@@ -1,3 +1,15 @@
 # Local tool state
 .netlify/
 .DS_Store
+
+# Never publish: third-party material and working files
+raw.md
+split/
+new-notes-*.md
+drafts/
+logs/
+sources/
+research/
+prompts/
+notes/
+questions/
