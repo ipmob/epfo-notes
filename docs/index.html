@@ -10,11 +10,14 @@
     :root { --bg:#0f1318; --fg:#e8ecf1; --muted:#9aa5b1; --accent:#6db3ff; --card:#1a2028; }
   }
   body { margin:0; background:var(--bg); color:var(--fg);
-         font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; }
+         font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; overflow-wrap:anywhere; }
   main { max-width:42rem; margin:0 auto; padding:2rem 16px 4rem; }
   h1 { font-size:1.6rem; margin:0 0 .25rem; }
   .sub { color:var(--muted); margin:0 0 1.5rem; }
   .card { background:var(--card); border-radius:10px; padding:1rem 1.25rem; margin:1rem 0; }
+  ol.topics { list-style:none; margin:0; padding:0; }
+  ol.topics li { background:var(--card); border-radius:10px; padding:.75rem 1.25rem; margin:.5rem 0; }
+  ol.topics .n { color:var(--muted); font-size:.85rem; }
   a { color:var(--accent); }
 </style>
 </head>
@@ -23,9 +26,17 @@
   <h1>EPFO Notes</h1>
   <p class="sub">Industrial Relations, Labour Codes and Social Security in India</p>
   <div class="card">
-    <strong>Status: under construction.</strong>
-    <p>The first topic, Industrial Relations, is being prepared. Notes are written from the statute text and checked against previous-year questions.</p>
+    <strong>Industrial Relations: 6 topics</strong>
+    <p>Notes are written from the statute text and checked against previous-year questions. Every rule on a page names the Code and section that applies today, and its in-force status.</p>
   </div>
+  <ol class="topics">
+    <li><span class="n">Topic 01</span><br><a href="01-ir-concepts.html">Industrial relations concepts, approaches and theories</a></li>
+    <li><span class="n">Topic 02</span><br><a href="02-ir-trade-unions.html">Trade Unions</a></li>
+    <li><span class="n">Topic 03</span><br><a href="03-ir-collective-bargaining-discipline.html">Collective bargaining, grievance and discipline</a></li>
+    <li><span class="n">Topic 04</span><br><a href="04-ir-conflicts-settlement.html">Conflicts and settlement</a></li>
+    <li><span class="n">Topic 05</span><br><a href="05-ir-workers-participation.html">Workers&#x27; participation in management</a></li>
+    <li><span class="n">Topic 06</span><br><a href="06-ir-code-2020-old-to-new.html">Industrial Relations Code 2020: old Acts to the Code</a></li>
+  </ol>
   <div class="card">
     <strong>Feedback</strong>
     <p>Tell the author what is hard to follow or hard to remember. Open an issue on the repository.</p>
