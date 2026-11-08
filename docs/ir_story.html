@@ -99,6 +99,117 @@ ol.tl li>b:first-child{display:inline-block;min-width:4.6rem;color:var(--acc);fo
 ol.quiz li{margin:.4rem 0}
 .answers{border-top:2px dashed var(--line);margin-top:1.2rem;padding-top:.3rem;color:var(--mut);font-size:.93rem}
 .answers h3{margin-top:.4rem}
+/* ---- story layer (student/story parts) ---- */
+:root{--stbg:#fbf5e9;--stline:#d9b46a;--stfg:#3b2f1a}
+@media screen and (prefers-color-scheme:dark){:root:not([data-theme="light"]){--stbg:#221c12;--stline:#8a6a2c;--stfg:#eadcc0}}
+.story{background:var(--stbg);color:var(--stfg);border-left:4px solid var(--stline);border-radius:0 10px 10px 0;padding:.6rem 1rem .7rem;margin:1rem 0;
+ font-family:Georgia,"Iowan Old Style","Times New Roman",serif;font-size:1.02rem;break-inside:avoid}
+.story p{margin:.35rem 0}
+.story .when{font:700 .72rem/1.2 system-ui,sans-serif;letter-spacing:.08em;text-transform:uppercase;color:var(--stline);margin:.1rem 0 .3rem}
+.story .punch{font-style:italic;font-weight:600}
+.story.case{background:var(--accbg);color:var(--fg);border-left-color:var(--acc);font-family:inherit;font-size:.97rem}
+.story.case .when{color:var(--acc)}
+h2 .ch{display:block;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--acc)}
+h2[id]{border-bottom-width:3px;margin-top:2.4rem}
+.note{border-left:3px solid var(--acc);padding:.1rem 0 .1rem .7rem;color:var(--fg)}
+/* journey map */
+.journey{margin:1rem 0}
+.journey figcaption{font-weight:700;font-size:.82rem;color:var(--mut);margin-bottom:.4rem}
+.journey ol{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(6,1fr);gap:.35rem;counter-reset:j}
+.journey li{position:relative}
+.journey li:not(:last-child)::after{content:"";position:absolute;right:-.33rem;top:50%;border:.3rem solid transparent;border-left-color:var(--acc);transform:translate(50%,-50%);z-index:1}
+.journey a{display:block;height:100%;padding:.5rem .55rem;border:1px solid var(--line);border-top:4px solid var(--acc);border-radius:8px;background:var(--card);color:var(--fg);text-decoration:none}
+.journey a b{display:block;font-size:.95rem}
+.journey a span{display:block;font-size:.78rem;color:var(--mut);line-height:1.3;margin-top:.15rem}
+/* figure frame and svg */
+.fig{border:1px solid var(--line);border-radius:12px;padding:.7rem .8rem;margin:1rem 0;background:var(--card);break-inside:avoid}
+.fig figcaption{font-weight:700;font-size:.85rem;color:var(--mut);margin:0 0 .5rem}
+.fig>figcaption:last-child{margin:.5rem 0 0;font-weight:500}
+.fig svg{display:block;width:100%;max-width:34rem;margin:0 auto;height:auto;overflow:visible;font-family:system-ui,-apple-system,sans-serif;font-size:13px}
+.fig .cap-note{font-size:.92rem;margin:.4rem 0 0}
+svg .grid line{stroke:var(--line);stroke-width:1}
+svg .grid line.cap{stroke:var(--acc);stroke-dasharray:5 4}
+svg .ax text{fill:var(--mut);font-size:12px}
+svg .ax .lab{font-size:12px}
+svg .ln{fill:none;stroke:var(--acc);stroke-width:3.5;stroke-linejoin:round}
+svg .pt{fill:var(--acc)} svg .pt.alt{fill:var(--warn)}
+svg .hl{fill:none;stroke:var(--warn);stroke-width:3}
+svg .hl-t{fill:var(--warn);font-weight:700}
+svg .note-t{fill:var(--acc);font-weight:700}
+svg .z-no{fill:var(--badbg);stroke:var(--bad)} svg .z-ok{fill:var(--okbg);stroke:var(--ok)} svg .z-off{fill:var(--oldbg);stroke:var(--old)}
+svg .zt{fill:var(--fg);font-weight:700}
+svg .tick line{stroke:var(--fg);stroke-width:1.5}
+svg .ax-t{fill:var(--fg);font-weight:700;font-size:12px}
+svg .sm{fill:var(--fg);font-size:12px} svg .mut{fill:var(--mut)}
+svg .scl{stroke:var(--line);stroke-width:6;stroke-linecap:round}
+/* slicing matrix */
+.mx-wrap{display:grid;grid-template-columns:repeat(auto-fit,minmax(8.5rem,1fr));gap:.6rem}
+.mx-card{background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:.5rem .6rem}
+.mx-card h4{font-size:.9rem;margin:0 0 .35rem}
+.mx-card p{font-size:.8rem;color:var(--mut);margin:.35rem 0 0;line-height:1.3}
+.mx{display:grid;grid-template-columns:repeat(4,1fr);gap:3px}
+.mx i{aspect-ratio:1;border-radius:3px;background:var(--oldbg);border:1px solid var(--line)}
+.mx i.on{background:var(--acc);border-color:var(--acc)}
+.mx i:nth-child(4n+2){margin-right:3px}
+/* shield */
+.sh-row{display:grid;grid-template-columns:1fr 1.6rem minmax(9rem,12rem);align-items:center;margin:.45rem 0}
+.atk{background:var(--badbg);border:1px solid var(--bad);border-radius:8px;padding:.4rem .6rem;font-size:.9rem}
+.arw{height:3px;background:var(--bad);position:relative}
+.arw::after{content:"";position:absolute;right:-2px;top:50%;transform:translateY(-50%);border:.4rem solid transparent;border-left-color:var(--bad)}
+.blk{background:var(--okbg);border:2px solid var(--ok);border-radius:8px 8px 18px 18px;padding:.35rem .6rem;font-size:.88rem}
+.blk b{display:block;color:var(--ok)}
+.was-s{display:block;margin-top:.15rem;font-size:.85em}
+/* seats, waffle */
+.seat-row{margin:.55rem 0}
+.seat-row p{margin:0 0 .25rem;font-size:.92rem}
+.dots{display:flex;flex-wrap:wrap;gap:4px}
+.dots i,.legend-dots i{display:inline-block;width:16px;height:16px;border-radius:50%;background:var(--acc)}
+.dots i.out,.legend-dots i.out{background:var(--warn)}
+.legend-dots{font-size:.82rem;color:var(--mut);margin:.5rem 0 0}
+.legend-dots i{width:11px;height:11px;vertical-align:-1px;margin:0 .2rem 0 .6rem}
+.legend-dots i:first-child{margin-left:0}
+.waffle{display:grid;grid-template-columns:repeat(20,1fr);gap:3px;max-width:26rem}
+.waffle i{aspect-ratio:1;border-radius:2px;background:var(--oldbg);border:1px solid var(--line)}
+.waffle i.on{background:var(--warn);border-color:var(--warn)}
+/* stacked shares */
+.stk-scale{position:relative;height:1.1rem;font-size:.75rem;color:var(--mut);font-weight:700}
+.stk-scale span{position:absolute;transform:translateX(-50%)}
+.stk{position:relative;display:flex;height:2.1rem;border-radius:6px;font-size:.8rem;font-weight:700;margin:.2rem 0}
+.stk span{position:relative;z-index:1;width:var(--w);display:flex;align-items:center;justify-content:center;white-space:nowrap;overflow:hidden}
+.stk span:first-child{border-radius:6px 0 0 6px} .stk span:last-of-type{border-radius:0 6px 6px 0}
+.stk .s1{background:var(--acc);color:var(--bg)} .stk .s2{background:var(--ok);color:var(--bg)}
+.stk .s3{background:var(--warn);color:var(--bg)} .stk .s0{background:var(--oldbg);color:var(--mut)}
+.stk b{position:absolute;z-index:0;top:-7px;bottom:-7px;width:2px;margin-left:-1px;background:var(--mut)}
+.stk b.m{width:3px;opacity:1;background:var(--bad)}
+.stk-t{font-weight:700;font-size:.9rem;margin:.7rem 0 .1rem}
+.stk-r{font-size:.92rem;margin:.25rem 0 .4rem}
+.bars.marked{position:relative;padding-top:1.1rem}
+.bars.marked::before{content:"100 needed";position:absolute;top:0;left:27%;transform:translateX(-50%);font-size:.72rem;font-weight:700;color:var(--warn)}
+.bars.marked::after{content:"";position:absolute;top:1rem;bottom:0;left:27%;border-left:2px dashed var(--warn)}
+/* spectrum */
+.spectrum ol{list-style:none;margin:0;padding:0 0 0 1.6rem;position:relative}
+.spectrum ol::before{content:"";position:absolute;left:.35rem;top:.4rem;bottom:.4rem;width:7px;border-radius:4px;background:linear-gradient(var(--acc),var(--line))}
+.spectrum li{margin:.35rem 0;padding:.35rem .6rem;background:var(--bg);border:1px solid var(--line);border-radius:8px;font-size:.93rem}
+.spectrum li>b:first-child{display:block}
+.spectrum li.none{border-style:dashed;color:var(--mut)}
+/* card variants */
+.cards.think .cue{font:700 .7rem/1.2 system-ui,sans-serif;letter-spacing:.07em;text-transform:uppercase;color:var(--acc);margin:0 0 .15rem}
+.cards.ages .big{font-size:2.6rem;font-weight:800;line-height:1;color:var(--acc);margin:0}
+.was-c{border-top:1px dashed var(--line);padding-top:.3rem;color:var(--mut);font-size:.88rem !important}
+.tl .pol{display:inline-block;font-size:.72rem;font-weight:700;padding:0 .45em;border-radius:99px;background:var(--oldbg);color:var(--mut);margin-right:.25rem;vertical-align:.1em}
+.score{font-size:.95rem}
+@media screen and (max-width:620px){
+ .journey ol{grid-template-columns:repeat(3,1fr)}
+ .journey li:nth-child(3)::after{display:none}
+}
+@media screen and (max-width:520px){
+ .sh-row{grid-template-columns:1fr;gap:0}
+ .arw{width:3px;height:1rem;margin-left:1.2rem}
+ .arw::after{right:auto;left:50%;top:auto;bottom:-6px;transform:translateX(-50%);border-left-color:transparent;border-top-color:var(--bad)}
+ .story{font-size:.98rem}
+ .sh-row{margin:.2rem 0 .9rem}
+}
+@media print{.story,.fig,.journey{break-inside:avoid}}
 /* phone: tables become labelled cards */
 @media screen and (max-width:520px){
  table.cmp,table.shift,table.cmp tbody,table.shift tbody,table.cmp tr,table.shift tr,table.cmp td,table.shift td{display:block;width:auto}
@@ -128,7 +239,7 @@ ol.quiz li{margin:.4rem 0}
 <p class="kicker">UPSC EPFO · Industrial Relations, Labour Codes and Social Security in India</p>
 <h1 class="title">Industrial Relations</h1>
 <p class="lede">Six topics, written from the law as it stands today. Each rule names the section that applies now, and what the old Act said where it changed.</p>
-<p class="dl"><a href="ir_notes.pdf">Download as PDF</a></p>
+<p class="dl"><a href="ir_story.pdf">Download as PDF</a></p>
 <div class="legend">
 <h2>How to read these notes</h2>
 <table class="cmp"><tbody>
@@ -291,9 +402,31 @@ ol.quiz li{margin:.4rem 0}
 <section class="topic" id="t02">
 <p class="kicker">Topic 2</p>
 <h1>Trade unions</h1>
-<p class="lede">A trade union is a body of workers (or employers) that works to regulate relations at work. This topic covers what a union is, how it registers, what protects it, who may join and lead it, and which union negotiates with the employer.</p>
+<p class="lede">How a group of workers becomes a union the law recognises, protects and must bargain with. We follow one union through its whole life.</p>
+
+<aside class="story" data-free>
+<p class="when">Madras, 1918</p>
+<p>Workers at the Buckingham and Carnatic Mills form the Madras Labour Union, one of India's first modern unions. Its leader is B.P. Wadia. When the union strikes, the mill owners go to the Madras High Court.</p>
+<p>In 1920 the court orders the leaders to stop. Persuading workers to break their contracts is a civil wrong, it says. A union can now be <b>sued out of existence</b>.</p>
+<p>N.M. Joshi takes the fight to the Central Legislative Assembly. The answer is the Trade Unions Act 1926, with a simple bargain: <b>register your union, and the law shields it</b>.</p>
+<p class="punch">A century later that bargain is still the core of the law. Only the statute has changed.</p>
+</aside>
+
 <div class="lawtoday"><b>Law today</b> <span class="sec">IR Code Ch III</span> (<span class="sec">IR Code ss.5 to 27</span>), in force from 21 November 2025 (S.O. 5320(E)). It replaced <span class="sec old"><i>old</i> TU Act 1926</span>, repealed from the same date <span class="sec">IR Code s.104(1)</span>.    </div>
 
+<figure class="journey" data-free>
+<figcaption>The life of a union: six stops, six chapters</figcaption>
+<ol>
+<li><a href="#t02-c1"><b>1 Form</b><span>What counts as a union</span></a></li>
+<li><a href="#t02-c2"><b>2 Register</b><span>7 apply, 10% or 100 join</span></a></li>
+<li><a href="#t02-c3"><b>3 Shield</b><span>Immunities and funds</span></a></li>
+<li><a href="#t02-c4"><b>4 Run</b><span>Members and office-bearers</span></a></li>
+<li><a href="#t02-c5"><b>5 Bargain</b><span>51% or a council</span></a></li>
+<li><a href="#t02-c6"><b>6 Strike</b><span>Notice and limits</span></a></li>
+</ol>
+</figure>
+
+<h2 class="five">If you remember only five things</h2>
 <ol class="keys">
 <li><b>7 members</b> apply to register a union <span class="sec">IR Code s.6(1)</span>. At least <b>10% of the workers or 100</b>, whichever is less, must be members <span class="sec">IR Code s.6(2)</span>. </li>
 <li>Registration is <b>optional</b>: members "may apply" <span class="sec">IR Code s.6(1)</span>. </li>
@@ -302,7 +435,13 @@ ol.quiz li{margin:.4rem 0}
 <li>The right to strike is a <b>common law right</b>, not a fundamental right. The Code regulates strikes <span class="sec">IR Code ss.62, 63</span>.  </li>
 </ol>
 
-<h2>1. What a trade union is</h2>
+<aside class="story case" data-free>
+<p class="when">Our example: Shakti Mills</p>
+<p>Shakti Mills is an imaginary textile mill with <b>1,100 workers</b>. Five groups of workers want to form unions: A, B, C, D and E. We will follow them through every chapter.</p>
+</aside>
+
+
+<h2 id="t02-c1"><span class="ch">Chapter 1</span> Form: what counts as a union</h2>
 <div class="rule">
 <div class="rh"><span class="sec">IR Code s.2(zl)</span> <span class="rt">Trade Union</span></div>
 <p>Any combination, temporary or permanent, formed <b>primarily to regulate relations</b> between workers and employers, workers and workers, or employers and employers. </p>
@@ -310,17 +449,63 @@ ol.quiz li{margin:.4rem 0}
 <p>It includes any <b>federation of two or more</b> Trade Unions. </p>
 <div class="was"><span class="sec old"><i>old</i> TU Act 1926 s.2(h)</span> the same definition. Only the wording changes: "workmen" became "workers" <span class="tag changed">Changed</span>  </div>
 </div>
-<p><b>Webb</b> (History of Trade Unionism, 1920 edition): a trade union is "a continuous association of wage earners for the purpose of maintaining or improving the conditions of their working lives". </p>
+<p class="note">Notice the three pairs. An <b>employers' association</b> is also a "trade union" in law.</p>
 
-<h3>Old term, new term: trade dispute</h3>
 <div class="rule">
 <div class="rh"><span class="sec">IR Code s.2(q)</span> <span class="rt">Industrial dispute</span></div>
 <p>The words "trade dispute" no longer appear in the Code. Its counterpart is <b>"industrial dispute"</b>, with the <b>same three heads</b>: a dispute between employers and workers, workers and workers, or employers and employers, connected with employment or non-employment, the terms of employment or the conditions of labour.  </p>
 <div class="was">"Trade dispute" <span class="sec old"><i>old</i> TU Act 1926 s.2(g)</span>: a dispute between employers and workmen, workmen and workmen, or employers and employers, connected with employment or non-employment, the terms of employment or the conditions of labour of any person <span class="tag changed">Changed</span> </div>
 </div>
 
-<h2>2. Registration</h2>
-<p>The Registrar of Trade Unions registers unions. The rules below sit in <span class="sec">IR Code ss.5 to 12</span>.</p>
+<h3>Four ways to slice a workforce</h3>
+<p>Unions differ by <b>who they cut across</b>. Picture a grid. Rows are crafts. Columns are workplaces in two industries.</p>
+<figure class="fig mx-set" data-free>
+<div class="mx-wrap">
+<div class="mx-card"><h4>Craft union</h4><div class="mx">
+<i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i>
+<i></i><i></i><i></i><i></i>
+<i></i><i></i><i></i><i></i></div><p>One craft, every workplace</p></div>
+<div class="mx-card"><h4>Industrial union</h4><div class="mx">
+<i class="on"></i><i class="on"></i><i></i><i></i>
+<i class="on"></i><i class="on"></i><i></i><i></i>
+<i class="on"></i><i class="on"></i><i></i><i></i></div><p>Every craft, one industry</p></div>
+<div class="mx-card"><h4>Company union</h4><div class="mx">
+<i class="on"></i><i></i><i></i><i></i>
+<i class="on"></i><i></i><i></i><i></i>
+<i class="on"></i><i></i><i></i><i></i></div><p>Only one firm's employees</p></div>
+<div class="mx-card"><h4>General union</h4><div class="mx">
+<i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i>
+<i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i>
+<i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></div><p>Many industries and crafts</p></div>
+</div>
+<figcaption>Rows: electricians, drivers, clerks. Columns: Mill 1, Mill 2 (textile), Plant 1, Plant 2 (steel).</figcaption>
+</figure>
+<table class="cmp"><thead><tr><th>Type</th><th>Test</th></tr></thead><tbody>
+<tr><td data-label="Type">Craft union</td><td data-label="Test">Workers of one craft or trade, whatever the plant or industry </td></tr>
+<tr><td data-label="Type">Industrial union</td><td data-label="Test">All workers of a plant or industry, whatever their craft or trade </td></tr>
+<tr><td data-label="Type">General union</td><td data-label="Test">Workers of many industries, employments and crafts </td></tr>
+<tr><td data-label="Type">Company union</td><td data-label="Test">Membership confined to the employees of one firm </td></tr>
+<tr><td data-label="Type">Enterprise union</td><td data-label="Test">The Japanese type </td></tr>
+<tr><td data-label="Type">Federation</td><td data-label="Test">A Trade Union includes a federation of two or more unions <span class="sec">IR Code s.2(zl)</span>. India has federations in many individual industries.  </td></tr>
+<tr><td data-label="Type">Central Trade Union Organisation</td><td data-label="Test">A central level body, recognised under <span class="sec">IR Code s.27(1)</span> <span class="tag rules">needs rules</span>. Say "central", not "national".  </td></tr>
+<tr><td data-label="Type">White-collar union</td><td data-label="Test">Staff such as banking and insurance employees, government employees, teachers, nurses, technicians and engineers have organised in India </td></tr>
+</tbody></table>
+
+<h3>What is a union for? Four answers</h3>
+<p>Thinkers disagree on the purpose. Their answers run from "fix today's pay" to "end the wage system".</p>
+<div class="cards think">
+<div class="card"><p class="cue">Improve working lives</p><h4>Webb</h4><p>"A continuous association of wage earners for the purpose of maintaining or improving the conditions of their working lives" (History of Trade Unionism, 1920 edition). In <i>Industrial Democracy</i>, unions sit in "the industrial democracy of the future". The earliest use of "collective bargaining" they knew was by Beatrice Potter in 1891.   </p></div>
+<div class="card"><p class="cue">Overthrow the system</p><h4>Marx</h4><p>Unions as "a lever for the final emancipation of the working class", that is "the ultimate abolition of the wages system" (<i>Value, Price and Profit</i>). </p></div>
+<div class="card"><p class="cue">Guard scarce jobs</p><h4>Perlman</h4><p><i>A Theory of the Labor Movement</i>: American unionism stabilised when <b>scarcity consciousness</b> replaced abundance consciousness. Conservative leaders strove harder for full job control than their radical rivals.  </p></div>
+<div class="card"><p class="cue">It depends on the union</p><h4>Hoxie</h4><p>Five functional types: <b>business, friendly or uplift, revolutionary, predatory and dependent</b>. Evolutionary unionism is not one of them.      </p></div>
+</div>
+
+
+<h2 id="t02-c2"><span class="ch">Chapter 2</span> Register: the numbers test</h2>
+<aside class="story case" data-free>
+<p class="when">At Shakti Mills</p>
+<p>Seven workers of group E meet in the canteen and sign an application. That is enough people to <b>apply</b>. But is it enough people to <b>register</b>? The Registrar checks a second number.</p>
+</aside>
 <div class="rule">
 <div class="rh"><span class="sec">IR Code s.6(1)</span> <span class="rt">Who applies</span></div>
 <p>Any <b>7 or more members</b> of a trade union may apply for registration. Registration is <b>optional</b>: the Code says "may apply".  </p>
@@ -331,19 +516,31 @@ ol.quiz li{margin:.4rem 0}
 <p>The members must be at least <b>10% of the workers or 100</b>, whichever is less. </p>
 <div class="was"><span class="sec old"><i>old</i> TU Act 1926 s.4</span> first proviso: the same test <span class="tag same">Same</span> </div>
 </div>
-<div class="rule">
-<div class="rh"><span class="sec">IR Code s.6(4)</span> <span class="rt">Strength after registration</span></div>
-<p>The union must <b>at all times</b> keep at least 10% of the workers or 100, whichever is less, subject to a minimum of <b>7</b>. </p>
-<div class="was"><span class="sec old"><i>old</i> TU Act 1926 s.4</span> second proviso: not less than 7 members on the date of application <span class="tag changed">Changed</span> </div>
-</div>
-<div class="rule">
-<div class="rh"><span class="sec">IR Code s.9(4)</span> <span class="rt">Old registrations</span></div>
-<p>A union validly registered under the 1926 Act is <b>deemed registered</b> under the Code. It files a statement and updated rules. </p>
-</div>
 
-<h3>Worked example: 1,100 workers</h3>
-<p>A unit has 1,100 workers. 10% of 1,100 is 110, but 100 is less, so the threshold is <b>100</b>. Unions with 100 or more members qualify.  </p>
-<div class="bars">
+<figure class="fig" data-free>
+<figcaption>Members needed to register, by size of the workforce</figcaption>
+<svg viewBox="0 0 480 270" role="img" aria-label="Line chart. Members needed rise as 10 percent of workers up to 1,000 workers, then stay flat at 100.">
+<g class="grid">
+<line x1="50" y1="230" x2="460" y2="230"/><line x1="50" y1="163" x2="460" y2="163"/><line x1="50" y1="97" x2="460" y2="97" class="cap"/><line x1="50" y1="30" x2="460" y2="30"/>
+</g>
+<g class="ax">
+<text x="42" y="234" text-anchor="end">0</text><text x="42" y="167" text-anchor="end">50</text><text x="42" y="101" text-anchor="end">100</text><text x="42" y="34" text-anchor="end">150</text>
+<text x="50" y="250" text-anchor="middle">0</text><text x="153" y="250" text-anchor="middle">500</text><text x="255" y="250" text-anchor="middle">1,000</text><text x="358" y="250" text-anchor="middle">1,500</text><text x="460" y="250" text-anchor="middle">2,000</text>
+<text x="255" y="268" text-anchor="middle" class="lab">workers in the establishment</text>
+</g>
+<polyline class="ln" points="50,230 255,97 460,97"/>
+<circle class="pt" cx="255" cy="97" r="5"/>
+<circle class="hl" cx="276" cy="97" r="7"/>
+<text x="168" y="200" class="note-t" transform="rotate(-33 168 200)">10% of workers</text>
+<text x="400" y="88" class="note-t" text-anchor="middle">capped at 100</text>
+<text x="290" y="128" class="hl-t">Shakti Mills</text><text x="290" y="145" class="hl-t">1,100 workers: 100 members</text>
+</svg>
+<p class="cap-note">The line bends at <b>1,000 workers</b>. Below it, 10% is the smaller number. Above it, 100 is always enough, however big the firm.</p>
+</figure>
+
+<h3>Which Shakti Mills unions pass?</h3>
+<p>10% of 1,100 is 110, but 100 is less, so the threshold is <b>100</b>. Unions with 100 or more members qualify.  </p>
+<div class="bars marked">
 <div class="bar" style="--w:27%">A: 100 members, qualifies </div>
 <div class="bar" style="--w:100%">B: 370 members, qualifies </div>
 <div class="bar" style="--w:30%">C: 110 members, qualifies </div>
@@ -351,6 +548,14 @@ ol.quiz li{margin:.4rem 0}
 <div class="bar no" style="--w:22%">E: 80 members, does not qualify </div>
 </div>
 <p>Unions A, B, C and D qualify. The Code <span class="sec">IR Code s.6(2)</span> uses the same test as the old Act, so the result is the same.  </p>
+<p class="note">Group E had its 7 signatures. It still fails, because 80 is below 100. <b>7 opens the door; 10% or 100 lets you in.</b></p>
+
+<div class="rule">
+<div class="rh"><span class="sec">IR Code s.6(4)</span> <span class="rt">Strength after registration</span></div>
+<p>The union must <b>at all times</b> keep at least 10% of the workers or 100, whichever is less, subject to a minimum of <b>7</b>. </p>
+<div class="was"><span class="sec old"><i>old</i> TU Act 1926 s.4</span> second proviso: not less than 7 members on the date of application <span class="tag changed">Changed</span> </div>
+</div>
+<p class="note">The old Act checked once, at the door. The Code keeps checking. If union C (110 members) later loses a dozen members, it falls below the line.</p>
 
 <h3>Who does what</h3>
 <table class="cmp"><thead><tr><th>Item</th><th>Owner</th><th>Section</th></tr></thead><tbody>
@@ -359,27 +564,26 @@ ol.quiz li{margin:.4rem 0}
 <tr><td data-label="Item">Recognises a Central Trade Union</td><td data-label="Owner">Central Government, in the prescribed manner</td><td data-label="Section"><span class="sec">IR Code s.27(1)</span> <span class="tag rules">needs rules</span> </td></tr>
 <tr><td data-label="Item">Recognises a State Trade Union</td><td data-label="Owner">State Government, in the prescribed manner</td><td data-label="Section"><span class="sec">IR Code s.27(2)</span> <span class="tag rules">needs rules</span> </td></tr>
 </tbody></table>
-
 <div class="rule">
 <div class="rh"><span class="sec">IR Code s.12</span> <span class="rt">Legal person</span></div>
 <p>Every registered union is a <b>body corporate</b>. It has perpetual succession and a common seal, may hold property and contract, and may sue and be sued.  </p>
 <div class="was"><span class="sec old"><i>old</i> TU Act 1926 s.13</span> said "a corporate" for the same idea <span class="tag same">Same</span> </div>
 </div>
-
-<h2>3. Funds and protections</h2>
-<h3>Funds</h3>
 <div class="rule">
-<div class="rh"><span class="sec">IR Code s.15(1)</span> <span class="tag rules">needs rules</span> <span class="rt">General fund</span></div>
-<p>Spent only on objects that are <b>prescribed</b>. </p>
-<div class="was"><span class="sec old"><i>old</i> TU Act 1926 s.15</span> listed the heads itself: office-bearers' salaries, administration and legal proceedings, the conduct of trade disputes, compensation of members for loss arising out of trade disputes, and educational, social or religious benefits for members <span class="tag changed">Changed</span>  </div>
-</div>
-<div class="rule">
-<div class="rh"><span class="sec">IR Code ss.15(2), 15(3)</span> <span class="rt">Political fund</span></div>
-<p>A registered union <b>may keep a separate political fund</b> for the civic and political interests of members. No member can be compelled to pay into it. A member who does not pay is not put at a disadvantage. </p>
-<div class="was"><span class="sec old"><i>old</i> TU Act 1926 s.16</span> the same idea, in a different section <span class="tag same">Same</span> </div>
+<div class="rh"><span class="sec">IR Code s.9(4)</span> <span class="rt">Old registrations</span></div>
+<p>A union validly registered under the 1926 Act is <b>deemed registered</b> under the Code. It files a statement and updated rules. </p>
 </div>
 
-<h3>Protections (Code Chapter III)</h3>
+
+<h2 id="t02-c3"><span class="ch">Chapter 3</span> Shield: what registration buys</h2>
+<p>Remember Madras in 1920. A court stopped a union because it "induced breach of contract". Registration now blocks four such attacks.</p>
+<figure class="fig shield" data-free>
+<figcaption>Four attacks on a registered union, and the section that blocks each</figcaption>
+<div class="sh-row"><div class="atk">Sue the union for making workers break their contracts</div><div class="arw" aria-hidden="true"></div><div class="blk"><b>No civil suit</b><span class="sec">IR Code s.16(1)</span><span class="was-s"><span class="sec old"><i>old</i> TU Act 1926 s.18(1)</span></span></div></div>
+<div class="sh-row"><div class="atk">Hold the union liable for a tort by a rogue agent</div><div class="arw" aria-hidden="true"></div><div class="blk"><b>Not liable</b><span class="sec">IR Code s.16(2)</span><span class="was-s"><span class="sec old"><i>old</i> TU Act 1926 s.18(2)</span></span></div></div>
+<div class="sh-row"><div class="atk">Prosecute members for criminal conspiracy</div><div class="arw" aria-hidden="true"></div><div class="blk"><b>No conspiracy</b><span class="sec">IR Code s.17</span><span class="was-s"><span class="sec old"><i>old</i> TU Act 1926 s.17</span></span></div></div>
+<div class="sh-row"><div class="atk">Call the union's agreement void as restraint of trade</div><div class="arw" aria-hidden="true"></div><div class="blk"><b>Not void</b><span class="sec">IR Code s.18</span><span class="was-s"><span class="sec old"><i>old</i> TU Act 1926 s.19</span></span></div></div>
+</figure>
 <div class="rule">
 <div class="rh"><span class="sec">IR Code s.16(1)</span> <span class="rt">No civil suit</span></div>
 <p>No civil suit lies against a registered union, an office-bearer or a member for an act in furtherance of an <b>industrial dispute</b>, on the ground only that it induces a breach of an employment contract. </p>
@@ -400,19 +604,27 @@ ol.quiz li{margin:.4rem 0}
 <p>An agreement between members is <b>not void or voidable</b> merely because its objects restrain trade. </p>
 <div class="was"><span class="sec old"><i>old</i> TU Act 1926 s.19</span> <span class="tag same">Same</span> </div>
 </div>
-<div class="trap"><p>Students mix up old and new section numbers because the Code moved the civil-suit protection from old <span class="sec old"><i>old</i> TU Act 1926 s.18</span> to <span class="sec">IR Code s.16</span>, and restraint of trade from old <span class="sec old"><i>old</i> TU Act 1926 s.19</span> to <span class="sec">IR Code s.18</span>.  </p></div>
+<div class="trap"><p>The section numbers moved. Civil suit: old <span class="sec old"><i>old</i> TU Act 1926 s.18</span> is now <span class="sec">IR Code s.16</span>. Restraint of trade: old <span class="sec old"><i>old</i> TU Act 1926 s.19</span> is now <span class="sec">IR Code s.18</span>. Conspiracy kept its number 17.   </p></div>
 
-<h2>4. Members and office-bearers</h2>
-<div class="rule">
-<div class="rh"><span class="sec">IR Code s.20</span> <span class="rt">Age to be a member</span></div>
-<p>A member must be <b>14 years</b> or more and employed in a <b>non-hazardous</b> industry. So a 17-year-old in a non-hazardous industry can be a member.  </p>
-<div class="was"><span class="sec old"><i>old</i> TU Act 1926 s.21</span> <b>15 years</b> <span class="tag changed">Changed</span> </div>
+<h3>Two wallets</h3>
+<div class="cards wallets">
+<div class="card"><h4>General fund <span class="sec">IR Code s.15(1)</span> <span class="tag rules">needs rules</span></h4><p>Spent only on objects that are <b>prescribed</b>. </p><p class="was-c"><span class="sec old"><i>old</i> TU Act 1926 s.15</span> listed the heads itself: office-bearers' salaries, administration and legal proceedings, the conduct of trade disputes, compensation of members for loss arising out of trade disputes, and educational, social or religious benefits for members <span class="tag changed">Changed</span>  </p></div>
+<div class="card"><h4>Political fund <span class="sec">IR Code ss.15(2), 15(3)</span></h4><p>A registered union <b>may keep a separate political fund</b> for the civic and political interests of members. No member can be compelled to pay into it. A member who does not pay is not put at a disadvantage. </p><p class="was-c"><span class="sec old"><i>old</i> TU Act 1926 s.16</span> the same idea, in a different section <span class="tag same">Same</span> </p></div>
 </div>
-<div class="rule">
-<div class="rh"><span class="sec">IR Code s.21(1)(i)</span> <span class="rt">Age to be an office-bearer</span></div>
-<p>An office-bearer must be <b>18 or more</b>. </p>
-<div class="was"><span class="sec old"><i>old</i> TU Act 1926 s.21A</span> the same <span class="tag same">Same</span> </div>
+
+
+<h2 id="t02-c4"><span class="ch">Chapter 4</span> Run: who may join and who may lead</h2>
+<div class="cards ages">
+<div class="card"><p class="big">14</p><h4>Member</h4><p>14 years or more, employed in a <b>non-hazardous</b> industry <span class="sec">IR Code s.20</span>. So a 17-year-old in a non-hazardous industry can be a member.  </p><p class="was-c"><span class="sec old"><i>old</i> TU Act 1926 s.21</span> 15 years <span class="tag changed">Changed</span> </p></div>
+<div class="card"><p class="big">18</p><h4>Office-bearer</h4><p>18 or more <span class="sec">IR Code s.21(1)(i)</span>. </p><p class="was-c"><span class="sec old"><i>old</i> TU Act 1926 s.21A</span> the same <span class="tag same">Same</span> </p></div>
 </div>
+
+<aside class="story" data-free>
+<p class="when">Why the law counts "outsiders"</p>
+<p>Many of India's best-known union leaders never worked in the factory they led. They were lawyers, doctors and politicians. Datta Samant, who led the Bombay mill strike of 1982, was a medical doctor. Outsiders brought education and political weight. They also brought party rivalries into the workplace. So the law <b>caps</b> them.</p>
+</aside>
+<p>Outside leadership has a historical background and lingered after independence. Illiteracy, backwardness and fatalism of workers contributed to dependence on it.  </p>
+
 <div class="rule">
 <div class="rh"><span class="sec">IR Code s.23(2)</span> <span class="rt">Outsiders in the executive</span></div>
 <p>All office-bearers except <b>not more than one-third of them, or 5</b>, whichever is less, must be persons actually engaged in the establishment or industry. A retired or retrenched employee is not an outsider.  </p>
@@ -423,31 +635,49 @@ ol.quiz li{margin:.4rem 0}
 <p>Not less than <b>one-half</b> of the office-bearers must be persons actually engaged in the industry. </p>
 <div class="was"><span class="sec old"><i>old</i> TU Act 1926 s.22(1)</span> the corresponding rule </div>
 </div>
-<div class="trap"><p>Students confuse the two outsider rules because both sit in <span class="sec">IR Code s.23</span>. "One-half" applies only to unions in an unorganised sector, which the appropriate Government notifies. "One-third or 5" is the general rule.  </p></div>
-<div class="rule">
-<div class="rh"><span class="sec">IR Code ss.7(f), 15(4)</span> <span class="tag rules">needs rules</span> <span class="rt">Minimum subscription</span></div>
-<p>Left to the rules, "as may be prescribed". The Code gives no rupee figure. </p>
-<div class="was"><span class="sec old"><i>old</i> TU Act 1926 s.6(ee)</span> not less than Re 1 a year for rural workers, Rs 3 for workers in other unorganised sectors, Rs 12 in any other case <span class="tag changed">Changed</span>   </div>
-</div>
-<div class="rule">
-<div class="rh"><span class="sec">IR Code s.26(1)(a)</span> <span class="tag rules">needs rules</span> <span class="rt">Annual return</span></div>
-<p>A general statement to the Registrar by the prescribed date, for the year ending <b>31 December</b>. </p>
-<div class="was"><span class="sec old"><i>old</i> TU Act 1926 s.28(1)</span> the same year-end <span class="tag same">Same</span> </div>
-</div>
-<div class="rule">
-<div class="rh"><span class="sec">IR Code s.24(2)</span> <span class="tag rules">needs rules</span> <span class="rt">Amalgamation</span></div>
-<p>Two or more registered unions may amalgamate "in such manner as may be prescribed". </p>
-<div class="was"><span class="sec old"><i>old</i> TU Act 1926 s.24</span> votes of at least one-half of the members of each union recorded, and at least <b>60%</b> of the votes recorded in favour <span class="tag changed">Changed</span>  </div>
-</div>
 
-<h2>5. Recognition: negotiating union and council</h2>
+<figure class="fig seats" data-free>
+<figcaption>Most outsider seats allowed, worked out for three executives</figcaption>
+<div class="seat-row"><p><b>9 office-bearers</b> one-third is 3, less than 5: <b>3 outsiders</b></p><div class="dots"><i class="out"></i><i class="out"></i><i class="out"></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
+<div class="seat-row"><p><b>21 office-bearers</b> one-third is 7, but 5 is less: <b>5 outsiders</b></p><div class="dots"><i class="out"></i><i class="out"></i><i class="out"></i><i class="out"></i><i class="out"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
+<div class="seat-row"><p><b>10 office-bearers, unorganised sector</b> at least one-half from the industry: <b>up to 5 outsiders</b></p><div class="dots"><i class="out"></i><i class="out"></i><i class="out"></i><i class="out"></i><i class="out"></i><i></i><i></i><i></i><i></i><i></i></div></div>
+<p class="legend-dots"><i class="out"></i> outsider allowed <i></i> must be engaged in the establishment or industry</p>
+</figure>
+<div class="trap"><p>Both outsider rules sit in <span class="sec">IR Code s.23</span>. "One-half" applies only to unions in an unorganised sector, which the appropriate Government notifies. "One-third or 5" is the general rule.  </p></div>
+
+<h3>Housekeeping: left to the rules</h3>
+<p>The old Act wrote fixed numbers. The Code hands three of them to the rules.</p>
+<table class="cmp"><thead><tr><th>Item</th><th>Now</th><th>Old Act</th></tr></thead><tbody>
+<tr><td data-label="Item">Minimum subscription</td><td data-label="Now">"As may be prescribed". No rupee figure <span class="sec">IR Code ss.7(f), 15(4)</span> <span class="tag rules">needs rules</span> </td><td data-label="Old Act">Re 1 a year for rural workers, Rs 3 for other unorganised sectors, Rs 12 in any other case <span class="sec old"><i>old</i> TU Act 1926 s.6(ee)</span> <span class="tag changed">Changed</span>   </td></tr>
+<tr><td data-label="Item">Annual return</td><td data-label="Now">To the Registrar by the prescribed date, for the year ending <b>31 December</b> <span class="sec">IR Code s.26(1)(a)</span> <span class="tag rules">needs rules</span> </td><td data-label="Old Act">The same year-end <span class="sec old"><i>old</i> TU Act 1926 s.28(1)</span> <span class="tag same">Same</span> </td></tr>
+<tr><td data-label="Item">Amalgamation</td><td data-label="Now">Two or more registered unions may amalgamate "in such manner as may be prescribed" <span class="sec">IR Code s.24(2)</span> <span class="tag rules">needs rules</span> </td><td data-label="Old Act">Votes of at least one-half of the members of each union recorded, and at least <b>60%</b> of the votes recorded in favour <span class="sec old"><i>old</i> TU Act 1926 s.24</span> <span class="tag changed">Changed</span>  </td></tr>
+</tbody></table>
+
+
+<h2 id="t02-c5"><span class="ch">Chapter 5</span> Bargain: who sits at the table</h2>
+<aside class="story" data-free>
+<p class="when">The old problem</p>
+<p>For decades, no central law told an employer <b>which</b> union to talk to. A firm could favour a friendly union and ignore the rest. Rival unions fought for the employer's ear, sometimes violently. The Code ends the guessing with a counting rule.</p>
+</aside>
 <p>The Code requires a negotiating union or a negotiating council in an industrial establishment that has a registered Trade Union <span class="sec">IR Code s.14(1)</span>. </p>
 <div class="decide">
 <p class="q">How many registered unions are in the establishment?</p>
 <div class="opts">
 <div class="opt"><b>One</b> The employer recognises it as the sole negotiating union, on prescribed criteria <span class="sec">IR Code s.14(2)</span> <span class="tag rules">needs rules</span>. It does not need 51%. </div>
-<div class="opt"><b>More than one</b> The share of workers on the muster roll, verified as prescribed, decides <span class="sec">IR Code s.14(3)</span> <span class="tag rules">needs rules</span>.  <b>51% or more:</b> that union is the sole negotiating union <span class="sec">IR Code s.14(3)</span>.  <b>No union at 51%:</b> a negotiating council is formed <span class="sec">IR Code s.14(4)</span>, with seats only for unions that have 20% or more of the workers.  </div>
+<div class="opt"><b>More than one</b> The share of workers on the muster roll, verified as prescribed, decides <span class="sec">IR Code s.14(3)</span> <span class="tag rules">needs rules</span>.  See the two cases below.</div>
 </div></div>
+
+<figure class="fig stacks" data-free>
+<figcaption>Shakti Mills, two possible verification results</figcaption>
+<div class="stk-scale"><span style="left:20%">20%</span><span style="left:51%">51%</span></div>
+<p class="stk-t">Case 1: one union crosses 51%</p>
+<div class="stk"><span class="s1" style="--w:56%">A 56%</span><span class="s2" style="--w:30%">B 30%</span><span class="s3" style="--w:14%">C 14%</span><b style="left:20%"></b><b class="m" style="left:51%"></b></div>
+<p class="stk-r"><b>A is the sole negotiating union.</b> <span class="sec">IR Code s.14(3)</span></p>
+<p class="stk-t">Case 2: nobody reaches 51%</p>
+<div class="stk"><span class="s1" style="--w:42%">A 42%</span><span class="s2" style="--w:33%">B 33%</span><span class="s3" style="--w:15%">C 15%</span><span class="s0" style="--w:10%" title="in no union"></span><b style="left:20%"></b><b class="m" style="left:51%"></b></div>
+<p class="stk-r">Grey: workers in no union. <b>A negotiating council of A and B.</b> C is below 20% and gets no seat. <span class="sec">IR Code s.14(4)</span></p>
+</figure>
+<p><b>51% or more:</b> that union is the sole negotiating union <span class="sec">IR Code s.14(3)</span>.  <b>No union at 51%:</b> a negotiating council is formed <span class="sec">IR Code s.14(4)</span>, with seats only for unions that have 20% or more of the workers.  </p>
 <p>The council has representatives of unions that have the support of not less than <b>20%</b> of the workers on the muster roll. It has one representative for each 20%, and for the remainder after calculating the membership on each 20%.  </p>
 <p>The second National Commission on Labour (2002) recommended that a system of recognising the negotiating agency be placed on the statute. The Code now does it <span class="sec">IR Code s.14</span>.  </p>
 
@@ -457,84 +687,110 @@ ol.quiz li{margin:.4rem 0}
 </div>
 <p>In 1946 the Government verified the membership of AITUC and IFL. This is a past event, not a Code rule. </p>
 
-<h2>6. Types of unions and union security</h2>
-<h3>Types of unions</h3>
-<table class="cmp"><thead><tr><th>Type</th><th>Test</th></tr></thead><tbody>
-<tr><td data-label="Type">Craft union</td><td data-label="Test">Workers of one craft or trade, whatever the plant or industry </td></tr>
-<tr><td data-label="Type">Industrial union</td><td data-label="Test">All workers of a plant or industry, whatever their craft or trade </td></tr>
-<tr><td data-label="Type">General union</td><td data-label="Test">Workers of many industries, employments and crafts </td></tr>
-<tr><td data-label="Type">Company union</td><td data-label="Test">Membership confined to the employees of one firm </td></tr>
-<tr><td data-label="Type">Enterprise union</td><td data-label="Test">The Japanese type </td></tr>
-<tr><td data-label="Type">Federation</td><td data-label="Test">A Trade Union includes a federation of two or more unions <span class="sec">IR Code s.2(zl)</span>. India has federations in many individual industries.  </td></tr>
-<tr><td data-label="Type">Central Trade Union Organisation</td><td data-label="Test">A central level body, recognised under <span class="sec">IR Code s.27(1)</span> <span class="tag rules">needs rules</span>. Say "central", not "national".  </td></tr>
-<tr><td data-label="Type">White-collar union</td><td data-label="Test">Staff such as banking and insurance employees, government employees, teachers, nurses, technicians and engineers have organised in India </td></tr>
-</tbody></table>
-
-<h3>Union security</h3>
-<table class="cmp"><thead><tr><th>Arrangement</th><th>Test</th></tr></thead><tbody>
-<tr><td data-label="Arrangement">Closed shop</td><td data-label="Test">Only union members may be employed </td></tr>
-<tr><td data-label="Arrangement">Union shop</td><td data-label="Test">Non-members may be hired, but must join if they stay beyond the probationary period </td></tr>
-<tr><td data-label="Arrangement">Agency shop</td><td data-label="Test">All employees in the bargaining unit pay dues; they need not join. It answers the complaint about free riders  </td></tr>
-<tr><td data-label="Arrangement">Maintenance of membership</td><td data-label="Test">Employees who are, or become, members after a specified date must stay members for the full term of the agreement </td></tr>
-<tr><td data-label="Arrangement">Preferential shop</td><td data-label="Test">Management agrees to give union members the first chance of employment </td></tr>
-<tr><td data-label="Arrangement">Check-off</td><td data-label="Test">The employer deducts union dues from pay and passes them to the union </td></tr>
-</tbody></table>
-<p>Open shop is <b>not</b> a union security measure. </p>
+<h3>Union security: how much must a worker do?</h3>
+<p>Once a union wins, it wants members to stay and pay. Union security arrangements sit on a scale, from "join before you are hired" to "nothing at all".</p>
+<figure class="fig spectrum" data-free>
+<figcaption>Strongest hold on the worker at the top</figcaption>
+<ol>
+<li><b>Closed shop</b> Only union members may be employed </li>
+<li><b>Union shop</b> Non-members may be hired, but must join if they stay beyond the probationary period </li>
+<li><b>Maintenance of membership</b> Employees who are, or become, members after a specified date must stay members for the full term of the agreement </li>
+<li><b>Agency shop</b> All employees in the bargaining unit pay dues; they need not join. It answers the complaint about free riders  </li>
+<li class="none"><b>Open shop</b> <b>Not</b> a union security measure </li>
+</ol>
+</figure>
+<p>Two more arrangements sit beside the scale. <b>Preferential shop:</b> management agrees to give union members the first chance of employment.  <b>Check-off:</b> the employer deducts union dues from pay and passes them to the union. </p>
 <p>India: the second National Commission on Labour (2002, para 6.73) recommended compulsory check-off in establishments of 300 or more workers. It is a recommendation, not law. </p>
+<div class="trap"><p>Closed shop and union shop both force membership. The difference is <b>timing</b>: closed shop before hiring, union shop after probation. Agency shop forces <b>dues</b>, not membership.</p></div>
 
-<h2>7. Problems of Indian unions</h2>
-<ol class="keys">
-<li><b>Multiplicity:</b> many unions is the rule in India, and rivalry causes violent incidents. The second National Commission on Labour (2002) describes the movement as marked by multiplicity of unions, fragmentation and politicisation.  </li>
-<li><b>Outside leadership:</b> it has a historical background and lingered after independence. Illiteracy, backwardness and fatalism of workers contributed to dependence on it.  </li>
-<li><b>Weak coverage:</b> the same Commission says working-class organisations are weakened by fragmentation, disenchantment and poor unionisation. </li>
-<li><b>Data (Labour Bureau, 2018):</b> average membership per registered union was 2,537. Only 4,771 unions (7.2%) filed returns. </li>
+
+<h2 id="t02-c6"><span class="ch">Chapter 6</span> Strike: the last weapon</h2>
+<aside class="story" data-free>
+<p class="when">Two strikes that shaped the law</p>
+<p><b>Bombay, January 1982.</b> About 2.5 lakh textile workers walk out under Datta Samant. The strike drags on for over a year. Many mills never reopen.</p>
+<p><b>Tamil Nadu, July 2003.</b> State government employees strike. The government dismisses about 1.7 lakh of them. The case reaches the Supreme Court as T.K. Rangarajan.</p>
+<p class="punch">Is striking a right? And if it is, can the law put limits on it?</p>
+</aside>
+
+<h3>Is it a right? The courts' answer</h3>
+<ol class="steps">
+<li><b>The Constitution</b><span class="sec">Constitution Art 19(1)(c)</span> gives citizens the right "to form associations or unions or co-operative societies". </li>
+<li><b>1961: All India Bank Employees' Association v National Industrial Tribunal</b> (28 August 1961, AIR 1962 SC 171). The right to form unions under <span class="sec">Constitution Art 19(1)(c)</span> does not carry a right to strike. The right to strike or to lock-out may be controlled or restricted by appropriate industrial legislation.  </li>
+<li><b>2003: T.K. Rangarajan v Government of Tamil Nadu</b> (6 August 2003). Employees have no fundamental right to strike. There is no fundamental, legal or equitable right to go on strike. The Court also said there is no legal or statutory right to strike. The case was about government employees only.   </li>
 </ol>
+<p class="note">The right to strike is a <b>common law right</b>, not a fundamental right.  So Parliament may regulate it, and the Code does.</p>
 
-<h2>8. Thinkers</h2>
-<table class="cmp"><thead><tr><th>Thinker</th><th>Idea</th></tr></thead><tbody>
-<tr><td data-label="Thinker">Hoxie</td><td data-label="Idea">Five functional types: <b>business, friendly or uplift, revolutionary, predatory and dependent</b> unionism. Evolutionary unionism is not one of them.      </td></tr>
-<tr><td data-label="Thinker">Marx</td><td data-label="Idea">Unions should be used as "a lever for the final emancipation of the working class", that is "the ultimate abolition of the wages system" (Value, Price and Profit). </td></tr>
-<tr><td data-label="Thinker">Webbs</td><td data-label="Idea">Industrial Democracy: trade unionism sits in "the industrial democracy of the future". The earliest use of "collective bargaining" they knew was by Beatrice Potter in 1891 (their own footnote).  </td></tr>
-<tr><td data-label="Thinker">Perlman</td><td data-label="Idea">A Theory of the Labor Movement: American unionism became a stabilised movement when scarcity consciousness replaced abundance consciousness. American conservative union leaders have striven more relentlessly for full job control than their radical rivals.  </td></tr>
-</tbody></table>
-
-<h2>9. History: central union organisations</h2>
-<ol class="tl">
-<li><b>1920</b> AITUC. Founding conference began on 31 October 1920 in Bombay. Lala Lajpat Rai was the first president.  </li>
-<li><b>1920</b> Textile Labour Association, Ahmedabad, founded by Anasuya Sarabhai and Mahatma Gandhi. </li>
-<li><b>1947</b> INTUC. </li>
-<li><b>1948</b> HMS. Founded in Calcutta at a conference on 24 to 26 December 1948. </li>
-<li><b>1949</b> UTUC. </li>
-<li><b>1955</b> BMS. Founded on 23 July 1955 by Thengadi. </li>
-<li><b>1970</b> CITU. </li>
-<li><b>1972</b> SEWA. Ahmedabad; Ela Bhatt took the initiative, with Arvind Buch. </li>
-</ol>
-<p>Order of the six: AITUC, INTUC, UTUC, BMS, CITU, SEWA. </p>
-
-<h2>10. Right to strike</h2>
-<p>The right to strike is a <b>common law right</b>, not a fundamental right. </p>
-<h3>What the courts said</h3>
-<ol class="keys">
-<li><span class="sec">Constitution Art 19(1)(c)</span> gives citizens the right "to form associations or unions or co-operative societies". </li>
-<li><b>All India Bank Employees' Association v National Industrial Tribunal</b> (28 August 1961, AIR 1962 SC 171): the right to form unions under <span class="sec">Constitution Art 19(1)(c)</span> does not carry a right to strike. The right to strike or to lock-out may be controlled or restricted by appropriate industrial legislation.  </li>
-<li><b>T.K. Rangarajan v Government of Tamil Nadu</b> (6 August 2003): employees have no fundamental right to strike. There is no fundamental, legal or equitable right to go on strike. The Court also said there is no legal or statutory right to strike. The case was about government employees only.   </li>
-</ol>
-<h3>What the Code says</h3>
+<h3>The Code's rules</h3>
 <div class="rule">
 <div class="rh"><span class="sec">IR Code s.2(zk)</span> <span class="rt">Strike</span></div>
 <p>A cessation of work by a body of persons employed in any industry acting in combination, or a concerted refusal to work. It includes <b>concerted casual leave on a given day by 50% or more</b> of the workers. </p>
 </div>
+<p class="note">So a "mass casual leave" by half the workforce on one day is a strike in law.</p>
 <div class="rule">
 <div class="rh"><span class="sec">IR Code ss.62, 62(1)</span> <span class="rt">Notice and bars</span></div>
 <p>No person in an industrial establishment may strike, in breach of contract, <b>without notice within 60 days before striking</b>. </p>
 <p>Other bars: within 14 days of the notice; before the date in the notice; during conciliation and for 7 days after; during Tribunal proceedings and for 60 days after; during notified arbitration and for 60 days after; and while a settlement or award applies. </p>
 </div>
+
+<figure class="fig" data-free>
+<figcaption>The strike clock, counted from the day notice is given</figcaption>
+<svg viewBox="0 0 480 182" role="img" aria-label="Timeline. Days 0 to 14 after notice: no strike. Days 14 to 60: strike may start if no other bar applies. After day 60: the notice is stale.">
+<rect class="z-no" x="30" y="50" width="93" height="34" rx="4"/>
+<rect class="z-ok" x="123" y="50" width="307" height="34" rx="4"/>
+<rect class="z-off" x="430" y="50" width="30" height="34" rx="4"/>
+<text x="76" y="72" text-anchor="middle" class="zt">no strike</text>
+<text x="276" y="72" text-anchor="middle" class="zt">strike may start</text>
+<g class="tick"><line x1="30" y1="44" x2="30" y2="92"/><line x1="123" y1="44" x2="123" y2="92"/><line x1="430" y1="44" x2="430" y2="92"/></g>
+<text x="30" y="36" text-anchor="middle" class="ax-t">day 0</text>
+<text x="123" y="36" text-anchor="middle" class="ax-t">day 14</text>
+<text x="430" y="36" text-anchor="middle" class="ax-t">day 60</text>
+<text x="30" y="110" class="sm">Notice given</text>
+<text x="123" y="110" class="sm">Earliest start, and not before</text>
+<text x="123" y="126" class="sm">the date named in the notice</text>
+<text x="460" y="110" text-anchor="end" class="sm">Notice too old:</text>
+<text x="460" y="126" text-anchor="end" class="sm">give a fresh one</text>
+<text x="30" y="158" class="sm mut">Also blocked inside the window: conciliation + 7 days, Tribunal + 60 days,</text>
+<text x="30" y="172" class="sm mut">notified arbitration + 60 days, while a settlement or award applies.</text>
+</svg>
+</figure>
 <div class="rule">
 <div class="rh"><span class="sec">IR Code s.63(1)(i)</span> <span class="rt">Illegal strike</span></div>
 <p>A strike started in breach of <span class="sec">IR Code s.62</span> is <b>illegal</b>. </p>
 </div>
 
+
+<h2 id="t02-c7"><span class="ch">Chapter 7</span> The family tree: why India has so many unions</h2>
+<p>Each big union centre was born from a political current. Follow the dates and the party, and the problem of <b>multiplicity</b> explains itself.</p>
+<aside class="story" data-free>
+<p class="when">Ahmedabad, 1918</p>
+<p>Gandhi leads a strike of Ahmedabad mill workers over wages and fasts to hold them together. Out of this grows a union built on arbitration, not confrontation: the Textile Labour Association.</p>
+</aside>
+<ol class="tl tree">
+<li><b>1920</b> <span class="pol">early national movement</span> AITUC. Founding conference began on 31 October 1920 in Bombay. Lala Lajpat Rai was the first president.  </li>
+<li><b>1920</b> <span class="pol">Gandhian</span> Textile Labour Association, Ahmedabad, founded by Anasuya Sarabhai and Mahatma Gandhi. </li>
+<li><b>1947</b> <span class="pol">Congress</span> INTUC. </li>
+<li><b>1948</b> <span class="pol">Socialists</span> HMS. Founded in Calcutta at a conference on 24 to 26 December 1948. </li>
+<li><b>1949</b> <span class="pol">Revolutionary Socialist Party</span> UTUC. </li>
+<li><b>1955</b> <span class="pol">Sangh Parivar</span> BMS. Founded on 23 July 1955 by Thengadi. </li>
+<li><b>1970</b> <span class="pol">CPI(M), split from AITUC</span> CITU. </li>
+<li><b>1972</b> <span class="pol">No party: self-employed women</span> SEWA. Ahmedabad; Ela Bhatt took the initiative, with Arvind Buch. </li>
+</ol>
+<p class="note">Order of the six: <b>AITUC, INTUC, UTUC, BMS, CITU, SEWA</b>. A memory line: "A-I-U-B-C-S", <i>"All Indian Unions Bargain, Celebrate, Strike"</i>. </p>
+
+<h3>Problems of Indian unions</h3>
+<div class="cards probs">
+<div class="card"><h4>Multiplicity</h4><p>Many unions is the rule in India, and rivalry causes violent incidents. The second National Commission on Labour (2002) describes the movement as marked by multiplicity of unions, fragmentation and politicisation.  </p></div>
+<div class="card"><h4>Outside leadership</h4><p>See Chapter 4. Rooted in history; capped by <span class="sec">IR Code s.23</span>. </p></div>
+<div class="card"><h4>Weak coverage</h4><p>The same Commission says working-class organisations are weakened by fragmentation, disenchantment and poor unionisation. </p></div>
+</div>
+<figure class="fig waffle-fig" data-free>
+<figcaption>Labour Bureau, 2018: of every 100 registered unions, about 7 filed returns</figcaption>
+<div class="waffle"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+</figure>
+<p><b>Data (Labour Bureau, 2018):</b> average membership per registered union was 2,537. Only 4,771 unions (7.2%) filed returns. </p>
+
 <h2>What changed</h2>
+<p class="score"><span class="tag same">Same</span> 3 &nbsp; <span class="tag changed">Changed</span> 8 &nbsp; Most changes are words, or numbers handed to the rules. The real rule changes: <b>age 15 to 14</b>, and strength kept <b>at all times</b>.</p>
 <table class="shift"><thead><tr><th>Point</th><th>Before</th><th>Now</th><th></th></tr></thead><tbody>
 <tr><td data-label="Point">Union definition</td><td data-label="Before">"Workmen" <span class="sec old"><i>old</i> TU Act 1926 s.2(h)</span></td><td data-label="Now">"Workers" <span class="sec">IR Code s.2(zl)</span>, same definition  </td><td><span class="tag changed">Changed</span></td></tr>
 <tr><td data-label="Point">Dispute term</td><td data-label="Before">"Trade dispute" <span class="sec old"><i>old</i> TU Act 1926 s.2(g)</span></td><td data-label="Now">"Industrial dispute" <span class="sec">IR Code s.2(q)</span>, same three heads  </td><td><span class="tag changed">Changed</span></td></tr>
@@ -551,11 +807,29 @@ ol.quiz li{margin:.4rem 0}
 
 <h2>Numbers on one scale</h2>
 <p><b>7</b> members to apply for registration, and the minimum after registration <span class="sec">IR Code ss.6(1), 6(4)</span>. Minimum age of a member: <b>14</b> years, non-hazardous industry <span class="sec">IR Code s.20</span>. Minimum age of an office-bearer: <b>18</b> years <span class="sec">IR Code s.21(1)(i)</span>.</p>
-<h3>Shares and money</h3>
+<h3>Shares of the workforce</h3>
+<figure class="fig" data-free>
+<svg viewBox="0 0 480 120" role="img" aria-label="Scale from 0 to 100 percent with marks at 10, 20, 50 and 51 percent.">
+<line class="scl" x1="30" y1="60" x2="450" y2="60"/>
+<g class="tick"><line x1="30" y1="52" x2="30" y2="68"/><line x1="450" y1="52" x2="450" y2="68"/></g>
+<text x="30" y="84" text-anchor="middle" class="sm mut">0%</text><text x="450" y="84" text-anchor="middle" class="sm mut">100%</text>
+<circle class="pt" cx="72" cy="60" r="6"/><text x="72" y="40" text-anchor="middle" class="sm"><tspan font-weight="700">10%</tspan></text><text x="64" y="102" text-anchor="middle" class="sm">register</text>
+<circle class="pt" cx="114" cy="60" r="6"/><text x="114" y="40" text-anchor="middle" class="sm"><tspan font-weight="700">20%</tspan></text><text x="140" y="102" text-anchor="middle" class="sm">council seat</text>
+<circle class="pt alt" cx="240" cy="60" r="6"/><text x="236" y="40" text-anchor="end" class="sm"><tspan font-weight="700">50%</tspan> casual leave = strike</text>
+<circle class="pt" cx="244" cy="60" r="6"/><text x="252" y="102" class="sm"><tspan font-weight="700">51%</tspan> sole negotiating union</text>
+</svg>
+</figure>
 <div class="ladder">
 <div class="rung"><b>10% or 100</b><span>of the workers, whichever is less, as members <span class="sec">IR Code s.6(2)</span></span></div>
 <div class="rung"><b>20%</b><span>of the workers: a union gets a seat on the negotiating council <span class="sec">IR Code s.14(4)</span></span></div>
+<div class="rung"><b>50%</b><span>of the workers on concerted casual leave on one day: a strike <span class="sec">IR Code s.2(zk)</span></span></div>
 <div class="rung"><b>51%</b><span>of the workers: sole negotiating union <span class="sec">IR Code s.14(3)</span></span></div>
+</div>
+<h3>Days</h3>
+<div class="ladder">
+<div class="rung"><b>7</b><span>days after conciliation ends: still no strike <span class="sec">IR Code s.62(1)</span></span></div>
+<div class="rung"><b>14</b><span>days after notice: earliest strike <span class="sec">IR Code s.62(1)</span></span></div>
+<div class="rung"><b>60</b><span>days: notice must fall within 60 days before the strike; also the bar after Tribunal or arbitration <span class="sec">IR Code s.62(1)</span></span></div>
 </div>
 
 <h2>Quick revision</h2>
