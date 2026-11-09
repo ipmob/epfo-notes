@@ -1,0 +1,833 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Code on Wages, 2019 | EPFO Notes</title>
+<style>
+:root{--bg:#fff;--fg:#1c2330;--mut:#5a6577;--line:#d6dce6;--card:#f4f6fa;--acc:#1f5fbf;--accbg:#e8f0fc;
+--old:#6b7280;--oldbg:#f1f2f4;--ok:#17734a;--okbg:#e3f4ea;--warn:#9a5200;--warnbg:#fdf0dd;--bad:#a1262d;--badbg:#fbe5e6;}
+@media screen and (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#11151c;--fg:#e6e9ef;--mut:#9aa6b8;--line:#2d3644;--card:#19202b;
+--acc:#7aaeff;--accbg:#1b2a44;--old:#a3aab6;--oldbg:#232a35;--ok:#5fd39a;--okbg:#14301f;--warn:#f2a650;--warnbg:#3a2a12;--bad:#f08a8f;--badbg:#3a1a1c;}}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;overflow-wrap:break-word}
+main{max-width:46rem;margin:0 auto;padding:1rem 16px 4rem}
+h1{font-size:1.75rem;line-height:1.2;margin:.2rem 0 .5rem}
+h1.title{font-size:2.4rem}
+h2{font-size:1.25rem;margin:1.8rem 0 .6rem;padding-bottom:.25rem;border-bottom:2px solid var(--line)}
+h3{font-size:1.05rem;margin:1.2rem 0 .4rem}
+h4{margin:0 0 .3rem;font-size:1rem}
+p{margin:.45rem 0}
+.kicker{color:var(--acc);font-weight:700;font-size:.8rem;letter-spacing:.06em;text-transform:uppercase;margin:0}
+.lede{font-size:1.08rem;color:var(--mut)}
+.topic{border-top:4px solid var(--acc);margin-top:3rem;padding-top:.8rem}
+.cover{padding-top:1rem}
+.toc li{margin:.15rem 0}
+.toc a{color:var(--acc)}
+.dl a{display:inline-block;padding:.35rem .8rem;border:1px solid var(--acc);border-radius:8px;color:var(--acc);font-weight:600;text-decoration:none}
+/* chips and tags */
+.sec{display:inline-block;white-space:nowrap;font-size:.8em;font-weight:650;line-height:1.35;padding:0 .45em;border-radius:5px;
+ color:var(--acc);background:var(--accbg);border:1px solid var(--acc);vertical-align:.08em}
+.sec.old{color:var(--old);background:var(--oldbg);border:1px dashed var(--old);font-weight:500}
+.sec.old i{font-style:normal;font-size:.85em;text-transform:uppercase;letter-spacing:.04em;margin-right:.15em}
+.tag{display:inline-block;font-size:.72em;font-weight:700;text-transform:uppercase;letter-spacing:.04em;padding:0 .5em;border-radius:99px;vertical-align:.12em;white-space:nowrap}
+.tag.same{color:var(--old);background:var(--oldbg)}
+.tag.changed{color:var(--warn);background:var(--warnbg)}
+.tag.new{color:var(--ok);background:var(--okbg)}
+.tag.removed{color:var(--bad);background:var(--badbg)}
+.tag.rules{color:var(--mut);border:1px solid var(--line);font-weight:600}
+/* law today strip */
+.lawtoday{border-left:5px solid var(--acc);background:var(--accbg);padding:.6rem .9rem;border-radius:0 8px 8px 0;margin:.8rem 0}
+.lawtoday b:first-child{display:block;font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--acc)}
+/* key points */
+ol.keys{list-style:none;counter-reset:k;padding:0;margin:.8rem 0;display:grid;gap:.5rem}
+ol.keys li{counter-increment:k;position:relative;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:.55rem .8rem .55rem 2.6rem}
+ol.keys li::before{content:counter(k);position:absolute;left:.7rem;top:.55rem;width:1.4rem;height:1.4rem;border-radius:50%;background:var(--acc);color:var(--bg);font-weight:700;font-size:.8rem;display:flex;align-items:center;justify-content:center}
+/* rule card */
+.rule{border:1px solid var(--line);border-left:5px solid var(--acc);border-radius:8px;margin:.8rem 0;background:var(--bg);break-inside:avoid}
+.rule .rh{padding:.45rem .8rem;border-bottom:1px solid var(--line);background:var(--card);border-radius:0 8px 0 0}
+.rule .rt{font-weight:700;margin-left:.3rem}
+.rule>p{padding:0 .8rem}
+.rule .was{padding:.4rem .8rem;border-top:1px dashed var(--line);color:var(--mut);font-size:.92rem}
+/* tables */
+table{border-collapse:collapse;width:100%;margin:.7rem 0;font-size:.95rem;break-inside:auto}
+th,td{border:1px solid var(--line);padding:.4rem .55rem;text-align:left;vertical-align:top}
+thead th{background:var(--card);font-size:.85rem}
+tr{break-inside:avoid}
+table.shift td:nth-child(2){color:var(--mut)}
+table.shift td:first-child{width:22%;font-weight:600}
+table.shift td:last-child{width:1%;white-space:nowrap}
+td{hyphens:manual}
+table.recall td:first-child{width:45%;font-weight:600}
+/* trap */
+.trap{border:1px solid var(--warn);background:var(--warnbg);border-radius:8px;padding:.3rem .8rem;margin:.8rem 0;break-inside:avoid}
+.trap::before{content:"Trap";display:block;font-weight:800;font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--warn);margin-top:.3rem}
+/* ladder */
+.ladder{margin:.8rem 0;border-left:3px solid var(--acc);padding-left:0;break-inside:avoid}
+.rung{display:flex;gap:.8rem;align-items:baseline;padding:.3rem 0 .3rem .8rem;position:relative}
+.rung::before{content:"";position:absolute;left:-7px;top:.85rem;width:11px;height:11px;border-radius:50%;background:var(--acc)}
+.rung>b{width:6.2rem;font-size:1.2rem;line-height:1.25;color:var(--acc);text-align:right;flex-shrink:0}
+/* steps */
+ol.steps{list-style:none;counter-reset:s;padding:0;margin:.8rem 0}
+ol.steps li{counter-increment:s;position:relative;padding:0 0 .9rem 2.6rem;break-inside:avoid}
+ol.steps li::before{content:counter(s);position:absolute;left:0;top:0;width:1.8rem;height:1.8rem;border-radius:50%;border:2px solid var(--acc);color:var(--acc);font-weight:800;display:flex;align-items:center;justify-content:center;background:var(--bg)}
+ol.steps li:not(:last-child)::after{content:"";position:absolute;left:.85rem;top:1.9rem;bottom:.1rem;width:2px;background:var(--line)}
+ol.steps li>b:first-child{display:block}
+/* timeline */
+ol.tl{list-style:none;padding:0 0 0 .2rem;margin:.8rem 0;border-left:3px solid var(--line)}
+ol.tl li{padding:.15rem 0 .5rem .9rem;position:relative;break-inside:avoid}
+ol.tl li>b:first-child{display:inline-block;min-width:4.6rem;color:var(--acc);font-weight:800}
+/* decision */
+.decide{border:1px solid var(--line);border-radius:10px;padding:.6rem .8rem;margin:.8rem 0;background:var(--card);break-inside:avoid}
+.decide .q{font-weight:700;margin:.1rem 0 .5rem}
+.decide .opts{display:grid;grid-template-columns:repeat(auto-fit,minmax(13rem,1fr));gap:.5rem}
+.decide .opt{background:var(--bg);border:1px solid var(--line);border-top:4px solid var(--acc);border-radius:8px;padding:.5rem .7rem}
+.decide .opt>b:first-child{display:block;margin-bottom:.2rem}
+/* bars */
+.bars{margin:.8rem 0;break-inside:avoid}
+.bar{--c:var(--okbg);--e:var(--ok);background:linear-gradient(var(--c),var(--c)) no-repeat left/var(--w,100%) 100%;
+ border-left:5px solid var(--e);padding:.25rem .55rem;margin:.3rem 0;border-radius:0 6px 6px 0;font-size:.92rem;outline:1px solid var(--line);outline-offset:-1px}
+.bar.no{--c:var(--badbg);--e:var(--bad)}
+.bar.mid{--c:var(--accbg);--e:var(--acc)}
+@media print{.bar{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+/* cards */
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(13rem,1fr));gap:.6rem;margin:.8rem 0}
+.card{border:1px solid var(--line);border-radius:10px;padding:.6rem .8rem;background:var(--card);break-inside:avoid}
+.card p{margin:.25rem 0;font-size:.95rem}
+/* questions */
+ol.quiz li{margin:.4rem 0}
+.answers{border-top:2px dashed var(--line);margin-top:1.2rem;padding-top:.3rem;color:var(--mut);font-size:.93rem}
+.answers h3{margin-top:.4rem}
+/* ---- story layer (student/story parts) ---- */
+:root{--stbg:#fbf5e9;--stline:#d9b46a;--stfg:#3b2f1a}
+@media screen and (prefers-color-scheme:dark){:root:not([data-theme="light"]){--stbg:#221c12;--stline:#8a6a2c;--stfg:#eadcc0}}
+.story{background:var(--stbg);color:var(--stfg);border-left:4px solid var(--stline);border-radius:0 10px 10px 0;padding:.6rem 1rem .7rem;margin:1rem 0;
+ font-family:Georgia,"Iowan Old Style","Times New Roman",serif;font-size:1.02rem;break-inside:avoid}
+.story p{margin:.35rem 0}
+.story .when{font:700 .72rem/1.2 system-ui,sans-serif;letter-spacing:.08em;text-transform:uppercase;color:var(--stline);margin:.1rem 0 .3rem}
+.story .punch{font-style:italic;font-weight:600}
+.story.case{background:var(--accbg);color:var(--fg);border-left-color:var(--acc);font-family:inherit;font-size:.97rem}
+.story.case .when{color:var(--acc)}
+h2 .ch{display:block;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--acc)}
+h2[id]:not([data-nav]){border-bottom-width:3px;margin-top:2.4rem}
+.note{border-left:3px solid var(--acc);padding:.1rem 0 .1rem .7rem;color:var(--fg)}
+/* journey map */
+.journey{margin:1rem 0}
+.journey figcaption{font-weight:700;font-size:.82rem;color:var(--mut);margin-bottom:.4rem}
+.journey ol{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(6,1fr);gap:.35rem;counter-reset:j}
+.journey li{position:relative}
+.journey li:not(:last-child)::after{content:"";position:absolute;right:-.33rem;top:50%;border:.3rem solid transparent;border-left-color:var(--acc);transform:translate(50%,-50%);z-index:1}
+.journey a{display:block;height:100%;padding:.5rem .55rem;border:1px solid var(--line);border-top:4px solid var(--acc);border-radius:8px;background:var(--card);color:var(--fg);text-decoration:none}
+.journey a b{display:block;font-size:.95rem}
+.journey a span{display:block;font-size:.78rem;color:var(--mut);line-height:1.3;margin-top:.15rem}
+/* figure frame and svg */
+.fig{border:1px solid var(--line);border-radius:12px;padding:.7rem .8rem;margin:1rem 0;background:var(--card);break-inside:avoid}
+.fig figcaption{font-weight:700;font-size:.85rem;color:var(--mut);margin:0 0 .5rem}
+.fig>figcaption:last-child{margin:.5rem 0 0;font-weight:500}
+.fig svg{display:block;width:100%;max-width:34rem;margin:0 auto;height:auto;overflow:visible;font-family:system-ui,-apple-system,sans-serif;font-size:13px}
+.fig .cap-note{font-size:.92rem;margin:.4rem 0 0}
+svg .grid line{stroke:var(--line);stroke-width:1}
+svg .grid line.cap{stroke:var(--acc);stroke-dasharray:5 4}
+svg .ax text{fill:var(--mut);font-size:12px}
+svg .ax .lab{font-size:12px}
+svg .ln{fill:none;stroke:var(--acc);stroke-width:3.5;stroke-linejoin:round}
+svg .pt{fill:var(--acc)} svg .pt.alt{fill:var(--warn)}
+svg .hl{fill:none;stroke:var(--warn);stroke-width:3}
+svg .hl-t{fill:var(--warn);font-weight:700}
+svg .note-t{fill:var(--acc);font-weight:700}
+svg .z-no{fill:var(--badbg);stroke:var(--bad)} svg .z-ok{fill:var(--okbg);stroke:var(--ok)} svg .z-off{fill:var(--oldbg);stroke:var(--old)}
+svg .zt{fill:var(--fg);font-weight:700}
+svg .tick line{stroke:var(--fg);stroke-width:1.5}
+svg .ax-t{fill:var(--fg);font-weight:700;font-size:12px}
+svg .sm{fill:var(--fg);font-size:12px} svg .mut{fill:var(--mut)}
+svg .scl{stroke:var(--line);stroke-width:6;stroke-linecap:round}
+/* slicing matrix */
+.mx-wrap{display:grid;grid-template-columns:repeat(auto-fit,minmax(8.5rem,1fr));gap:.6rem}
+.mx-card{background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:.5rem .6rem}
+.mx-card h4{font-size:.9rem;margin:0 0 .35rem}
+.mx-card p{font-size:.8rem;color:var(--mut);margin:.35rem 0 0;line-height:1.3}
+.mx{display:grid;grid-template-columns:repeat(4,1fr);gap:3px}
+.mx i{aspect-ratio:1;border-radius:3px;background:var(--oldbg);border:1px solid var(--line)}
+.mx i.on{background:var(--acc);border-color:var(--acc)}
+.mx i:nth-child(4n+2){margin-right:3px}
+/* shield */
+.sh-row{display:grid;grid-template-columns:1fr 1.6rem minmax(9rem,12rem);align-items:center;margin:.45rem 0}
+.atk{background:var(--badbg);border:1px solid var(--bad);border-radius:8px;padding:.4rem .6rem;font-size:.9rem}
+.arw{height:3px;background:var(--bad);position:relative}
+.arw::after{content:"";position:absolute;right:-2px;top:50%;transform:translateY(-50%);border:.4rem solid transparent;border-left-color:var(--bad)}
+.blk{background:var(--okbg);border:2px solid var(--ok);border-radius:8px 8px 18px 18px;padding:.35rem .6rem;font-size:.88rem}
+.blk b{display:block;color:var(--ok)}
+.was-s{display:block;margin-top:.15rem;font-size:.85em}
+/* seats, waffle */
+.seat-row{margin:.55rem 0}
+.seat-row p{margin:0 0 .25rem;font-size:.92rem}
+.dots{display:flex;flex-wrap:wrap;gap:4px}
+.dots i,.legend-dots i{display:inline-block;width:16px;height:16px;border-radius:50%;background:var(--acc)}
+.dots i.out,.legend-dots i.out{background:var(--warn)}
+.legend-dots{font-size:.82rem;color:var(--mut);margin:.5rem 0 0}
+.legend-dots i{width:11px;height:11px;vertical-align:-1px;margin:0 .2rem 0 .6rem}
+.legend-dots i:first-child{margin-left:0}
+.waffle{display:grid;grid-template-columns:repeat(20,1fr);gap:3px;max-width:26rem}
+.waffle i{aspect-ratio:1;border-radius:2px;background:var(--oldbg);border:1px solid var(--line)}
+.waffle i.on{background:var(--warn);border-color:var(--warn)}
+/* stacked shares */
+.stk-scale{position:relative;height:1.1rem;font-size:.75rem;color:var(--mut);font-weight:700}
+.stk-scale span{position:absolute;transform:translateX(-50%)}
+.stk{position:relative;display:flex;height:2.1rem;border-radius:6px;font-size:.8rem;font-weight:700;margin:.2rem 0}
+.stk span{position:relative;z-index:1;width:var(--w);display:flex;align-items:center;justify-content:center;white-space:nowrap;overflow:hidden}
+.stk span:first-child{border-radius:6px 0 0 6px} .stk span:last-of-type{border-radius:0 6px 6px 0}
+.stk .s1{background:var(--acc);color:var(--bg)} .stk .s2{background:var(--ok);color:var(--bg)}
+.stk .s3{background:var(--warn);color:var(--bg)} .stk .s0{background:var(--oldbg);color:var(--mut)}
+.stk b{position:absolute;z-index:0;top:-7px;bottom:-7px;width:2px;margin-left:-1px;background:var(--mut)}
+.stk b.m{width:3px;opacity:1;background:var(--bad)}
+.stk-t{font-weight:700;font-size:.9rem;margin:.7rem 0 .1rem}
+.stk-r{font-size:.92rem;margin:.25rem 0 .4rem}
+.bars.marked{position:relative;padding-top:1.1rem}
+.bars.marked::before{content:"100 needed";position:absolute;top:0;left:27%;transform:translateX(-50%);font-size:.72rem;font-weight:700;color:var(--warn)}
+.bars.marked::after{content:"";position:absolute;top:1rem;bottom:0;left:27%;border-left:2px dashed var(--warn)}
+/* spectrum */
+.spectrum ol{list-style:none;margin:0;padding:0 0 0 1.6rem;position:relative}
+.spectrum ol::before{content:"";position:absolute;left:.35rem;top:.4rem;bottom:.4rem;width:7px;border-radius:4px;background:linear-gradient(var(--acc),var(--line))}
+.spectrum li{margin:.35rem 0;padding:.35rem .6rem;background:var(--bg);border:1px solid var(--line);border-radius:8px;font-size:.93rem}
+.spectrum li>b:first-child{display:block}
+.spectrum li.none{border-style:dashed;color:var(--mut)}
+/* card variants */
+.cards.think .cue{font:700 .7rem/1.2 system-ui,sans-serif;letter-spacing:.07em;text-transform:uppercase;color:var(--acc);margin:0 0 .15rem}
+.cards.ages .big{font-size:2.6rem;font-weight:800;line-height:1;color:var(--acc);margin:0}
+.was-c{border-top:1px dashed var(--line);padding-top:.3rem;color:var(--mut);font-size:.88rem !important}
+.tl .pol{display:inline-block;font-size:.72rem;font-weight:700;padding:0 .45em;border-radius:99px;background:var(--oldbg);color:var(--mut);margin-right:.25rem;vertical-align:.1em}
+.score{font-size:.95rem}
+@media screen and (max-width:620px){
+ .journey ol{grid-template-columns:repeat(3,1fr)}
+ .journey li:nth-child(3)::after{display:none}
+}
+@media screen and (max-width:520px){
+ .sh-row{grid-template-columns:1fr;gap:0}
+ .arw{width:3px;height:1rem;margin-left:1.2rem}
+ .arw::after{right:auto;left:50%;top:auto;bottom:-6px;transform:translateX(-50%);border-left-color:transparent;border-top-color:var(--bad)}
+ .story{font-size:.98rem}
+ .sh-row{margin:.2rem 0 .9rem}
+}
+@media print{.story,.fig,.journey{break-inside:avoid}}
+/* phone: tables become labelled cards */
+@media screen and (max-width:520px){
+ table.cmp,table.shift,table.cmp tbody,table.shift tbody,table.cmp tr,table.shift tr,table.cmp td,table.shift td{display:block;width:auto}
+ table.cmp thead,table.shift thead{display:none}
+ table.cmp tr,table.shift tr{border:1px solid var(--line);border-radius:8px;margin:.5rem 0;overflow:hidden}
+ table.cmp td,table.shift td{border:0;border-bottom:1px solid var(--line)}
+ table.cmp td:first-child,table.shift td:first-child{background:var(--card);font-weight:700}
+ table.cmp td[data-label]:not(:first-child)::before,table.shift td[data-label]:not(:first-child)::before{content:attr(data-label);display:block;font-size:.72rem;text-transform:uppercase;letter-spacing:.05em;color:var(--mut)}
+ table.shift td:last-child{width:auto}
+ .rung>b{width:4.8rem;font-size:1.05rem}
+}
+@page{size:A4;margin:16mm 14mm 16mm 14mm}
+@media print{
+ *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+ body{font-size:10.5pt}
+ main{max-width:none;padding:0}
+ .topic{break-before:page;margin-top:0}
+ h2,h3{break-after:avoid}
+ a{color:inherit;text-decoration:none}
+ .dl{display:none}
+}
+/* ---- screen styles: reading width, tables, cards, margin contents list ----
+   Additive only. Colours are tokens from :root. Print is not touched: everything here sits inside @media screen.
+   Meaning of colours is unchanged (blue = law today, grey dashed = repealed old law, green/orange/red tags = new/changed/removed). */
+@media screen{
+
+/* 1. New tokens, each with a dark value (same switch as the page's own variables). */
+:root{
+ --zebra:#f6f8fb;
+ --hover:#edf2fa;
+ --shadow:rgba(28,35,48,.08);
+ --acc-line:#1f5fbf;
+}
+@media (prefers-color-scheme:dark){
+ :root:not([data-theme="light"]){--zebra:#151b24;--hover:#1d2632;--shadow:rgba(0,0,0,.40);--acc-line:#7aaeff}
+}
+:root[data-theme="dark"]{--zebra:#151b24;--hover:#1d2632;--shadow:rgba(0,0,0,.40);--acc-line:#7aaeff}
+
+/* 2. Reading measure and rhythm: body text capped near 68 characters, looser leading. */
+html{scroll-behavior:smooth}
+body{line-height:1.65;text-rendering:optimizeLegibility}
+main{padding-bottom:4rem}
+main p{max-width:68ch;line-height:1.65}
+main li{line-height:1.6}
+main li+li{margin-top:.12rem}
+main ul,main ol:not(.keys):not(.steps):not(.tl){padding-left:1.3rem}
+
+/* 3. Type scale: clearer h1/h2/h3 steps, accent rule under h2, room above sections. */
+h1{font-size:1.85rem;letter-spacing:-.01em;line-height:1.18}
+h1.title{font-size:2.5rem;letter-spacing:-.02em}
+h2{font-size:1.3rem;line-height:1.3;letter-spacing:-.005em;margin:2.1rem 0 .7rem;padding-bottom:.4rem;
+ background:linear-gradient(var(--acc-line),var(--acc-line)) left bottom/3.5rem 3px no-repeat}
+h3{font-size:1.06rem;line-height:1.35;margin:1.3rem 0 .45rem}
+h4{line-height:1.35}
+.kicker{letter-spacing:.07em}
+.lede{font-size:1.1rem;line-height:1.55;max-width:64ch}
+
+/* 4. Anchors: headings are not hidden under a fixed element when jumped to. */
+[id]{scroll-margin-top:1rem}
+
+/* 5. Links and keyboard focus. */
+a{text-underline-offset:.18em;text-decoration-thickness:.07em}
+a:hover{text-decoration-thickness:.1em}
+:focus-visible{outline:3px solid var(--acc-line);outline-offset:2px;border-radius:4px}
+summary:focus-visible{border-radius:4px}
+
+/* 6. Tables: stronger header, comfortable cells, zebra rows and hover on wide screens only. */
+table{border-radius:8px;overflow:hidden}
+th,td{padding:.5rem .7rem;line-height:1.5}
+thead th{font-weight:700;letter-spacing:.01em;font-size:.82rem;text-transform:none;border-bottom:2px solid var(--line)}
+td{font-variant-numeric:tabular-nums}
+@media (min-width:521px){
+ tbody tr:nth-child(even) td{background:var(--zebra)}
+ @media (hover:hover){tbody tr:hover td{background:var(--hover)}}
+}
+table.recall td:first-child{font-weight:650}
+
+/* 7. Cards and rule blocks: softer edge, a little shadow, clearer chip. */
+.rule{box-shadow:0 1px 2px var(--shadow);border-radius:10px}
+.rule .rh{border-radius:0 9px 0 0}
+.card{box-shadow:0 1px 2px var(--shadow);border-radius:12px}
+.decide{box-shadow:0 1px 2px var(--shadow)}
+.fig{box-shadow:0 1px 2px var(--shadow)}
+.sec{font-weight:700;letter-spacing:.005em;border-radius:6px;padding:.05em .5em}
+.sec.old{font-weight:500}
+
+/* 8. Tags as pills with steadier padding (colours unchanged). */
+.tag{padding:.12em .55em;line-height:1.45;letter-spacing:.05em}
+
+/* 9. The "law today" strip: stronger label and clearer edge. */
+.lawtoday{box-shadow:inset 0 0 0 1px var(--line);color:var(--fg)}
+.lawtoday b:first-child{font-weight:800}
+
+/* 10. Trap callout: a little more air. */
+.trap{padding:.4rem .9rem .6rem;border-radius:10px}
+
+/* 11. Ladder, steps and timeline: tidier spacing. */
+ol.steps li{padding-bottom:1.05rem}
+ol.tl li{padding-top:.25rem}
+.decide{border-radius:12px}
+.decide .opt{border-radius:10px}
+
+/* 12. Answers block: visually separated from the questions. */
+.answers{padding-top:.6rem}
+
+/* 13. Contents: on wide screens the list floats in the right margin and stays in view.
+   Narrow screens keep the list in the normal flow. CSS only. */
+@media (min-width:1320px){
+ h2:has(+ ol.toc){display:none}
+ ol.toc{position:fixed;top:5.5rem;left:calc(50% + 24rem);width:13.5rem;max-height:calc(100vh - 7rem);overflow:auto;
+  margin:0;padding:.7rem .85rem;list-style:none;background:var(--card);border:1px solid var(--line);border-radius:12px;
+  box-shadow:0 2px 8px var(--shadow);font-size:.9rem;z-index:2}
+ ol.toc::before{content:"On this page";display:block;font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--mut);margin-bottom:.35rem}
+ ol.toc li{margin:.25rem 0;line-height:1.35}
+}
+
+/* 14. Reduced motion: no smooth scrolling. */
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+}
+/* ---- reading progress bar: scroll-driven where supported, small script otherwise; never printed ---- */
+.rp{position:fixed;top:0;left:0;right:0;height:4px;z-index:9000;pointer-events:none;background:var(--accbg)}
+.rp-bar{height:100%;width:100%;background:var(--acc);transform-origin:left center;transform:scaleX(0)}
+@keyframes rp-grow{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@supports (animation-timeline:scroll()){
+ .rp-bar{animation:rp-grow 1s linear both;animation-timeline:scroll(root block)}
+}
+@media (prefers-reduced-motion:reduce){.rp-bar{transition:none}}
+@media print{.rp,nav.top{display:none!important}}
+/* ---- top navigation and edition switcher (screen only) ---- */
+@media screen{
+nav.top{display:flex;flex-wrap:wrap;align-items:center;gap:.3rem .5rem;margin:0 0 1.2rem;padding:.2rem 0 .7rem;border-bottom:1px solid var(--line);font-size:.9rem}
+nav.top a{color:var(--acc);font-weight:650;text-decoration:none;padding:.2rem .35rem;border-radius:6px}
+nav.top a:hover{background:var(--accbg)}
+nav.top .sep{color:var(--mut)}
+nav.top .here{color:var(--mut);font-weight:600}
+nav.top .ed{margin-left:auto;display:inline-flex;border:1px solid var(--acc);border-radius:99px;overflow:hidden}
+nav.top .ed a{border-radius:0;padding:.2rem .85rem;font-weight:600}
+nav.top .ed a+a{border-left:1px solid var(--acc)}
+nav.top .ed a[aria-current="page"]{background:var(--acc);color:var(--bg);font-weight:700}
+.banner{border-left:4px solid var(--stline);background:var(--stbg);color:var(--stfg);padding:.5rem .8rem;border-radius:0 8px 8px 0;font-size:.95rem}
+}
+/* contents on a single-topic cover: headings carry their own numbers, so no list numbers */
+main ol.toc.flat:not(.keys):not(.steps):not(.tl){list-style:none;padding-left:0}
+</style>
+</head>
+<body>
+<div class="rp" aria-hidden="true"><div class="rp-bar"></div></div>
+<main>
+<nav class="top" aria-label="Site"><a class="home" href="index.html">EPFO Notes</a><span class="sep" aria-hidden="true">/</span><span class="here">Code on Wages</span></nav>
+<section class="cover">
+<p class="kicker">UPSC EPFO · Industrial Relations, Labour Codes and Social Security in India</p>
+<h1 class="title">Code on Wages, 2019</h1>
+<p class="lede">One topic, written from the law as it stands today. Each rule names the Code section that applies now, and what the old Act said where it changed.</p>
+<p class="dl"><a href="wages_notes.pdf">Download as PDF</a></p>
+<div class="legend">
+<h2>How to read these notes</h2>
+<table class="cmp"><tbody>
+<tr><td><span class="sec">Wages Code s.18(3)</span></td><td>The law today. The Code on Wages 2019 is in force from 21 November 2025. Only the Central Advisory Board parts came earlier, on 18 December 2020.</td></tr>
+<tr><td><span class="sec">Wages Central Rules r.5</span></td><td>A rule in the Code on Wages (Central) Rules 2026, in force from 8 May 2026. The Code itself leaves the point to the Rules.</td></tr>
+<tr><td><span class="sec old"><i>old</i> PW Act 1936 s.5</span></td><td>An old Act, now repealed. Shown only to compare.</td></tr>
+<tr><td><span class="tag rules">needs rules</span></td><td>The section works through rules or a Government notification.</td></tr>
+<tr><td><span class="tag same">Same</span> <span class="tag changed">Changed</span> <span class="tag new">New</span> <span class="tag removed">Removed</span></td><td>How the Code compares with the old law.</td></tr>
+</tbody></table>
+<div class="rule"><div class="rh"><span class="sec">Wages Code s.x</span> <span class="rt">Rule card</span></div><p>One rule of law. The section is always at the top.</p><div class="was"><span class="sec old"><i>old</i> Old Act s.y</span> what it said before <span class="tag same">Same</span></div></div>
+</div>
+<h2>Contents</h2>
+<ol class="toc flat"><li><a href="#s1-the-code-at-a-glance">1. The Code at a glance</a></li><li><a href="#s2-definitions-shared-by-all-four-codes">2. Definitions shared by all four Codes</a></li><li><a href="#s3-who-is-covered">3. Who is covered</a></li><li><a href="#s4-minimum-wage-and-floor-wage-chapter-ii">4. Minimum wage and floor wage (Chapter II)</a></li><li><a href="#s5-payment-of-wages-chapter-iii">5. Payment of wages (Chapter III)</a></li><li><a href="#s6-payment-of-bonus-chapter-iv">6. Payment of bonus (Chapter IV)</a></li><li><a href="#s7-equality-boards-claims-inspection-and-penalties">7. Equality, boards, claims, inspection and penalties</a></li><li><a href="#what-changed">What changed</a></li><li><a href="#numbers-on-one-scale">Numbers on one scale</a></li><li><a href="#quick-revision">Quick revision</a></li><li><a href="#test-yourself">Test yourself</a></li></ol>
+</section>
+
+<section class="topic" id="t07">
+<p class="lede">Four Acts on wages, payment of wages, bonus and equal pay became one Code. This topic teaches the Code first: who is covered, how minimum and floor wages work, when wages are paid, what can be deducted, how bonus is worked out, and how claims, inspection and penalties run. The old Acts appear only to show what changed. </p>
+<div class="lawtoday"><b>Law today</b> The Code on Wages, 2019 <span class="sec">Wages Code</span> (Act 29 of 2019) is in force from 21 November 2025 (S.O. 5322(E)). The Central Advisory Board parts came earlier, on 18 December 2020 (S.O. 4604(E)).   It repealed four Acts: the Payment of Wages Act 1936, the Minimum Wages Act 1948, the Payment of Bonus Act 1965 and the Equal Remuneration Act 1976 <span class="sec">Wages Code s.69(1)</span>.  The Code on Wages (Central) Rules 2026 (G.S.R. 343(E)) are in force from 8 May 2026. A point marked with a Rules chip comes from the Rules, not the Code text.  </div>
+
+<ol class="keys">
+<li><b>4 Acts, 1 Code.</b> The Code has <b>69</b> sections and <b>9</b> chapters. It was assented to on 8 August 2019 and came into force in two steps.      </li>
+<li><b>Wages</b> <span class="sec">Wages Code s.2(y)</span> means basic pay, dearness allowance and retaining allowance. Excluded items above <b>one-half</b> of all remuneration are added back. Pay in kind counts up to <b>15%</b>.   </li>
+<li><b>Minimum wage</b> covers <b>any employee</b> <span class="sec">Wages Code s.5</span>. The Code has no schedule of employments. Rates are reviewed ordinarily at intervals not above <b>5 years</b> <span class="sec">Wages Code s.8(4)</span>. The Central Government fixes the floor wage <span class="sec">Wages Code s.9</span>.   </li>
+<li><b>Payment:</b> wage period at most <b>1 month</b> <span class="sec">Wages Code s.16</span>; monthly wages before the <b>7th day</b> of the next month <span class="sec">Wages Code s.17(1)(iv)</span>; deductions at most <b>50%</b> <span class="sec">Wages Code s.18(3)</span>; fines at most <b>3%</b> <span class="sec">Wages Code s.19(4)</span>; overtime at least <b>2 times</b> the normal rate <span class="sec">Wages Code s.14</span>.     </li>
+<li><b>Bonus:</b> at least <b>30 days</b> worked; minimum <b>8.33%</b> or Rs 100; maximum <b>20%</b>; paid within <b>8 months</b> <span class="sec">Wages Code ss.26, 39(1)</span>. Claims go to an authority within <b>3 years</b> <span class="sec">Wages Code s.45(6)</span>. Compounding costs <b>50%</b> of the maximum fine <span class="sec">Wages Code s.56</span>.      </li>
+</ol>
+
+<h2 id="s1-the-code-at-a-glance" data-nav>1. The Code at a glance</h2>
+<div class="cards">
+<div class="card"><h4>Minimum Wages Act 1948</h4><p>Minimum wage and floor wage. Now <span class="sec">Wages Code Ch II</span>.  </p></div>
+<div class="card"><h4>Payment of Wages Act 1936</h4><p>Mode, time, deductions and fines. Now <span class="sec">Wages Code Ch III</span>.  </p></div>
+<div class="card"><h4>Payment of Bonus Act 1965</h4><p>Bonus. Now <span class="sec">Wages Code Ch IV</span>.  </p></div>
+<div class="card"><h4>Equal Remuneration Act 1976</h4><p>Equal pay and no discrimination in recruitment. Now <span class="sec">Wages Code ss.3, 4</span>.  </p></div>
+</div>
+<table class="cmp"><thead><tr><th>Point</th><th>Rule</th></tr></thead><tbody>
+<tr><td data-label="Point">Purpose</td><td data-label="Rule">The long title says it amends and consolidates the laws relating to wages and bonus. </td></tr>
+<tr><td data-label="Point">Size</td><td data-label="Rule"><b>69</b> sections; <span class="sec">Wages Code s.69</span> is "Repeal and savings". </td></tr>
+<tr><td data-label="Point">Chapters</td><td data-label="Rule"><b>9</b>: I Preliminary; II Minimum Wages; III Payment of Wages; IV Payment of Bonus; V Advisory Board; VI Payment of Dues, Claims and Audit; VII Inspector-cum-Facilitator; VIII Offences and Penalties; IX Miscellaneous. </td></tr>
+<tr><td data-label="Point">Assent</td><td data-label="Rule">8 August 2019. This is the assent date only, not the date the Code came into force. </td></tr>
+</tbody></table>
+<h3>Key dates</h3>
+<ol class="tl">
+<li><b>8 Aug 2019</b> Presidential assent. </li>
+<li><b>18 Dec 2020</b> S.O. 4604(E) brings in the Central Advisory Board parts of <span class="sec">Wages Code ss.42, 67</span> and part of <span class="sec">Wages Code s.69</span>. </li>
+<li><b>21 Nov 2025</b> S.O. 5322(E) brings in the rest of the Code. The four old Acts stand repealed.  </li>
+<li><b>8 May 2026</b> Code on Wages (Central) Rules 2026, G.S.R. 343(E), in force on publication. </li>
+<li><b>25 Aug 2026</b> S.O. 4711(E) fixes the Rs 21,000 bonus eligibility figure and S.O. 4710(E) the Rs 7,000 bonus calculation figure. Both are deemed in force from 21 Nov 2025.  </li>
+</ol>
+
+
+<h2 id="s2-definitions-shared-by-all-four-codes" data-nav>2. Definitions shared by all four Codes</h2>
+<p>The Wages Code defines these terms in <span class="sec">Wages Code s.2</span>. The IR, Social Security and OSH Codes repeat the wages definition. It is the same in substance, not word for word. </p>
+<table class="cmp"><thead><tr><th>Count</th><th>Across the four Codes</th></tr></thead><tbody>
+<tr><td data-label="Count">Old Acts merged</td><td data-label="Across the four Codes"><b>29</b>: Wages 4, IR 3, Social Security 9, OSH 13. </td></tr>
+<tr><td data-label="Count">Sections</td><td data-label="Across the four Codes"><b>480</b>: Wages 69, IR 104, Social Security 164, OSH 143. </td></tr>
+</tbody></table>
+
+<h3>Wages</h3>
+<div class="rule">
+<div class="rh"><span class="sec">Wages Code s.2(y)</span> <span class="rt">Wages</span></div>
+<p>All remuneration in terms of money. It includes <b>basic pay, dearness allowance and retaining allowance</b>, if any. </p>
+<p><b>The one-half rule.</b> If payments under clauses (a) to (i) of the exclusion list exceed <b>one-half</b> of all remuneration, or another percentage the Central Government notifies, the excess is added back to wages. Gratuity and retrenchment compensation are outside clauses (a) to (i), so they do not count in this test.  </p>
+<p><b>In kind.</b> Remuneration in kind, given in place of part or all of the wages, counts as wages up to <b>15%</b> of the total wages payable. </p>
+<p>The <span class="sec">IR Code s.2(zq)</span>, the <span class="sec">Code on SS s.2(88)</span> and the <span class="sec">OSH Code s.2(zzj)</span> carry the same items and the same one-half proviso. </p>
+<div class="was">The Minimum Wages Act counted house rent allowance as wages. The Code excludes it, subject to the add-back <span class="sec">Wages Code s.2(y)(f)</span> <span class="tag changed">Changed</span> </div>
+</div>
+<h3>Worked example: the one-half rule</h3>
+<p>Basic Rs 20,000 plus DA Rs 5,000 is Rs 25,000. Excluded items are Rs 35,000. All remuneration is Rs 60,000, so half is Rs 30,000. The excess of excluded items over half is Rs 5,000, and it is added to wages. </p>
+<div class="bars">
+<div class="bar mid" style="--w:100%">All remuneration: Rs 60,000 (half is Rs 30,000) </div>
+<div class="bar" style="--w:42%">Basic + DA: Rs 25,000 </div>
+<div class="bar no" style="--w:58%">Excluded items: Rs 35,000 </div>
+<div class="bar" style="--w:8%">Excess added back: Rs 5,000 </div>
+<div class="bar mid" style="--w:50%">Wages for the Code: Rs 25,000 + Rs 5,000 = Rs 30,000 </div>
+</div>
+
+<h3>Employee, worker, employer</h3>
+<table class="cmp"><thead><tr><th>Term</th><th>Wages Code rule</th><th>Other Codes</th></tr></thead><tbody>
+<tr><td data-label="Term">Employee <span class="sec">Wages Code s.2(k)</span></td><td data-label="Wages Code rule">Any person, other than an apprentice under the Apprentices Act 1961, employed on wages by an establishment for skilled, semi-skilled or unskilled, manual, operational, supervisory, managerial, administrative, technical or clerical work. It includes a person the appropriate Government declares an employee. It excludes members of the Armed Forces of the Union. </td><td data-label="Other Codes">Fixed-term employment is not named here. See below.</td></tr>
+<tr><td data-label="Term">Worker <span class="sec">Wages Code s.2(z)</span></td><td data-label="Wages Code rule">A person in any industry doing manual, unskilled, skilled, technical, operational, clerical or supervisory work. It excludes a person mainly in a managerial or administrative capacity, and a supervisor drawing above <b>Rs 15,000</b> a month or an amount the Central Government notifies. Working journalists and sales promotion employees are included.  </td><td data-label="Other Codes"><span class="sec">IR Code s.2(zr)</span> and <span class="sec">OSH Code s.2(zzl)</span>: supervisor limit <b>Rs 18,000</b> a month (the IR Code adds "or an amount as may be notified"). Both also include working journalists and sales promotion employees.  </td></tr>
+<tr><td data-label="Term">Employer <span class="sec">Wages Code s.2(l)</span></td><td data-label="Wages Code rule">A person who employs, directly or through any person, one or more employees. It includes the occupier (for a factory), the person with ultimate control and the manager or managing director (otherwise), the contractor, and the legal representative of a deceased employer. </td><td data-label="Other Codes">Same idea in each Code.</td></tr>
+</tbody></table>
+<p>A manual worker on Rs 40,000 is still a worker, because the limit applies only to supervisory staff. A supervisor on Rs 30,000 is not a worker.  Minimum wage and payment of wages use "employee" <span class="sec">Wages Code ss.5, 15 to 17</span>, so they cover managerial and supervisory staff too.  </p>
+<h3>Wage limits: which number belongs to what</h3>
+<div class="ladder">
+<div class="rung"><b>15,000</b><span>Rs a month: supervisor limit in "worker", <span class="sec">Wages Code s.2(z)</span> </span></div>
+<div class="rung"><b>18,000</b><span>Rs a month: supervisor limit in "worker", IR and OSH Codes. Also the inter-State migrant worker limit in the Social Security and OSH Codes  </span></div>
+<div class="rung"><b>21,000</b><span>Rs a month: bonus eligibility figure. Not a "worker" limit </span></div>
+<div class="rung"><b>24,000</b><span>Rs a month: Payment of Wages Act ceiling. Repealed, not a Code figure </span></div>
+</div>
+
+<h3>Other shared terms</h3>
+<table class="cmp"><thead><tr><th>Term</th><th>Rule</th><th>Status</th></tr></thead><tbody>
+<tr><td data-label="Term">Appropriate Government <span class="sec">Wages Code s.2(d)</span></td><td data-label="Rule">The Central Government for an establishment carried on by or under the Central Government, railways, mines, oil field, major ports, air transport service, telecommunication, banking and insurance company, a corporation or authority set up by a Central Act, central public sector undertakings with their subsidiaries, autonomous bodies owned or controlled by the Central Government, and contractors of these. For any other establishment, the State Government. </td><td data-label="Status">In force</td></tr>
+<tr><td data-label="Term">Fixed-term employment <span class="sec">IR Code s.2(o)</span>, <span class="sec">Code on SS s.2(34)</span></td><td data-label="Rule">A written contract for a fixed period. Hours of work, wages, allowances and other benefits are <b>not less than</b> those of a permanent employee doing the same or similar work. The <span class="sec">Wages Code s.2(k)</span> does not mention it.  </td><td data-label="Status">In force</td></tr>
+<tr><td data-label="Term">Fixed-term gratuity <span class="sec">Code on SS s.53</span></td><td data-label="Rule">The five-year service rule is not needed when a fixed-term contract ends. Gratuity is paid on a <b>pro rata</b> basis. A fixed-term employee is also eligible for benefits in proportion to the period of service, even below the qualifying period <span class="sec">Code on SS s.2(34)</span>. </td><td data-label="Status">In force</td></tr>
+<tr><td data-label="Term">Gig worker <span class="sec">Code on SS s.2(35)</span></td><td data-label="Rule">A person who performs work or takes part in a work arrangement and earns from it outside the traditional employer-employee relationship. </td><td data-label="Status">In force</td></tr>
+<tr><td data-label="Term">Platform worker <span class="sec">Code on SS ss.2(60), 2(61)</span></td><td data-label="Rule">A person engaged in or undertaking platform work, which uses an online platform to solve problems or provide services for payment. </td><td data-label="Status">In force</td></tr>
+<tr><td data-label="Term">Aggregator <span class="sec">Code on SS s.2(2)</span></td><td data-label="Rule">A digital intermediary or marketplace for a buyer or user of a service to connect with the seller or service provider. </td><td data-label="Status">In force</td></tr>
+<tr><td data-label="Term">Inter-State migrant worker <span class="sec">Code on SS s.2(41)</span>, <span class="sec">OSH Code s.2(zf)</span></td><td data-label="Rule">A person recruited in one State, directly by the employer or through a contractor, for work in another State, or one who came on his own from one State and got work in another, drawing wages not above <b>Rs 18,000</b> a month or a higher amount notified. The Wages Code uses the term only inside contract labour <span class="sec">Wages Code s.2(g)</span>. </td><td data-label="Status">In force</td></tr>
+<tr><td data-label="Term">Inspector-cum-Facilitator <span class="sec">Wages Code s.2(r)</span></td><td data-label="Rule">The <span class="sec">Code on SS s.2(37)</span> and the <span class="sec">OSH Code s.2(ze)</span> use the same term. Duties are under "Inspector-cum-Facilitator" below. </td><td data-label="Status">In force</td></tr>
+</tbody></table>
+
+<h2 id="s3-who-is-covered" data-nav>3. Who is covered</h2>
+<table class="cmp"><thead><tr><th>Point</th><th>Rule today</th></tr></thead><tbody>
+<tr><td data-label="Point">Minimum wage</td><td data-label="Rule today">No employer shall pay any <b>employee</b> less than the minimum rate the appropriate Government notifies <span class="sec">Wages Code s.5</span>. There is no schedule. </td></tr>
+<tr><td data-label="Point">Payment of wages</td><td data-label="Rule today"><span class="sec">Wages Code ss.15 to 17</span> apply to every employee as defined in <span class="sec">Wages Code s.2(k)</span>. There is no monthly wage ceiling. </td></tr>
+<tr><td data-label="Point">Government establishments</td><td data-label="Rule today">Chapter III does not apply to Government establishments unless the appropriate Government notifies it <span class="sec">Wages Code s.25</span>. </td></tr>
+<tr><td data-label="Point">Bonus</td><td data-label="Rule today">Chapter IV applies to an establishment in which <b>20 or more</b> persons are employed, or were employed on any day during an accounting year, subject to the exclusions in <span class="sec">Wages Code s.41(1)</span> <span class="sec">Wages Code s.41(2)</span>. </td></tr>
+</tbody></table>
+<h3>Old coverage tests</h3>
+<table class="shift"><thead><tr><th>Point</th><th>Before</th><th>Now</th><th></th></tr></thead><tbody>
+<tr><td data-label="Point">Payment of wages</td><td data-label="Before">Employees drawing up to Rs 24,000 a month. S.O. 2806(E) of 28 August 2017 set this figure.  </td><td data-label="Now">No ceiling <span class="sec">Wages Code ss.15 to 17</span> </td><td><span class="tag removed">Removed</span></td></tr>
+<tr><td data-label="Point">Minimum wage</td><td data-label="Before">Scheduled employments only  </td><td data-label="Now">Any employee, no schedule <span class="sec">Wages Code s.5</span> </td><td><span class="tag changed">Changed</span></td></tr>
+<tr><td data-label="Point">Bonus</td><td data-label="Before">20 or more persons. The Government could extend this to a smaller number, not below ten </td><td data-label="Now">20 or more <span class="sec">Wages Code s.41(2)</span> </td><td><span class="tag same">Same</span></td></tr>
+</tbody></table>
+<p>Before the Code, the existing legal protection of minimum wage reached about 40% of the workforce, according to a Lok Sabha reply of 30 July 2019. </p>
+
+<h2 id="s4-minimum-wage-and-floor-wage-chapter-ii" data-nav>4. Minimum wage and floor wage (Chapter II)</h2>
+<div class="rule">
+<div class="rh"><span class="sec">Wages Code s.6(6)</span> <span class="rt">How the rate is fixed</span></div>
+<p>The appropriate Government <b>shall</b> primarily take into account the skill of workers (unskilled, skilled, semi-skilled, highly-skilled), or geographical area, or both <span class="sec">Wages Code s.6(6)(a)</span>. It <b>may</b>, in addition, take into account arduousness: temperature or humidity normally difficult to bear, hazardous occupations or processes, underground work <span class="sec">Wages Code s.6(6)(b)</span>.  </p>
+<p>The norms of fixation are "such as may be prescribed" <span class="sec">Wages Code s.6(6)(c)</span> <span class="tag rules">needs rules</span>. The Code states no calorie, cloth or housing norm. </p>
+</div>
+<div class="rule">
+<div class="rh"><span class="sec">Wages Code ss.6(2), 6(3), 12</span> <span class="rt">Time work and piece work</span></div>
+<p>A minimum rate may be fixed for time work or for piece work <span class="sec">Wages Code s.6(2)</span>. For piece workers, the rate must secure a minimum wage on a time-work basis <span class="sec">Wages Code s.6(3)</span>. Where only a minimum time rate is fixed for piece work, the employer pays at least that time rate <span class="sec">Wages Code s.12</span>.  </p>
+</div>
+<div class="rule">
+<div class="rh"><span class="sec">Wages Code s.7(1)(a)</span> <span class="rt">Basic rate plus cost-of-living allowance</span></div>
+<p>A minimum rate may be a basic rate plus a cost of living allowance, adjusted at intervals the appropriate Government directs, to follow the cost of living index number. The Code sets no frequency. </p>
+<p>The Rules fix one: the cost of living allowance and the cash value of concessions on essential commodities are computed once before 1 April and once before 1 October every year, to revise the variable dearness allowance. The base is the Average Consumer Price Index for Industrial Workers published by the Labour Bureau <span class="sec">Wages Central Rules r.4</span>. </p>
+</div>
+<h3>From proposal to review, and the floor wage</h3>
+<ol class="steps">
+<li><b>Fix the rate <span class="sec">Wages Code s.8(1)</span></b> The appropriate Government either appoints committees to hold enquiries and recommend, or publishes its proposals by notification and names a date <b>not less than 2 months</b> later. </li>
+<li><b>Floor wage first <span class="sec">Wages Code s.9(1)</span></b> The Central Government fixes the floor wage, taking into account the minimum living standards of a worker. Different floor wages may be fixed for different geographical areas. </li>
+<li><b>No rate below it <span class="sec">Wages Code s.9(2)</span></b> Minimum rates fixed by the appropriate Government shall not be less than the floor wage, and an earlier higher rate is not reduced. </li>
+<li><b>Review <span class="sec">Wages Code s.8(4)</span></b> Review or revise "ordinarily at an interval not exceeding five years". The floor wage has the same limit <span class="sec">Wages Central Rules r.10(4)</span>.  </li>
+</ol>
+<p>The Central Government <b>may</b> obtain the advice of the Central Advisory Board and consult State Governments before fixing the floor wage <span class="sec">Wages Code s.9(3)</span>.  The Rules name "food, clothing, housing and any other factors" for the floor wage and leave the criteria to a Central Government order <span class="sec">Wages Central Rules r.3(1), 10(1)</span>. They do not repeat consumption norms. </p>
+<div class="trap"><p>"May" and "shall" are different in this chapter. Skill or geographical area is a <b>shall</b> <span class="sec">Wages Code s.6(6)(a)</span>. Arduousness is a <b>may</b> <span class="sec">Wages Code s.6(6)(b)</span>. The Board's advice on the floor wage is also a <b>may</b> <span class="sec">Wages Code s.9(3)</span>.   </p></div>
+<h3>What the Minimum Wages Act 1948 did</h3>
+<table class="shift"><thead><tr><th>Point</th><th>Before</th><th>Now</th><th></th></tr></thead><tbody>
+<tr><td data-label="Point">Method</td><td data-label="Before">Committee method and notification method </td><td data-label="Now">The same two methods <span class="sec">Wages Code s.8(1)</span> </td><td><span class="tag same">Same</span></td></tr>
+<tr><td data-label="Point">Review</td><td data-label="Before">Not exceeding five years <span class="sec old"><i>old</i> MW Act 1948 s.3(1)(b)</span> </td><td data-label="Now">Not exceeding five years <span class="sec">Wages Code s.8(4)</span> </td><td><span class="tag same">Same</span></td></tr>
+<tr><td data-label="Point">Rate kinds</td><td data-label="Before">Minimum time rate, minimum piece rate, guaranteed time rate for piece workers, and overtime rate. Adult 18 and over, adolescent 14 to 18, child under 14. </td><td data-label="Now">The Code does not use "adult", "adolescent" or "guaranteed time rate". </td><td><span class="tag removed">Removed</span></td></tr>
+<tr><td data-label="Point">Schedule</td><td data-label="Before">Scheduled employments </td><td data-label="Now">No schedule </td><td><span class="tag removed">Removed</span></td></tr>
+</tbody></table>
+
+<h3>Wage norms and bodies (concepts, unchanged by the Codes)</h3>
+<p>These are not in the Code text. They come from the 15th Indian Labour Conference (1957), case law and committee reports. </p>
+<table class="cmp"><thead><tr><th>Item</th><th>Fact</th></tr></thead><tbody>
+<tr><td data-label="Item">15th Indian Labour Conference</td><td data-label="Fact">Set the need-based minimum wage norms in <b>1957</b>. </td></tr>
+<tr><td data-label="Item">Consumption units</td><td data-label="Fact"><b>3</b> consumption units per earner. </td></tr>
+<tr><td data-label="Item">Cloth</td><td data-label="Fact"><b>18 yards</b> per person per year (Supreme Court judgment); <b>72 yards</b> per family of four consumption units (Labour Ministry report). </td></tr>
+<tr><td data-label="Item">Fuel, lighting, miscellaneous</td><td data-label="Fact"><b>20%</b> of the total minimum wage. </td></tr>
+<tr><td data-label="Item">Reptakos Brett case</td><td data-label="Fact">Workmen v Reptakos Brett and Co Ltd (Supreme Court, 31 October 1991; (1992) 1 SCC 290) added <b>25%</b> to the norms for children's education, medical need, recreation, old age and marriage. Some texts spell it "Raptakos"; the judgment spells it "Reptakos". </td></tr>
+<tr><td data-label="Item">Dr Aykroyd</td><td data-label="Fact">His formula is linked to minimum wage fixation. It ties to the food (calorie) norm inside the 15th ILC norms. </td></tr>
+<tr><td data-label="Item">Committee on Fair Wages, 1948-49</td><td data-label="Fact">Three levels of wage: <b>minimum wage, fair wage and living wage</b>. The fair wage lies between the minimum and the living wage and depends on capacity to pay. </td></tr>
+<tr><td data-label="Item">Satpathy Expert Committee, 2019</td><td data-label="Fact">Chair: Dr Anoop Satpathy. Recommended a national minimum wage of Rs 375 a day at July 2018 prices, with a method based on a balanced diet of about 2,400 kcal. It is a recommendation, not a notified rate. </td></tr>
+</tbody></table>
+
+<h2 id="s5-payment-of-wages-chapter-iii" data-nav>5. Payment of wages (Chapter III)</h2>
+<p>Chapter III does not apply to Government establishments unless the appropriate Government notifies it <span class="sec">Wages Code s.25</span>. </p>
+<div class="rule">
+<div class="rh"><span class="sec">Wages Code ss.15, 16</span> <span class="rt">Mode and wage period</span></div>
+<p><b>Mode.</b> Wages are paid in current coin or currency notes, or by cheque, or by crediting the bank account of the employee, or by the electronic mode. The proviso lets the appropriate Government notify establishments that must pay only by cheque or bank credit. The proviso names cheque and bank credit, not the electronic mode <span class="sec">Wages Code s.15</span>.  </p>
+<p><b>Wage period.</b> Daily, weekly, fortnightly or monthly. No wage period for any employee is more than <b>a month</b> <span class="sec">Wages Code s.16</span>. </p>
+</div>
+<h3>When wages fall due <span class="sec">Wages Code s.17</span></h3>
+<table class="cmp"><thead><tr><th>Wage basis</th><th>Due</th></tr></thead><tbody>
+<tr><td data-label="Wage basis">Daily <span class="sec">Wages Code s.17(1)(i)</span></td><td data-label="Due">At the end of the shift </td></tr>
+<tr><td data-label="Wage basis">Weekly <span class="sec">Wages Code s.17(1)(ii)</span></td><td data-label="Due">On the last working day of the week, that is, before the weekly holiday </td></tr>
+<tr><td data-label="Wage basis">Fortnightly <span class="sec">Wages Code s.17(1)(iii)</span></td><td data-label="Due">Before the end of the <b>second day</b> after the end of the fortnight </td></tr>
+<tr><td data-label="Wage basis">Monthly <span class="sec">Wages Code s.17(1)(iv)</span></td><td data-label="Due">Before the expiry of the <b>7th day</b> of the next month. There is no 10th-day alternative and no head-count test. </td></tr>
+<tr><td data-label="Wage basis">On exit <span class="sec">Wages Code s.17(2)</span></td><td data-label="Due">Within <b>2 working days</b> of removal, dismissal, retrenchment or resignation, or of becoming unemployed because the establishment closed </td></tr>
+</tbody></table>
+<div class="rule">
+<div class="rh"><span class="sec">Wages Code s.18</span> <span class="rt">Deductions</span></div>
+<p>In any wage period, total deductions are at most <b>50%</b> of the wages <span class="sec">Wages Code s.18(3)</span>. The Code has no separate higher limit for dues to a co-operative society. The excess may be recovered in the manner prescribed <span class="sec">Wages Code s.18(4)</span> <span class="tag rules">needs rules</span> <span class="sec">Wages Central Rules r.13</span>. </p>
+<p>Permitted purposes <span class="sec">Wages Code s.18(2)</span> include amenities and services supplied by the employer (e), recovery of advances (f)(i), and payment to a co-operative society on the Government's conditions (j). </p>
+<div class="was"><span class="sec old"><i>old</i> PW Act 1936 s.7(3)</span> 50% of wages, or 75% where deductions include payments to a co-operative society <span class="tag changed">Changed</span> </div>
+</div>
+<div class="rule">
+<div class="rh"><span class="sec">Wages Code s.19</span> <span class="rt">Fines</span></div>
+<p>A fine is at most <b>3%</b> of the wages payable for that wage period <span class="sec">Wages Code s.19(4)</span>. No fine on an employee under <b>15</b> years <span class="sec">Wages Code s.19(5)</span>. A fine is not recovered by instalments, and not after <b>90 days</b> from the day it was imposed <span class="sec">Wages Code s.19(6)</span>.   </p>
+<p>Fines and realisations are recorded in a register and applied only to purposes beneficial to the persons employed, as the prescribed authority approves <span class="sec">Wages Code s.19(8)</span>. </p>
+<div class="was"><span class="sec old"><i>old</i> PW Act 1936 s.8(4)</span> 3% of wages <span class="tag same">Same</span> </div>
+</div>
+<div class="rule">
+<div class="rh"><span class="sec">Wages Code ss.13, 14</span> <span class="rt">Overtime, hours and rest</span></div>
+<p><b>Overtime</b> is paid for every hour or part of an hour worked beyond the normal working day, at not less than <b>twice</b> the normal rate of wages <span class="sec">Wages Code s.14</span>. </p>
+<p>The Code only lets the Government fix the hours <span class="sec">Wages Code s.13(1)(a)</span>. The Rules fix them: a daily-wage employee has a normal working day of <b>8 hours</b>; for other wage periods the total weekly hours are not above <b>48</b> <span class="sec">Wages Central Rules r.5</span>. </p>
+<p>The appropriate Government <b>may</b> provide a day of rest in every period of seven days <span class="sec">Wages Code s.13(1)(b)</span>. The Rules provide one rest day in every week, ordinarily Sunday <span class="sec">Wages Central Rules r.6</span>. </p>
+<p>Under <span class="sec">Wages Central Rules r.3(2)</span> the daily rate is divided by 8 for the hourly rate and <b>multiplied</b> by 26 for the monthly rate. </p>
+</div>
+<h3>Payment of Wages Act 1936: what changed</h3>
+<table class="shift"><thead><tr><th>Point</th><th>Before</th><th>Now</th><th></th></tr></thead><tbody>
+<tr><td data-label="Point">Wage period</td><td data-label="Before">At most one month <span class="sec old"><i>old</i> PW Act 1936 s.4</span> </td><td data-label="Now">At most one month <span class="sec">Wages Code s.16</span> </td><td><span class="tag same">Same</span></td></tr>
+<tr><td data-label="Point">Monthly due date</td><td data-label="Before">7th day where fewer than 1,000 persons are employed; otherwise the 10th day <span class="sec old"><i>old</i> PW Act 1936 s.5</span> </td><td data-label="Now">7th day for all. No head-count test <span class="sec">Wages Code s.17(1)(iv)</span> </td><td><span class="tag changed">Changed</span></td></tr>
+<tr><td data-label="Point">Deduction cap</td><td data-label="Before">50%, or 75% with co-operative society dues <span class="sec old"><i>old</i> PW Act 1936 s.7(3)</span> </td><td data-label="Now">50% only <span class="sec">Wages Code s.18(3)</span> </td><td><span class="tag changed">Changed</span></td></tr>
+<tr><td data-label="Point">Fines</td><td data-label="Before">3% <span class="sec old"><i>old</i> PW Act 1936 s.8(4)</span> </td><td data-label="Now">3% <span class="sec">Wages Code s.19(4)</span> </td><td><span class="tag same">Same</span></td></tr>
+<tr><td data-label="Point">Permitted deductions</td><td data-label="Before">Amenities (e), advances (f), co-operative society (j) <span class="sec old"><i>old</i> PW Act 1936 s.7(2)</span> </td><td data-label="Now">All three kept <span class="sec">Wages Code s.18(2)</span> </td><td><span class="tag same">Same</span></td></tr>
+<tr><td data-label="Point">Coverage</td><td data-label="Before">Ceiling of Rs 24,000 a month </td><td data-label="Now">No ceiling </td><td><span class="tag removed">Removed</span></td></tr>
+</tbody></table>
+
+<h2 id="s6-payment-of-bonus-chapter-iv" data-nav>6. Payment of bonus (Chapter IV)</h2>
+<div class="rule">
+<div class="rh"><span class="sec">Wages Code s.26(1)</span> <span class="rt">Eligibility and minimum bonus</span></div>
+<p>Bonus is paid to every employee drawing wages not above an amount per month fixed by notification, who has worked at least <b>30 days</b> in an accounting year. The Code gives no rupee figure. S.O. 4711(E) of 25 August 2026 fixes <b>Rs 21,000</b> a month, deemed in force from 21 November 2025.  </p>
+<p>The minimum bonus is <b>8.33%</b> of the wages earned, or <b>Rs 100</b>, whichever is higher. It is payable whether or not there is any allocable surplus in the previous accounting year. </p>
+<div class="was"><span class="sec old"><i>old</i> Bonus Act 1965 s.2(13)</span> Rs 21,000, as raised by the Payment of Bonus (Amendment) Act 2015 from the accounting year starting 1 April 2014. <span class="sec old"><i>old</i> Bonus Act 1965 s.10</span> 8.33% or Rs 100 <span class="tag changed">Changed</span>  </div>
+</div>
+<div class="rule">
+<div class="rh"><span class="sec">Wages Code s.26(2)</span> <span class="rt">Calculation base</span></div>
+<p>Where the wages exceed the notified amount, bonus is calculated as if the wage were the notified amount or the minimum wage fixed by the appropriate Government, <b>whichever is higher</b>. The Code names no figure. S.O. 4710(E) of 25 August 2026 notifies <b>Rs 7,000</b> a month, deemed in force from 21 November 2025.  </p>
+<div class="was"><span class="sec old"><i>old</i> Bonus Act 1965 s.12</span> Rs 7,000 or the minimum wage for the scheduled employment, whichever is higher <span class="tag changed">Changed</span> </div>
+</div>
+<h3>Worked example: the calculation base</h3>
+<p>The minimum wage fixed for an employee is Rs 9,000. That is above Rs 7,000, so the base is Rs 9,000. Rs 9,000 x 12 = Rs 1,08,000. At 8.33%, the bonus is about <b>Rs 8,996</b>.  </p>
+<div class="bars">
+<div class="bar no" style="--w:78%">Notified amount: Rs 7,000 </div>
+<div class="bar" style="--w:100%">Minimum wage fixed: Rs 9,000, the higher, so this is the base </div>
+</div>
+<div class="rule">
+<div class="rh"><span class="sec">Wages Code s.26(3)</span> <span class="rt">Maximum bonus</span></div>
+<p>Where the allocable surplus exceeds the minimum bonus, bonus is in proportion to the wages earned, up to a maximum of <b>20%</b> of those wages. </p>
+<div class="was"><span class="sec old"><i>old</i> Bonus Act 1965 s.11</span> maximum 20% <span class="tag same">Same</span> </div>
+</div>
+<div class="rule">
+<div class="rh"><span class="sec">Wages Code s.26(6)</span> <span class="rt">New establishments</span></div>
+<p>In the first <b>5</b> accounting years after the employer first sells goods or renders services, bonus is payable only for a year in which the employer makes a profit. </p>
+</div>
+<div class="rule">
+<div class="rh"><span class="sec">Wages Code s.36</span> <span class="rt">Set-on and set-off</span></div>
+<p>Surplus above the 20% maximum (set on) and a shortfall in the minimum bonus (set off) are carried forward up to and including the <b>fourth</b> accounting year. </p>
+</div>
+<div class="rule">
+<div class="rh"><span class="sec">Wages Code s.39(1)</span> <span class="rt">Time of payment</span></div>
+<p>By crediting the employee's bank account within <b>8 months</b> from the close of the accounting year. The appropriate Government may extend the period for sufficient reasons, and the total extension cannot exceed <b>2 years</b>. </p>
+<div class="was"><span class="sec old"><i>old</i> Bonus Act 1965 s.19</span> 8 months <span class="tag same">Same</span> </div>
+</div>
+<div class="rule">
+<div class="rh"><span class="sec">Wages Code s.29</span> <span class="rt">Disqualification</span></div>
+<p>An employee is disqualified if dismissed for: <b>fraud</b>; <b>riotous or violent behaviour</b> on the premises; <b>theft, misappropriation or sabotage</b> of the establishment's property; or <b>conviction for sexual harassment</b>. </p>
+<div class="was"><span class="sec old"><i>old</i> Bonus Act 1965 s.9</span> three grounds: fraud; riotous or violent behaviour; theft, misappropriation or sabotage. The Code adds sexual harassment as the fourth <span class="tag changed">Changed</span> </div>
+</div>
+<h3>Bonus numbers that look alike</h3>
+<table class="cmp"><thead><tr><th>Number</th><th>What it is</th></tr></thead><tbody>
+<tr><td data-label="Number">30 days</td><td data-label="What it is">Minimum work in the accounting year </td></tr>
+<tr><td data-label="Number">8.33% or Rs 100</td><td data-label="What it is">Minimum bonus </td></tr>
+<tr><td data-label="Number">20%</td><td data-label="What it is">Maximum bonus </td></tr>
+<tr><td data-label="Number">20 persons</td><td data-label="What it is">Coverage </td></tr>
+<tr><td data-label="Number">Rs 21,000</td><td data-label="What it is">Eligibility figure, notified </td></tr>
+<tr><td data-label="Number">Rs 7,000</td><td data-label="What it is">Calculation base, notified. Also the old Act's figure under <span class="sec old"><i>old</i> Bonus Act 1965 s.12</span>  </td></tr>
+<tr><td data-label="Number">8 months</td><td data-label="What it is">Payment time; extension up to 2 years in total </td></tr>
+<tr><td data-label="Number">4th accounting year</td><td data-label="What it is">Last year for set-on and set-off </td></tr>
+<tr><td data-label="Number">5 accounting years</td><td data-label="What it is">New-establishment rule </td></tr>
+</tbody></table>
+
+<h2 id="s7-equality-boards-claims-inspection-and-penalties" data-nav>7. Equality, boards, claims, inspection and penalties</h2>
+<h3>Equal remuneration</h3>
+<div class="rule">
+<div class="rh"><span class="sec">Wages Code s.3(1)</span> <span class="rt">Equal pay</span></div>
+<p>No discrimination in an establishment among employees on the ground of <b>gender</b> in matters relating to wages by the same employer, for the same work or work of a similar nature. </p>
+<div class="was"><span class="sec old"><i>old</i> ER Act 1976 s.4</span> equal remuneration for the same work or work of a similar nature <span class="tag same">Same</span> </div>
+</div>
+<div class="rule">
+<div class="rh"><span class="sec">Wages Code s.3(2)</span> <span class="rt">Recruitment and conditions</span></div>
+<p>The employer shall not reduce the wage rate of any employee to comply with <span class="sec">Wages Code s.3(1)</span>. The employer shall not discriminate on the ground of <b>sex</b> while recruiting for the same or similar work, or in the conditions of employment. The exception: where the law prohibits or restricts the employment of women in such work. </p>
+<div class="was"><span class="sec old"><i>old</i> ER Act 1976 s.5</span> no sex discrimination in recruitment, with the same exception <span class="tag same">Same</span> </div>
+</div>
+<div class="rule">
+<div class="rh"><span class="sec">Wages Code ss.2(v), 4</span> <span class="rt">Same work, and disputes</span></div>
+<p>"Same work or work of a similar nature" means work for which the skill, effort, experience and responsibility required are the same, under similar working conditions. Any differences between employees of any gender are not of practical importance <span class="sec">Wages Code s.2(v)</span>. A dispute on whether work is of the same or a similar nature is decided by the authority the appropriate Government notifies <span class="sec">Wages Code s.4</span>.  </p>
+<p>The Equal Remuneration Act rested on <span class="sec">Constitution Art 39(d)</span>. </p>
+</div>
+<h3>Advisory Boards <span class="sec">Wages Code s.42</span></h3>
+<table class="cmp"><thead><tr><th>Board</th><th>Rule</th><th>In force from</th></tr></thead><tbody>
+<tr><td data-label="Board">Central Advisory Board <span class="sec">Wages Code s.42(1)</span></td><td data-label="Rule">Members nominated by the Central Government: representatives of employers; an <b>equal number</b> of representatives of employees; independent persons, not more than <b>one-third</b> of the total; and <b>five</b> representatives of State Governments. </td><td data-label="In force from">18 Dec 2020 (S.O. 4604(E))</td></tr>
+<tr><td data-label="Board">Central Advisory Board <span class="sec">Wages Code s.42(2)</span></td><td data-label="Rule"><b>One-third</b> of the members are women. One of the independent members is appointed by the Central Government as Chairperson. </td><td data-label="In force from">18 Dec 2020</td></tr>
+<tr><td data-label="Board">State Advisory Board <span class="sec">Wages Code ss.42(4), 42(6), 42(7)</span></td><td data-label="Rule">Each State Government constitutes one: employers, an equal number of employees, and independent persons not above one-third. One-third of the members are women. The State Government appoints one independent member as Chairperson. </td><td data-label="In force from">21 Nov 2025 (S.O. 5322(E))</td></tr>
+</tbody></table>
+<p>Before the Code, the Chairman of the Central Advisory Board was appointed from the independent members under the Minimum Wages Act. The Code says "Chairperson". The Equal Remuneration Act had an Advisory Committee <span class="sec old"><i>old</i> ER Act 1976 s.6</span>, which the Code's Advisory Boards replace.   </p>
+
+<h3>Claims and appeals</h3>
+<ol class="steps">
+<li><b>Claim <span class="sec">Wages Code s.45(1)</span></b> The appropriate Government appoints by notification one or more authorities, not below the rank of a Gazetted Officer, to hear and determine claims. </li>
+<li><b>File within 3 years <span class="sec">Wages Code s.45(6)</span></b> From the date the claim arises. The authority may take it later on sufficient cause. </li>
+<li><b>Decision <span class="sec">Wages Code s.45(2)</span></b> In addition to the claim, the authority may award up to <b>10 times</b> the claim determined as compensation. It and the appellate authority shall endeavour to decide within <b>3 months</b> <span class="sec">Wages Code s.49(3)</span>. "Endeavour" is a duty to try, not a fixed limit.  </li>
+<li><b>Appeal within 90 days <span class="sec">Wages Code s.49</span></b> To an appellate authority, which is an officer at least one rank higher <span class="sec">Wages Code s.49(2)</span>. Later on sufficient cause. </li>
+</ol>
+<table class="shift"><thead><tr><th>Point</th><th>Before</th><th>Now</th><th></th></tr></thead><tbody>
+<tr><td data-label="Point">Claim period</td><td data-label="Before">6 months (Minimum Wages Act); 12 months (Payment of Wages Act)  </td><td data-label="Now"><b>3 years</b> <span class="sec">Wages Code s.45(6)</span> </td><td><span class="tag changed">Changed</span></td></tr>
+</tbody></table>
+
+<h3>Inspector-cum-Facilitator</h3>
+<div class="rule">
+<div class="rh"><span class="sec">Wages Code s.51</span> <span class="rt">Role and inspection scheme</span></div>
+<p>The appropriate Government appoints Inspector-cum-Facilitators. They may advise employers and workers on compliance and inspect the establishments assigned to them <span class="sec">Wages Code s.51(5)</span>. The old Acts used the word "Inspector". </p>
+<p>The appropriate Government <b>may</b> lay down an inspection scheme by notification. It may include a web-based inspection and electronic calling of information, and it may give the officer jurisdiction for randomised selection of inspection <span class="sec">Wages Code ss.51(2), 51(3)</span>. </p>
+</div>
+<div class="decide">
+<p class="q">Before prosecution, does the employer get a chance to comply? <span class="sec">Wages Code s.54(3)</span></p>
+<div class="opts">
+<div class="opt"><b>First offence under <span class="sec">Wages Code s.54(1)(c)</span> or <span class="sec">Wages Code s.54(2)</span></b> The officer gives a written direction with a time to comply. If the employer complies, no prosecution starts. </div>
+<div class="opt"><b>Same kind of violation repeated within 5 years</b> No such chance is given. Paying less than due <span class="sec">Wages Code s.54(1)(a)</span> never gets the chance. </div>
+</div></div>
+
+<h3>Registers, records and returns</h3>
+<table class="cmp"><thead><tr><th>Source</th><th>Rule</th></tr></thead><tbody>
+<tr><td data-label="Source">Code <span class="sec">Wages Code s.50(1)</span></td><td data-label="Rule">Every employer maintains a register with details of persons employed, muster roll, wages and other prescribed details. The Code fixes no retention period. </td></tr>
+<tr><td data-label="Source"><span class="sec">Wages Central Rules r.51(1)</span></td><td data-label="Rule">Three registers, kept electronically or in physical form: Employee Register (Form I); Register of Wages, Overtime, Advances, Fines and Deductions for Damage and Loss (Form IV); Attendance Register-cum-Muster Roll (Form IX). </td></tr>
+<tr><td data-label="Source"><span class="sec">Wages Central Rules r.51(4)</span></td><td data-label="Rule">Registers are kept for <b>5 years</b> after the date of the last entry. </td></tr>
+<tr><td data-label="Source"><span class="sec">Wages Central Rules r.48</span></td><td data-label="Rule">Returns are filed electronically by every employer, in the Forms under the OSH Code 2020. </td></tr>
+</tbody></table>
+
+<h3>Offences and penalties <span class="sec">Wages Code s.54</span></h3>
+<table class="cmp"><thead><tr><th>Section</th><th>Offence</th><th>Punishment</th></tr></thead><tbody>
+<tr><td data-label="Section"><span class="sec">Wages Code s.54(1)(a)</span></td><td data-label="Offence">Pays an employee less than the amount due under the Code </td><td data-label="Punishment">Fine up to <b>Rs 50,000</b></td></tr>
+<tr><td data-label="Section"><span class="sec">Wages Code s.54(1)(b)</span></td><td data-label="Offence">Repeat of (a) within 5 years, on the second and later offence </td><td data-label="Punishment">Imprisonment up to <b>3 months</b>, or fine up to <b>Rs 1 lakh</b>, or both</td></tr>
+<tr><td data-label="Section"><span class="sec">Wages Code s.54(1)(c)</span></td><td data-label="Offence">Contravenes any other provision of the Code, a rule or an order </td><td data-label="Punishment">Fine up to <b>Rs 20,000</b></td></tr>
+<tr><td data-label="Section"><span class="sec">Wages Code s.54(1)(d)</span></td><td data-label="Offence">Repeat of (c) within 5 years </td><td data-label="Punishment">Imprisonment up to <b>1 month</b>, or fine up to <b>Rs 40,000</b>, or both</td></tr>
+<tr><td data-label="Section"><span class="sec">Wages Code s.54(2)</span></td><td data-label="Offence">Non-maintenance or improper maintenance of records </td><td data-label="Punishment">Fine up to <b>Rs 10,000</b></td></tr>
+</tbody></table>
+<p>Record-keeping lapses are not decriminalised: the fine stays, and a written direction comes first <span class="sec">Wages Code s.54(3)</span>.   The Minimum Wages Act penalty was imprisonment up to 6 months or a fine up to Rs 500. That is the Central text; State amendments exist. </p>
+
+<h3>Compounding <span class="sec">Wages Code s.56</span></h3>
+<p>On the accused's application, a notified Gazetted Officer may compound an offence for <b>50%</b> of the maximum fine for that offence. Offences punishable with imprisonment only, or with imprisonment and also with fine, are excluded.  No compounding for an offence committed a second time or later within 5 years of a similar offence that was earlier compounded or that led to conviction <span class="sec">Wages Code s.56(2)</span>. </p>
+<div class="bars">
+<div class="bar mid" style="--w:100%">Maximum fine Rs 50,000 <span class="sec">Wages Code s.54(1)(a)</span>: compound for Rs 25,000  </div>
+<div class="bar mid" style="--w:40%">Maximum fine Rs 20,000 <span class="sec">Wages Code s.54(1)(c)</span>: compound for Rs 10,000  </div>
+<div class="bar mid" style="--w:20%">Maximum fine Rs 10,000 <span class="sec">Wages Code s.54(2)</span>: compound for Rs 5,000  </div>
+</div>
+<div class="trap"><p>Three different 50% figures. One is the add-back test in the wages definition <span class="sec">Wages Code s.2(y)</span>. One is the cap on total deductions <span class="sec">Wages Code s.18(3)</span>. One is the share of the maximum fine paid to compound <span class="sec">Wages Code s.56</span>.   </p></div>
+
+<h2 id="what-changed" data-nav>What changed</h2>
+<table class="shift"><thead><tr><th>Point</th><th>Before</th><th>Now</th><th></th></tr></thead><tbody>
+<tr><td data-label="Point">Wage ceiling</td><td data-label="Before">Payment of Wages Act covered up to Rs 24,000 a month </td><td data-label="Now">No ceiling <span class="sec">Wages Code ss.15 to 17</span> </td><td><span class="tag removed">Removed</span></td></tr>
+<tr><td data-label="Point">Schedule</td><td data-label="Before">Minimum Wages Act: scheduled employments only </td><td data-label="Now">Any employee <span class="sec">Wages Code s.5</span> </td><td><span class="tag removed">Removed</span></td></tr>
+<tr><td data-label="Point">Monthly due date</td><td data-label="Before">7th day (under 1,000 persons) or 10th day </td><td data-label="Now">7th day for all <span class="sec">Wages Code s.17(1)(iv)</span> </td><td><span class="tag changed">Changed</span></td></tr>
+<tr><td data-label="Point">Deduction cap</td><td data-label="Before">50%, or 75% with co-operative dues </td><td data-label="Now">50% only <span class="sec">Wages Code s.18(3)</span> </td><td><span class="tag changed">Changed</span></td></tr>
+<tr><td data-label="Point">Fines</td><td data-label="Before">3% </td><td data-label="Now">3% <span class="sec">Wages Code s.19(4)</span> </td><td><span class="tag same">Same</span></td></tr>
+<tr><td data-label="Point">Bonus coverage</td><td data-label="Before">20 or more persons </td><td data-label="Now">20 or more <span class="sec">Wages Code s.41(2)</span> </td><td><span class="tag same">Same</span></td></tr>
+<tr><td data-label="Point">Bonus eligibility</td><td data-label="Before">Rs 21,000 fixed in the Act </td><td data-label="Now">Set by notification; the figure is Rs 21,000 <span class="sec">Wages Code s.26(1)</span> </td><td><span class="tag changed">Changed</span></td></tr>
+<tr><td data-label="Point">Bonus base</td><td data-label="Before">Rs 7,000 or the minimum wage for the scheduled employment </td><td data-label="Now">The notified amount (Rs 7,000) or the minimum wage fixed, whichever is higher <span class="sec">Wages Code s.26(2)</span>  </td><td><span class="tag changed">Changed</span></td></tr>
+<tr><td data-label="Point">Disqualification</td><td data-label="Before">3 grounds </td><td data-label="Now">4 grounds <span class="sec">Wages Code s.29</span> </td><td><span class="tag changed">Changed</span></td></tr>
+<tr><td data-label="Point">Claim period</td><td data-label="Before">6 months or 12 months  </td><td data-label="Now">3 years <span class="sec">Wages Code s.45(6)</span> </td><td><span class="tag changed">Changed</span></td></tr>
+<tr><td data-label="Point">Enforcing officer</td><td data-label="Before">Inspector </td><td data-label="Now">Inspector-cum-Facilitator <span class="sec">Wages Code s.51(5)</span> </td><td><span class="tag changed">Changed</span></td></tr>
+<tr><td data-label="Point">Equal pay advice body</td><td data-label="Before">Advisory Committee <span class="sec old"><i>old</i> ER Act 1976 s.6</span> </td><td data-label="Now">Advisory Boards <span class="sec">Wages Code s.42</span> </td><td><span class="tag changed">Changed</span></td></tr>
+<tr><td data-label="Point">Review of minimum wages</td><td data-label="Before">Not above 5 years </td><td data-label="Now">Not above 5 years <span class="sec">Wages Code s.8(4)</span> </td><td><span class="tag same">Same</span></td></tr>
+</tbody></table>
+
+<h2 id="numbers-on-one-scale" data-nav>Numbers on one scale</h2>
+<h3>Time limits: days</h3>
+<div class="ladder">
+<div class="rung"><b>2</b><span>working days: wages due on exit <span class="sec">Wages Code s.17(2)</span> </span></div>
+<div class="rung"><b>7th</b><span>day of the next month: monthly wages due before it expires <span class="sec">Wages Code s.17(1)(iv)</span> </span></div>
+<div class="rung"><b>30</b><span>days worked in the year: bonus eligibility <span class="sec">Wages Code s.26(1)</span> </span></div>
+<div class="rung"><b>90</b><span>days: fine recovery bar <span class="sec">Wages Code s.19(6)</span>; appeal period <span class="sec">Wages Code s.49</span>  </span></div>
+</div>
+<h3>Time limits: months</h3>
+<div class="ladder">
+<div class="rung"><b>1</b><span>month: longest wage period <span class="sec">Wages Code s.16</span> </span></div>
+<div class="rung"><b>2</b><span>months: shortest notice before fixing rates <span class="sec">Wages Code s.8(1)</span> </span></div>
+<div class="rung"><b>3</b><span>months: claim and appeal to be decided <span class="sec">Wages Code s.45(2)</span>, <span class="sec">Wages Code s.49(3)</span> </span></div>
+<div class="rung"><b>8</b><span>months: bonus payment time <span class="sec">Wages Code s.39(1)</span> </span></div>
+</div>
+<h3>Time limits: years</h3>
+<div class="ladder">
+<div class="rung"><b>2</b><span>years: longest total extension for bonus payment <span class="sec">Wages Code s.39(1)</span> </span></div>
+<div class="rung"><b>3</b><span>years: claim period <span class="sec">Wages Code s.45(6)</span> </span></div>
+<div class="rung"><b>4th</b><span>accounting year: last year for set-on and set-off <span class="sec">Wages Code s.36</span> </span></div>
+<div class="rung"><b>5</b><span>years: review of minimum wages <span class="sec">Wages Code s.8(4)</span>; repeat-offence window <span class="sec">Wages Code s.54</span>; registers kept <span class="sec">Wages Central Rules r.51(4)</span>; also the first 5 accounting years for new establishments <span class="sec">Wages Code s.26(6)</span>    </span></div>
+</div>
+<h3>Shares</h3>
+<div class="ladder">
+<div class="rung"><b>3%</b><span>maximum fine <span class="sec">Wages Code s.19(4)</span> </span></div>
+<div class="rung"><b>8.33%</b><span>minimum bonus <span class="sec">Wages Code s.26(1)</span> </span></div>
+<div class="rung"><b>15%</b><span>pay in kind counted as wages <span class="sec">Wages Code s.2(y)</span> </span></div>
+<div class="rung"><b>20%</b><span>maximum bonus <span class="sec">Wages Code s.26(3)</span> </span></div>
+<div class="rung"><b>50%</b><span>add-back test <span class="sec">Wages Code s.2(y)</span>; deductions cap <span class="sec">Wages Code s.18(3)</span>; compounding <span class="sec">Wages Code s.56</span>   </span></div>
+</div>
+<h3>Money: fines in rupees</h3>
+<div class="ladder">
+<div class="rung"><b>10,000</b><span>record-keeping lapse <span class="sec">Wages Code s.54(2)</span> </span></div>
+<div class="rung"><b>20,000</b><span>other contravention <span class="sec">Wages Code s.54(1)(c)</span> </span></div>
+<div class="rung"><b>40,000</b><span>repeat of that, or 1 month in jail <span class="sec">Wages Code s.54(1)(d)</span> </span></div>
+<div class="rung"><b>50,000</b><span>paying less than due <span class="sec">Wages Code s.54(1)(a)</span> </span></div>
+<div class="rung"><b>1 lakh</b><span>repeat of that, or 3 months in jail <span class="sec">Wages Code s.54(1)(b)</span> </span></div>
+</div>
+
+<h2 id="quick-revision" data-nav>Quick revision</h2>
+<table class="recall"><tbody>
+<tr><td>Acts merged / sections / chapters</td><td>4 / 69 / 9   </td></tr>
+<tr><td>In force</td><td>21 Nov 2025 (S.O. 5322(E)); Board parts 18 Dec 2020  </td></tr>
+<tr><td>Wages</td><td>Basic + DA + retaining allowance <span class="sec">Wages Code s.2(y)</span> </td></tr>
+<tr><td>Items counted as wages beyond one-half</td><td>The excess of clauses (a) to (i) is added back </td></tr>
+<tr><td>Worker supervisor limit</td><td>Rs 15,000 (Wages Code); Rs 18,000 (IR and OSH Codes)  </td></tr>
+<tr><td>Minimum wage covers</td><td>Any employee <span class="sec">Wages Code s.5</span> </td></tr>
+<tr><td>Skill categories</td><td>Unskilled, skilled, semi-skilled, highly-skilled </td></tr>
+<tr><td>Arduousness</td><td>"May" <span class="sec">Wages Code s.6(6)(b)</span> </td></tr>
+<tr><td>Notice for proposals</td><td>Not less than 2 months <span class="sec">Wages Code s.8(1)</span> </td></tr>
+<tr><td>Review interval</td><td>Ordinarily not above 5 years <span class="sec">Wages Code s.8(4)</span> </td></tr>
+<tr><td>Floor wage</td><td>Fixed by the Central Government <span class="sec">Wages Code s.9(1)</span>; minimum rates not below it <span class="sec">Wages Code s.9(2)</span> </td></tr>
+<tr><td>DA revision dates</td><td>Before 1 April and before 1 October <span class="sec">Wages Central Rules r.4</span> </td></tr>
+<tr><td>15th ILC</td><td>1957; 3 consumption units; 20% fuel, lighting and miscellaneous   </td></tr>
+<tr><td>Wage period maximum</td><td>1 month <span class="sec">Wages Code s.16</span> </td></tr>
+<tr><td>Monthly wage due</td><td>Before the expiry of the 7th day <span class="sec">Wages Code s.17(1)(iv)</span> </td></tr>
+<tr><td>Wages on exit</td><td>Within 2 working days <span class="sec">Wages Code s.17(2)</span> </td></tr>
+<tr><td>Deductions / fines</td><td>50% <span class="sec">Wages Code s.18(3)</span> / 3% <span class="sec">Wages Code s.19(4)</span>; no fine under 15; recover within 90 days    </td></tr>
+<tr><td>Overtime</td><td>At least 2 times <span class="sec">Wages Code s.14</span>; 8 hours a day, 48 a week <span class="sec">Wages Central Rules r.5</span>  </td></tr>
+<tr><td>Bonus</td><td>30 days; 8.33% or Rs 100; max 20%; 8 months    </td></tr>
+<tr><td>Bonus figures</td><td>Rs 21,000 eligibility (S.O. 4711(E)); Rs 7,000 base (S.O. 4710(E))  </td></tr>
+<tr><td>Bonus disqualification</td><td>4 grounds, including conviction for sexual harassment </td></tr>
+<tr><td>Equal pay</td><td><span class="sec">Wages Code s.3</span>: gender; same work or work of a similar nature </td></tr>
+<tr><td>Women on Advisory Boards</td><td>One-third  </td></tr>
+<tr><td>Claims</td><td>Within 3 years; up to 10 times compensation; appeal within 90 days   </td></tr>
+<tr><td>Officer who advises and inspects</td><td>Inspector-cum-Facilitator </td></tr>
+<tr><td>Registers kept</td><td>5 years after the last entry <span class="sec">Wages Central Rules r.51(4)</span> </td></tr>
+<tr><td>Compounding</td><td>50% of the maximum fine <span class="sec">Wages Code s.56</span> </td></tr>
+</tbody></table>
+
+<h2 id="test-yourself" data-nav>Test yourself</h2>
+<ol class="quiz">
+<li>Which four Acts did the Code on Wages repeal, and from what date is the Code in force?</li>
+<li>Under the Code, what counts as "wages", and what happens when excluded items pass one-half of all remuneration?</li>
+<li>Who is covered by minimum wage under the Code? What happened to the old schedule of employments?</li>
+<li>By which day of the next month must monthly wages be paid? Does the number of persons employed change this?</li>
+<li>What are the maximum shares for deductions and for fines?</li>
+<li>An employee's minimum wage is Rs 9,000 and the notified amount is Rs 7,000. On what wage is bonus worked out?</li>
+<li>Within what time must a wage claim be filed, and what is the longest compensation the authority may add?</li>
+<li>Name the supervisor wage limit in "worker" under the Wages Code and under the IR and OSH Codes.</li>
+</ol>
+<div class="answers"><h3>Answers</h3><ol>
+<li>The Payment of Wages Act 1936, the Minimum Wages Act 1948, the Payment of Bonus Act 1965 and the Equal Remuneration Act 1976 <span class="sec">Wages Code s.69(1)</span>. In force from 21 November 2025, except the Central Advisory Board parts from 18 December 2020.   </li>
+<li>Basic pay, dearness allowance and retaining allowance, if any <span class="sec">Wages Code s.2(y)</span>. The excess of clauses (a) to (i) over one-half of all remuneration is added back to wages.  </li>
+<li>Any employee <span class="sec">Wages Code s.5</span>. The Code has no schedule. </li>
+<li>Before the expiry of the 7th day <span class="sec">Wages Code s.17(1)(iv)</span>. No: the old head-count test (7th or 10th day) is gone.  </li>
+<li>50% of the wages for deductions <span class="sec">Wages Code s.18(3)</span>; 3% of the wages for fines <span class="sec">Wages Code s.19(4)</span>.  </li>
+<li>Rs 9,000, the higher of the two <span class="sec">Wages Code s.26(2)</span>. The yearly figure is Rs 1,08,000 and the bonus at 8.33% is about Rs 8,996.   </li>
+<li>Within 3 years <span class="sec">Wages Code s.45(6)</span>; compensation up to 10 times the claim <span class="sec">Wages Code s.45(2)</span>.  </li>
+<li>Rs 15,000 a month under the <span class="sec">Wages Code s.2(z)</span>; Rs 18,000 under the <span class="sec">IR Code s.2(zr)</span> and the <span class="sec">OSH Code s.2(zzl)</span>.  </li>
+</ol></div>
+</section>
+
+</main>
+<script>
+/* Fallback only: runs when the browser cannot drive the bar from CSS. Passive listeners, one rAF per frame. */
+(function(){
+  try{
+    if(window.CSS&&CSS.supports&&CSS.supports('animation-timeline','scroll()'))return;
+    var bar=document.querySelector('.rp-bar'),el=document.documentElement,q=false;
+    if(!bar)return;
+    function update(){q=false;var y=window.pageYOffset||el.scrollTop,max=el.scrollHeight-el.clientHeight;
+      bar.style.transform='scaleX('+(max>0?Math.min(1,Math.max(0,y/max)):0)+')';}
+    function queue(){if(!q){q=true;requestAnimationFrame(update);}}
+    window.addEventListener('scroll',queue,{passive:true});
+    window.addEventListener('resize',queue,{passive:true});
+    update();
+  }catch(e){}
+})();
+</script>
+</body>
+</html>

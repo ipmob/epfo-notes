@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Industrial Relations Notes</title>
+<title>Industrial Relations | EPFO Notes</title>
 <style>
 :root{--bg:#fff;--fg:#1c2330;--mut:#5a6577;--line:#d6dce6;--card:#f4f6fa;--acc:#1f5fbf;--accbg:#e8f0fc;
 --old:#6b7280;--oldbg:#f1f2f4;--ok:#17734a;--okbg:#e3f4ea;--warn:#9a5200;--warnbg:#fdf0dd;--bad:#a1262d;--badbg:#fbe5e6;}
@@ -110,7 +110,7 @@ ol.quiz li{margin:.4rem 0}
 .story.case{background:var(--accbg);color:var(--fg);border-left-color:var(--acc);font-family:inherit;font-size:.97rem}
 .story.case .when{color:var(--acc)}
 h2 .ch{display:block;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--acc)}
-h2[id]{border-bottom-width:3px;margin-top:2.4rem}
+h2[id]:not([data-nav]){border-bottom-width:3px;margin-top:2.4rem}
 .note{border-left:3px solid var(--acc);padding:.1rem 0 .1rem .7rem;color:var(--fg)}
 /* journey map */
 .journey{margin:1rem 0}
@@ -231,10 +231,135 @@ svg .scl{stroke:var(--line);stroke-width:6;stroke-linecap:round}
  a{color:inherit;text-decoration:none}
  .dl{display:none}
 }
+/* ---- screen styles: reading width, tables, cards, margin contents list ----
+   Additive only. Colours are tokens from :root. Print is not touched: everything here sits inside @media screen.
+   Meaning of colours is unchanged (blue = law today, grey dashed = repealed old law, green/orange/red tags = new/changed/removed). */
+@media screen{
+
+/* 1. New tokens, each with a dark value (same switch as the page's own variables). */
+:root{
+ --zebra:#f6f8fb;
+ --hover:#edf2fa;
+ --shadow:rgba(28,35,48,.08);
+ --acc-line:#1f5fbf;
+}
+@media (prefers-color-scheme:dark){
+ :root:not([data-theme="light"]){--zebra:#151b24;--hover:#1d2632;--shadow:rgba(0,0,0,.40);--acc-line:#7aaeff}
+}
+:root[data-theme="dark"]{--zebra:#151b24;--hover:#1d2632;--shadow:rgba(0,0,0,.40);--acc-line:#7aaeff}
+
+/* 2. Reading measure and rhythm: body text capped near 68 characters, looser leading. */
+html{scroll-behavior:smooth}
+body{line-height:1.65;text-rendering:optimizeLegibility}
+main{padding-bottom:4rem}
+main p{max-width:68ch;line-height:1.65}
+main li{line-height:1.6}
+main li+li{margin-top:.12rem}
+main ul,main ol:not(.keys):not(.steps):not(.tl){padding-left:1.3rem}
+
+/* 3. Type scale: clearer h1/h2/h3 steps, accent rule under h2, room above sections. */
+h1{font-size:1.85rem;letter-spacing:-.01em;line-height:1.18}
+h1.title{font-size:2.5rem;letter-spacing:-.02em}
+h2{font-size:1.3rem;line-height:1.3;letter-spacing:-.005em;margin:2.1rem 0 .7rem;padding-bottom:.4rem;
+ background:linear-gradient(var(--acc-line),var(--acc-line)) left bottom/3.5rem 3px no-repeat}
+h3{font-size:1.06rem;line-height:1.35;margin:1.3rem 0 .45rem}
+h4{line-height:1.35}
+.kicker{letter-spacing:.07em}
+.lede{font-size:1.1rem;line-height:1.55;max-width:64ch}
+
+/* 4. Anchors: headings are not hidden under a fixed element when jumped to. */
+[id]{scroll-margin-top:1rem}
+
+/* 5. Links and keyboard focus. */
+a{text-underline-offset:.18em;text-decoration-thickness:.07em}
+a:hover{text-decoration-thickness:.1em}
+:focus-visible{outline:3px solid var(--acc-line);outline-offset:2px;border-radius:4px}
+summary:focus-visible{border-radius:4px}
+
+/* 6. Tables: stronger header, comfortable cells, zebra rows and hover on wide screens only. */
+table{border-radius:8px;overflow:hidden}
+th,td{padding:.5rem .7rem;line-height:1.5}
+thead th{font-weight:700;letter-spacing:.01em;font-size:.82rem;text-transform:none;border-bottom:2px solid var(--line)}
+td{font-variant-numeric:tabular-nums}
+@media (min-width:521px){
+ tbody tr:nth-child(even) td{background:var(--zebra)}
+ @media (hover:hover){tbody tr:hover td{background:var(--hover)}}
+}
+table.recall td:first-child{font-weight:650}
+
+/* 7. Cards and rule blocks: softer edge, a little shadow, clearer chip. */
+.rule{box-shadow:0 1px 2px var(--shadow);border-radius:10px}
+.rule .rh{border-radius:0 9px 0 0}
+.card{box-shadow:0 1px 2px var(--shadow);border-radius:12px}
+.decide{box-shadow:0 1px 2px var(--shadow)}
+.fig{box-shadow:0 1px 2px var(--shadow)}
+.sec{font-weight:700;letter-spacing:.005em;border-radius:6px;padding:.05em .5em}
+.sec.old{font-weight:500}
+
+/* 8. Tags as pills with steadier padding (colours unchanged). */
+.tag{padding:.12em .55em;line-height:1.45;letter-spacing:.05em}
+
+/* 9. The "law today" strip: stronger label and clearer edge. */
+.lawtoday{box-shadow:inset 0 0 0 1px var(--line);color:var(--fg)}
+.lawtoday b:first-child{font-weight:800}
+
+/* 10. Trap callout: a little more air. */
+.trap{padding:.4rem .9rem .6rem;border-radius:10px}
+
+/* 11. Ladder, steps and timeline: tidier spacing. */
+ol.steps li{padding-bottom:1.05rem}
+ol.tl li{padding-top:.25rem}
+.decide{border-radius:12px}
+.decide .opt{border-radius:10px}
+
+/* 12. Answers block: visually separated from the questions. */
+.answers{padding-top:.6rem}
+
+/* 13. Contents: on wide screens the list floats in the right margin and stays in view.
+   Narrow screens keep the list in the normal flow. CSS only. */
+@media (min-width:1320px){
+ h2:has(+ ol.toc){display:none}
+ ol.toc{position:fixed;top:5.5rem;left:calc(50% + 24rem);width:13.5rem;max-height:calc(100vh - 7rem);overflow:auto;
+  margin:0;padding:.7rem .85rem;list-style:none;background:var(--card);border:1px solid var(--line);border-radius:12px;
+  box-shadow:0 2px 8px var(--shadow);font-size:.9rem;z-index:2}
+ ol.toc::before{content:"On this page";display:block;font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--mut);margin-bottom:.35rem}
+ ol.toc li{margin:.25rem 0;line-height:1.35}
+}
+
+/* 14. Reduced motion: no smooth scrolling. */
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+}
+/* ---- reading progress bar: scroll-driven where supported, small script otherwise; never printed ---- */
+.rp{position:fixed;top:0;left:0;right:0;height:4px;z-index:9000;pointer-events:none;background:var(--accbg)}
+.rp-bar{height:100%;width:100%;background:var(--acc);transform-origin:left center;transform:scaleX(0)}
+@keyframes rp-grow{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@supports (animation-timeline:scroll()){
+ .rp-bar{animation:rp-grow 1s linear both;animation-timeline:scroll(root block)}
+}
+@media (prefers-reduced-motion:reduce){.rp-bar{transition:none}}
+@media print{.rp,nav.top{display:none!important}}
+/* ---- top navigation and edition switcher (screen only) ---- */
+@media screen{
+nav.top{display:flex;flex-wrap:wrap;align-items:center;gap:.3rem .5rem;margin:0 0 1.2rem;padding:.2rem 0 .7rem;border-bottom:1px solid var(--line);font-size:.9rem}
+nav.top a{color:var(--acc);font-weight:650;text-decoration:none;padding:.2rem .35rem;border-radius:6px}
+nav.top a:hover{background:var(--accbg)}
+nav.top .sep{color:var(--mut)}
+nav.top .here{color:var(--mut);font-weight:600}
+nav.top .ed{margin-left:auto;display:inline-flex;border:1px solid var(--acc);border-radius:99px;overflow:hidden}
+nav.top .ed a{border-radius:0;padding:.2rem .85rem;font-weight:600}
+nav.top .ed a+a{border-left:1px solid var(--acc)}
+nav.top .ed a[aria-current="page"]{background:var(--acc);color:var(--bg);font-weight:700}
+.banner{border-left:4px solid var(--stline);background:var(--stbg);color:var(--stfg);padding:.5rem .8rem;border-radius:0 8px 8px 0;font-size:.95rem}
+}
+/* contents on a single-topic cover: headings carry their own numbers, so no list numbers */
+main ol.toc.flat:not(.keys):not(.steps):not(.tl){list-style:none;padding-left:0}
 </style>
 </head>
 <body>
+<div class="rp" aria-hidden="true"><div class="rp-bar"></div></div>
 <main>
+<nav class="top" aria-label="Site"><a class="home" href="index.html">EPFO Notes</a><span class="sep" aria-hidden="true">/</span><span class="here">Industrial Relations</span><span class="ed" role="group" aria-label="Edition"><a href="ir_notes.html" aria-current="page">Notes</a><a href="ir_story.html">Story edition</a></span></nav>
 <section class="cover">
 <p class="kicker">UPSC EPFO · Industrial Relations, Labour Codes and Social Security in India</p>
 <h1 class="title">Industrial Relations</h1>
@@ -244,6 +369,7 @@ svg .scl{stroke:var(--line);stroke-width:6;stroke-linecap:round}
 <h2>How to read these notes</h2>
 <table class="cmp"><tbody>
 <tr><td><span class="sec">IR Code s.6(2)</span></td><td>The law today. The Industrial Relations Code 2020 is in force from 21 November 2025.</td></tr>
+<tr><td><span class="sec">IR Central Rules r.5</span></td><td>A rule in the Industrial Relations (Central) Rules 2026, in force from 8 May 2026. The Code itself leaves the point to the Rules.</td></tr>
 <tr><td><span class="sec old"><i>old</i> TU Act 1926 s.4</span></td><td>An old Act, now repealed. Shown only to compare.</td></tr>
 <tr><td><span class="tag rules">needs rules</span></td><td>The section works through rules or a Government notification.</td></tr>
 <tr><td><span class="tag same">Same</span> <span class="tag changed">Changed</span> <span class="tag new">New</span> <span class="tag removed">Removed</span></td><td>How the Code compares with the old law.</td></tr>
@@ -1815,7 +1941,7 @@ svg .scl{stroke:var(--line);stroke-width:6;stroke-linecap:round}
 </tbody></table>
 
 <h2>4. Fixed-term employment</h2>
-<p>The IR Code gives fixed-term employment a statutory home. Two Codes define it, and each carries part of the gratuity rule. The Code on Social Security is in force only in part (S.O. 5319(E)); its definition section is in force.    </p>
+<p>The IR Code gives fixed-term employment a statutory home. Two Codes define it, and each carries part of the gratuity rule. The Code on Social Security is in force from 21 November 2025 (S.O. 5319(E)), and that includes its definition section.    </p>
 <div class="rule">
 <div class="rh"><span class="sec">IR Code s.2(o)</span> <span class="rt">Definition</span></div>
 <p>Engagement of a worker on a <b>written</b> contract of employment for a fixed period. </p>
@@ -2121,5 +2247,21 @@ svg .scl{stroke:var(--line);stroke-width:6;stroke-linecap:round}
 </section>
 
 </main>
+<script>
+/* Fallback only: runs when the browser cannot drive the bar from CSS. Passive listeners, one rAF per frame. */
+(function(){
+  try{
+    if(window.CSS&&CSS.supports&&CSS.supports('animation-timeline','scroll()'))return;
+    var bar=document.querySelector('.rp-bar'),el=document.documentElement,q=false;
+    if(!bar)return;
+    function update(){q=false;var y=window.pageYOffset||el.scrollTop,max=el.scrollHeight-el.clientHeight;
+      bar.style.transform='scaleX('+(max>0?Math.min(1,Math.max(0,y/max)):0)+')';}
+    function queue(){if(!q){q=true;requestAnimationFrame(update);}}
+    window.addEventListener('scroll',queue,{passive:true});
+    window.addEventListener('resize',queue,{passive:true});
+    update();
+  }catch(e){}
+})();
+</script>
 </body>
 </html>

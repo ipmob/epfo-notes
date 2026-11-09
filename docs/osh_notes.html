@@ -1,0 +1,935 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OSH Code, 2020 | EPFO Notes</title>
+<style>
+:root{--bg:#fff;--fg:#1c2330;--mut:#5a6577;--line:#d6dce6;--card:#f4f6fa;--acc:#1f5fbf;--accbg:#e8f0fc;
+--old:#6b7280;--oldbg:#f1f2f4;--ok:#17734a;--okbg:#e3f4ea;--warn:#9a5200;--warnbg:#fdf0dd;--bad:#a1262d;--badbg:#fbe5e6;}
+@media screen and (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#11151c;--fg:#e6e9ef;--mut:#9aa6b8;--line:#2d3644;--card:#19202b;
+--acc:#7aaeff;--accbg:#1b2a44;--old:#a3aab6;--oldbg:#232a35;--ok:#5fd39a;--okbg:#14301f;--warn:#f2a650;--warnbg:#3a2a12;--bad:#f08a8f;--badbg:#3a1a1c;}}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;overflow-wrap:break-word}
+main{max-width:46rem;margin:0 auto;padding:1rem 16px 4rem}
+h1{font-size:1.75rem;line-height:1.2;margin:.2rem 0 .5rem}
+h1.title{font-size:2.4rem}
+h2{font-size:1.25rem;margin:1.8rem 0 .6rem;padding-bottom:.25rem;border-bottom:2px solid var(--line)}
+h3{font-size:1.05rem;margin:1.2rem 0 .4rem}
+h4{margin:0 0 .3rem;font-size:1rem}
+p{margin:.45rem 0}
+.kicker{color:var(--acc);font-weight:700;font-size:.8rem;letter-spacing:.06em;text-transform:uppercase;margin:0}
+.lede{font-size:1.08rem;color:var(--mut)}
+.topic{border-top:4px solid var(--acc);margin-top:3rem;padding-top:.8rem}
+.cover{padding-top:1rem}
+.toc li{margin:.15rem 0}
+.toc a{color:var(--acc)}
+.dl a{display:inline-block;padding:.35rem .8rem;border:1px solid var(--acc);border-radius:8px;color:var(--acc);font-weight:600;text-decoration:none}
+/* chips and tags */
+.sec{display:inline-block;white-space:nowrap;font-size:.8em;font-weight:650;line-height:1.35;padding:0 .45em;border-radius:5px;
+ color:var(--acc);background:var(--accbg);border:1px solid var(--acc);vertical-align:.08em}
+.sec.old{color:var(--old);background:var(--oldbg);border:1px dashed var(--old);font-weight:500}
+.sec.old i{font-style:normal;font-size:.85em;text-transform:uppercase;letter-spacing:.04em;margin-right:.15em}
+.tag{display:inline-block;font-size:.72em;font-weight:700;text-transform:uppercase;letter-spacing:.04em;padding:0 .5em;border-radius:99px;vertical-align:.12em;white-space:nowrap}
+.tag.same{color:var(--old);background:var(--oldbg)}
+.tag.changed{color:var(--warn);background:var(--warnbg)}
+.tag.new{color:var(--ok);background:var(--okbg)}
+.tag.removed{color:var(--bad);background:var(--badbg)}
+.tag.rules{color:var(--mut);border:1px solid var(--line);font-weight:600}
+/* law today strip */
+.lawtoday{border-left:5px solid var(--acc);background:var(--accbg);padding:.6rem .9rem;border-radius:0 8px 8px 0;margin:.8rem 0}
+.lawtoday b:first-child{display:block;font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--acc)}
+/* key points */
+ol.keys{list-style:none;counter-reset:k;padding:0;margin:.8rem 0;display:grid;gap:.5rem}
+ol.keys li{counter-increment:k;position:relative;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:.55rem .8rem .55rem 2.6rem}
+ol.keys li::before{content:counter(k);position:absolute;left:.7rem;top:.55rem;width:1.4rem;height:1.4rem;border-radius:50%;background:var(--acc);color:var(--bg);font-weight:700;font-size:.8rem;display:flex;align-items:center;justify-content:center}
+/* rule card */
+.rule{border:1px solid var(--line);border-left:5px solid var(--acc);border-radius:8px;margin:.8rem 0;background:var(--bg);break-inside:avoid}
+.rule .rh{padding:.45rem .8rem;border-bottom:1px solid var(--line);background:var(--card);border-radius:0 8px 0 0}
+.rule .rt{font-weight:700;margin-left:.3rem}
+.rule>p{padding:0 .8rem}
+.rule .was{padding:.4rem .8rem;border-top:1px dashed var(--line);color:var(--mut);font-size:.92rem}
+/* tables */
+table{border-collapse:collapse;width:100%;margin:.7rem 0;font-size:.95rem;break-inside:auto}
+th,td{border:1px solid var(--line);padding:.4rem .55rem;text-align:left;vertical-align:top}
+thead th{background:var(--card);font-size:.85rem}
+tr{break-inside:avoid}
+table.shift td:nth-child(2){color:var(--mut)}
+table.shift td:first-child{width:22%;font-weight:600}
+table.shift td:last-child{width:1%;white-space:nowrap}
+td{hyphens:manual}
+table.recall td:first-child{width:45%;font-weight:600}
+/* trap */
+.trap{border:1px solid var(--warn);background:var(--warnbg);border-radius:8px;padding:.3rem .8rem;margin:.8rem 0;break-inside:avoid}
+.trap::before{content:"Trap";display:block;font-weight:800;font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--warn);margin-top:.3rem}
+/* ladder */
+.ladder{margin:.8rem 0;border-left:3px solid var(--acc);padding-left:0;break-inside:avoid}
+.rung{display:flex;gap:.8rem;align-items:baseline;padding:.3rem 0 .3rem .8rem;position:relative}
+.rung::before{content:"";position:absolute;left:-7px;top:.85rem;width:11px;height:11px;border-radius:50%;background:var(--acc)}
+.rung>b{width:6.2rem;font-size:1.2rem;line-height:1.25;color:var(--acc);text-align:right;flex-shrink:0}
+/* steps */
+ol.steps{list-style:none;counter-reset:s;padding:0;margin:.8rem 0}
+ol.steps li{counter-increment:s;position:relative;padding:0 0 .9rem 2.6rem;break-inside:avoid}
+ol.steps li::before{content:counter(s);position:absolute;left:0;top:0;width:1.8rem;height:1.8rem;border-radius:50%;border:2px solid var(--acc);color:var(--acc);font-weight:800;display:flex;align-items:center;justify-content:center;background:var(--bg)}
+ol.steps li:not(:last-child)::after{content:"";position:absolute;left:.85rem;top:1.9rem;bottom:.1rem;width:2px;background:var(--line)}
+ol.steps li>b:first-child{display:block}
+/* timeline */
+ol.tl{list-style:none;padding:0 0 0 .2rem;margin:.8rem 0;border-left:3px solid var(--line)}
+ol.tl li{padding:.15rem 0 .5rem .9rem;position:relative;break-inside:avoid}
+ol.tl li>b:first-child{display:inline-block;min-width:4.6rem;color:var(--acc);font-weight:800}
+/* decision */
+.decide{border:1px solid var(--line);border-radius:10px;padding:.6rem .8rem;margin:.8rem 0;background:var(--card);break-inside:avoid}
+.decide .q{font-weight:700;margin:.1rem 0 .5rem}
+.decide .opts{display:grid;grid-template-columns:repeat(auto-fit,minmax(13rem,1fr));gap:.5rem}
+.decide .opt{background:var(--bg);border:1px solid var(--line);border-top:4px solid var(--acc);border-radius:8px;padding:.5rem .7rem}
+.decide .opt>b:first-child{display:block;margin-bottom:.2rem}
+/* bars */
+.bars{margin:.8rem 0;break-inside:avoid}
+.bar{--c:var(--okbg);--e:var(--ok);background:linear-gradient(var(--c),var(--c)) no-repeat left/var(--w,100%) 100%;
+ border-left:5px solid var(--e);padding:.25rem .55rem;margin:.3rem 0;border-radius:0 6px 6px 0;font-size:.92rem;outline:1px solid var(--line);outline-offset:-1px}
+.bar.no{--c:var(--badbg);--e:var(--bad)}
+.bar.mid{--c:var(--accbg);--e:var(--acc)}
+@media print{.bar{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+/* cards */
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(13rem,1fr));gap:.6rem;margin:.8rem 0}
+.card{border:1px solid var(--line);border-radius:10px;padding:.6rem .8rem;background:var(--card);break-inside:avoid}
+.card p{margin:.25rem 0;font-size:.95rem}
+/* questions */
+ol.quiz li{margin:.4rem 0}
+.answers{border-top:2px dashed var(--line);margin-top:1.2rem;padding-top:.3rem;color:var(--mut);font-size:.93rem}
+.answers h3{margin-top:.4rem}
+/* ---- story layer (student/story parts) ---- */
+:root{--stbg:#fbf5e9;--stline:#d9b46a;--stfg:#3b2f1a}
+@media screen and (prefers-color-scheme:dark){:root:not([data-theme="light"]){--stbg:#221c12;--stline:#8a6a2c;--stfg:#eadcc0}}
+.story{background:var(--stbg);color:var(--stfg);border-left:4px solid var(--stline);border-radius:0 10px 10px 0;padding:.6rem 1rem .7rem;margin:1rem 0;
+ font-family:Georgia,"Iowan Old Style","Times New Roman",serif;font-size:1.02rem;break-inside:avoid}
+.story p{margin:.35rem 0}
+.story .when{font:700 .72rem/1.2 system-ui,sans-serif;letter-spacing:.08em;text-transform:uppercase;color:var(--stline);margin:.1rem 0 .3rem}
+.story .punch{font-style:italic;font-weight:600}
+.story.case{background:var(--accbg);color:var(--fg);border-left-color:var(--acc);font-family:inherit;font-size:.97rem}
+.story.case .when{color:var(--acc)}
+h2 .ch{display:block;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--acc)}
+h2[id]:not([data-nav]){border-bottom-width:3px;margin-top:2.4rem}
+.note{border-left:3px solid var(--acc);padding:.1rem 0 .1rem .7rem;color:var(--fg)}
+/* journey map */
+.journey{margin:1rem 0}
+.journey figcaption{font-weight:700;font-size:.82rem;color:var(--mut);margin-bottom:.4rem}
+.journey ol{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(6,1fr);gap:.35rem;counter-reset:j}
+.journey li{position:relative}
+.journey li:not(:last-child)::after{content:"";position:absolute;right:-.33rem;top:50%;border:.3rem solid transparent;border-left-color:var(--acc);transform:translate(50%,-50%);z-index:1}
+.journey a{display:block;height:100%;padding:.5rem .55rem;border:1px solid var(--line);border-top:4px solid var(--acc);border-radius:8px;background:var(--card);color:var(--fg);text-decoration:none}
+.journey a b{display:block;font-size:.95rem}
+.journey a span{display:block;font-size:.78rem;color:var(--mut);line-height:1.3;margin-top:.15rem}
+/* figure frame and svg */
+.fig{border:1px solid var(--line);border-radius:12px;padding:.7rem .8rem;margin:1rem 0;background:var(--card);break-inside:avoid}
+.fig figcaption{font-weight:700;font-size:.85rem;color:var(--mut);margin:0 0 .5rem}
+.fig>figcaption:last-child{margin:.5rem 0 0;font-weight:500}
+.fig svg{display:block;width:100%;max-width:34rem;margin:0 auto;height:auto;overflow:visible;font-family:system-ui,-apple-system,sans-serif;font-size:13px}
+.fig .cap-note{font-size:.92rem;margin:.4rem 0 0}
+svg .grid line{stroke:var(--line);stroke-width:1}
+svg .grid line.cap{stroke:var(--acc);stroke-dasharray:5 4}
+svg .ax text{fill:var(--mut);font-size:12px}
+svg .ax .lab{font-size:12px}
+svg .ln{fill:none;stroke:var(--acc);stroke-width:3.5;stroke-linejoin:round}
+svg .pt{fill:var(--acc)} svg .pt.alt{fill:var(--warn)}
+svg .hl{fill:none;stroke:var(--warn);stroke-width:3}
+svg .hl-t{fill:var(--warn);font-weight:700}
+svg .note-t{fill:var(--acc);font-weight:700}
+svg .z-no{fill:var(--badbg);stroke:var(--bad)} svg .z-ok{fill:var(--okbg);stroke:var(--ok)} svg .z-off{fill:var(--oldbg);stroke:var(--old)}
+svg .zt{fill:var(--fg);font-weight:700}
+svg .tick line{stroke:var(--fg);stroke-width:1.5}
+svg .ax-t{fill:var(--fg);font-weight:700;font-size:12px}
+svg .sm{fill:var(--fg);font-size:12px} svg .mut{fill:var(--mut)}
+svg .scl{stroke:var(--line);stroke-width:6;stroke-linecap:round}
+/* slicing matrix */
+.mx-wrap{display:grid;grid-template-columns:repeat(auto-fit,minmax(8.5rem,1fr));gap:.6rem}
+.mx-card{background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:.5rem .6rem}
+.mx-card h4{font-size:.9rem;margin:0 0 .35rem}
+.mx-card p{font-size:.8rem;color:var(--mut);margin:.35rem 0 0;line-height:1.3}
+.mx{display:grid;grid-template-columns:repeat(4,1fr);gap:3px}
+.mx i{aspect-ratio:1;border-radius:3px;background:var(--oldbg);border:1px solid var(--line)}
+.mx i.on{background:var(--acc);border-color:var(--acc)}
+.mx i:nth-child(4n+2){margin-right:3px}
+/* shield */
+.sh-row{display:grid;grid-template-columns:1fr 1.6rem minmax(9rem,12rem);align-items:center;margin:.45rem 0}
+.atk{background:var(--badbg);border:1px solid var(--bad);border-radius:8px;padding:.4rem .6rem;font-size:.9rem}
+.arw{height:3px;background:var(--bad);position:relative}
+.arw::after{content:"";position:absolute;right:-2px;top:50%;transform:translateY(-50%);border:.4rem solid transparent;border-left-color:var(--bad)}
+.blk{background:var(--okbg);border:2px solid var(--ok);border-radius:8px 8px 18px 18px;padding:.35rem .6rem;font-size:.88rem}
+.blk b{display:block;color:var(--ok)}
+.was-s{display:block;margin-top:.15rem;font-size:.85em}
+/* seats, waffle */
+.seat-row{margin:.55rem 0}
+.seat-row p{margin:0 0 .25rem;font-size:.92rem}
+.dots{display:flex;flex-wrap:wrap;gap:4px}
+.dots i,.legend-dots i{display:inline-block;width:16px;height:16px;border-radius:50%;background:var(--acc)}
+.dots i.out,.legend-dots i.out{background:var(--warn)}
+.legend-dots{font-size:.82rem;color:var(--mut);margin:.5rem 0 0}
+.legend-dots i{width:11px;height:11px;vertical-align:-1px;margin:0 .2rem 0 .6rem}
+.legend-dots i:first-child{margin-left:0}
+.waffle{display:grid;grid-template-columns:repeat(20,1fr);gap:3px;max-width:26rem}
+.waffle i{aspect-ratio:1;border-radius:2px;background:var(--oldbg);border:1px solid var(--line)}
+.waffle i.on{background:var(--warn);border-color:var(--warn)}
+/* stacked shares */
+.stk-scale{position:relative;height:1.1rem;font-size:.75rem;color:var(--mut);font-weight:700}
+.stk-scale span{position:absolute;transform:translateX(-50%)}
+.stk{position:relative;display:flex;height:2.1rem;border-radius:6px;font-size:.8rem;font-weight:700;margin:.2rem 0}
+.stk span{position:relative;z-index:1;width:var(--w);display:flex;align-items:center;justify-content:center;white-space:nowrap;overflow:hidden}
+.stk span:first-child{border-radius:6px 0 0 6px} .stk span:last-of-type{border-radius:0 6px 6px 0}
+.stk .s1{background:var(--acc);color:var(--bg)} .stk .s2{background:var(--ok);color:var(--bg)}
+.stk .s3{background:var(--warn);color:var(--bg)} .stk .s0{background:var(--oldbg);color:var(--mut)}
+.stk b{position:absolute;z-index:0;top:-7px;bottom:-7px;width:2px;margin-left:-1px;background:var(--mut)}
+.stk b.m{width:3px;opacity:1;background:var(--bad)}
+.stk-t{font-weight:700;font-size:.9rem;margin:.7rem 0 .1rem}
+.stk-r{font-size:.92rem;margin:.25rem 0 .4rem}
+.bars.marked{position:relative;padding-top:1.1rem}
+.bars.marked::before{content:"100 needed";position:absolute;top:0;left:27%;transform:translateX(-50%);font-size:.72rem;font-weight:700;color:var(--warn)}
+.bars.marked::after{content:"";position:absolute;top:1rem;bottom:0;left:27%;border-left:2px dashed var(--warn)}
+/* spectrum */
+.spectrum ol{list-style:none;margin:0;padding:0 0 0 1.6rem;position:relative}
+.spectrum ol::before{content:"";position:absolute;left:.35rem;top:.4rem;bottom:.4rem;width:7px;border-radius:4px;background:linear-gradient(var(--acc),var(--line))}
+.spectrum li{margin:.35rem 0;padding:.35rem .6rem;background:var(--bg);border:1px solid var(--line);border-radius:8px;font-size:.93rem}
+.spectrum li>b:first-child{display:block}
+.spectrum li.none{border-style:dashed;color:var(--mut)}
+/* card variants */
+.cards.think .cue{font:700 .7rem/1.2 system-ui,sans-serif;letter-spacing:.07em;text-transform:uppercase;color:var(--acc);margin:0 0 .15rem}
+.cards.ages .big{font-size:2.6rem;font-weight:800;line-height:1;color:var(--acc);margin:0}
+.was-c{border-top:1px dashed var(--line);padding-top:.3rem;color:var(--mut);font-size:.88rem !important}
+.tl .pol{display:inline-block;font-size:.72rem;font-weight:700;padding:0 .45em;border-radius:99px;background:var(--oldbg);color:var(--mut);margin-right:.25rem;vertical-align:.1em}
+.score{font-size:.95rem}
+@media screen and (max-width:620px){
+ .journey ol{grid-template-columns:repeat(3,1fr)}
+ .journey li:nth-child(3)::after{display:none}
+}
+@media screen and (max-width:520px){
+ .sh-row{grid-template-columns:1fr;gap:0}
+ .arw{width:3px;height:1rem;margin-left:1.2rem}
+ .arw::after{right:auto;left:50%;top:auto;bottom:-6px;transform:translateX(-50%);border-left-color:transparent;border-top-color:var(--bad)}
+ .story{font-size:.98rem}
+ .sh-row{margin:.2rem 0 .9rem}
+}
+@media print{.story,.fig,.journey{break-inside:avoid}}
+/* phone: tables become labelled cards */
+@media screen and (max-width:520px){
+ table.cmp,table.shift,table.cmp tbody,table.shift tbody,table.cmp tr,table.shift tr,table.cmp td,table.shift td{display:block;width:auto}
+ table.cmp thead,table.shift thead{display:none}
+ table.cmp tr,table.shift tr{border:1px solid var(--line);border-radius:8px;margin:.5rem 0;overflow:hidden}
+ table.cmp td,table.shift td{border:0;border-bottom:1px solid var(--line)}
+ table.cmp td:first-child,table.shift td:first-child{background:var(--card);font-weight:700}
+ table.cmp td[data-label]:not(:first-child)::before,table.shift td[data-label]:not(:first-child)::before{content:attr(data-label);display:block;font-size:.72rem;text-transform:uppercase;letter-spacing:.05em;color:var(--mut)}
+ table.shift td:last-child{width:auto}
+ .rung>b{width:4.8rem;font-size:1.05rem}
+}
+@page{size:A4;margin:16mm 14mm 16mm 14mm}
+@media print{
+ *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+ body{font-size:10.5pt}
+ main{max-width:none;padding:0}
+ .topic{break-before:page;margin-top:0}
+ h2,h3{break-after:avoid}
+ a{color:inherit;text-decoration:none}
+ .dl{display:none}
+}
+/* ---- screen styles: reading width, tables, cards, margin contents list ----
+   Additive only. Colours are tokens from :root. Print is not touched: everything here sits inside @media screen.
+   Meaning of colours is unchanged (blue = law today, grey dashed = repealed old law, green/orange/red tags = new/changed/removed). */
+@media screen{
+
+/* 1. New tokens, each with a dark value (same switch as the page's own variables). */
+:root{
+ --zebra:#f6f8fb;
+ --hover:#edf2fa;
+ --shadow:rgba(28,35,48,.08);
+ --acc-line:#1f5fbf;
+}
+@media (prefers-color-scheme:dark){
+ :root:not([data-theme="light"]){--zebra:#151b24;--hover:#1d2632;--shadow:rgba(0,0,0,.40);--acc-line:#7aaeff}
+}
+:root[data-theme="dark"]{--zebra:#151b24;--hover:#1d2632;--shadow:rgba(0,0,0,.40);--acc-line:#7aaeff}
+
+/* 2. Reading measure and rhythm: body text capped near 68 characters, looser leading. */
+html{scroll-behavior:smooth}
+body{line-height:1.65;text-rendering:optimizeLegibility}
+main{padding-bottom:4rem}
+main p{max-width:68ch;line-height:1.65}
+main li{line-height:1.6}
+main li+li{margin-top:.12rem}
+main ul,main ol:not(.keys):not(.steps):not(.tl){padding-left:1.3rem}
+
+/* 3. Type scale: clearer h1/h2/h3 steps, accent rule under h2, room above sections. */
+h1{font-size:1.85rem;letter-spacing:-.01em;line-height:1.18}
+h1.title{font-size:2.5rem;letter-spacing:-.02em}
+h2{font-size:1.3rem;line-height:1.3;letter-spacing:-.005em;margin:2.1rem 0 .7rem;padding-bottom:.4rem;
+ background:linear-gradient(var(--acc-line),var(--acc-line)) left bottom/3.5rem 3px no-repeat}
+h3{font-size:1.06rem;line-height:1.35;margin:1.3rem 0 .45rem}
+h4{line-height:1.35}
+.kicker{letter-spacing:.07em}
+.lede{font-size:1.1rem;line-height:1.55;max-width:64ch}
+
+/* 4. Anchors: headings are not hidden under a fixed element when jumped to. */
+[id]{scroll-margin-top:1rem}
+
+/* 5. Links and keyboard focus. */
+a{text-underline-offset:.18em;text-decoration-thickness:.07em}
+a:hover{text-decoration-thickness:.1em}
+:focus-visible{outline:3px solid var(--acc-line);outline-offset:2px;border-radius:4px}
+summary:focus-visible{border-radius:4px}
+
+/* 6. Tables: stronger header, comfortable cells, zebra rows and hover on wide screens only. */
+table{border-radius:8px;overflow:hidden}
+th,td{padding:.5rem .7rem;line-height:1.5}
+thead th{font-weight:700;letter-spacing:.01em;font-size:.82rem;text-transform:none;border-bottom:2px solid var(--line)}
+td{font-variant-numeric:tabular-nums}
+@media (min-width:521px){
+ tbody tr:nth-child(even) td{background:var(--zebra)}
+ @media (hover:hover){tbody tr:hover td{background:var(--hover)}}
+}
+table.recall td:first-child{font-weight:650}
+
+/* 7. Cards and rule blocks: softer edge, a little shadow, clearer chip. */
+.rule{box-shadow:0 1px 2px var(--shadow);border-radius:10px}
+.rule .rh{border-radius:0 9px 0 0}
+.card{box-shadow:0 1px 2px var(--shadow);border-radius:12px}
+.decide{box-shadow:0 1px 2px var(--shadow)}
+.fig{box-shadow:0 1px 2px var(--shadow)}
+.sec{font-weight:700;letter-spacing:.005em;border-radius:6px;padding:.05em .5em}
+.sec.old{font-weight:500}
+
+/* 8. Tags as pills with steadier padding (colours unchanged). */
+.tag{padding:.12em .55em;line-height:1.45;letter-spacing:.05em}
+
+/* 9. The "law today" strip: stronger label and clearer edge. */
+.lawtoday{box-shadow:inset 0 0 0 1px var(--line);color:var(--fg)}
+.lawtoday b:first-child{font-weight:800}
+
+/* 10. Trap callout: a little more air. */
+.trap{padding:.4rem .9rem .6rem;border-radius:10px}
+
+/* 11. Ladder, steps and timeline: tidier spacing. */
+ol.steps li{padding-bottom:1.05rem}
+ol.tl li{padding-top:.25rem}
+.decide{border-radius:12px}
+.decide .opt{border-radius:10px}
+
+/* 12. Answers block: visually separated from the questions. */
+.answers{padding-top:.6rem}
+
+/* 13. Contents: on wide screens the list floats in the right margin and stays in view.
+   Narrow screens keep the list in the normal flow. CSS only. */
+@media (min-width:1320px){
+ h2:has(+ ol.toc){display:none}
+ ol.toc{position:fixed;top:5.5rem;left:calc(50% + 24rem);width:13.5rem;max-height:calc(100vh - 7rem);overflow:auto;
+  margin:0;padding:.7rem .85rem;list-style:none;background:var(--card);border:1px solid var(--line);border-radius:12px;
+  box-shadow:0 2px 8px var(--shadow);font-size:.9rem;z-index:2}
+ ol.toc::before{content:"On this page";display:block;font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--mut);margin-bottom:.35rem}
+ ol.toc li{margin:.25rem 0;line-height:1.35}
+}
+
+/* 14. Reduced motion: no smooth scrolling. */
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+}
+/* ---- reading progress bar: scroll-driven where supported, small script otherwise; never printed ---- */
+.rp{position:fixed;top:0;left:0;right:0;height:4px;z-index:9000;pointer-events:none;background:var(--accbg)}
+.rp-bar{height:100%;width:100%;background:var(--acc);transform-origin:left center;transform:scaleX(0)}
+@keyframes rp-grow{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@supports (animation-timeline:scroll()){
+ .rp-bar{animation:rp-grow 1s linear both;animation-timeline:scroll(root block)}
+}
+@media (prefers-reduced-motion:reduce){.rp-bar{transition:none}}
+@media print{.rp,nav.top{display:none!important}}
+/* ---- top navigation and edition switcher (screen only) ---- */
+@media screen{
+nav.top{display:flex;flex-wrap:wrap;align-items:center;gap:.3rem .5rem;margin:0 0 1.2rem;padding:.2rem 0 .7rem;border-bottom:1px solid var(--line);font-size:.9rem}
+nav.top a{color:var(--acc);font-weight:650;text-decoration:none;padding:.2rem .35rem;border-radius:6px}
+nav.top a:hover{background:var(--accbg)}
+nav.top .sep{color:var(--mut)}
+nav.top .here{color:var(--mut);font-weight:600}
+nav.top .ed{margin-left:auto;display:inline-flex;border:1px solid var(--acc);border-radius:99px;overflow:hidden}
+nav.top .ed a{border-radius:0;padding:.2rem .85rem;font-weight:600}
+nav.top .ed a+a{border-left:1px solid var(--acc)}
+nav.top .ed a[aria-current="page"]{background:var(--acc);color:var(--bg);font-weight:700}
+.banner{border-left:4px solid var(--stline);background:var(--stbg);color:var(--stfg);padding:.5rem .8rem;border-radius:0 8px 8px 0;font-size:.95rem}
+}
+/* contents on a single-topic cover: headings carry their own numbers, so no list numbers */
+main ol.toc.flat:not(.keys):not(.steps):not(.tl){list-style:none;padding-left:0}
+</style>
+</head>
+<body>
+<div class="rp" aria-hidden="true"><div class="rp-bar"></div></div>
+<main>
+<nav class="top" aria-label="Site"><a class="home" href="index.html">EPFO Notes</a><span class="sep" aria-hidden="true">/</span><span class="here">OSH Code</span></nav>
+<section class="cover">
+<p class="kicker">UPSC EPFO · Industrial Relations, Labour Codes and Social Security in India</p>
+<h1 class="title">OSH Code, 2020</h1>
+<p class="lede">One topic, written from the law as it stands today. Each rule names the Code section that applies now, and what the old Act said where it changed.</p>
+<p class="dl"><a href="osh_notes.pdf">Download as PDF</a></p>
+<div class="legend">
+<h2>How to read these notes</h2>
+<table class="cmp"><tbody>
+<tr><td><span class="sec">OSH Code s.25(1)</span></td><td>The law today. The Occupational Safety, Health and Working Conditions Code 2020 is in force from 21 November 2025.</td></tr>
+<tr><td><span class="sec">OSH Central Rules r.64(1)</span></td><td>A rule in the OSH (Central) Rules 2026, in force from 8 May 2026. The Code itself leaves the point to the Rules.</td></tr>
+<tr><td><span class="sec old"><i>old</i> Factories Act 1948 s.51</span></td><td>An old Act, now repealed. Shown only to compare.</td></tr>
+<tr><td><span class="tag rules">needs rules</span></td><td>The section works through rules or a Government notification.</td></tr>
+<tr><td><span class="tag same">Same</span> <span class="tag changed">Changed</span> <span class="tag new">New</span> <span class="tag removed">Removed</span></td><td>How the Code compares with the old law.</td></tr>
+</tbody></table>
+<div class="rule"><div class="rh"><span class="sec">OSH Code s.x</span> <span class="rt">Rule card</span></div><p>One rule of law. The section is always at the top.</p><div class="was"><span class="sec old"><i>old</i> Old Act s.y</span> what it said before <span class="tag same">Same</span></div></div>
+</div>
+<h2>Contents</h2>
+<ol class="toc flat"><li><a href="#s1-the-code-at-a-glance">1. The Code at a glance</a></li><li><a href="#s2-definitions-and-who-is-covered">2. Definitions and who is covered</a></li><li><a href="#s3-registration-licence-and-returns">3. Registration, licence and returns</a></li><li><a href="#s4-hours-overtime-and-leave">4. Hours, overtime and leave</a></li><li><a href="#s5-women-health-check-up-and-age">5. Women, health check-up and age</a></li><li><a href="#s6-welfare-safety-and-hazardous-work">6. Welfare, safety and hazardous work</a></li><li><a href="#s7-contract-labour-chapter-xi-part-i">7. Contract labour (Chapter XI, Part I)</a></li><li><a href="#s8-inter-state-migrant-workers-chapter-xi-part-ii">8. Inter-State migrant workers (Chapter XI, Part II)</a></li><li><a href="#s9-mines-and-plantations-bridge">9. Mines and plantations (bridge)</a></li><li><a href="#s10-penalties-and-compounding">10. Penalties and compounding</a></li><li><a href="#what-changed">What changed</a></li><li><a href="#numbers-on-one-scale">Numbers on one scale</a></li><li><a href="#quick-revision">Quick revision</a></li><li><a href="#test-yourself">Test yourself</a></li></ol>
+</section>
+
+<section class="topic" id="t08">
+<p class="lede">Thirteen Acts on factories, mines, plantations, contract labour, migrant workers, construction, docks and other workplaces became one Code on occupational safety, health and working conditions. This topic teaches the Code first: who is covered, registration, hours and leave, welfare and safety, contract labour, migrant workers and penalties. The old Acts appear only to show what changed.  </p>
+<div class="lawtoday"><b>Law today</b> The Occupational Safety, Health and Working Conditions Code, 2020 <span class="sec">OSH Code</span> (Act 37 of 2020) is in force in full from 21 November 2025 (S.O. 5321(E)).  It repealed 13 Acts <span class="sec">OSH Code s.143(1)</span>.   The Central Government may fix different dates for different provisions <span class="sec">OSH Code s.1(2)</span>, but the notification fixes one date for the whole Code.   The Occupational Safety, Health and Working Conditions (Central) Rules, 2026 (G.S.R. 345(E), 8 May 2026) are in force from the date they were published in the Gazette <span class="sec">OSH Central Rules r.1(3)</span>. A point marked with a Rules chip comes from the Rules, not the Code text.    </div>
+
+
+<ol class="keys">
+<li><b>13 Acts, 1 Code.</b> The Code has <b>143</b> sections and <b>14</b> chapters. It was assented to on 28 September 2020 and is in force in full from 21 November 2025.     </li>
+<li><b>Who is covered.</b> An establishment with <b>10 or more</b> workers <span class="sec">OSH Code s.2(1)(v)</span>. A factory with <b>20 or more</b> workers with power, <b>40 or more</b> without <span class="sec">OSH Code s.2(1)(w)</span>. Contract labour: <b>50 or more</b> <span class="sec">OSH Code s.45(1)(i)</span>. Inter-State migrant workers: <b>10 or more</b> <span class="sec">OSH Code s.59</span>. Mines and docks have no worker threshold.     </li>
+<li><b>Hours and leave.</b> <b>8 hours</b> a day <span class="sec">OSH Code s.25(1)(a)</span>. The <b>48-hour</b> week is in the Rules <span class="sec">OSH Central Rules r.64(1)</span>, not in the Code. Overtime at <b>2 times</b> wages, with the worker's consent <span class="sec">OSH Code s.27</span>. Leave with wages after <b>180 days</b> worked, 1 day for every <b>20</b> days <span class="sec">OSH Code s.32(1)</span>.      </li>
+<li><b>Welfare and safety.</b> Canteen at <b>100 or more</b> workers <span class="sec">OSH Code s.24(1)(v)</span>. Crèche at <b>more than 50</b> workers <span class="sec">OSH Code s.24(3)</span>. Welfare officer at <b>250 or more</b> <span class="sec">OSH Code s.24(2)(iv)</span>. Ambulance room at <b>more than 500</b> <span class="sec">OSH Code s.24(2)(i)</span>. Safety Committee at <b>500 or more</b> in the Rules <span class="sec">OSH Central Rules r.14(1)</span>; the Code gives no number <span class="sec">OSH Code s.22(1)</span>.      </li>
+<li><b>Contract labour and penalties.</b> Contract labour in core activities is barred, with 3 exceptions <span class="sec">OSH Code s.57(1)</span>. A death caused by a contravention: imprisonment up to <b>2 years</b>, or a fine of <b>not less than Rs 5 lakh</b>, or both <span class="sec">OSH Code s.103(1)(a)</span>. Compounding: <b>50%</b> of the maximum penalty, <b>75%</b> of the maximum fine <span class="sec">OSH Code s.114(1)</span>.    </li>
+</ol>
+
+<h2 id="s1-the-code-at-a-glance" data-nav>1. The Code at a glance</h2>
+<table class="cmp"><thead><tr><th>Point</th><th>Rule</th></tr></thead><tbody>
+<tr><td data-label="Point">Act</td><td data-label="Rule">Act 37 of 2020. Presidential assent on 28 September 2020. </td></tr>
+<tr><td data-label="Point">Acts merged</td><td data-label="Rule"><b>13</b> enactments listed in <span class="sec">OSH Code s.143(1)</span>.  </td></tr>
+<tr><td data-label="Point">Size</td><td data-label="Rule"><b>143</b> sections. <span class="sec">OSH Code s.143</span> is the last operative section, "Repeal and Savings". </td></tr>
+<tr><td data-label="Point">Chapters</td><td data-label="Rule"><b>14</b>, I to XIV. </td></tr>
+<tr><td data-label="Point">Commencement</td><td data-label="Rule">S.O. 5321(E), 21 November 2025, for the whole Code. </td></tr>
+<tr><td data-label="Point">Rules</td><td data-label="Rule">Central Rules 2026, G.S.R. 345(E), 8 May 2026. </td></tr>
+</tbody></table>
+<h3>Key dates</h3>
+<ol class="tl">
+<li><b>28 Sep 2020</b> Presidential assent. </li>
+<li><b>21 Nov 2025</b> S.O. 5321(E): the whole Code is in force. The 13 old Acts stand repealed.  </li>
+<li><b>8 May 2026</b> Central Rules 2026, G.S.R. 345(E), in force on publication.  </li>
+</ol>
+<h3>Chapter map</h3>
+<table class="cmp"><thead><tr><th>Chapter</th><th>Title</th></tr></thead><tbody>
+<tr><td data-label="Chapter">I</td><td data-label="Title">Preliminary </td></tr>
+<tr><td data-label="Chapter">II</td><td data-label="Title">Registration </td></tr>
+<tr><td data-label="Chapter">III</td><td data-label="Title">Duties of Employer and Employees, etc. </td></tr>
+<tr><td data-label="Chapter">IV</td><td data-label="Title">Occupational Safety and Health </td></tr>
+<tr><td data-label="Chapter">V</td><td data-label="Title">Health, Safety and Working Conditions </td></tr>
+<tr><td data-label="Chapter">VI</td><td data-label="Title">Welfare Provisions </td></tr>
+<tr><td data-label="Chapter">VII</td><td data-label="Title">Hours of Work and Annual Leave with Wages </td></tr>
+<tr><td data-label="Chapter">VIII</td><td data-label="Title">Maintenance of Registers, Records and Returns </td></tr>
+<tr><td data-label="Chapter">IX</td><td data-label="Title">Inspector-cum-Facilitators and Other Authority </td></tr>
+<tr><td data-label="Chapter">X</td><td data-label="Title">Special Provision relating to Employment of Women </td></tr>
+<tr><td data-label="Chapter">XI</td><td data-label="Title">Special Provisions for Contract Labour and Inter-State Migrant Worker, etc. Its parts include Part I (Contract Labour), Part II (Inter-State Migrant Workers) and Part III (Audio-Visual Workers). </td></tr>
+<tr><td data-label="Chapter">XII</td><td data-label="Title">Offences and Penalties </td></tr>
+<tr><td data-label="Chapter">XIII</td><td data-label="Title">Social Security Fund </td></tr>
+<tr><td data-label="Chapter">XIV</td><td data-label="Title">Miscellaneous </td></tr>
+</tbody></table>
+<h3>The 13 repealed Acts</h3>
+<p><span class="sec">OSH Code s.143(1)</span> repeals these Acts. </p>
+<table class="cmp"><thead><tr><th>Item</th><th>Act</th></tr></thead><tbody>
+<tr><td data-label="Item">(a)</td><td data-label="Act">Factories Act 1948 </td></tr>
+<tr><td data-label="Item">(b)</td><td data-label="Act">Plantations Labour Act 1951 </td></tr>
+<tr><td data-label="Item">(c)</td><td data-label="Act">Mines Act 1952 </td></tr>
+<tr><td data-label="Item">(d), (e)</td><td data-label="Act">Working Journalists and other Newspaper Employees (Conditions of Service) and Miscellaneous Provisions Act 1955; Working Journalists (Fixation of Rates of Wages) Act 1958 </td></tr>
+<tr><td data-label="Item">(f)</td><td data-label="Act">Motor Transport Workers Act 1961 </td></tr>
+<tr><td data-label="Item">(g)</td><td data-label="Act">Beedi and Cigar Workers (Conditions of Employment) Act 1966 </td></tr>
+<tr><td data-label="Item">(h)</td><td data-label="Act">Contract Labour (Regulation and Abolition) Act 1970 </td></tr>
+<tr><td data-label="Item">(i)</td><td data-label="Act">Sales Promotion Employees (Conditions of Service) Act 1976 </td></tr>
+<tr><td data-label="Item">(j)</td><td data-label="Act">Inter-State Migrant Workmen (Regulation of Employment and Conditions of Service) Act 1979 </td></tr>
+<tr><td data-label="Item">(k)</td><td data-label="Act">Cine-Workers and Cinema Theatre Workers (Regulation of Employment) Act 1981 </td></tr>
+<tr><td data-label="Item">(l)</td><td data-label="Act">Dock Workers (Safety, Health and Welfare) Act 1986 </td></tr>
+<tr><td data-label="Item">(m)</td><td data-label="Act">Building and Other Construction Workers (Regulation of Employment and Conditions of Service) Act 1996 </td></tr>
+</tbody></table>
+<p>The Child and Adolescent Labour (Prohibition and Regulation) Act 1986 is not in this list, so the Code does not repeal it. </p>
+
+<h2 id="s2-definitions-and-who-is-covered" data-nav>2. Definitions and who is covered</h2>
+<p>For the wages definitions shared by all the Codes, see Topic 7, Code on Wages. The OSH Code's own wording is below.</p>
+<div class="rule">
+<div class="rh"><span class="sec">OSH Code s.2(1)(v)</span> <span class="rt">Establishment</span></div>
+<p>A place where an industry, trade, business, manufacturing or occupation is carried on and <b>10 or more</b> workers are employed. </p>
+<p>A motor transport undertaking, newspaper establishment, audio-video production, building or other construction work, or plantation, also needs <b>10 or more</b> workers. </p>
+<p>A mine, or a port or its vicinity where dock work is carried out, has <b>no worker threshold</b>. </p>
+<p>The 10-worker threshold does not apply to an establishment where a hazardous or life threatening activity, notified by the Central Government, is carried on. </p>
+</div>
+<div class="rule">
+<div class="rh"><span class="sec">OSH Code s.2(1)(w)</span> <span class="rt">Factory</span></div>
+<p>Premises with <b>20 or more</b> workers (now, or on any day of the preceding 12 months) where a manufacturing process is carried on <b>with power</b>. With <b>40 or more</b> workers where it is carried on <b>without power</b>. </p>
+<p>If a State law fixed a different number before the Code, that number prevails in the State until the State Legislature amends it. </p>
+<div class="was"><span class="sec old"><i>old</i> Factories Act 1948 s.2(m)</span> 10 or more workers with power, 20 or more without <span class="tag changed">Changed</span> </div>
+</div>
+
+<div class="rule">
+<div class="rh"><span class="sec">OSH Code s.2(1)(zx)</span> <span class="rt">Plantation</span></div>
+<p>Land used for growing tea, coffee, rubber, cinchona or cardamom that measures <b>5 hectares or more</b>. Other plants can be added by State notification. </p>
+</div>
+<div class="rule">
+<div class="rh"><span class="sec">OSH Code s.2(1)(zs)</span> <span class="rt">Occupier</span></div>
+<p>The person with ultimate control over the affairs of the factory. For a company, any one of the directors other than an independent director. For a firm, one of the partners. </p>
+</div>
+<div class="rule">
+<div class="rh"><span class="sec">OSH Code s.2(1)(zzl)</span> <span class="rt">Worker</span></div>
+<p>Anyone employed in an establishment for manual, unskilled, skilled, technical, operational, clerical or supervisory work for hire or reward. </p>
+<p>Excluded: a supervisor drawing wage above <b>Rs 18,000</b> a month (or a notified amount), armed forces, police and prison staff, and managerial or administrative staff. The definition has no out-worker exclusion.  </p>
+<div class="was"><span class="sec old"><i>old</i> CLRA 1970</span> the definition of "workman" excluded an out-worker <span class="tag removed">Removed</span> </div>
+</div>
+<div class="rule">
+<div class="rh"><span class="sec">OSH Code s.2(1)(t)</span> <span class="rt">Employee</span></div>
+<p>A person (other than an apprentice under the Apprentices Act 1961) employed on wages for skilled, semi-skilled, unskilled, manual, operational, supervisory, managerial, administrative, technical, clerical or other work. It excludes members of the Armed Forces of the Union. </p>
+<p>"Employee" is wider than "worker" because it takes in managerial and administrative staff. </p>
+</div>
+<div class="rule">
+<div class="rh"><span class="sec">OSH Code s.2(1)(ze)</span> <span class="rt">Inspector-cum-Facilitator</span></div>
+<p>The officer appointed under <span class="sec">OSH Code s.34(1)</span>. The appropriate Government may appoint Inspector-cum-Facilitators by notification. </p>
+</div>
+<div class="trap"><p>The factory test is not the same in the two Acts. The old Act said 10 with power and 20 without. The Code says <b>20</b> with power and <b>40</b> without. The contract labour test also moved, from 20 to <b>50</b>.    </p></div>
+
+<h2 id="s3-registration-licence-and-returns" data-nav>3. Registration, licence and returns</h2>
+<div class="rule">
+<div class="rh"><span class="sec">OSH Code ss.3(1), 3(3)</span> <span class="rt">Registration</span></div>
+<p>An employer of an establishment that comes into existence after the Code starts, and to which the Code applies, applies <b>electronically</b> to the registering officer within <b>60 days</b> of applicability. The certificate of registration is issued electronically. </p>
+</div>
+<div class="rule">
+<div class="rh"><span class="sec">OSH Code s.3(8)</span> <span class="rt">Existing registrations</span></div>
+<p>An establishment already registered under a Central labour law is deemed registered under the Code if the holder gives the details to the registering officer in the prescribed time and form. </p>
+</div>
+<div class="rule">
+<div class="rh"><span class="sec">OSH Code s.119(1)</span> <span class="rt">Common licence</span></div>
+<p>One may apply for a common licence for a factory, industrial premises for beedi and cigar work and engaging contract workers, or any combination of them, or a single licence for any one of them. The common licence is <b>optional</b>. </p>
+</div>
+<div class="rule">
+<div class="rh"><span class="sec">OSH Code ss.47, 48(3)</span> <span class="rt">Contractor licence</span></div>
+<p>A contractor who wants a licence for more than one State or the whole of India may obtain it from the authority designated by the Central Government. The licence is valid for <b>5 years</b> for the number of contract labour named in it.  </p>
+</div>
+<div class="rule">
+<div class="rh"><span class="sec">OSH Code s.6(1)(f)</span> <span class="rt">Appointment letter</span></div>
+<p>The employer issues a letter of appointment to every employee on appointment. An employee who has none when the Code starts gets one within <b>3 months</b> of commencement. </p>
+<p><b>Rules.</b> No employee is employed unless an appointment letter in the prescribed format is issued <span class="sec">OSH Central Rules r.6</span>. The format has items for type of employment, wages (basic pay and dearness allowance), applicability of social security (EPFO and ESIC) and the broad nature of duties. </p>
+</div>
+<div class="rule">
+<div class="rh"><span class="sec">OSH Code s.37</span> <span class="rt">Third party audit</span></div>
+<p>The appropriate Government may notify a scheme to empanel experts for third party audit and certification for start-up establishments or classes it specifies. Experts are assigned in a randomised manner through a web-based scheme. </p>
+</div>
+<div class="rule">
+<div class="rh"><span class="sec">OSH Code s.33(d)</span> <span class="rt">Return</span></div>
+<p>The employer files a return, electronically or otherwise, with the Inspector-cum-Facilitator, in the manner and during the periods the appropriate Government prescribes. </p>
+<p><b>Rules.</b> Every employer sends an annual return in FORM-XVII to the Inspector-cum-Facilitator, electronically, to reach on or before the <b>last day of February</b> after each calendar year <span class="sec">OSH Central Rules r.74</span>. A return in FORM-XVII and XVIII is uploaded on or before the 28th or 29th day of February <span class="sec">OSH Central Rules r.73(5)</span>. </p>
+</div>
+<div class="trap"><p>The Code does not use the words "single" or "annual" for the return. <span class="sec">OSH Code s.33(d)</span> leaves the manner and periods to the Government. The annual return comes from the Rules <span class="sec">OSH Central Rules r.74</span>.  </p></div>
+
+<h2 id="s4-hours-overtime-and-leave" data-nav>4. Hours, overtime and leave</h2>
+<div class="rule">
+<div class="rh"><span class="sec">OSH Code s.25(1)</span> <span class="rt">Daily hours</span></div>
+<p>No worker is required or allowed to work in an establishment for more than <b>8 hours</b> in a day <span class="sec">OSH Code s.25(1)(a)</span>. Intervals and spread-over are left to notification by the appropriate Government <span class="sec">OSH Code s.25(1)(b)</span>. </p>
+<div class="was">Factories Act 1948: 9 hours a day <span class="sec old"><i>old</i> Factories Act 1948 s.54</span>. Spread-over 10.5 hours <span class="sec old"><i>old</i> Factories Act 1948 s.56</span>, which the Chief Inspector may raise to 12 hours <span class="tag changed">Changed</span> </div>
+</div>
+<div class="rule">
+<div class="rh"><span class="sec">OSH Code s.26(1)</span> <span class="rt">Six-day week</span></div>
+<p>No worker is allowed to work for more than <b>6 days</b> in any one week. </p>
+</div>
+<div class="rule">
+<div class="rh"><span class="sec">OSH Central Rules r.64(1)</span> <span class="rt">Weekly hours (Rules)</span></div>
+<p>No worker is required or allowed to work for more than <b>48 hours</b> in a week. The Code text has <b>no weekly hour figure</b>.  </p>
+<div class="was"><span class="sec old"><i>old</i> Factories Act 1948 s.51</span> 48 hours for an adult worker. The number is the same. The source is now the Rules, not the Code <span class="tag changed">Changed</span>  </div>
+</div>
+<div class="trap"><p>Many books say the Code gives "8 hours a day, 48 hours a week". The Code fixes <b>8 hours a day</b> only <span class="sec">OSH Code s.25(1)(a)</span>. The 48-hour week is in the Rules <span class="sec">OSH Central Rules r.64(1)</span>.   </p></div>
+<div class="rule">
+<div class="rh"><span class="sec">OSH Code s.27</span> <span class="rt">Overtime</span></div>
+<p>Wages at <b>twice</b> the rate of wages for overtime work. The overtime period is calculated on a daily or weekly basis, whichever is more favourable to the worker. </p>
+<p>Overtime work is subject to the <b>consent</b> of the worker. The appropriate Government may prescribe the total hours of overtime.  </p>
+<p><b>Rules.</b> A worker other than a daily wager who works more than 48 hours in a week is paid twice the rate of wages <span class="sec">OSH Central Rules r.69(1)(b)</span>. No worker is allowed to work overtime exceeding <b>144 hours</b> in any quarter of a year <span class="sec">OSH Central Rules r.69</span>.  </p>
+<div class="was"><span class="sec old"><i>old</i> Factories Act 1948 s.59</span> twice the rate <span class="tag same">Same</span> </div>
+</div>
+<div class="rule">
+<div class="rh"><span class="sec">OSH Code s.32(1)</span> <span class="rt">Leave with wages</span></div>
+<p><b>Eligibility.</b> A worker who has worked <b>180 days or more</b> in a calendar year <span class="sec">OSH Code s.32(1)(i)</span>. </p>
+<p><b>Counted days.</b> Layoff, maternity leave and annual leave availed in the year count toward the 180 days. The worker does not earn leave for the days so counted <span class="sec">OSH Code s.32(1)(iii)</span>. </p>
+<p><b>Carry-forward.</b> At most <b>30 days</b> are carried forward to a succeeding year <span class="sec">OSH Code s.32(1)(vii)(a)</span>. Leave refused after the worker applied can be carried forward without limit. </p>
+<p><b>Encashment.</b> On the worker's demand, leave is encashed at the end of the calendar year <span class="sec">OSH Code s.32(1)(viii)</span>. Clause (ix) lets the worker encash leave above 30 days.  </p>
+<div class="was"><span class="sec old"><i>old</i> Factories Act 1948 s.79</span> 240 days or more to qualify. Layoff days counted and earned no leave, as now <span class="tag changed">Changed</span>  </div>
+</div>
+
+<table class="cmp"><thead><tr><th>Worker</th><th>Leave earned</th></tr></thead><tbody>
+<tr><td data-label="Worker">Any other worker <span class="sec">OSH Code s.32(1)(ii)</span></td><td data-label="Leave earned">1 day for every <b>20</b> days of work </td></tr>
+<tr><td data-label="Worker">Adolescent worker</td><td data-label="Leave earned">1 day for every <b>15</b> days </td></tr>
+<tr><td data-label="Worker">Worker below ground in a mine</td><td data-label="Leave earned">1 day for every <b>15</b> days </td></tr>
+</tbody></table>
+<h3>Worked example: layoff and leave</h3>
+<p>A worker works 220 days in a year and is laid off for 25 days. The layoff days count toward the 180 days, so 220 + 25 = 245 and the worker qualifies. Leave is earned only on the 220 days worked: 220 / 20 = <b>11 days</b>.  </p>
+<div class="bars">
+<div class="bar mid" style="--w:100%">Days counted for eligibility: 220 + 25 = 245 </div>
+<div class="bar" style="--w:90%">Days that earn leave: 220, so 11 days </div>
+<div class="bar no" style="--w:73%">Minimum to qualify: 180 </div>
+</div>
+
+<h2 id="s5-women-health-check-up-and-age" data-nav>5. Women, health check-up and age</h2>
+<div class="rule">
+<div class="rh"><span class="sec">OSH Code s.43</span> <span class="rt">Women and night work</span></div>
+<p>Women are entitled to be employed in all establishments for all types of work under the Code. They may also be employed, with their consent, before <b>6 a.m.</b> and beyond <b>7 p.m.</b>, subject to prescribed conditions on safety, holidays and working hours. </p>
+<p><b>Rules.</b> Night or early-late work needs the woman's <b>written consent</b>, adequate transport, a well-lit workplace with closed-circuit television on the way to toilets, washrooms and drinking facilities, and compliance with the Sexual Harassment of Women at Workplace Act 2013 <span class="sec">OSH Central Rules r.83</span>. </p>
+<div class="was">Factories Act 1948: women not employed between 7 p.m. and 6 a.m., relaxable between 10 p.m. and 5 a.m. A factory-only bar became a consent rule for all establishments <span class="tag changed">Changed</span>  </div>
+</div>
+<div class="rule">
+<div class="rh"><span class="sec">OSH Code s.44</span> <span class="rt">Dangerous operations</span></div>
+<p>Where the appropriate Government considers employment of women dangerous to their health and safety, it may require the employer to provide adequate safeguards first. </p>
+<p><b>Rules.</b> The Central Government may declare by notification the class of establishments and the standard for safeguarding women in hazardous processes <span class="sec">OSH Central Rules r.84</span>. </p>
+</div>
+<div class="rule">
+<div class="rh"><span class="sec">OSH Code s.6(1)(c)</span> <span class="rt">Annual health check-up</span></div>
+<p>The employer provides an annual health examination or test, free of cost, to the employees of the age or class the appropriate Government prescribes. </p>
+<p><b>Rules.</b> Every employer of dock work, building or other construction work arranges a free medical examination for an employee who has completed <b>40 years</b> of age <span class="sec">OSH Central Rules r.5(1)</span>. The rule covers only those two kinds of work. </p>
+</div>
+<div class="rule">
+<div class="rh"><span class="sec">OSH Code ss.2(1)(b), 2(1)(a)</span> <span class="rt">Adult and adolescent</span></div>
+<p>An <b>adult</b> is a person who has completed <b>18</b> years of age. An <b>adolescent</b> has the meaning in <span class="sec">CAL Act 1986 s.2(i)</span>. The Code itself states no age range. </p>
+<div class="was">Factories Act 1948: an adolescent is a person who has completed 15 years but not 18 <span class="tag changed">Changed</span> </div>
+</div>
+<div class="rule">
+<div class="rh"><span class="sec">OSH Code s.42(2)(c)</span> <span class="rt">Fitness certificate</span></div>
+<p>The medical officer appointed under <span class="sec">OSH Code s.42(1)</span> examines and certifies adolescents for fitness for employment in a factory, plantation, motor transport undertaking or other prescribed establishment. The Code uses "medical officer", not "certifying surgeon". </p>
+<div class="was">Factories Act 1948: the certifying surgeon gave the certificate <span class="tag changed">Changed</span> </div>
+</div>
+<h3>Proof of age <span class="sec">OSH Code s.117(2)</span></h3>
+<ol class="steps">
+<li><b>Aadhaar card</b> The medical authority prescribed by the Central Government takes the Aadhaar card first. </li>
+<li><b>School certificate</b> Then the school date-of-birth or matriculation certificate. </li>
+<li><b>Birth certificate</b> Then a birth certificate from a corporation, municipal authority or Panchayat. </li>
+<li><b>Ossification test</b> Only if none of these exists. </li>
+</ol>
+
+<h2 id="s6-welfare-safety-and-hazardous-work" data-nav>6. Welfare, safety and hazardous work</h2>
+<p>The Code lists welfare facilities "as may be prescribed by the Central Government" <span class="sec">OSH Code s.24(1)</span> <span class="tag rules">needs rules</span>. The Rules fill in the detail. </p>
+<table class="cmp"><thead><tr><th>Facility</th><th>Code</th><th>Rules</th></tr></thead><tbody>
+<tr><td data-label="Facility">Canteen</td><td data-label="Code">Where <b>100 or more</b> workers, including contract labourers, are ordinarily employed <span class="sec">OSH Code s.24(1)(v)</span> </td><td data-label="Rules">Every factory, mine, building or other construction work, beedi and cigar premises, motor transport undertaking, dock work and plantation with 100 or more workers provides one <span class="sec">OSH Central Rules r.53(i)</span> </td></tr>
+<tr><td data-label="Facility">First aid</td><td data-label="Code">Adequate first-aid boxes or cupboards, readily accessible during all working hours <span class="sec">OSH Code s.24(1)(vii)</span> </td><td data-label="Rules"></td></tr>
+<tr><td data-label="Facility">Water and latrines</td><td data-label="Code">Potable drinking water. Latrine and urinal accommodation, separate for male, female and transgender employees <span class="sec">OSH Code ss.23(2)(v), 23(2)(viii)</span> </td><td data-label="Rules"></td></tr>
+<tr><td data-label="Facility">Crèche</td><td data-label="Code">The Central Government may make rules for a crèche for children under <b>6 years</b> of the employees where <b>more than 50</b> workers are ordinarily employed. The Code says "employees", not "women" <span class="sec">OSH Code s.24(3)</span>  </td><td data-label="Rules">More than 50 workers: a crèche for children under 6 years of employees <span class="sec">OSH Central Rules r.58(i)</span> </td></tr>
+<tr><td data-label="Facility">Welfare officer</td><td data-label="Code">The Central Government may prescribe one in every factory, mine or plantation where <b>250 or more</b> workers are ordinarily employed <span class="sec">OSH Code s.24(2)(iv)</span> </td><td data-label="Rules">Between 250 and up to 500 workers: at least one, and one more for every additional 500 or fraction over 500 <span class="sec">OSH Central Rules r.57(i)(a)</span> </td></tr>
+<tr><td data-label="Facility">Ambulance room</td><td data-label="Code">The Central Government may prescribe one in every factory, mine, building or other construction work where <b>more than 500</b> workers are ordinarily employed <span class="sec">OSH Code s.24(2)(i)</span> </td><td data-label="Rules">More than 500 workers: a suitable ambulance room or dispensary <span class="sec">OSH Central Rules r.55(i)</span> </td></tr>
+</tbody></table>
+<h3>Look-alike: the Code against the old Factories Act</h3>
+<table class="cmp"><thead><tr><th>Facility</th><th>OSH Code today</th><th>Factories Act 1948 (repealed)</th></tr></thead><tbody>
+<tr><td data-label="Facility">Canteen</td><td data-label="OSH Code today"><b>100 or more</b> workers </td><td data-label="Factories Act 1948 (repealed)"><b>More than 250</b> workers <span class="sec old"><i>old</i> Factories Act 1948 s.46(1)</span> </td></tr>
+<tr><td data-label="Facility">Crèche</td><td data-label="OSH Code today"><b>More than 50</b> workers, children under 6 </td><td data-label="Factories Act 1948 (repealed)"><b>More than 30 women</b> workers <span class="sec old"><i>old</i> Factories Act 1948 s.48(1)</span> </td></tr>
+<tr><td data-label="Facility">Welfare officer</td><td data-label="OSH Code today"><b>250 or more</b> workers </td><td data-label="Factories Act 1948 (repealed)"><b>500 or more</b> workers <span class="sec old"><i>old</i> Factories Act 1948 s.49(1)</span> </td></tr>
+<tr><td data-label="Facility">Ambulance room</td><td data-label="OSH Code today"><b>More than 500</b> workers </td><td data-label="Factories Act 1948 (repealed)"><b>More than 500</b> workers <span class="sec old"><i>old</i> Factories Act 1948 s.45(4)</span> </td></tr>
+<tr><td data-label="Facility">First aid</td><td data-label="OSH Code today">Adequate boxes or cupboards </td><td data-label="Factories Act 1948 (repealed)">One box for every <b>150</b> workers <span class="sec old"><i>old</i> Factories Act 1948 s.45(1)</span> </td></tr>
+<tr><td data-label="Facility">Safety officer</td><td data-label="OSH Code today">500 or more factory; 250 or more hazardous-process factory; 250 or more construction; 100 or more mine    </td><td data-label="Factories Act 1948 (repealed)"><b>1,000 or more</b> workers <span class="sec old"><i>old</i> Factories Act 1948 s.40B(1)(i)</span> </td></tr>
+</tbody></table>
+
+<div class="trap"><p>Watch "more than" against "or more". The Code crèche is "more than 50" <span class="sec">OSH Code s.24(3)</span>, but the plantation crèche is "50 or more" <span class="sec">OSH Code s.92(1)(b)</span>. The old canteen rule was "more than 250", not "250 or more".   </p></div>
+<h3>Safety Committee and safety officers <span class="sec">OSH Code s.22</span></h3>
+<div class="cards">
+<div class="card"><h4>Safety Committee</h4><p>The appropriate Government may, by general or special order, require an establishment or class to set one up, with employer and worker representatives. Worker representatives are not fewer than employer representatives <span class="sec">OSH Code s.22(1)</span>. </p><p>The section gives no worker number and no hazardous-process test. </p><p>Rules: every establishment with <b>500 or more</b> workers <span class="sec">OSH Central Rules r.14(1)</span>. The Central Government may fix a different threshold for classes by order <span class="sec">OSH Central Rules r.14(2)</span>. No hazardous condition.  </p></div>
+<div class="card"><h4>Safety officers</h4><p>The employer appoints them in <span class="sec">OSH Code s.22(2)</span>: a factory with <b>500 or more</b> workers; a factory with a hazardous process and <b>250 or more</b>; a building or other construction work with <b>250 or more</b>; a mine with <b>100 or more</b>.    </p><p>"Hazardous" is a test here, not for the Safety Committee.  </p></div>
+</div>
+<p>Before the Code, the Factories Act 1948 required a Safety Committee in a factory where hazardous substances are used or handled <span class="sec old"><i>old</i> Factories Act 1948 s.41G</span> <span class="tag changed">Changed</span>  </p>
+
+<h3>Boards, danger, site appraisal, diseases</h3>
+<table class="cmp"><thead><tr><th>Point</th><th>Rule</th></tr></thead><tbody>
+<tr><td data-label="Point">National OSH Advisory Board <span class="sec">OSH Code s.16</span></td><td data-label="Rule">The Central Government constitutes it by notification. The Secretary, Ministry of Labour and Employment, is Chairperson ex officio. </td></tr>
+<tr><td data-label="Point">Imminent danger <span class="sec">OSH Code s.89</span></td><td data-label="Rule">Workers in a factory engaged in a hazardous process who reasonably apprehend imminent danger to life or health from an accident may tell the occupier, agent, manager or person in charge. They tell the Inspector-cum-Facilitator at the same time. If the occupier is not satisfied, the Inspector-cum-Facilitator's decision is final <span class="sec">OSH Code s.89(3)</span>. </td></tr>
+<tr><td data-label="Point">Site appraisal <span class="sec">OSH Code s.83</span></td><td data-label="Rule">The appropriate Government may constitute one or more site appraisal committees "consisting of a chairman and other members". They consider the initial location or expansion of a factory involving a hazardous process. The Code does not say who the chairman is.  Under the Factories Act 1948 the State Chief Inspector headed it <span class="sec old"><i>old</i> Factories Act 1948 s.41A</span> <span class="tag changed">Changed</span> </td></tr>
+<tr><td data-label="Point">Notifiable diseases <span class="sec">OSH Code s.12(1)</span></td><td data-label="Rule">A worker who contracts a disease in the <span class="sec">OSH Code Third Schedule</span>: the employer sends notice. The Schedule lists <b>29</b> diseases, from lead poisoning to toxic nephritis. A medical practitioner must report such a disease <span class="sec">OSH Code s.12(2)</span>. Failure to report carries a penalty up to <b>Rs 10,000</b> <span class="sec">OSH Code s.12(3)</span>.  The old Third Schedule also listed 29 <span class="tag same">Same</span> </td></tr>
+<tr><td data-label="Point">Hazardous processes <span class="sec">OSH Code First Schedule</span></td><td data-label="Rule">The First Schedule lists <b>40</b> industries involving hazardous processes. </td></tr>
+</tbody></table>
+
+<h2 id="s7-contract-labour-chapter-xi-part-i" data-nav>7. Contract labour (Chapter XI, Part I)</h2>
+<div class="rule">
+<div class="rh"><span class="sec">OSH Code s.45(1)(i)</span> <span class="rt">Where Part I applies</span></div>
+<p>Every establishment with <b>50 or more</b> contract labour, now or on any day of the preceding 12 months. Part I also covers every manpower supply contractor with 50 or more contract labour. </p>
+<div class="was"><span class="sec old"><i>old</i> CLRA 1970</span> 20 workmen <span class="tag changed">Changed</span> </div>
+</div>
+
+<div class="rule">
+<div class="rh"><span class="sec">OSH Code s.45(2)</span> <span class="rt">Intermittent work</span></div>
+<p>The Part does not apply to an establishment where work only of an intermittent or casual nature is performed. Work is not intermittent if done for more than <b>120 days</b> in the preceding 12 months, or, if seasonal, for more than <b>60 days</b> in a year. </p>
+</div>
+<div class="rule">
+<div class="rh"><span class="sec">OSH Code s.2(1)(p)</span> <span class="rt">Core activity</span></div>
+<p>Any activity for which the establishment is set up, including any activity essential or necessary to it. </p>
+<p>These are not treated as essential or necessary if the establishment is not set up for them: sanitation works, watch and ward including security, canteen and catering, loading and unloading, support-service hospitals and guest houses, courier services, civil and constructional works, gardening, housekeeping and laundry, transport including ambulance services, and any activity of intermittent nature. </p>
+</div>
+<div class="decide">
+<p class="q">Is the work a core activity of the establishment? <span class="sec">OSH Code s.57(1)</span></p>
+<div class="opts">
+<div class="opt"><b>Yes</b> Contract labour is prohibited.  Three exceptions: the activity is ordinarily done through a contractor given the normal functioning of the establishment; it does not need full-time workers for the major part of the working hours or for longer periods; or there is a sudden increase in the volume of work that must be done in a specified time. </div>
+<div class="opt"><b>No</b> The ban does not apply. Sanitation, security, canteen and the other activities named in <span class="sec">OSH Code s.2(1)(p)</span> fall here when the establishment is not set up for them. </div>
+</div></div>
+<div class="trap"><p>Sanitation, canteen and security are not exceptions to the ban. They are part of the definition of "core activity", so they are outside it from the start. The three exceptions in <span class="sec">OSH Code s.57(1)</span> are separate tests.  </p></div>
+<div class="rule">
+<div class="rh"><span class="sec">OSH Code ss.53, 55</span> <span class="rt">Welfare and wages</span></div>
+<p><b>Welfare.</b> The principal employer provides the welfare facilities under <span class="sec">OSH Code s.23</span> and <span class="sec">OSH Code s.24</span> to the contract labour employed in the establishment <span class="sec">OSH Code s.53</span>. This duty is direct, not "if the contractor fails". </p>
+<p><b>Wages.</b> The contractor pays wages to each contract labour <span class="sec">OSH Code s.55</span>. If the contractor fails to pay in the prescribed period, or short pays, the principal employer pays the wages in full or the unpaid balance. The principal employer recovers it from the contractor by deduction or as a debt <span class="sec">OSH Code s.55(3)</span>. </p>
+</div>
+<p>In SAIL v National Union Water Front Workers (2001), (2001) 7 SCC 1, the Supreme Court held that contract workers are not automatically absorbed by the principal employer on abolition of contract labour. </p>
+
+<p>The licence and common licence rules are under "Registration, licence and returns" above.</p>
+
+<h2 id="s8-inter-state-migrant-workers-chapter-xi-part-ii" data-nav>8. Inter-State migrant workers (Chapter XI, Part II)</h2>
+<div class="rule">
+<div class="rh"><span class="sec">OSH Code s.2(1)(zf)</span> <span class="rt">Who is a migrant worker</span></div>
+<p>A person employed in an establishment who draws wages not exceeding <b>Rs 18,000</b> a month, or a higher amount the Central Government notifies. </p>
+<p>It also covers a person who came on his own from one State and got work in an establishment of another State, or later changed establishment within that State, if there is an agreement or other arrangement for the employment. </p>
+</div>
+<div class="rule">
+<div class="rh"><span class="sec">OSH Code s.59</span> <span class="rt">Where Part II applies</span></div>
+<p>Every establishment with <b>10 or more</b> inter-State migrant workers, now or on any day of the preceding 12 months. </p>
+</div>
+<div class="rule">
+<div class="rh"><span class="sec">OSH Code s.60</span> <span class="rt">Facilities</span></div>
+<p>The contractor or employer ensures suitable conditions of work. A fatal accident or serious bodily injury is reported to the authorities of both States and to the next of kin. The worker gets every benefit a worker of the establishment gets, including ESI Act 1948 and EPF Act 1952 benefits and the medical check-up under <span class="sec">OSH Code s.6(1)(c)</span>. </p>
+</div>
+<div class="rule">
+<div class="rh"><span class="sec">OSH Code s.61</span> <span class="rt">Journey allowance</span></div>
+<p>The employer pays every inter-State migrant worker, in a year, a lump sum equal to the fare for a to-and-fro journey to his native place. </p>
+<p><b>Rules.</b> A lump sum for travel not less than II Class sleeper or bus, once in twelve months, if the worker worked not less than <b>180 days</b> in the establishment in the preceding twelve months <span class="sec">OSH Central Rules r.102</span>. </p>
+</div>
+<div class="rule">
+<div class="rh"><span class="sec">OSH Code ss.62, 63</span> <span class="rt">Ration, cess and helpline</span></div>
+<p>The appropriate Government makes schemes so that a migrant worker can use public distribution system benefits in his native State or the destination State. It also makes schemes for portability of building and other construction cess fund benefits in the destination State, for a worker in building or other construction work <span class="sec">OSH Code s.62</span>. </p>
+<p>The appropriate Government <b>may</b> provide a toll free helpline <span class="sec">OSH Code s.63</span>. <b>Rules:</b> the Director General Labour Welfare Organisation <b>shall</b> provide a toll-free help-line number <span class="sec">OSH Central Rules r.103</span>. </p>
+</div>
+<div class="rule">
+<div class="rh"><span class="sec">OSH Code s.21(2)</span> <span class="rt">Database</span></div>
+<p>The Central and State Governments keep a database or record of inter-State migrant workers on a portal. A worker may register himself on self-declaration and Aadhaar. </p>
+<p><b>Rules.</b> The employer furnishes details and statistics of inter-State migrant workers <span class="sec">OSH Central Rules r.13</span>. </p>
+</div>
+<div class="rule">
+<div class="rh"><span class="sec">OSH Code ss.59 to 65</span> <span class="rt">No displacement allowance</span></div>
+<p>The Code has no displacement allowance. The migrant worker provisions in <span class="sec">OSH Code ss.59 to 65</span> pay none.  </p>
+<div class="was"><span class="sec old"><i>old</i> ISMW Act 1979</span> displacement allowance of 50% of monthly wages or Rs 75, whichever is higher <span class="tag removed">Removed</span>. The contractor also had duties of equal pay for the same or similar work, suitable residential accommodation, protective clothing, prescribed medical facilities and a journey allowance. The Act had no old-age benefit.  </div>
+</div>
+
+<div class="trap"><p>Contract labour starts at <b>50</b> workers <span class="sec">OSH Code s.45(1)(i)</span>. Inter-State migrant workers start at <b>10</b> <span class="sec">OSH Code s.59</span>. The migrant wage limit is <b>Rs 18,000</b> a month <span class="sec">OSH Code s.2(1)(zf)</span>. Do not swap the numbers.   </p></div>
+
+<h2 id="s9-mines-and-plantations-bridge" data-nav>9. Mines and plantations (bridge)</h2>
+<h3>Mines</h3>
+<div class="rule">
+<div class="rh"><span class="sec">OSH Code s.41</span> <span class="rt">Entry to a mine</span></div>
+<p>A Government servant authorised by the Chief Inspector-cum-Facilitator or an Inspector-cum-Facilitator may enter a mine to survey, level or measure it or its output after giving not less than <b>3 days'</b> notice to the manager. In an emergency, no notice is needed. </p>
+<div class="was"><span class="sec old"><i>old</i> Mines Act 1952</span> a special officer gave the manager at least 3 days' notice <span class="tag same">Same</span> </div>
+</div>
+<div class="rule">
+<div class="rh"><span class="sec">OSH Code s.25(1)</span> <span class="rt">Mine hours</span></div>
+<p>Below-ground hours are left to Central Government notification <span class="sec">OSH Code s.25(1)</span>. The Code has no mine size threshold <span class="sec">OSH Code s.2(1)(v)</span>.  </p>
+<div class="was"><span class="sec old"><i>old</i> Mines Act 1952</span> 48 hours a week, 9 a day above ground and 8 a day below ground. The Act applied to all mines regardless of size <span class="tag changed">Changed</span> </div>
+</div>
+<div class="rule">
+<div class="rh"><span class="sec">OSH Code s.43</span> <span class="rt">Women below ground</span></div>
+<p>The Code allows women in all types of work. <b>Rules:</b> in a below-ground mine, not fewer than <b>three</b> women on duty at any place <span class="sec">OSH Central Rules r.83(g)</span>.  </p>
+<div class="was"><span class="sec old"><i>old</i> Mines Act 1952</span> barred women below ground. A relaxation by notification allowed it, with written consent and safeguards <span class="tag changed">Changed</span> </div>
+</div>
+
+<p>A mine with <b>100 or more</b> workers needs a safety officer <span class="sec">OSH Code s.22(2)</span>. Mine employees are medically examined before employment and at intervals <span class="sec">OSH Code s.24(1)(vi)</span>.  </p>
+<h3>Plantations</h3>
+<div class="rule">
+<div class="rh"><span class="sec">OSH Code s.92(1)(a)</span> <span class="rt">Housing</span></div>
+<p>The State Government <b>may</b> prescribe that every plantation employer provides necessary housing accommodation, including drinking water, kitchen and toilet, for every worker and family. It is a Code facility only as the State rules prescribe. </p>
+<div class="was"><span class="sec old"><i>old</i> Plantations Act 1951 s.15</span> housing was a statutory provision <span class="tag changed">Changed</span> </div>
+</div>
+<div class="rule">
+<div class="rh"><span class="sec">OSH Code ss.92(1)(b) to (e)</span> <span class="rt">Other plantation facilities</span></div>
+<p>The State Government may prescribe crèches where <b>50 or more</b> workers are employed (or were employed on any day of the preceding 12 months), including workers of a contractor. It may prescribe educational facilities where children aged 6 to 12 exceed 25, health facilities for worker and family or ESI coverage, and recreational facilities. </p>
+<div class="was"><span class="sec old"><i>old</i> Plantations Act 1951 s.11(1)</span> canteen at 150 or more workers. <span class="sec old"><i>old</i> Plantations Act 1951 s.12(1)</span> crèche at 50 or more women; the amended section has a second limb for 20 or more children. <span class="sec old"><i>old</i> Plantations Act 1951 s.18(1)</span> welfare officer at 300 or more <span class="tag changed">Changed</span> </div>
+</div>
+<h3>Welfare officer: 250, 300, 500</h3>
+<table class="cmp"><thead><tr><th>Limit</th><th>Belongs to</th></tr></thead><tbody>
+<tr><td data-label="Limit">250 or more</td><td data-label="Belongs to">OSH Code, factory, mine or plantation <span class="sec">OSH Code s.24(2)(iv)</span> </td></tr>
+<tr><td data-label="Limit">300 or more</td><td data-label="Belongs to">Plantations Labour Act 1951 (repealed) <span class="sec old"><i>old</i> Plantations Act 1951 s.18(1)</span> </td></tr>
+<tr><td data-label="Limit">500 or more</td><td data-label="Belongs to">Factories Act 1948 (repealed) <span class="sec old"><i>old</i> Factories Act 1948 s.49(1)</span> </td></tr>
+</tbody></table>
+<p>The other repealed Acts (Working Journalists, Motor Transport Workers, Beedi and Cigar Workers, Sales Promotion Employees, Cine-Workers and Cinema Theatre Workers, and Dock Workers) are gone by <span class="sec">OSH Code s.143(1)</span>. The Code keeps a 10-worker establishment rule for motor transport and newspaper establishments <span class="sec">OSH Code s.2(1)(v)</span>.  </p>
+
+<h2 id="s10-penalties-and-compounding" data-nav>10. Penalties and compounding</h2>
+<div class="rule">
+<div class="rh"><span class="sec">OSH Code s.94</span> <span class="rt">General penalty</span></div>
+<p>A penalty of <b>not less than Rs 2 lakh and up to Rs 3 lakh</b> on the employer or principal employer. A further penalty up to <b>Rs 2,000</b> for each day the contravention continues after conviction. It is a penalty, not imprisonment. </p>
+<div class="was"><span class="sec old"><i>old</i> Factories Act 1948 s.92</span> imprisonment up to 2 years or a fine up to Rs 1 lakh <span class="tag changed">Changed</span> </div>
+</div>
+<div class="rule">
+<div class="rh"><span class="sec">OSH Code s.103(1)(a)</span> <span class="rt">Death through a contravention</span></div>
+<p>Where non-compliance with duties causes an accident or dangerous occurrence resulting in death: imprisonment up to <b>2 years</b>, or a fine of <b>not less than Rs 5 lakh</b>, or both. </p>
+<p>The court may direct that a portion of the fine, <b>not less than 50%</b>, be given as compensation to the victim, or to the legal heirs if the victim died <span class="sec">OSH Code s.103(1)</span>. </p>
+</div>
+<div class="trap"><p>Rs 5 lakh is a <b>minimum</b>, not a maximum. The law says the fine "shall not be less than" Rs 5 lakh <span class="sec">OSH Code s.103(1)(a)</span>. </p></div>
+<div class="rule">
+<div class="rh"><span class="sec">OSH Code s.114(1)</span> <span class="rt">Compounding</span></div>
+<p>A listed penalty may be compounded for <b>50%</b> of the maximum penalty. A listed offence may be compounded for <b>75%</b> of the maximum fine.  </p>
+<p>No compounding for a second or later penalty or offence within <b>3 years</b> of one earlier compounded or convicted. The compounding sum goes to the social security fund for unorganised workers <span class="sec">OSH Code s.115</span>. </p>
+</div>
+<h3>Five numbers around penalties</h3>
+<table class="cmp"><thead><tr><th>Figure</th><th>Belongs to</th></tr></thead><tbody>
+<tr><td data-label="Figure">Rs 2 lakh to Rs 3 lakh</td><td data-label="Belongs to">General penalty <span class="sec">OSH Code s.94</span> </td></tr>
+<tr><td data-label="Figure">Rs 5 lakh (minimum fine)</td><td data-label="Belongs to">Death <span class="sec">OSH Code s.103(1)(a)</span> </td></tr>
+<tr><td data-label="Figure">50%</td><td data-label="Belongs to">Compounding a penalty <span class="sec">OSH Code s.114(1)</span>. Also the floor of the fine share given to the victim <span class="sec">OSH Code s.103(1)</span>  </td></tr>
+<tr><td data-label="Figure">75%</td><td data-label="Belongs to">Compounding an offence <span class="sec">OSH Code s.114(1)</span> </td></tr>
+</tbody></table>
+
+<h2 id="what-changed" data-nav>What changed</h2>
+<table class="shift"><thead><tr><th>Point</th><th>Before</th><th>Now</th><th></th></tr></thead><tbody>
+<tr><td data-label="Point">Factory size</td><td data-label="Before">10 with power, 20 without <span class="sec old"><i>old</i> Factories Act 1948 s.2(m)</span> </td><td data-label="Now"><b>20</b> with power, <b>40</b> without <span class="sec">OSH Code s.2(1)(w)</span> </td><td><span class="tag changed">Changed</span></td></tr>
+<tr><td data-label="Point">Contract labour</td><td data-label="Before">20 workmen <span class="sec old"><i>old</i> CLRA 1970</span> </td><td data-label="Now"><b>50</b> or more <span class="sec">OSH Code s.45(1)(i)</span> </td><td><span class="tag changed">Changed</span></td></tr>
+<tr><td data-label="Point">Daily hours</td><td data-label="Before">9 hours <span class="sec old"><i>old</i> Factories Act 1948 s.54</span> </td><td data-label="Now"><b>8</b> hours <span class="sec">OSH Code s.25(1)(a)</span> </td><td><span class="tag changed">Changed</span></td></tr>
+<tr><td data-label="Point">Weekly hours</td><td data-label="Before">48 hours <span class="sec old"><i>old</i> Factories Act 1948 s.51</span> </td><td data-label="Now">48 hours, set by the Rules <span class="sec">OSH Central Rules r.64(1)</span>; the Code has no weekly figure  </td><td><span class="tag changed">Changed</span></td></tr>
+<tr><td data-label="Point">Spread-over</td><td data-label="Before">10.5 hours, up to 12 <span class="sec old"><i>old</i> Factories Act 1948 s.56</span> </td><td data-label="Now">Left to notification <span class="sec">OSH Code s.25(1)(b)</span> </td><td><span class="tag changed">Changed</span></td></tr>
+<tr><td data-label="Point">Overtime</td><td data-label="Before">Twice the rate <span class="sec old"><i>old</i> Factories Act 1948 s.59</span> </td><td data-label="Now">Twice the rate <span class="sec">OSH Code s.27</span> </td><td><span class="tag same">Same</span></td></tr>
+<tr><td data-label="Point">Leave to qualify</td><td data-label="Before">240 days <span class="sec old"><i>old</i> Factories Act 1948 s.79</span> </td><td data-label="Now"><b>180</b> days <span class="sec">OSH Code s.32(1)(i)</span> </td><td><span class="tag changed">Changed</span></td></tr>
+<tr><td data-label="Point">Women at night</td><td data-label="Before">Barred 7 p.m. to 6 a.m. in factories </td><td data-label="Now">With consent, all establishments <span class="sec">OSH Code s.43</span> </td><td><span class="tag changed">Changed</span></td></tr>
+<tr><td data-label="Point">Adolescent</td><td data-label="Before">15 years but not 18 </td><td data-label="Now">Taken from <span class="sec">CAL Act 1986 s.2(i)</span>; no age range in the Code <span class="sec">OSH Code s.2(1)(a)</span> </td><td><span class="tag changed">Changed</span></td></tr>
+<tr><td data-label="Point">Fitness certificate</td><td data-label="Before">Certifying surgeon </td><td data-label="Now">Medical officer <span class="sec">OSH Code s.42(2)(c)</span> </td><td><span class="tag changed">Changed</span></td></tr>
+<tr><td data-label="Point">Canteen</td><td data-label="Before">More than 250 <span class="sec old"><i>old</i> Factories Act 1948 s.46(1)</span> </td><td data-label="Now"><b>100 or more</b> <span class="sec">OSH Code s.24(1)(v)</span> </td><td><span class="tag changed">Changed</span></td></tr>
+<tr><td data-label="Point">Crèche</td><td data-label="Before">More than 30 women <span class="sec old"><i>old</i> Factories Act 1948 s.48(1)</span> </td><td data-label="Now">More than 50 workers <span class="sec">OSH Code s.24(3)</span> </td><td><span class="tag changed">Changed</span></td></tr>
+<tr><td data-label="Point">Welfare officer</td><td data-label="Before">500 or more <span class="sec old"><i>old</i> Factories Act 1948 s.49(1)</span> </td><td data-label="Now"><b>250 or more</b> <span class="sec">OSH Code s.24(2)(iv)</span> </td><td><span class="tag changed">Changed</span></td></tr>
+<tr><td data-label="Point">Ambulance room</td><td data-label="Before">More than 500 <span class="sec old"><i>old</i> Factories Act 1948 s.45(4)</span> </td><td data-label="Now">More than 500 <span class="sec">OSH Code s.24(2)(i)</span> </td><td><span class="tag same">Same</span></td></tr>
+<tr><td data-label="Point">Safety officer</td><td data-label="Before">1,000 or more <span class="sec old"><i>old</i> Factories Act 1948 s.40B(1)(i)</span> </td><td data-label="Now">500, 250, 250, 100 by type of workplace <span class="sec">OSH Code s.22(2)</span>    </td><td><span class="tag changed">Changed</span></td></tr>
+<tr><td data-label="Point">Safety Committee</td><td data-label="Before">Factory where hazardous substances are used or handled <span class="sec old"><i>old</i> Factories Act 1948 s.41G</span> </td><td data-label="Now">By Government order <span class="sec">OSH Code s.22(1)</span>; 500 or more in the Rules <span class="sec">OSH Central Rules r.14(1)</span> </td><td><span class="tag changed">Changed</span></td></tr>
+<tr><td data-label="Point">Site appraisal chair</td><td data-label="Before">State Chief Inspector <span class="sec old"><i>old</i> Factories Act 1948 s.41A</span> </td><td data-label="Now">The Code names no chairman <span class="sec">OSH Code s.83</span> </td><td><span class="tag changed">Changed</span></td></tr>
+<tr><td data-label="Point">Notifiable diseases</td><td data-label="Before">29 in the Third Schedule </td><td data-label="Now">29 in the <span class="sec">OSH Code Third Schedule</span> </td><td><span class="tag same">Same</span></td></tr>
+<tr><td data-label="Point">Contract labour ban</td><td data-label="Before">Government considered factors such as whether the work is incidental or necessary, of perennial nature, or ordinarily done through regular workmen <span class="sec old"><i>old</i> CLRA 1970</span> </td><td data-label="Now">Core activities barred, with 3 exceptions <span class="sec">OSH Code s.57(1)</span>. Intermittent activity is outside "core activity" <span class="sec">OSH Code s.45(2)</span> </td><td><span class="tag changed">Changed</span></td></tr>
+<tr><td data-label="Point">Out-worker</td><td data-label="Before">Excluded from "workman" <span class="sec old"><i>old</i> CLRA 1970</span> </td><td data-label="Now">No out-worker exclusion in "worker" <span class="sec">OSH Code s.2(1)(zzl)</span> </td><td><span class="tag removed">Removed</span></td></tr>
+<tr><td data-label="Point">Displacement allowance</td><td data-label="Before">50% of monthly wages or Rs 75 <span class="sec old"><i>old</i> ISMW Act 1979</span> </td><td data-label="Now">None in the Code </td><td><span class="tag removed">Removed</span></td></tr>
+<tr><td data-label="Point">Mines hours</td><td data-label="Before">48 a week, 9 above ground, 8 below <span class="sec old"><i>old</i> Mines Act 1952</span> </td><td data-label="Now">Below-ground hours by notification <span class="sec">OSH Code s.25(1)</span> </td><td><span class="tag changed">Changed</span></td></tr>
+<tr><td data-label="Point">Mines entry notice</td><td data-label="Before">3 days <span class="sec old"><i>old</i> Mines Act 1952</span> </td><td data-label="Now">3 days <span class="sec">OSH Code s.41</span> </td><td><span class="tag same">Same</span></td></tr>
+<tr><td data-label="Point">Plantation housing</td><td data-label="Before">A statutory provision <span class="sec old"><i>old</i> Plantations Act 1951 s.15</span> </td><td data-label="Now">The State may prescribe it <span class="sec">OSH Code s.92(1)(a)</span> </td><td><span class="tag changed">Changed</span></td></tr>
+<tr><td data-label="Point">General penalty</td><td data-label="Before">Up to 2 years or up to Rs 1 lakh <span class="sec old"><i>old</i> Factories Act 1948 s.92</span> </td><td data-label="Now">Rs 2 lakh to Rs 3 lakh, a penalty and not imprisonment <span class="sec">OSH Code s.94</span> </td><td><span class="tag changed">Changed</span></td></tr>
+</tbody></table>
+
+<h2 id="numbers-on-one-scale" data-nav>Numbers on one scale</h2>
+<h3>Headcounts: workers</h3>
+<div class="ladder">
+<div class="rung"><b>10</b><span>or more: establishment <span class="sec">OSH Code s.2(1)(v)</span>; inter-State migrant workers <span class="sec">OSH Code s.59</span>  </span></div>
+<div class="rung"><b>20</b><span>or more: factory with power <span class="sec">OSH Code s.2(1)(w)</span> </span></div>
+<div class="rung"><b>40</b><span>or more: factory without power <span class="sec">OSH Code s.2(1)(w)</span> </span></div>
+<div class="rung"><b>50</b><span>or more: contract labour <span class="sec">OSH Code s.45(1)(i)</span>; plantation crèche <span class="sec">OSH Code s.92(1)(b)</span>. More than 50: crèche <span class="sec">OSH Code s.24(3)</span>   </span></div>
+<div class="rung"><b>100</b><span>or more: canteen <span class="sec">OSH Code s.24(1)(v)</span>; safety officer in a mine <span class="sec">OSH Code s.22(2)</span>  </span></div>
+<div class="rung"><b>250</b><span>or more: welfare officer <span class="sec">OSH Code s.24(2)(iv)</span>; safety officer in a hazardous-process factory and in construction <span class="sec">OSH Code s.22(2)</span>   </span></div>
+<div class="rung"><b>500</b><span>or more: safety officer in a factory <span class="sec">OSH Code s.22(2)</span>; Safety Committee <span class="sec">OSH Central Rules r.14(1)</span>. More than 500: ambulance room <span class="sec">OSH Code s.24(2)(i)</span>   </span></div>
+</div>
+<h3>Time limits: days</h3>
+<div class="ladder">
+<div class="rung"><b>3</b><span>days: notice before entering a mine <span class="sec">OSH Code s.41</span> </span></div>
+<div class="rung"><b>6</b><span>days: longest work in a week <span class="sec">OSH Code s.26(1)</span> </span></div>
+<div class="rung"><b>30</b><span>days: most leave carried forward <span class="sec">OSH Code s.32(1)(vii)(a)</span> </span></div>
+<div class="rung"><b>60</b><span>days: to apply for registration <span class="sec">OSH Code s.3(1)</span>; seasonal work is not intermittent beyond 60 days a year <span class="sec">OSH Code s.45(2)</span>  </span></div>
+<div class="rung"><b>120</b><span>days: work beyond this in 12 months is not intermittent <span class="sec">OSH Code s.45(2)</span> </span></div>
+<div class="rung"><b>180</b><span>days: worked to earn leave <span class="sec">OSH Code s.32(1)(i)</span>; worked for the journey allowance <span class="sec">OSH Central Rules r.102</span>  </span></div>
+</div>
+<h3>Time limits: hours</h3>
+<div class="ladder">
+<div class="rung"><b>8</b><span>hours a day <span class="sec">OSH Code s.25(1)(a)</span> </span></div>
+<div class="rung"><b>48</b><span>hours a week <span class="sec">OSH Central Rules r.64(1)</span> </span></div>
+<div class="rung"><b>144</b><span>hours of overtime in a quarter <span class="sec">OSH Central Rules r.69</span> </span></div>
+</div>
+<h3>Time limits: months</h3>
+<div class="ladder">
+<div class="rung"><b>3</b><span>months: appointment letter for existing employees <span class="sec">OSH Code s.6(1)(f)</span> </span></div>
+<div class="rung"><b>12</b><span>months: look-back for thresholds <span class="sec">OSH Code s.45(1)(i)</span>, <span class="sec">OSH Code s.59</span>; one journey allowance in twelve months <span class="sec">OSH Central Rules r.102</span>   </span></div>
+</div>
+<h3>Time limits: years</h3>
+<div class="ladder">
+<div class="rung"><b>3</b><span>years: no compounding of a repeat within this time <span class="sec">OSH Code s.114</span> </span></div>
+<div class="rung"><b>5</b><span>years: contractor licence <span class="sec">OSH Code s.48(3)</span> </span></div>
+</div>
+<h3>Ages in years</h3>
+<div class="ladder">
+<div class="rung"><b>6</b><span>years: children under this age for a crèche <span class="sec">OSH Code s.24(3)</span> </span></div>
+<div class="rung"><b>18</b><span>years: an adult has completed 18 <span class="sec">OSH Code s.2(1)(b)</span> </span></div>
+<div class="rung"><b>40</b><span>years: free medical examination in dock and construction work <span class="sec">OSH Central Rules r.5(1)</span> </span></div>
+</div>
+<h3>Shares</h3>
+<div class="ladder">
+<div class="rung"><b>50%</b><span>compounding a penalty; least share of a fine given to the victim <span class="sec">OSH Code s.114(1)</span>, <span class="sec">OSH Code s.103(1)</span>  </span></div>
+<div class="rung"><b>75%</b><span>compounding an offence <span class="sec">OSH Code s.114(1)</span> </span></div>
+</div>
+<h3>Money: rupees</h3>
+<div class="ladder">
+<div class="rung"><b>2,000</b><span>a day: further penalty for a continuing contravention <span class="sec">OSH Code s.94</span> </span></div>
+<div class="rung"><b>10,000</b><span>penalty for failing to report a notifiable disease <span class="sec">OSH Code s.12(3)</span> </span></div>
+<div class="rung"><b>18,000</b><span>a month: wage limit for a migrant worker, and for a supervisor under "worker" <span class="sec">OSH Code s.2(1)(zf)</span>, <span class="sec">OSH Code s.2(1)(zzl)</span>  </span></div>
+<div class="rung"><b>2 lakh</b><span>least general penalty; the most is 3 lakh <span class="sec">OSH Code s.94</span> </span></div>
+<div class="rung"><b>5 lakh</b><span>least fine for a death <span class="sec">OSH Code s.103(1)(a)</span> </span></div>
+</div>
+
+<h2 id="quick-revision" data-nav>Quick revision</h2>
+<table class="recall"><tbody>
+<tr><td>Sections / chapters / Acts repealed</td><td>143 / 14 / 13 <span class="sec">OSH Code s.143(1)</span>   </td></tr>
+<tr><td>In force</td><td>21 Nov 2025, S.O. 5321(E) </td></tr>
+<tr><td>Rules</td><td>G.S.R. 345(E), 8 May 2026 </td></tr>
+<tr><td>Establishment</td><td>10 or more workers <span class="sec">OSH Code s.2(1)(v)</span> </td></tr>
+<tr><td>Factory</td><td>20 with power, 40 without (old: 10 and 20)  </td></tr>
+<tr><td>Plantation</td><td>5 hectares; tea, coffee, rubber, cinchona, cardamom </td></tr>
+<tr><td>Supervisor limit in "worker"</td><td>Rs 18,000 a month <span class="sec">OSH Code s.2(1)(zzl)</span> </td></tr>
+<tr><td>Registration</td><td>Electronic, within 60 days <span class="sec">OSH Code s.3(1)</span> </td></tr>
+<tr><td>Contractor licence</td><td>5 years <span class="sec">OSH Code s.48(3)</span> </td></tr>
+<tr><td>Annual return</td><td>Rules, FORM-XVII, last day of February <span class="sec">OSH Central Rules r.74</span> </td></tr>
+<tr><td>Daily / weekly hours</td><td>8 <span class="sec">OSH Code s.25(1)(a)</span> / 48 in the Rules <span class="sec">OSH Central Rules r.64(1)</span>  </td></tr>
+<tr><td>Days in a week</td><td>6 <span class="sec">OSH Code s.26(1)</span> </td></tr>
+<tr><td>Overtime</td><td>2 times; with consent; 144 hours a quarter (Rules)   </td></tr>
+<tr><td>Leave</td><td>180 days (old 240); 1 per 20; adolescent and below ground 1 per 15; carry 30 days    </td></tr>
+<tr><td>Women at night</td><td>Consent; before 6 a.m., beyond 7 p.m. <span class="sec">OSH Code s.43</span> </td></tr>
+<tr><td>Health check-up (Rules)</td><td>40 years, dock and construction </td></tr>
+<tr><td>Proof of age</td><td>Aadhaar, school certificate, birth certificate, then ossification </td></tr>
+<tr><td>Canteen / crèche</td><td>100 or more / more than 50  </td></tr>
+<tr><td>Welfare officer / ambulance room</td><td>250 or more / more than 500  </td></tr>
+<tr><td>Safety Committee</td><td>Code: no number; Rules: 500 or more  </td></tr>
+<tr><td>Safety officers</td><td>500 factory / 250 hazardous factory / 250 construction / 100 mine    </td></tr>
+<tr><td>Advisory Board chair</td><td>Secretary, Ministry of Labour and Employment <span class="sec">OSH Code s.16</span> </td></tr>
+<tr><td>Notifiable diseases / hazardous industries</td><td>Third Schedule, 29 / First Schedule, 40 </td></tr>
+<tr><td>Contract labour</td><td>50 or more (old 20); core activities barred <span class="sec">OSH Code s.57(1)</span>   </td></tr>
+<tr><td>Intermittent test</td><td>More than 120 days; seasonal more than 60 </td></tr>
+<tr><td>Welfare / unpaid wages</td><td>Principal employer pays; recovers from the contractor <span class="sec">OSH Code s.53</span>, <span class="sec">OSH Code s.55(3)</span>  </td></tr>
+<tr><td>Migrant workers</td><td>10 or more; Rs 18,000 a month; journey allowance <span class="sec">OSH Code s.61</span>   </td></tr>
+<tr><td>Displacement allowance</td><td>Dropped by the Code </td></tr>
+<tr><td>Helpline</td><td>Code "may", Rules "shall" </td></tr>
+<tr><td>Mines notice</td><td>3 days <span class="sec">OSH Code s.41</span> </td></tr>
+<tr><td>Plantation housing</td><td>As the State prescribes <span class="sec">OSH Code s.92(1)(a)</span> </td></tr>
+<tr><td>General penalty</td><td>Rs 2 lakh to Rs 3 lakh <span class="sec">OSH Code s.94</span> </td></tr>
+<tr><td>Death</td><td>2 years, or fine not less than Rs 5 lakh </td></tr>
+<tr><td>Compounding</td><td>50% of the penalty; 75% of the fine; not for a repeat within 3 years   </td></tr>
+</tbody></table>
+
+<h2 id="test-yourself" data-nav>Test yourself</h2>
+<ol class="quiz">
+<li>From what date is the OSH Code in force, by which notification, and how many Acts did it repeal?</li>
+<li>What is the worker threshold for a factory under the Code, and what was it under the old Act?</li>
+<li>Where is the 48-hour week fixed? What does the Code itself fix?</li>
+<li>A worker works 220 days and is laid off for 25 days in a year. Does the worker qualify for leave with wages, and for how many days of leave?</li>
+<li>What number sets up a Safety Committee, and where does it come from? Which workplaces need a safety officer at 250?</li>
+<li>For which workplace size is a canteen required, and for a crèche? Which one says "more than"?</li>
+<li>When is contract labour barred, and what are the three exceptions?</li>
+<li>What is the punishment for a death caused by a contravention? Is Rs 5 lakh a maximum?</li>
+<li>At what share of the maximum can a penalty be compounded, and at what share an offence?</li>
+</ol>
+<div class="answers"><h3>Answers</h3><ol>
+<li>21 November 2025, by S.O. 5321(E). It repealed 13 Acts <span class="sec">OSH Code s.143(1)</span>.  </li>
+<li>20 or more workers with power, 40 or more without <span class="sec">OSH Code s.2(1)(w)</span>. The old Act said 10 and 20.  </li>
+<li>In the Rules <span class="sec">OSH Central Rules r.64(1)</span>. The Code fixes only 8 hours a day <span class="sec">OSH Code s.25(1)(a)</span>.  </li>
+<li>Yes. The 25 layoff days count, so 220 + 25 = 245, which is above 180. Leave is earned on the 220 days worked: 220 / 20 = 11 days <span class="sec">OSH Code s.32(1)</span>.  </li>
+<li>The Code gives no number <span class="sec">OSH Code s.22(1)</span>. The Rules say 500 or more <span class="sec">OSH Central Rules r.14(1)</span>. A safety officer at 250 is needed in a hazardous-process factory and in a building or other construction work <span class="sec">OSH Code s.22(2)</span>.    </li>
+<li>A canteen at 100 or more workers <span class="sec">OSH Code s.24(1)(v)</span>. A crèche at more than 50 workers <span class="sec">OSH Code s.24(3)</span>. The crèche says "more than".  </li>
+<li>Contract labour in core activities is barred <span class="sec">OSH Code s.57(1)</span>. Exceptions: the activity is ordinarily done through a contractor; it does not need full-time workers for the major part of the working hours or for longer periods; or there is a sudden increase in the volume of work. </li>
+<li>Imprisonment up to 2 years, or a fine of not less than Rs 5 lakh, or both <span class="sec">OSH Code s.103(1)(a)</span>. No: Rs 5 lakh is a minimum. </li>
+<li>50% of the maximum penalty, and 75% of the maximum fine for an offence <span class="sec">OSH Code s.114(1)</span>.  </li>
+</ol></div>
+</section>
+
+</main>
+<script>
+/* Fallback only: runs when the browser cannot drive the bar from CSS. Passive listeners, one rAF per frame. */
+(function(){
+  try{
+    if(window.CSS&&CSS.supports&&CSS.supports('animation-timeline','scroll()'))return;
+    var bar=document.querySelector('.rp-bar'),el=document.documentElement,q=false;
+    if(!bar)return;
+    function update(){q=false;var y=window.pageYOffset||el.scrollTop,max=el.scrollHeight-el.clientHeight;
+      bar.style.transform='scaleX('+(max>0?Math.min(1,Math.max(0,y/max)):0)+')';}
+    function queue(){if(!q){q=true;requestAnimationFrame(update);}}
+    window.addEventListener('scroll',queue,{passive:true});
+    window.addEventListener('resize',queue,{passive:true});
+    update();
+  }catch(e){}
+})();
+</script>
+</body>
+</html>

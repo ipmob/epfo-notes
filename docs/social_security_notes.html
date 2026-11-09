@@ -1,0 +1,1139 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Code on Social Security, 2020 | EPFO Notes</title>
+<style>
+:root{--bg:#fff;--fg:#1c2330;--mut:#5a6577;--line:#d6dce6;--card:#f4f6fa;--acc:#1f5fbf;--accbg:#e8f0fc;
+--old:#6b7280;--oldbg:#f1f2f4;--ok:#17734a;--okbg:#e3f4ea;--warn:#9a5200;--warnbg:#fdf0dd;--bad:#a1262d;--badbg:#fbe5e6;}
+@media screen and (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#11151c;--fg:#e6e9ef;--mut:#9aa6b8;--line:#2d3644;--card:#19202b;
+--acc:#7aaeff;--accbg:#1b2a44;--old:#a3aab6;--oldbg:#232a35;--ok:#5fd39a;--okbg:#14301f;--warn:#f2a650;--warnbg:#3a2a12;--bad:#f08a8f;--badbg:#3a1a1c;}}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;overflow-wrap:break-word}
+main{max-width:46rem;margin:0 auto;padding:1rem 16px 4rem}
+h1{font-size:1.75rem;line-height:1.2;margin:.2rem 0 .5rem}
+h1.title{font-size:2.4rem}
+h2{font-size:1.25rem;margin:1.8rem 0 .6rem;padding-bottom:.25rem;border-bottom:2px solid var(--line)}
+h3{font-size:1.05rem;margin:1.2rem 0 .4rem}
+h4{margin:0 0 .3rem;font-size:1rem}
+p{margin:.45rem 0}
+.kicker{color:var(--acc);font-weight:700;font-size:.8rem;letter-spacing:.06em;text-transform:uppercase;margin:0}
+.lede{font-size:1.08rem;color:var(--mut)}
+.topic{border-top:4px solid var(--acc);margin-top:3rem;padding-top:.8rem}
+.cover{padding-top:1rem}
+.toc li{margin:.15rem 0}
+.toc a{color:var(--acc)}
+.dl a{display:inline-block;padding:.35rem .8rem;border:1px solid var(--acc);border-radius:8px;color:var(--acc);font-weight:600;text-decoration:none}
+/* chips and tags */
+.sec{display:inline-block;white-space:nowrap;font-size:.8em;font-weight:650;line-height:1.35;padding:0 .45em;border-radius:5px;
+ color:var(--acc);background:var(--accbg);border:1px solid var(--acc);vertical-align:.08em}
+.sec.old{color:var(--old);background:var(--oldbg);border:1px dashed var(--old);font-weight:500}
+.sec.old i{font-style:normal;font-size:.85em;text-transform:uppercase;letter-spacing:.04em;margin-right:.15em}
+.tag{display:inline-block;font-size:.72em;font-weight:700;text-transform:uppercase;letter-spacing:.04em;padding:0 .5em;border-radius:99px;vertical-align:.12em;white-space:nowrap}
+.tag.same{color:var(--old);background:var(--oldbg)}
+.tag.changed{color:var(--warn);background:var(--warnbg)}
+.tag.new{color:var(--ok);background:var(--okbg)}
+.tag.removed{color:var(--bad);background:var(--badbg)}
+.tag.rules{color:var(--mut);border:1px solid var(--line);font-weight:600}
+/* law today strip */
+.lawtoday{border-left:5px solid var(--acc);background:var(--accbg);padding:.6rem .9rem;border-radius:0 8px 8px 0;margin:.8rem 0}
+.lawtoday b:first-child{display:block;font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--acc)}
+/* key points */
+ol.keys{list-style:none;counter-reset:k;padding:0;margin:.8rem 0;display:grid;gap:.5rem}
+ol.keys li{counter-increment:k;position:relative;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:.55rem .8rem .55rem 2.6rem}
+ol.keys li::before{content:counter(k);position:absolute;left:.7rem;top:.55rem;width:1.4rem;height:1.4rem;border-radius:50%;background:var(--acc);color:var(--bg);font-weight:700;font-size:.8rem;display:flex;align-items:center;justify-content:center}
+/* rule card */
+.rule{border:1px solid var(--line);border-left:5px solid var(--acc);border-radius:8px;margin:.8rem 0;background:var(--bg);break-inside:avoid}
+.rule .rh{padding:.45rem .8rem;border-bottom:1px solid var(--line);background:var(--card);border-radius:0 8px 0 0}
+.rule .rt{font-weight:700;margin-left:.3rem}
+.rule>p{padding:0 .8rem}
+.rule .was{padding:.4rem .8rem;border-top:1px dashed var(--line);color:var(--mut);font-size:.92rem}
+/* tables */
+table{border-collapse:collapse;width:100%;margin:.7rem 0;font-size:.95rem;break-inside:auto}
+th,td{border:1px solid var(--line);padding:.4rem .55rem;text-align:left;vertical-align:top}
+thead th{background:var(--card);font-size:.85rem}
+tr{break-inside:avoid}
+table.shift td:nth-child(2){color:var(--mut)}
+table.shift td:first-child{width:22%;font-weight:600}
+table.shift td:last-child{width:1%;white-space:nowrap}
+td{hyphens:manual}
+table.recall td:first-child{width:45%;font-weight:600}
+/* trap */
+.trap{border:1px solid var(--warn);background:var(--warnbg);border-radius:8px;padding:.3rem .8rem;margin:.8rem 0;break-inside:avoid}
+.trap::before{content:"Trap";display:block;font-weight:800;font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--warn);margin-top:.3rem}
+/* ladder */
+.ladder{margin:.8rem 0;border-left:3px solid var(--acc);padding-left:0;break-inside:avoid}
+.rung{display:flex;gap:.8rem;align-items:baseline;padding:.3rem 0 .3rem .8rem;position:relative}
+.rung::before{content:"";position:absolute;left:-7px;top:.85rem;width:11px;height:11px;border-radius:50%;background:var(--acc)}
+.rung>b{width:6.2rem;font-size:1.2rem;line-height:1.25;color:var(--acc);text-align:right;flex-shrink:0}
+/* steps */
+ol.steps{list-style:none;counter-reset:s;padding:0;margin:.8rem 0}
+ol.steps li{counter-increment:s;position:relative;padding:0 0 .9rem 2.6rem;break-inside:avoid}
+ol.steps li::before{content:counter(s);position:absolute;left:0;top:0;width:1.8rem;height:1.8rem;border-radius:50%;border:2px solid var(--acc);color:var(--acc);font-weight:800;display:flex;align-items:center;justify-content:center;background:var(--bg)}
+ol.steps li:not(:last-child)::after{content:"";position:absolute;left:.85rem;top:1.9rem;bottom:.1rem;width:2px;background:var(--line)}
+ol.steps li>b:first-child{display:block}
+/* timeline */
+ol.tl{list-style:none;padding:0 0 0 .2rem;margin:.8rem 0;border-left:3px solid var(--line)}
+ol.tl li{padding:.15rem 0 .5rem .9rem;position:relative;break-inside:avoid}
+ol.tl li>b:first-child{display:inline-block;min-width:4.6rem;color:var(--acc);font-weight:800}
+/* decision */
+.decide{border:1px solid var(--line);border-radius:10px;padding:.6rem .8rem;margin:.8rem 0;background:var(--card);break-inside:avoid}
+.decide .q{font-weight:700;margin:.1rem 0 .5rem}
+.decide .opts{display:grid;grid-template-columns:repeat(auto-fit,minmax(13rem,1fr));gap:.5rem}
+.decide .opt{background:var(--bg);border:1px solid var(--line);border-top:4px solid var(--acc);border-radius:8px;padding:.5rem .7rem}
+.decide .opt>b:first-child{display:block;margin-bottom:.2rem}
+/* bars */
+.bars{margin:.8rem 0;break-inside:avoid}
+.bar{--c:var(--okbg);--e:var(--ok);background:linear-gradient(var(--c),var(--c)) no-repeat left/var(--w,100%) 100%;
+ border-left:5px solid var(--e);padding:.25rem .55rem;margin:.3rem 0;border-radius:0 6px 6px 0;font-size:.92rem;outline:1px solid var(--line);outline-offset:-1px}
+.bar.no{--c:var(--badbg);--e:var(--bad)}
+.bar.mid{--c:var(--accbg);--e:var(--acc)}
+@media print{.bar{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+/* cards */
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(13rem,1fr));gap:.6rem;margin:.8rem 0}
+.card{border:1px solid var(--line);border-radius:10px;padding:.6rem .8rem;background:var(--card);break-inside:avoid}
+.card p{margin:.25rem 0;font-size:.95rem}
+/* questions */
+ol.quiz li{margin:.4rem 0}
+.answers{border-top:2px dashed var(--line);margin-top:1.2rem;padding-top:.3rem;color:var(--mut);font-size:.93rem}
+.answers h3{margin-top:.4rem}
+/* ---- story layer (student/story parts) ---- */
+:root{--stbg:#fbf5e9;--stline:#d9b46a;--stfg:#3b2f1a}
+@media screen and (prefers-color-scheme:dark){:root:not([data-theme="light"]){--stbg:#221c12;--stline:#8a6a2c;--stfg:#eadcc0}}
+.story{background:var(--stbg);color:var(--stfg);border-left:4px solid var(--stline);border-radius:0 10px 10px 0;padding:.6rem 1rem .7rem;margin:1rem 0;
+ font-family:Georgia,"Iowan Old Style","Times New Roman",serif;font-size:1.02rem;break-inside:avoid}
+.story p{margin:.35rem 0}
+.story .when{font:700 .72rem/1.2 system-ui,sans-serif;letter-spacing:.08em;text-transform:uppercase;color:var(--stline);margin:.1rem 0 .3rem}
+.story .punch{font-style:italic;font-weight:600}
+.story.case{background:var(--accbg);color:var(--fg);border-left-color:var(--acc);font-family:inherit;font-size:.97rem}
+.story.case .when{color:var(--acc)}
+h2 .ch{display:block;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--acc)}
+h2[id]:not([data-nav]){border-bottom-width:3px;margin-top:2.4rem}
+.note{border-left:3px solid var(--acc);padding:.1rem 0 .1rem .7rem;color:var(--fg)}
+/* journey map */
+.journey{margin:1rem 0}
+.journey figcaption{font-weight:700;font-size:.82rem;color:var(--mut);margin-bottom:.4rem}
+.journey ol{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(6,1fr);gap:.35rem;counter-reset:j}
+.journey li{position:relative}
+.journey li:not(:last-child)::after{content:"";position:absolute;right:-.33rem;top:50%;border:.3rem solid transparent;border-left-color:var(--acc);transform:translate(50%,-50%);z-index:1}
+.journey a{display:block;height:100%;padding:.5rem .55rem;border:1px solid var(--line);border-top:4px solid var(--acc);border-radius:8px;background:var(--card);color:var(--fg);text-decoration:none}
+.journey a b{display:block;font-size:.95rem}
+.journey a span{display:block;font-size:.78rem;color:var(--mut);line-height:1.3;margin-top:.15rem}
+/* figure frame and svg */
+.fig{border:1px solid var(--line);border-radius:12px;padding:.7rem .8rem;margin:1rem 0;background:var(--card);break-inside:avoid}
+.fig figcaption{font-weight:700;font-size:.85rem;color:var(--mut);margin:0 0 .5rem}
+.fig>figcaption:last-child{margin:.5rem 0 0;font-weight:500}
+.fig svg{display:block;width:100%;max-width:34rem;margin:0 auto;height:auto;overflow:visible;font-family:system-ui,-apple-system,sans-serif;font-size:13px}
+.fig .cap-note{font-size:.92rem;margin:.4rem 0 0}
+svg .grid line{stroke:var(--line);stroke-width:1}
+svg .grid line.cap{stroke:var(--acc);stroke-dasharray:5 4}
+svg .ax text{fill:var(--mut);font-size:12px}
+svg .ax .lab{font-size:12px}
+svg .ln{fill:none;stroke:var(--acc);stroke-width:3.5;stroke-linejoin:round}
+svg .pt{fill:var(--acc)} svg .pt.alt{fill:var(--warn)}
+svg .hl{fill:none;stroke:var(--warn);stroke-width:3}
+svg .hl-t{fill:var(--warn);font-weight:700}
+svg .note-t{fill:var(--acc);font-weight:700}
+svg .z-no{fill:var(--badbg);stroke:var(--bad)} svg .z-ok{fill:var(--okbg);stroke:var(--ok)} svg .z-off{fill:var(--oldbg);stroke:var(--old)}
+svg .zt{fill:var(--fg);font-weight:700}
+svg .tick line{stroke:var(--fg);stroke-width:1.5}
+svg .ax-t{fill:var(--fg);font-weight:700;font-size:12px}
+svg .sm{fill:var(--fg);font-size:12px} svg .mut{fill:var(--mut)}
+svg .scl{stroke:var(--line);stroke-width:6;stroke-linecap:round}
+/* slicing matrix */
+.mx-wrap{display:grid;grid-template-columns:repeat(auto-fit,minmax(8.5rem,1fr));gap:.6rem}
+.mx-card{background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:.5rem .6rem}
+.mx-card h4{font-size:.9rem;margin:0 0 .35rem}
+.mx-card p{font-size:.8rem;color:var(--mut);margin:.35rem 0 0;line-height:1.3}
+.mx{display:grid;grid-template-columns:repeat(4,1fr);gap:3px}
+.mx i{aspect-ratio:1;border-radius:3px;background:var(--oldbg);border:1px solid var(--line)}
+.mx i.on{background:var(--acc);border-color:var(--acc)}
+.mx i:nth-child(4n+2){margin-right:3px}
+/* shield */
+.sh-row{display:grid;grid-template-columns:1fr 1.6rem minmax(9rem,12rem);align-items:center;margin:.45rem 0}
+.atk{background:var(--badbg);border:1px solid var(--bad);border-radius:8px;padding:.4rem .6rem;font-size:.9rem}
+.arw{height:3px;background:var(--bad);position:relative}
+.arw::after{content:"";position:absolute;right:-2px;top:50%;transform:translateY(-50%);border:.4rem solid transparent;border-left-color:var(--bad)}
+.blk{background:var(--okbg);border:2px solid var(--ok);border-radius:8px 8px 18px 18px;padding:.35rem .6rem;font-size:.88rem}
+.blk b{display:block;color:var(--ok)}
+.was-s{display:block;margin-top:.15rem;font-size:.85em}
+/* seats, waffle */
+.seat-row{margin:.55rem 0}
+.seat-row p{margin:0 0 .25rem;font-size:.92rem}
+.dots{display:flex;flex-wrap:wrap;gap:4px}
+.dots i,.legend-dots i{display:inline-block;width:16px;height:16px;border-radius:50%;background:var(--acc)}
+.dots i.out,.legend-dots i.out{background:var(--warn)}
+.legend-dots{font-size:.82rem;color:var(--mut);margin:.5rem 0 0}
+.legend-dots i{width:11px;height:11px;vertical-align:-1px;margin:0 .2rem 0 .6rem}
+.legend-dots i:first-child{margin-left:0}
+.waffle{display:grid;grid-template-columns:repeat(20,1fr);gap:3px;max-width:26rem}
+.waffle i{aspect-ratio:1;border-radius:2px;background:var(--oldbg);border:1px solid var(--line)}
+.waffle i.on{background:var(--warn);border-color:var(--warn)}
+/* stacked shares */
+.stk-scale{position:relative;height:1.1rem;font-size:.75rem;color:var(--mut);font-weight:700}
+.stk-scale span{position:absolute;transform:translateX(-50%)}
+.stk{position:relative;display:flex;height:2.1rem;border-radius:6px;font-size:.8rem;font-weight:700;margin:.2rem 0}
+.stk span{position:relative;z-index:1;width:var(--w);display:flex;align-items:center;justify-content:center;white-space:nowrap;overflow:hidden}
+.stk span:first-child{border-radius:6px 0 0 6px} .stk span:last-of-type{border-radius:0 6px 6px 0}
+.stk .s1{background:var(--acc);color:var(--bg)} .stk .s2{background:var(--ok);color:var(--bg)}
+.stk .s3{background:var(--warn);color:var(--bg)} .stk .s0{background:var(--oldbg);color:var(--mut)}
+.stk b{position:absolute;z-index:0;top:-7px;bottom:-7px;width:2px;margin-left:-1px;background:var(--mut)}
+.stk b.m{width:3px;opacity:1;background:var(--bad)}
+.stk-t{font-weight:700;font-size:.9rem;margin:.7rem 0 .1rem}
+.stk-r{font-size:.92rem;margin:.25rem 0 .4rem}
+.bars.marked{position:relative;padding-top:1.1rem}
+.bars.marked::before{content:"100 needed";position:absolute;top:0;left:27%;transform:translateX(-50%);font-size:.72rem;font-weight:700;color:var(--warn)}
+.bars.marked::after{content:"";position:absolute;top:1rem;bottom:0;left:27%;border-left:2px dashed var(--warn)}
+/* spectrum */
+.spectrum ol{list-style:none;margin:0;padding:0 0 0 1.6rem;position:relative}
+.spectrum ol::before{content:"";position:absolute;left:.35rem;top:.4rem;bottom:.4rem;width:7px;border-radius:4px;background:linear-gradient(var(--acc),var(--line))}
+.spectrum li{margin:.35rem 0;padding:.35rem .6rem;background:var(--bg);border:1px solid var(--line);border-radius:8px;font-size:.93rem}
+.spectrum li>b:first-child{display:block}
+.spectrum li.none{border-style:dashed;color:var(--mut)}
+/* card variants */
+.cards.think .cue{font:700 .7rem/1.2 system-ui,sans-serif;letter-spacing:.07em;text-transform:uppercase;color:var(--acc);margin:0 0 .15rem}
+.cards.ages .big{font-size:2.6rem;font-weight:800;line-height:1;color:var(--acc);margin:0}
+.was-c{border-top:1px dashed var(--line);padding-top:.3rem;color:var(--mut);font-size:.88rem !important}
+.tl .pol{display:inline-block;font-size:.72rem;font-weight:700;padding:0 .45em;border-radius:99px;background:var(--oldbg);color:var(--mut);margin-right:.25rem;vertical-align:.1em}
+.score{font-size:.95rem}
+@media screen and (max-width:620px){
+ .journey ol{grid-template-columns:repeat(3,1fr)}
+ .journey li:nth-child(3)::after{display:none}
+}
+@media screen and (max-width:520px){
+ .sh-row{grid-template-columns:1fr;gap:0}
+ .arw{width:3px;height:1rem;margin-left:1.2rem}
+ .arw::after{right:auto;left:50%;top:auto;bottom:-6px;transform:translateX(-50%);border-left-color:transparent;border-top-color:var(--bad)}
+ .story{font-size:.98rem}
+ .sh-row{margin:.2rem 0 .9rem}
+}
+@media print{.story,.fig,.journey{break-inside:avoid}}
+/* phone: tables become labelled cards */
+@media screen and (max-width:520px){
+ table.cmp,table.shift,table.cmp tbody,table.shift tbody,table.cmp tr,table.shift tr,table.cmp td,table.shift td{display:block;width:auto}
+ table.cmp thead,table.shift thead{display:none}
+ table.cmp tr,table.shift tr{border:1px solid var(--line);border-radius:8px;margin:.5rem 0;overflow:hidden}
+ table.cmp td,table.shift td{border:0;border-bottom:1px solid var(--line)}
+ table.cmp td:first-child,table.shift td:first-child{background:var(--card);font-weight:700}
+ table.cmp td[data-label]:not(:first-child)::before,table.shift td[data-label]:not(:first-child)::before{content:attr(data-label);display:block;font-size:.72rem;text-transform:uppercase;letter-spacing:.05em;color:var(--mut)}
+ table.shift td:last-child{width:auto}
+ .rung>b{width:4.8rem;font-size:1.05rem}
+}
+@page{size:A4;margin:16mm 14mm 16mm 14mm}
+@media print{
+ *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+ body{font-size:10.5pt}
+ main{max-width:none;padding:0}
+ .topic{break-before:page;margin-top:0}
+ h2,h3{break-after:avoid}
+ a{color:inherit;text-decoration:none}
+ .dl{display:none}
+}
+/* ---- screen styles: reading width, tables, cards, margin contents list ----
+   Additive only. Colours are tokens from :root. Print is not touched: everything here sits inside @media screen.
+   Meaning of colours is unchanged (blue = law today, grey dashed = repealed old law, green/orange/red tags = new/changed/removed). */
+@media screen{
+
+/* 1. New tokens, each with a dark value (same switch as the page's own variables). */
+:root{
+ --zebra:#f6f8fb;
+ --hover:#edf2fa;
+ --shadow:rgba(28,35,48,.08);
+ --acc-line:#1f5fbf;
+}
+@media (prefers-color-scheme:dark){
+ :root:not([data-theme="light"]){--zebra:#151b24;--hover:#1d2632;--shadow:rgba(0,0,0,.40);--acc-line:#7aaeff}
+}
+:root[data-theme="dark"]{--zebra:#151b24;--hover:#1d2632;--shadow:rgba(0,0,0,.40);--acc-line:#7aaeff}
+
+/* 2. Reading measure and rhythm: body text capped near 68 characters, looser leading. */
+html{scroll-behavior:smooth}
+body{line-height:1.65;text-rendering:optimizeLegibility}
+main{padding-bottom:4rem}
+main p{max-width:68ch;line-height:1.65}
+main li{line-height:1.6}
+main li+li{margin-top:.12rem}
+main ul,main ol:not(.keys):not(.steps):not(.tl){padding-left:1.3rem}
+
+/* 3. Type scale: clearer h1/h2/h3 steps, accent rule under h2, room above sections. */
+h1{font-size:1.85rem;letter-spacing:-.01em;line-height:1.18}
+h1.title{font-size:2.5rem;letter-spacing:-.02em}
+h2{font-size:1.3rem;line-height:1.3;letter-spacing:-.005em;margin:2.1rem 0 .7rem;padding-bottom:.4rem;
+ background:linear-gradient(var(--acc-line),var(--acc-line)) left bottom/3.5rem 3px no-repeat}
+h3{font-size:1.06rem;line-height:1.35;margin:1.3rem 0 .45rem}
+h4{line-height:1.35}
+.kicker{letter-spacing:.07em}
+.lede{font-size:1.1rem;line-height:1.55;max-width:64ch}
+
+/* 4. Anchors: headings are not hidden under a fixed element when jumped to. */
+[id]{scroll-margin-top:1rem}
+
+/* 5. Links and keyboard focus. */
+a{text-underline-offset:.18em;text-decoration-thickness:.07em}
+a:hover{text-decoration-thickness:.1em}
+:focus-visible{outline:3px solid var(--acc-line);outline-offset:2px;border-radius:4px}
+summary:focus-visible{border-radius:4px}
+
+/* 6. Tables: stronger header, comfortable cells, zebra rows and hover on wide screens only. */
+table{border-radius:8px;overflow:hidden}
+th,td{padding:.5rem .7rem;line-height:1.5}
+thead th{font-weight:700;letter-spacing:.01em;font-size:.82rem;text-transform:none;border-bottom:2px solid var(--line)}
+td{font-variant-numeric:tabular-nums}
+@media (min-width:521px){
+ tbody tr:nth-child(even) td{background:var(--zebra)}
+ @media (hover:hover){tbody tr:hover td{background:var(--hover)}}
+}
+table.recall td:first-child{font-weight:650}
+
+/* 7. Cards and rule blocks: softer edge, a little shadow, clearer chip. */
+.rule{box-shadow:0 1px 2px var(--shadow);border-radius:10px}
+.rule .rh{border-radius:0 9px 0 0}
+.card{box-shadow:0 1px 2px var(--shadow);border-radius:12px}
+.decide{box-shadow:0 1px 2px var(--shadow)}
+.fig{box-shadow:0 1px 2px var(--shadow)}
+.sec{font-weight:700;letter-spacing:.005em;border-radius:6px;padding:.05em .5em}
+.sec.old{font-weight:500}
+
+/* 8. Tags as pills with steadier padding (colours unchanged). */
+.tag{padding:.12em .55em;line-height:1.45;letter-spacing:.05em}
+
+/* 9. The "law today" strip: stronger label and clearer edge. */
+.lawtoday{box-shadow:inset 0 0 0 1px var(--line);color:var(--fg)}
+.lawtoday b:first-child{font-weight:800}
+
+/* 10. Trap callout: a little more air. */
+.trap{padding:.4rem .9rem .6rem;border-radius:10px}
+
+/* 11. Ladder, steps and timeline: tidier spacing. */
+ol.steps li{padding-bottom:1.05rem}
+ol.tl li{padding-top:.25rem}
+.decide{border-radius:12px}
+.decide .opt{border-radius:10px}
+
+/* 12. Answers block: visually separated from the questions. */
+.answers{padding-top:.6rem}
+
+/* 13. Contents: on wide screens the list floats in the right margin and stays in view.
+   Narrow screens keep the list in the normal flow. CSS only. */
+@media (min-width:1320px){
+ h2:has(+ ol.toc){display:none}
+ ol.toc{position:fixed;top:5.5rem;left:calc(50% + 24rem);width:13.5rem;max-height:calc(100vh - 7rem);overflow:auto;
+  margin:0;padding:.7rem .85rem;list-style:none;background:var(--card);border:1px solid var(--line);border-radius:12px;
+  box-shadow:0 2px 8px var(--shadow);font-size:.9rem;z-index:2}
+ ol.toc::before{content:"On this page";display:block;font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--mut);margin-bottom:.35rem}
+ ol.toc li{margin:.25rem 0;line-height:1.35}
+}
+
+/* 14. Reduced motion: no smooth scrolling. */
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+}
+/* ---- reading progress bar: scroll-driven where supported, small script otherwise; never printed ---- */
+.rp{position:fixed;top:0;left:0;right:0;height:4px;z-index:9000;pointer-events:none;background:var(--accbg)}
+.rp-bar{height:100%;width:100%;background:var(--acc);transform-origin:left center;transform:scaleX(0)}
+@keyframes rp-grow{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@supports (animation-timeline:scroll()){
+ .rp-bar{animation:rp-grow 1s linear both;animation-timeline:scroll(root block)}
+}
+@media (prefers-reduced-motion:reduce){.rp-bar{transition:none}}
+@media print{.rp,nav.top{display:none!important}}
+/* ---- top navigation and edition switcher (screen only) ---- */
+@media screen{
+nav.top{display:flex;flex-wrap:wrap;align-items:center;gap:.3rem .5rem;margin:0 0 1.2rem;padding:.2rem 0 .7rem;border-bottom:1px solid var(--line);font-size:.9rem}
+nav.top a{color:var(--acc);font-weight:650;text-decoration:none;padding:.2rem .35rem;border-radius:6px}
+nav.top a:hover{background:var(--accbg)}
+nav.top .sep{color:var(--mut)}
+nav.top .here{color:var(--mut);font-weight:600}
+nav.top .ed{margin-left:auto;display:inline-flex;border:1px solid var(--acc);border-radius:99px;overflow:hidden}
+nav.top .ed a{border-radius:0;padding:.2rem .85rem;font-weight:600}
+nav.top .ed a+a{border-left:1px solid var(--acc)}
+nav.top .ed a[aria-current="page"]{background:var(--acc);color:var(--bg);font-weight:700}
+.banner{border-left:4px solid var(--stline);background:var(--stbg);color:var(--stfg);padding:.5rem .8rem;border-radius:0 8px 8px 0;font-size:.95rem}
+}
+/* contents on a single-topic cover: headings carry their own numbers, so no list numbers */
+main ol.toc.flat:not(.keys):not(.steps):not(.tl){list-style:none;padding-left:0}
+</style>
+</head>
+<body>
+<div class="rp" aria-hidden="true"><div class="rp-bar"></div></div>
+<main>
+<nav class="top" aria-label="Site"><a class="home" href="index.html">EPFO Notes</a><span class="sep" aria-hidden="true">/</span><span class="here">Code on Social Security</span></nav>
+<section class="cover">
+<p class="kicker">UPSC EPFO · Industrial Relations, Labour Codes and Social Security in India</p>
+<h1 class="title">Code on Social Security, 2020</h1>
+<p class="lede">One topic, written from the law as it stands today. Each rule names the Code section that applies now, and what the old Act said where it changed.</p>
+<p class="dl"><a href="social_security_notes.pdf">Download as PDF</a></p>
+<div class="legend">
+<h2>How to read these notes</h2>
+<table class="cmp"><tbody>
+<tr><td><span class="sec">Code on SS s.16(1)(a)</span></td><td>The law today. The Code on Social Security 2020 is in force in full, by date: 3 May 2021, 3 May 2023, and everything else from 21 November 2025.</td></tr>
+<tr><td><span class="sec">SS Central Rules r.19(1)</span> <span class="sec">EPF Scheme 2026 para 18(2)</span></td><td>A point from the Social Security (Central) Rules 2026 (in force from 8 May 2026) or from a Scheme of 29 June 2026. The Code itself leaves the point to them.</td></tr>
+<tr><td><span class="sec old"><i>old</i> EPF Act 1952 s.6</span></td><td>An old Act, now repealed. Shown only to compare.</td></tr>
+<tr><td><span class="tag rules">needs rules</span></td><td>The section works through rules or a Government notification.</td></tr>
+<tr><td><span class="tag same">Same</span> <span class="tag changed">Changed</span> <span class="tag new">New</span> <span class="tag removed">Removed</span></td><td>How the Code compares with the old law.</td></tr>
+</tbody></table>
+<div class="rule"><div class="rh"><span class="sec">Code on SS s.x</span> <span class="rt">Rule card</span></div><p>One rule of law. The section is always at the top.</p><div class="was"><span class="sec old"><i>old</i> Old Act s.y</span> what it said before <span class="tag same">Same</span></div></div>
+</div>
+<h2>Contents</h2>
+<ol class="toc flat"><li><a href="#s1-the-code-at-a-glance">1. The Code at a glance</a></li><li><a href="#s2-definitions-and-who-is-covered">2. Definitions and who is covered</a></li><li><a href="#s3-employees-provident-fund-chapter-iii">3. Employees' Provident Fund (Chapter III)</a></li><li><a href="#s4-epf-withdrawals-and-settlement-scheme-2026">4. EPF withdrawals and settlement (Scheme 2026)</a></li><li><a href="#s5-employees-pension-scheme-2026">5. Employees' Pension Scheme 2026</a></li><li><a href="#s6-employees-deposit-linked-insurance-scheme-2026">6. Employees' Deposit-Linked Insurance Scheme 2026</a></li><li><a href="#s7-employees-state-insurance-chapter-iv">7. Employees' State Insurance (Chapter IV)</a></li><li><a href="#s8-employees-compensation-chapter-vii">8. Employees' Compensation (Chapter VII)</a></li><li><a href="#s9-maternity-benefit-chapter-vi">9. Maternity Benefit (Chapter VI)</a></li><li><a href="#s10-gratuity-chapter-v">10. Gratuity (Chapter V)</a></li><li><a href="#s11-gig-and-platform-workers">11. Gig and platform workers</a></li><li><a href="#s12-unorganised-workers-and-the-boards">12. Unorganised workers and the Boards</a></li><li><a href="#s13-building-and-other-construction-workers-chapter-viii">13. Building and other construction workers (Chapter VIII)</a></li><li><a href="#s14-career-centres">14. Career centres</a></li><li><a href="#s15-registration-inspection-offences-and-compounding">15. Registration, inspection, offences and compounding</a></li><li><a href="#s16-exemption-and-emergency-powers">16. Exemption and emergency powers</a></li><li><a href="#s17-the-nine-repealed-acts-where-each-went">17. The nine repealed Acts: where each went</a></li><li><a href="#what-changed">What changed</a></li><li><a href="#numbers-on-one-scale">Numbers on one scale</a></li><li><a href="#quick-revision">Quick revision</a></li><li><a href="#test-yourself">Test yourself</a></li></ol>
+</section>
+
+<section class="topic" id="t09">
+<p class="lede">Nine Acts on provident fund, state insurance, compensation, maternity, gratuity, building workers, unorganised workers and job vacancies became one Code on social security. This topic teaches the Code first, scheme by scheme: who is covered, the money numbers, the authority that decides, and the new gig, platform and unorganised worker rules. The old Acts appear only to show what changed. </p>
+<div class="lawtoday"><b>Law today</b> The Code on Social Security, 2020 <span class="sec">Code on SS</span> (Act 36 of 2020) is in force in full, by date. <span class="sec">Code on SS s.142</span> (Aadhaar) has been in force from 3 May 2021 (S.O. 1730(E)).  The Employees' Pension Scheme 1995 parts of <span class="sec">Code on SS ss.15(3), 16(1)(a), 16(2), 164(2)(b)</span>, all of <span class="sec">Code on SS s.16(1)(b)</span>, the <span class="sec">Code on SS s.143</span> part at serial (v) and the <span class="sec">Code on SS s.164(1)</span> repeal of the matching EPF Act 1952 provisions are in force from 3 May 2023 (S.O. 2060(E)).         Everything else is in force from 21 November 2025 (S.O. 5319(E), as corrected by S.O. 5936(E) of 19 December 2025).    The Code repealed 9 Acts <span class="sec">Code on SS s.164(1)</span>, including the EPF Act 1952.   The Social Security (Central) Rules, 2026 (G.S.R. 344(E), 8 May 2026) are in force from the date of publication. A Rules chip marks a point that comes from the Rules, not the Code text.  The EPF Scheme 2026 (G.S.R. 525(E)) and the EDLI Scheme 2026 (G.S.R. 526(E)) are dated 29 June 2026 and are in force on publication. The Employees' Pension Scheme 2026 (G.S.R. 527(E)) is dated 29 June 2026 and is also in force on publication.   </div>
+
+
+
+<ol class="keys">
+<li><b>1 Code, 9 Acts.</b> The Code has <b>164</b> sections and <b>14</b> chapters. It was assented to on 28 September 2020. It is in force by date: 3 May 2021, 3 May 2023, and the rest from 21 November 2025.     </li>
+<li><b>Who is covered.</b> EPF: <b>20 or more</b> employees <span class="sec">Code on SS First Schedule</span>. ESI: <b>10 or more</b> persons, other than a seasonal factory. Gratuity: factories, mines, oilfields, plantations, ports and railway companies of any size, and shops or establishments with <b>10 or more</b> employees. Once covered, always covered <span class="sec">Code on SS s.1(8)</span>.    </li>
+<li><b>The money numbers.</b> EPF: the Code reads <b>10%</b>, with <b>12%</b> by notification <span class="sec">Code on SS s.16(1)(a)</span>; the EPF Scheme 2026 fixes <b>12%</b> each side <span class="sec">EPF Scheme 2026 para 18(2)</span>. ESI: employer <b>3.25%</b> plus employee <b>0.75%</b> <span class="sec">SS Central Rules r.19(1)</span>. Maternity: <b>26 weeks</b>, or <b>12 weeks</b> with two or more surviving children <span class="sec">Code on SS s.60(3)</span>. Gratuity: <b>15 days' wages</b> a year after <b>5 years</b> <span class="sec">Code on SS s.53</span>. Death compensation: <b>50%</b> of monthly wages x the factor <span class="sec">Code on SS s.76(1)(a)</span>.         </li>
+<li><b>The new groups.</b> An aggregator pays <b>1% to 2%</b> of annual turnover, capped at <b>5%</b> of what it pays gig and platform workers <span class="sec">Code on SS s.114(4)</span>; the duty starts on a notified date. Building workers' cess: <b>1% to 2%</b> of the cost of construction <span class="sec">Code on SS s.100(1)</span>. The Social Security Fund is in <span class="sec">Code on SS s.141</span>.     </li>
+<li><b>Compliance.</b> First-offence compounding <span class="sec">Code on SS s.138(1)</span>: <b>half</b> of the maximum fine for a fine-only offence, <b>three-fourths</b> where there is imprisonment up to one year and fine. Obstructing an Inspector-cum-Facilitator: up to <b>6 months</b> or Rs <b>50,000</b>, or both. Exemption under <span class="sec">Code on SS s.143</span>: initially <b>3 years</b>.    </li>
+</ol>
+
+<h2 id="s1-the-code-at-a-glance" data-nav>1. The Code at a glance</h2>
+<table class="cmp"><thead><tr><th>Point</th><th>Rule</th></tr></thead><tbody>
+<tr><td data-label="Point">Act</td><td data-label="Rule">Act 36 of 2020. Presidential assent on 28 September 2020. </td></tr>
+<tr><td data-label="Point">Size</td><td data-label="Rule"><b>164</b> sections. The last, <span class="sec">Code on SS s.164</span>, is "Repeal and savings". </td></tr>
+<tr><td data-label="Point">Chapters</td><td data-label="Rule"><b>14</b>, from Chapter I Preliminary to Chapter XIV Miscellaneous. </td></tr>
+<tr><td data-label="Point">Acts repealed</td><td data-label="Rule"><b>9</b> <span class="sec">Code on SS s.164(1)</span>. </td></tr>
+<tr><td data-label="Point">Commencement power</td><td data-label="Rule">Different dates may be fixed for different provisions <span class="sec">Code on SS s.1(3)</span>. A reference in a provision to the commencement of the Code means the coming into force of that provision. </td></tr>
+<tr><td data-label="Point">Rules</td><td data-label="Rule">Social Security (Central) Rules 2026, G.S.R. 344(E), 8 May 2026. In force on publication. </td></tr>
+</tbody></table>
+
+<h3>When each part is in force</h3>
+<p>The Code has no single commencement date. Read the table by provision. </p>
+<table class="cmp"><thead><tr><th>Provision</th><th>In force from</th><th>Notification</th></tr></thead><tbody>
+<tr><td data-label="Provision"><span class="sec">Code on SS s.142</span> (Aadhaar for registration, benefits, career-centre services and payments to Insured Persons) </td><td data-label="In force from"><b>3 May 2021</b></td><td data-label="Notification">S.O. 1730(E), 30 April 2021 </td></tr>
+<tr><td data-label="Provision">The Employees' Pension Scheme 1995 parts of <span class="sec">Code on SS ss.15(3), 16(1)(a), 16(2), 164(2)(b)</span>; the whole of <span class="sec">Code on SS s.16(1)(b)</span>; the part of <span class="sec">Code on SS s.143</span> that gives effect to <span class="sec">Code on SS s.16(1)(b)(ii)</span> for that Scheme; the repeal of the matching EPF Act 1952 provisions in <span class="sec">Code on SS s.164(1)</span>        </td><td data-label="In force from"><b>3 May 2023</b></td><td data-label="Notification">S.O. 2060(E), 7 items </td></tr>
+<tr><td data-label="Provision"><span class="sec">Code on SS ss.1 to 14, 17 to 141, 144 to 163</span>; <span class="sec">Code on SS s.143</span> except the part above; the rest of <span class="sec">Code on SS s.164</span>  </td><td data-label="In force from"><b>21 November 2025</b></td><td data-label="Notification">S.O. 5319(E), under <span class="sec">Code on SS s.1(3)</span> </td></tr>
+<tr><td data-label="Provision">The rest of <span class="sec">Code on SS s.15</span> and <span class="sec">Code on SS s.16</span>, including <span class="sec">Code on SS s.16(1)(c)</span>   </td><td data-label="In force from"><b>21 November 2025</b></td><td data-label="Notification">S.O. 5936(E) (corrigendum), entries (a) and (b)  </td></tr>
+<tr><td data-label="Provision">The rest of <span class="sec">Code on SS s.164(1)</span>, including the EPF Act repeal, and the rest of <span class="sec">Code on SS ss.164(2), 164(3)</span>  </td><td data-label="In force from"><b>21 November 2025</b></td><td data-label="Notification">S.O. 5936(E), entries (c) and (d)  </td></tr>
+</tbody></table>
+<p>S.O. 5936(E) of 19 December 2025 corrects S.O. 5319(E). It was published in Gazette No. 5739 of 20 December 2025. Read together, the lists in the four instruments name every section as in force.  </p>
+<h3>Key dates</h3>
+<ol class="tl">
+<li><b>28 Sep 2020</b> Presidential assent. </li>
+<li><b>3 May 2021</b> S.O. 1730(E): <span class="sec">Code on SS s.142</span> (Aadhaar). </li>
+<li><b>3 May 2023</b> S.O. 2060(E): seven items, mostly the Employees' Pension Scheme 1995 parts, with <span class="sec">Code on SS s.16(1)(b)</span> and the EPF Act repeal. </li>
+<li><b>21 Nov 2025</b> S.O. 5319(E): the general date for the rest. </li>
+<li><b>19 Dec 2025</b> S.O. 5936(E), corrigendum: the rest of <span class="sec">Code on SS ss.15, 16, 164</span>.     </li>
+<li><b>8 May 2026</b> Central Rules 2026, G.S.R. 344(E). </li>
+<li><b>29 Jun 2026</b> EPF Scheme 2026 (G.S.R. 525(E)) supersedes the EPF Scheme 1952.  </li>
+<li><b>17 Sep 2026</b> EPF wage ceiling raised to Rs 25,000 (Cabinet approval of 16 September 2026). </li>
+</ol>
+<p>Savings <span class="sec">Code on SS s.164(2)(b)</span>: the EPF Scheme 1952, the EDLI Scheme 1976, the EPS 1995 and the Tribunal (Procedure) Rules 1997 stay in force for one year from commencement of the Code, so far as they are not inconsistent with it.   The EPF Scheme 1952 was superseded on publication of G.S.R. 525(E) on 29 June 2026. </p>
+
+
+<h2 id="s2-definitions-and-who-is-covered" data-nav>2. Definitions and who is covered</h2>
+<p><b>Law today.</b> All of <span class="sec">Code on SS s.2</span> (definitions) is in force from 21 November 2025.  </p>
+<h3>Coverage by chapter</h3>
+<table class="cmp"><thead><tr><th>Chapter</th><th>Applies to</th></tr></thead><tbody>
+<tr><td data-label="Chapter">III, Employees' Provident Fund</td><td data-label="Applies to">Every establishment in which <b>twenty or more</b> employees are employed <span class="sec">Code on SS s.1(4)</span>, <span class="sec">Code on SS First Schedule</span>. </td></tr>
+<tr><td data-label="Chapter">IV, Employees' State Insurance</td><td data-label="Applies to">Every establishment in which <b>ten or more</b> persons are employed, other than a seasonal factory <span class="sec">Code on SS First Schedule</span>. </td></tr>
+<tr><td data-label="Chapter">V, Gratuity</td><td data-label="Applies to">Every factory, mine, oilfield, plantation, port and railway company. Also every shop or establishment in which <b>ten or more</b> employees are or were employed on any day of the preceding twelve months, and shops or establishments the appropriate Government notifies <span class="sec">Code on SS First Schedule</span>. </td></tr>
+<tr><td data-label="Chapter">VI, Maternity Benefit</td><td data-label="Applies to">(a) Every factory, mine or plantation, including one belonging to Government. (b) Every shop or establishment in which <b>ten or more</b> employees are or were employed on any day of the preceding twelve months. Other establishments the appropriate Government notifies. The size limit applies only to (b) <span class="sec">Code on SS First Schedule</span>. </td></tr>
+<tr><td data-label="Chapter">VII, Employees' Compensation</td><td data-label="Applies to">Employers and employees to whom Chapter IV does not apply <span class="sec">Code on SS First Schedule</span>. </td></tr>
+<tr><td data-label="Chapter">VIII, Building and other construction workers</td><td data-label="Applies to">Every establishment under the building and other construction work entry of the First Schedule. The building work covered excludes work employing fewer than ten workers in the preceding twelve months <span class="sec">Code on SS s.2(6)</span>. </td></tr>
+</tbody></table>
+<h3>Extensions and extra coverage rules</h3>
+<table class="cmp"><thead><tr><th>Point</th><th>Rule</th></tr></thead><tbody>
+<tr><td data-label="Point">Voluntary ESI <span class="sec">Code on SS s.1(7)</span></td><td data-label="Rule">The Director General of the Corporation may extend Chapter IV on the agreement of the employer and the majority of employees. The employer may later withdraw on joint agreement. </td></tr>
+<tr><td data-label="Point">Hazardous occupation, Chapter IV</td><td data-label="Rule">Applies to an establishment in a hazardous or life-threatening occupation notified by the Central Government, even with a single employee. It bites only after a notification names the occupations. </td></tr>
+<tr><td data-label="Point">Plantation, Chapter IV</td><td data-label="Rule">The employer of a plantation may opt for Chapter IV by giving his willingness to the Corporation, where the Chapter's benefits are better than what the employer provides. </td></tr>
+<tr><td data-label="Point">Voluntary EPF <span class="sec">Code on SS s.1(5)</span></td><td data-label="Rule">The Central Provident Fund Commissioner may, by notification, apply Chapter III where the employer and the majority of employees have agreed. It may later be made inapplicable on a joint application. </td></tr>
+<tr><td data-label="Point">Any establishment <span class="sec">Code on SS s.1(6)</span></td><td data-label="Rule">The Central Government may, after not less than two months' notice, apply the Code to any establishment employing not less than a number it notifies. </td></tr>
+<tr><td data-label="Point">Once covered <span class="sec">Code on SS s.1(8)</span></td><td data-label="Rule">An establishment to which a Chapter applies at the first instance stays covered even if the number of employees later falls below the First Schedule threshold. </td></tr>
+<tr><td data-label="Point">Counting employees <span class="sec">Code on SS s.2(26)</span></td><td data-label="Rule">To decide coverage under Chapter III or IV, employees whose wages are above the notified wage ceiling are also counted (second proviso). </td></tr>
+</tbody></table>
+<div class="trap"><p>Students swap the EPF line and the ESI line because both are headcounts in the First Schedule. EPF is <b>20 or more</b> employees. ESI is <b>10 or more</b> persons. Gratuity and maternity use 10 or more only for shops and establishments; factories, mines and plantations are covered whatever the size.    </p></div>
+
+<h3>Definitions the whole Code uses</h3>
+<table class="cmp"><thead><tr><th>Term</th><th>Definition</th></tr></thead><tbody>
+<tr><td data-label="Term">Gig worker <span class="sec">Code on SS s.2(35)</span></td><td data-label="Definition">A person who performs work or participates in a work arrangement and earns from such activities outside of traditional employer-employee relationship. </td></tr>
+<tr><td data-label="Term">Platform work <span class="sec">Code on SS s.2(60)</span></td><td data-label="Definition">A work arrangement outside a traditional employer-employee relationship in which organisations or individuals use an online platform to access others to solve specific problems or provide specific services, in exchange for payment. </td></tr>
+<tr><td data-label="Term">Platform worker <span class="sec">Code on SS s.2(61)</span></td><td data-label="Definition">A person engaged in or undertaking platform work. </td></tr>
+<tr><td data-label="Term">Aggregator <span class="sec">Code on SS s.2(2)</span></td><td data-label="Definition">A digital intermediary or a market place for a buyer or user of a service to connect with the seller or the service provider. </td></tr>
+<tr><td data-label="Term">Unorganised worker <span class="sec">Code on SS s.2(86)</span></td><td data-label="Definition">A home-based worker, self-employed worker or a wage worker in the unorganised sector. It includes a worker in the organised sector who is not covered by the Industrial Disputes Act 1947 or Chapters III to VII of the Code. </td></tr>
+<tr><td data-label="Term">Unorganised sector</td><td data-label="Definition">An enterprise owned by individuals or self-employed workers where, if it employs workers, they number fewer than ten. </td></tr>
+<tr><td data-label="Term">Fixed term employment <span class="sec">Code on SS s.2(34)</span></td><td data-label="Definition">The engagement of an employee on a written contract of employment for a fixed period. His hours of work, wages, allowances and other benefits shall not be less than those of a permanent employee. He is eligible for all benefits proportionately according to the period of service rendered, even if the qualifying period is not completed. </td></tr>
+<tr><td data-label="Term">Inter-State migrant worker <span class="sec">Code on SS s.2(41)</span></td><td data-label="Definition">A person employed in an establishment who was recruited directly by the employer or through a contractor in one State for an establishment in another State, or who came on his own from one State and got employment in an establishment of another State, drawing wages not exceeding Rs 18,000 a month or a higher amount notified. </td></tr>
+<tr><td data-label="Term">Wages <span class="sec">Code on SS s.2(88)</span>; wage ceiling <span class="sec">Code on SS s.2(89)</span></td><td data-label="Definition">"Wage ceiling" means such amount of wages as the Central Government notifies.  </td></tr>
+</tbody></table>
+<h3>"Employee" means three things</h3>
+<table class="cmp"><thead><tr><th>Chapter</th><th>"Employee"</th></tr></thead><tbody>
+<tr><td data-label="Chapter">III (other than the Employees' Provident Fund Scheme) and IV</td><td data-label="&quot;Employee&quot;">One drawing wages up to the notified wage ceiling <span class="sec">Code on SS s.2(26)</span>. For counting establishments, those above the ceiling also count. </td></tr>
+<tr><td data-label="Chapter">V, Gratuity</td><td data-label="&quot;Employee&quot;">The <span class="sec">Code on SS s.2(26)</span> definition. Managerial and supervisory staff are included; apprentices under the Apprentices Act are excluded. A person holding a post under the Central or State Government and governed by another Act or rules providing for gratuity is not an employee for this Chapter. </td></tr>
+<tr><td data-label="Chapter">VII, Compensation</td><td data-label="&quot;Employee&quot;">Only the persons in the Second Schedule and others the Central or State Government adds by notification <span class="sec">Code on SS s.2(26)</span> third proviso. </td></tr>
+</tbody></table>
+
+<h2 id="s3-employees-provident-fund-chapter-iii" data-nav>3. Employees' Provident Fund (Chapter III)</h2>
+<p><b>Law today.</b> <span class="sec">Code on SS Ch III</span> covers EPF. <span class="sec">Code on SS ss.15(1), 15(2)</span> are in force from 21 November 2025; the Pension Scheme part of <span class="sec">Code on SS s.15(3)</span> from 3 May 2023, the rest from 21 November 2025. The EPF Act 1952 is repealed and the EPF Scheme 2026 is in force from 29 June 2026.   </p>
+<h3>Schemes, contributions and funds</h3>
+<div class="rule">
+<div class="rh"><span class="sec">Code on SS s.15(1)</span> <span class="rt">Three Schemes</span></div>
+<p>The Central Government may frame three Schemes by notification: the Employees' Provident Fund Scheme; the Employees' Pension Scheme (superannuation, retiring or permanent total disablement pension; widow or widower, children and orphan pension; nominee pension); and the Employees' Deposit Linked Insurance Scheme (life insurance). <span class="sec">Code on SS s.15(2)</span> lists the matters in Parts A, B and C of the Fifth Schedule. </p>
+</div>
+<div class="rule">
+<div class="rh"><span class="sec">Code on SS s.16(1)(a)</span> <span class="rt">Contribution</span></div>
+<p>The employer's contribution to the Provident Fund is <b>10%</b> of the wages payable to each employee, directly employed or through a contractor. The employee's contribution equals it. </p>
+<div class="was"><span class="sec old"><i>old</i> EPF Act 1952 s.6</span> 10% of basic wages, dearness allowance and retaining allowance (if any). The base changed from named pay heads to "wages" <span class="tag changed">Changed</span> </div>
+</div>
+<div class="rule">
+<div class="rh"><span class="sec">Code on SS s.16(1)(a)</span> <span class="rt">12% by notification</span></div>
+<p>First proviso: the Central Government may, after inquiry, notify an establishment or class for which "ten per cent." reads "twelve per cent." The second proviso lets it notify the rate of employees' contributions and the period for any class of employee. An employee may, if he so desires, contribute more than 10% of the wages; the employer is not obliged to pay more than his own contribution.  </p>
+</div>
+<div class="rule">
+<div class="rh"><span class="sec">Code on SS s.16(1)(b)</span> <span class="rt">Pension Fund</span></div>
+<p>The Pension Fund receives from the employer's contribution not more than <b>8 and one-third per cent.</b> of wages (or the notified per cent.), plus sums paid by employers of exempted establishments under <span class="sec">Code on SS s.143</span>, plus sums the Central Government specifies after appropriation by Parliament. In force from 3 May 2023. </p>
+</div>
+<div class="rule">
+<div class="rh"><span class="sec">Code on SS s.16(1)(c)</span> <span class="rt">Insurance Fund</span></div>
+<p>The Deposit-Linked Insurance Fund receives from the employer, for every employee, an amount not more than <b>1%</b> of the wages (or the notified per cent.), and a further sum not exceeding <b>one-fourth</b> of that contribution for the administration expenses of the Insurance Scheme, other than the expenses towards the cost of any benefits. </p>
+</div>
+<table class="cmp"><thead><tr><th>Point</th><th>Rule</th></tr></thead><tbody>
+<tr><td data-label="Point">Vesting <span class="sec">Code on SS s.16(2)</span></td><td data-label="Rule">The Provident Fund, Pension Fund and Insurance Fund vest in, and are administered by, the Central Board. </td></tr>
+<tr><td data-label="Point">Contract employees <span class="sec">Code on SS s.17</span></td><td data-label="Rule">Contributions and administration charges paid by a principal employer for contract employees may be recovered from the contractor. The contractor may recover the employee's contribution from the employee's wages but not the employer's share. </td></tr>
+<tr><td data-label="Point">Charge on assets <span class="sec">Code on SS s.19</span></td><td data-label="Rule">Any amount due under Chapter III is a charge on the assets of the establishment and is paid in priority in accordance with the Insolvency and Bankruptcy Code, 2016. </td></tr>
+<tr><td data-label="Point">Exclusion <span class="sec">Code on SS s.20(1)(a)</span></td><td data-label="Rule">Chapter III does not apply to an establishment registered under the Co-operative Societies Act 1912 or a State co-operative law employing <b>less than fifty</b> persons and working without the aid of power. </td></tr>
+<tr><td data-label="Point">Exclusions <span class="sec">Code on SS s.20(1)</span> (b) to (d)</td><td data-label="Rule">Also excluded: a Central or State Government establishment whose employees get contributory PF or old age pension under a scheme or rule; an establishment set up under a Central or State law whose employees get such benefits under that law; and employees who, immediately before the Code's commencement, were receiving PF benefits under any Central or State enactment. </td></tr>
+<tr><td data-label="Point">No "infancy" exclusion</td><td data-label="Rule"><span class="sec">Code on SS s.20(1)</span> lists only clauses (a) to (d). The Code has no exclusion for new establishments in their first three years. </td></tr>
+<tr><td data-label="Point">Separate PF account <span class="sec">Code on SS s.21(1)</span></td><td data-label="Rule">The Central Government may, on an application by the employer and the majority of employees of an establishment employing <b>one hundred or more</b> persons, authorise the employer to maintain a separate provident fund account. It is refused if the employer defaulted on PF contribution or committed another offence under the Code in the previous three years. </td></tr>
+<tr><td data-label="Point">Transfer <span class="sec">Code on SS s.22</span></td><td data-label="Rule">An employee who changes from one establishment to another has the accumulated PF or pension amount transferred as the Provident Fund Scheme or Pension Scheme specifies. </td></tr>
+</tbody></table>
+
+<h3>10%, 12% and 8.33%</h3>
+<table class="cmp"><thead><tr><th>Point</th><th>Rule</th><th>Where</th></tr></thead><tbody>
+<tr><td data-label="Point">Code default</td><td data-label="Rule">10% of wages, each side </td><td data-label="Where"><span class="sec">Code on SS s.16(1)(a)</span></td></tr>
+<tr><td data-label="Point">Code, by notification</td><td data-label="Rule">12% for a notified establishment or class </td><td data-label="Where"><span class="sec">Code on SS s.16(1)(a)</span> first proviso</td></tr>
+<tr><td data-label="Point">EPF Scheme 2026</td><td data-label="Rule">12% of the wages payable to the employee, each side </td><td data-label="Where"><span class="sec">EPF Scheme 2026 para 18(2)</span></td></tr>
+<tr><td data-label="Point">Scheme exception</td><td data-label="Rule">10% for the class of establishments notified by the Central Government. The Scheme does not list those classes. </td><td data-label="Where"><span class="sec">EPF Scheme 2026 para 18(2)</span> first proviso</td></tr>
+<tr><td data-label="Point">Pension Fund share</td><td data-label="Rule">Not more than 8 and one-third per cent. of wages, from the employer's contribution </td><td data-label="Where"><span class="sec">Code on SS s.16(1)(b)</span></td></tr>
+<tr><td data-label="Point">Insurance Fund</td><td data-label="Rule">Not more than 1% of wages, plus up to one-fourth of that for administration </td><td data-label="Where"><span class="sec">Code on SS s.16(1)(c)</span></td></tr>
+</tbody></table>
+<div class="trap"><p>Students take "12%" as the Code rate because the Scheme says 12%. The defaults point opposite ways. The Code reads 10% and allows 12% by notification. The Scheme 2026 reads 12% and allows 10% for notified classes.   </p></div>
+
+<h3>EPF Scheme 2026 (G.S.R. 525(E))</h3>
+<p>Made by the Ministry of Labour and Employment under <span class="sec">Code on SS s.15(1)(a)</span>, dated 29 June 2026. It comes into force on publication.  It supersedes the Employees' Provident Funds Scheme 1952, except for things done or omitted to be done before.  The Scheme defines "Repealed Act" in para 2(1)(m) as the Employees' Provident & Miscellaneous Provisions Act, 1952. </p>
+<table class="cmp"><thead><tr><th>Point</th><th>Rule</th></tr></thead><tbody>
+<tr><td data-label="Point">Membership <span class="sec">EPF Scheme 2026 para 9(2)</span></td><td data-label="Rule">Every employee in or in connection with the work of a covered establishment is entitled and required to become a member from the day the Scheme comes into force in the establishment or the date of joining, whichever is later. An excluded employee is outside this rule. </td></tr>
+<tr><td data-label="Point">Rate <span class="sec">EPF Scheme 2026 para 18(2)</span></td><td data-label="Rule">Employer: 12% of the wages payable to the employee. Employee: equal. </td></tr>
+<tr><td data-label="Point">Ceiling <span class="sec">EPF Scheme 2026 para 18(3)</span></td><td data-label="Rule">Contribution is subject to the wage ceiling notified by the Central Government from time to time. Where a member's monthly wage exceeds the ceiling, the contributions are limited to the contribution on the ceiling. The Scheme states no rupee figure. </td></tr>
+<tr><td data-label="Point">Payment <span class="sec">EPF Scheme 2026 para 20(1), 28(3)</span></td><td data-label="Rule">Both shares, with administrative charges, are paid within <b>fifteen days</b> of the close of every month. The employer remits by electronic mode. </td></tr>
+<tr><td data-label="Point">Damages <span class="sec">EPF Scheme 2026 para 23(1)</span> Table</td><td data-label="Rule">The Central Provident Fund Commissioner may levy damages, not exceeding the arrears: <b>0.25%</b> of arrears a month for default of less than two months; <b>0.50%</b> for more than two and less than four months; <b>1%</b> for more than four months. </td></tr>
+<tr><td data-label="Point">Interest to members <span class="sec">EPF Scheme 2026 para 42(1)</span></td><td data-label="Rule">The Commissioner credits interest at the rate the Central Government determines in consultation with the Central Board, on a monthly running balance basis. The Scheme states no rate. </td></tr>
+<tr><td data-label="Point">Transfer <span class="sec">EPF Scheme 2026 para 43</span></td><td data-label="Rule">A member moving to another covered or exempted establishment, or one with its own provident fund, applies on the designated portal to transfer the balance. The Commissioner may provide automated transfer subject to confirmation of identity. </td></tr>
+<tr><td data-label="Point">Nomination <span class="sec">EPF Scheme 2026 para 44</span></td><td data-label="Rule">Each member nominates on the designated portal. Where the member has a family, the nomination must be in favour of one or more persons of the family, and a nomination in favour of a person outside the family is invalid. </td></tr>
+<tr><td data-label="Point">UAN <span class="sec">EPF Scheme 2026 para 2(1)(q), 24(2)(iii)</span></td><td data-label="Rule">The Universal Account Number is an identity number allotted to an employee on a permanent basis in the form and manner the Commissioner specifies. The employer must facilitate generation of a UAN for an employee who fails to generate it on the portal. </td></tr>
+</tbody></table>
+<p>The 0.25%, 0.50% and 1% above are Scheme rates, not Code text. The Code gives only the power: interest on delayed payment is simple interest at the rate notified by the Central Government, from the date the amount fell due till payment <span class="sec">Code on SS s.127</span>. Damages may not exceed the arrears, and are levied after a hearing <span class="sec">Code on SS s.128</span>.   Under the Vishwas scheme, damages for delayed contributions are reduced to 0.25%, 0.5% or 1% a month, by the period of default. The Code gives the power to reduce or waive damages only on an insolvency plan <span class="sec">Code on SS s.128</span>. </p>
+
+<h3>The wage ceiling: Rs 15,000 and Rs 25,000</h3>
+<table class="cmp"><thead><tr><th>Point</th><th>Rule</th></tr></thead><tbody>
+<tr><td data-label="Point">Code <span class="sec">Code on SS s.2(89)</span></td><td data-label="Rule">"Wage ceiling" means such amount of wages as may be notified by the Central Government. </td></tr>
+<tr><td data-label="Point">Before 17 September 2026</td><td data-label="Rule">Rs 15,000 a month, in force since 1 September 2014. </td></tr>
+<tr><td data-label="Point">From 17 September 2026</td><td data-label="Rule">Rs 25,000 a month, on Cabinet approval of 16 September 2026, covering EPF, EPS and EDLI. </td></tr>
+</tbody></table>
+
+
+<h3>Recovery, assessment and appeals</h3>
+<ol class="steps">
+<li><b>Authorised Officer</b> An officer not below Group 'A' rank decides disputes on the applicability of Chapter III or IV and the amount due <span class="sec">Code on SS s.125(1)</span>. No proceeding starts after <b>5 years</b> from the date the dispute is alleged to have arisen or the amount is alleged to have been due. </li>
+<li><b>Inquiry</b> It is held day to day as far as practicable, with an endeavour to conclude it within <b>2 years</b>. If not concluded, the officer records reasons and the Central Provident Fund Commissioner may grant an extension of up to <b>1 year</b> <span class="sec">Code on SS s.125(2)</span>. The two years is an endeavour, not a bar. </li>
+<li><b>Interest and damages</b> Simple interest at the notified rate <span class="sec">Code on SS s.127</span>. Damages not exceeding the arrears, after a hearing <span class="sec">Code on SS s.128</span>. </li>
+<li><b>Appeal to the Tribunal</b> A person aggrieved by an order on (a) determination and assessment of dues under <span class="sec">Code on SS s.125</span> for Chapter III and (b) damages under <span class="sec">Code on SS s.128</span> for Chapter III may appeal to the Tribunal constituted by the Central Government <span class="sec">Code on SS s.23(1)</span>. The employer must first deposit <b>25%</b> of the amount due <span class="sec">Code on SS s.23(3)</span>. The Tribunal endeavours to decide within <b>1 year</b> <span class="sec">Code on SS s.23(4)</span>.   </li>
+<li><b>Recovery Officer</b> The Authorised Officer or competent authority sends a certificate to the Recovery Officer <span class="sec">Code on SS ss.129(2), 129(4)</span>. The Recovery Officer recovers arrears for any chapter of the Code, not for EPF alone, by attachment and sale of property, arrest of the employer or appointing a receiver. </li>
+</ol>
+<p><span class="sec">Code on SS s.2(84)</span> defines "Tribunal" as the Industrial Tribunal constituted by the appropriate Government under <span class="sec old"><i>old</i> ID Act 1947 s.7A</span>. <span class="sec">IR Code s.44(1)</span> says the Industrial Tribunal constituted by the Central Government also exercises the jurisdiction of the Tribunal defined in the EPF Act. </p>
+
+
+<h3>Bridge: EPF Act 1952 to the Code and the Scheme 2026</h3>
+<p>The EPF and Miscellaneous Provisions Act 1952 is Act 19 of 1952, dated 4 March 1952. It is repealed: the corresponding provisions from 3 May 2023, the rest from 21 November 2025.  </p>
+<table class="cmp"><thead><tr><th>Point</th><th>EPF Act 1952 (repealed)</th><th>Code now</th></tr></thead><tbody>
+<tr><td data-label="Point">Coverage</td><td data-label="EPF Act 1952 (repealed)">Every factory in a Schedule I industry with twenty or more persons, and any other establishment or class of twenty or more specified by notification. The Central Government may extend it to fewer than twenty after two months' notice. </td><td data-label="Code now">Every establishment with twenty or more employees, no list of industries <span class="sec">Code on SS First Schedule</span>. </td></tr>
+<tr><td data-label="Point">Once covered</td><td data-label="EPF Act 1952 (repealed)"><span class="sec old"><i>old</i> EPF Act 1952 s.1(5)</span> stays covered even if the number falls below twenty. </td><td data-label="Code now"><span class="sec">Code on SS s.1(8)</span> </td></tr>
+<tr><td data-label="Point">Voluntary cover</td><td data-label="EPF Act 1952 (repealed)"><span class="sec old"><i>old</i> EPF Act 1952 s.1(4)</span> the Commissioner applies the Act on the agreement of the employer and the majority of employees. </td><td data-label="Code now"><span class="sec">Code on SS s.1(5)</span> </td></tr>
+<tr><td data-label="Point">Contribution</td><td data-label="EPF Act 1952 (repealed)"><span class="sec old"><i>old</i> EPF Act 1952 s.6</span> 10% of basic wages, dearness allowance and retaining allowance (if any). </td><td data-label="Code now"><span class="sec">Code on SS s.16(1)(a)</span> 10% of "wages". Scheme 2026 <span class="sec">EPF Scheme 2026 para 18(2)</span>: 12% of wages.  </td></tr>
+<tr><td data-label="Point">Interest</td><td data-label="EPF Act 1952 (repealed)"><span class="sec old"><i>old</i> EPF Act 1952 s.7Q</span> simple interest at 12% a year (or a higher rate the Scheme specifies). </td><td data-label="Code now"><span class="sec">Code on SS s.127</span> rate notified, no figure. </td></tr>
+<tr><td data-label="Point">Damages</td><td data-label="EPF Act 1952 (repealed)"><span class="sec old"><i>old</i> EPF Act 1952 s.14B</span> not exceeding the arrears, as the Scheme specifies, after a hearing. </td><td data-label="Code now"><span class="sec">Code on SS s.128</span>; Scheme 2026 <span class="sec">EPF Scheme 2026 para 23(1)</span>.  </td></tr>
+<tr><td data-label="Point">Appeal deposit</td><td data-label="EPF Act 1952 (repealed)"><span class="sec old"><i>old</i> EPF Act 1952 s.7-O</span> <b>75%</b>, which the Tribunal may waive or reduce for reasons recorded. </td><td data-label="Code now"><span class="sec">Code on SS s.23(3)</span> <b>25%</b>, no waiver proviso. </td></tr>
+<tr><td data-label="Point">Appellate body</td><td data-label="EPF Act 1952 (repealed)"><span class="sec old"><i>old</i> EPF Act 1952 s.7D</span> the Industrial Tribunal constituted by the Central Government under <span class="sec old"><i>old</i> ID Act 1947 s.7A</span> is the Tribunal for the Act. </td><td data-label="Code now"><span class="sec">Code on SS s.23</span> the Tribunal constituted by the Central Government. </td></tr>
+<tr><td data-label="Point">Separate PF account</td><td data-label="EPF Act 1952 (repealed)"><span class="sec old"><i>old</i> EPF Act 1952 s.16A</span> one hundred or more persons. </td><td data-label="Code now"><span class="sec">Code on SS s.21</span> the same rule, in force. </td></tr>
+<tr><td data-label="Point">Exemption</td><td data-label="EPF Act 1952 (repealed)"><span class="sec old"><i>old</i> EPF Act 1952 s.17</span> the appropriate Government may exempt an establishment from the Act or a Scheme if its employees get benefits not less favourable. </td><td data-label="Code now"><span class="sec">Code on SS s.143</span> </td></tr>
+<tr><td data-label="Point">Appeals list</td><td data-label="EPF Act 1952 (repealed)"><span class="sec old"><i>old</i> EPF Act 1952 s.7-I(1)</span> appeal to a Tribunal against notifications and orders under the proviso to <span class="sec old"><i>old</i> EPF Act 1952 ss.1(3), 1(4)</span>, and under <span class="sec old"><i>old</i> EPF Act 1952 ss.3, 7A(1), 7B, 7C, 14B</span> (except an order rejecting a review application). The list does not name <span class="sec old"><i>old</i> EPF Act 1952 s.7Q</span>. </td><td data-label="Code now"><span class="sec">Code on SS s.23(1)</span> dues under <span class="sec">Code on SS s.125</span> and damages under <span class="sec">Code on SS s.128</span>. </td></tr>
+<tr><td data-label="Point">Recovery Officer</td><td data-label="EPF Act 1952 (repealed)">Defined in <span class="sec old"><i>old</i> EPF Act 1952 s.2(kb)</span>, with the certificate procedure in <span class="sec old"><i>old</i> EPF Act 1952 s.8B</span>. </td><td data-label="Code now"><span class="sec">Code on SS s.129</span> serves every chapter of the Code, not EPF alone. </td></tr>
+</tbody></table>
+
+<p>The appeal deposit falls from 75% to 25%. "Reduced to 25%" is true only against the old Act.  </p>
+
+<h2 id="s4-epf-withdrawals-and-settlement-scheme-2026" data-nav>4. EPF withdrawals and settlement (Scheme 2026)</h2>
+<p><b>Law today.</b> The EPF Scheme 2026, in force from 29 June 2026, sets the withdrawal rules. </p>
+<table class="cmp"><thead><tr><th>Point</th><th>Rule</th></tr></thead><tbody>
+<tr><td data-label="Point">Minimum partial withdrawal <span class="sec">EPF Scheme 2026 para 46(1)</span></td><td data-label="Rule">Not less than Rs 1,000. </td></tr>
+<tr><td data-label="Point">Minimum balance <span class="sec">EPF Scheme 2026 para 46(1)</span> Explanation (a)</td><td data-label="Rule"><b>25%</b> of the aggregate of the total contributions to the member's credit (employee's and employer's share and interest) up to the date of withdrawal must remain to the member's credit. </td></tr>
+<tr><td data-label="Point">Leaving before 12 months <span class="sec">EPF Scheme 2026 para 46(5)</span></td><td data-label="Rule">A member may withdraw up to the Eligible Member Balance. </td></tr>
+<tr><td data-label="Point">Frequency caps <span class="sec">EPF Scheme 2026 para 46</span></td><td data-label="Rule">Education <b>ten</b> times during membership; marriage <b>five</b> times; housing <b>five</b> times; special circumstances <b>two</b> times in a financial year. </td></tr>
+<tr><td data-label="Point">Full withdrawal on retirement <span class="sec">EPF Scheme 2026 para 49(1)(i)</span></td><td data-label="Rule">After attaining <b>fifty-five</b> years of age. </td></tr>
+<tr><td data-label="Point">Full withdrawal on leaving <span class="sec">EPF Scheme 2026 para 49(2)</span></td><td data-label="Rule">In cases not listed in para 49(1), the Commissioner or an authorised officer may permit full withdrawal on ceasing to be an employee in any covered establishment, provided the member has not been employed in any such establishment for a continuous period of not less than <b>twelve months</b> before the application. </td></tr>
+</tbody></table>
+<p>Partial withdrawal <span class="sec">EPF Scheme 2026 para 46(2), 46(3), 46(4)</span> has three groups. Each allows up to <b>100%</b> of the Eligible Member Balance after <b>twelve months</b> of total membership. </p>
+<div class="cards">
+<div class="card"><h4>Group (a)</h4><p>Illness, education and marriage of self and family members.</p></div>
+<div class="card"><h4>Group (b)</h4><p>Housing.</p></div>
+<div class="card"><h4>Group (c)</h4><p>Special circumstances.</p></div>
+</div>
+
+<p>The October 2025 Central Board decision merged 13 partial-withdrawal provisions into three categories (essential needs, housing, special circumstances). It set up to 100% of the eligible balance, 25% of contributions kept as minimum, 12 months' minimum service, education up to 10 times and marriage up to 5 times. It changed premature final settlement from 2 months to 12 months. Pension withdrawal is after 36 months. The Scheme 2026 carries the 100% limit, the 25% balance, the twelve months, the ten education withdrawals and the five marriage withdrawals.       The auto-settlement limit for advance claims was raised from Rs 1 lakh to Rs 5 lakh in June 2025. </p>
+<div class="trap"><p>Students swap two ages. Full withdrawal on retirement is <b>55</b> <span class="sec">EPF Scheme 2026 para 49(1)(i)</span>. Pension on superannuation is <b>58</b> <span class="sec">Code on SS s.2(82)</span> proviso for Chapter III.  </p></div>
+
+<h2 id="s5-employees-pension-scheme-2026" data-nav>5. Employees' Pension Scheme 2026</h2>
+<p><b>Law today.</b> The Pension Fund is in <span class="sec">Code on SS s.16(1)(b)</span>, in force from 3 May 2023. The Employees' Pension Scheme 2026 (G.S.R. 527(E), 29 June 2026) is made under <span class="sec">Code on SS s.15(1)(b)</span> in supersession of the Employees' Family Pension Scheme 1971 and the Employees' Pension Scheme 1995. It is in force on publication.  </p>
+
+<table class="cmp"><thead><tr><th>Point</th><th>Rule</th></tr></thead><tbody>
+<tr><td data-label="Point">Employer's part <span class="sec">EPS Scheme 2026 para 4(1)</span></td><td data-label="Rule">From the employer's contribution each month under <span class="sec">Code on SS s.16(1)(a)</span>, <b>8.33%</b> of the employee's wages, up to the notified wage ceiling, goes to the Pension Fund within fifteen days of the close of the month. </td></tr>
+<tr><td data-label="Point">Central Government's part <span class="sec">EPS Scheme 2026 para 4(2)</span></td><td data-label="Rule"><b>1.16%</b> of the pay of the members, limited to such sum as the Central Government specifies. </td></tr>
+<tr><td data-label="Point">Superannuation pension <span class="sec">EPS Scheme 2026 para 12(1)(i)</span></td><td data-label="Rule">Eligible service of not less than <b>ten years</b> and retirement on attaining the age of superannuation. For Chapter III the Code fixes that age at <b>fifty-eight years</b> <span class="sec">Code on SS s.2(82)</span> proviso. </td></tr>
+<tr><td data-label="Point">Formula <span class="sec">EPS Scheme 2026 para 12(2)</span></td><td data-label="Rule">For a member other than an existing member: (pensionable wages x pensionable service) divided by <b>70</b>. </td></tr>
+<tr><td data-label="Point">Pensionable wages <span class="sec">EPS Scheme 2026 para 11</span></td><td data-label="Rule">The average monthly wages drawn during the contributory period of service in the span of <b>sixty months</b> immediately before exit from membership, limited to the notified wage ceiling per month. </td></tr>
+<tr><td data-label="Point">Minimum <span class="sec">EPS Scheme 2026 para 12(8)</span></td><td data-label="Rule">The monthly pension, including any relief, is not less than <b>Rs 1,000</b>. From 1 September 2014 that minimum is subject to deductions for commutation and return of capital taken before 26 September 2008 and for early pension. </td></tr>
+<tr><td data-label="Point">Early and deferred pension <span class="sec">EPS Scheme 2026 para 12(7), 12(9)</span></td><td data-label="Rule">Early pension is allowed from a date not earlier than <b>fifty</b> years of age, reduced at <b>4%</b> for every year the age falls short of the age of superannuation. A member under para 12(1)(a) may defer the pension up to <b>sixty</b> years of age, with an increase of 4% for every completed year. </td></tr>
+</tbody></table>
+<p>Bridge, EPS 1995 (superseded): pension from age 58 after at least 10 years of service. The formula was (pensionable salary x pensionable service) divided by 70, with pensionable salary the average of the last 60 months. The minimum was Rs 1,000 a month. The Scheme 2026 says "pensionable wages", not "pensionable salary".    </p>
+<p>Higher pension: by its judgment of 4 November 2022 (EPFO v. Sunil Kumar B.) the Supreme Court allowed members in service on 1 September 2014 to opt for pension on actual wages ("higher pension"). Members who retired before that date are excluded. </p>
+
+
+<h2 id="s6-employees-deposit-linked-insurance-scheme-2026" data-nav>6. Employees' Deposit-Linked Insurance Scheme 2026</h2>
+<p><b>Law today.</b> The Insurance Fund is in <span class="sec">Code on SS s.16(1)(c)</span>. The EDLI Scheme 2026 (G.S.R. 526(E), 29 June 2026) is made under <span class="sec">Code on SS s.15(1)(c)</span> in supersession of the EDLI Scheme 1976. It is in force on publication.  </p>
+<table class="cmp"><thead><tr><th>Point</th><th>Rule</th></tr></thead><tbody>
+<tr><td data-label="Point">Who pays</td><td data-label="Rule">The employer pays. <span class="sec">Code on SS s.16(1)(c)</span> caps the contribution at 1% of wages. The 1976 Scheme had no employee contribution.  </td></tr>
+<tr><td data-label="Point">Rate <span class="sec">EDLI Scheme 2026 para 5</span></td><td data-label="Rule">Calculated on "wages" as defined in <span class="sec">Code on SS s.2(88)</span>, subject to the wage ceiling in <span class="sec">Code on SS s.2(89)</span>. The rate is notified by the Central Government in consultation with the Central Board. The Scheme gives no per cent. figure. The employer's contribution may not be deducted from the employee's wages <span class="sec">EDLI Scheme 2026 para 8</span>. </td></tr>
+<tr><td data-label="Point">Benefit on death <span class="sec">EDLI Scheme 2026 para 21(4)</span></td><td data-label="Rule">For an employee in continuous employment for twelve months: average monthly wages of the preceding twelve months (subject to the wage ceiling) x <b>35</b>, plus <b>50%</b> of the average balance in the account during the preceding twelve months. The balance part has a ceiling of <b>Rs 1,75,000</b>. The benefit in para 21(1) is paid if higher. Para 21(5) increases the benefit further by 20%. </td></tr>
+<tr><td data-label="Point">Minimum and maximum <span class="sec">EDLI Scheme 2026 para 21(4)</span></td><td data-label="Rule">Not less than <b>Rs 2,50,000</b> and not more than <b>Rs 7,00,000</b>. </td></tr>
+</tbody></table>
+
+<h2 id="s7-employees-state-insurance-chapter-iv" data-nav>7. Employees' State Insurance (Chapter IV)</h2>
+<p><b>Law today.</b> <span class="sec">Code on SS Ch IV</span> covers ESI. It is in force from 21 November 2025, and the ESI Act 1948 is repealed. The contribution rates and benefit rates sit in the Social Security (Central) Rules 2026, not in the Code.   </p>
+<h3>Contribution and the Corporation</h3>
+<div class="rule">
+<div class="rh"><span class="sec">SS Central Rules r.19(1)</span> <span class="rt">Contribution rates</span></div>
+<p>Employer <b>3.25%</b> and employee <b>0.75%</b> of the wages, rounded to the next higher rupee. Total <b>4%</b>. The Code leaves the rates to the Central Government <span class="sec">Code on SS s.29(2)</span>. </p>
+<div class="was"><span class="sec old"><i>old</i> ESI Act 1948</span> the 4% rate (3.25% plus 0.75%) has applied since 1 July 2019 <span class="tag same">Same</span> </div>
+</div>
+<p>Example: on a wage of Rs 20,000 the employer pays Rs 650 and the employee Rs 150. </p>
+<div class="bars"><div class="bar" style="--w:100%">Employer, 3.25% of Rs 20,000: Rs 650</div><div class="bar mid" style="--w:23%">Employee, 0.75%: Rs 150</div></div>
+<table class="cmp"><thead><tr><th>Point</th><th>Rule</th></tr></thead><tbody>
+<tr><td data-label="Point">Corporation <span class="sec">Code on SS s.5(1)(a)</span></td><td data-label="Rule">The Employees' State Insurance Corporation has a Chairperson appointed by the Central Government. </td></tr>
+<tr><td data-label="Point">Person with disability <span class="sec">SS Central Rules r.19</span></td><td data-label="Rule">The employer of a person with disability does not pay the employer's share for up to three years from the start of the contribution period (or as the Central Government specifies). The Central Government reimburses the Corporation. </td></tr>
+<tr><td data-label="Point">Periods <span class="sec">SS Central Rules r.2(1)(i), 2(1)(q)</span></td><td data-label="Rule">The contribution period and the benefit period are each not more than six consecutive months, as specified in the regulations. The Rules leave the dates to the regulations. </td></tr>
+<tr><td data-label="Point">Deduction <span class="sec">Code on SS s.31</span></td><td data-label="Rule">Any sum deducted by the employer from wages under the Chapter is deemed to have been entrusted to him by the employee for the purpose of paying the contribution. The employee's contribution may be deducted only from wages for the period it relates to. </td></tr>
+<tr><td data-label="Point">Commuting <span class="sec">Code on SS s.34(3)</span></td><td data-label="Rule">An accident while commuting from residence to the place of employment for duty, or back after duty, is deemed to arise out of and in the course of employment if a nexus between the circumstances, time and place of the accident and the employment is established. </td></tr>
+</tbody></table>
+<p>Under the old ESI Act, employees whose average daily wage was up to <b>Rs 176</b> were exempt from their own share of the contribution, and the employer still paid his share. This figure is not in the Rules. </p>
+
+<h3>Benefits</h3>
+<table class="cmp"><thead><tr><th>Benefit</th><th>Rule</th></tr></thead><tbody>
+<tr><td data-label="Benefit">The six <span class="sec">Code on SS s.32(1)</span></td><td data-label="Rule">Insured Persons and their dependants are entitled to sickness, maternity, disablement, dependants' benefit, medical benefit and funeral expenses. The named benefit is "medical benefit"; "health benefit" is not a named benefit.  </td></tr>
+<tr><td data-label="Benefit">Medical benefit <span class="sec">Code on SS s.32(2)</span></td><td data-label="Rule">Available to the Insured Person and, on the Corporation's decision under its regulations, to the family. The Code text does not say "from day 1". </td></tr>
+<tr><td data-label="Benefit">Sickness <span class="sec">SS Central Rules r.22(1)</span></td><td data-label="Rule">Qualified where contributions were payable for not less than <b>78 days</b> in the corresponding contribution period. Paid at <b>70%</b> of the Standard Benefit Rate, rounded to the next higher rupee. Not paid for more than <b>91 days</b> in any two consecutive benefit periods. The Rule does not say "in a year".  </td></tr>
+<tr><td data-label="Benefit">Extended sickness <span class="sec">SS Central Rules r.22(2)</span></td><td data-label="Rule"><b>80%</b> of the Standard Benefit Rate for diseases specified in the Corporation's regulations, for a maximum of <b>730 days</b> (2 years), including ordinary sickness benefit. </td></tr>
+<tr><td data-label="Benefit">Maternity <span class="sec">SS Central Rules r.22(3)</span></td><td data-label="Rule">The Standard Benefit Rate (the average daily wage, so 100%) for <b>26 weeks</b>, of which not more than <b>8 weeks</b> precede delivery; <b>6 weeks</b> for miscarriage or medical termination; <b>12 weeks</b> for a commissioning or adopting mother; <b>12 weeks</b>, of which not more than 6 weeks precede confinement, for a woman with two or more surviving children. Qualifying condition: contributions for 70 days in the two preceding contribution periods. </td></tr>
+<tr><td data-label="Benefit">Medical bonus <span class="sec">SS Central Rules r.22(4)</span></td><td data-label="Rule"><b>Rs 15,000</b> per case for confinement expenses where the necessary ESI medical facilities are not available, for two confinements only. </td></tr>
+<tr><td data-label="Benefit">Disablement and dependants <span class="sec">SS Central Rules r.22</span></td><td data-label="Rule">Temporary and permanent disablement benefit: <b>90%</b> of the Standard Benefit Rate. Dependants' benefit (death from employment injury): <b>90%</b> of the Standard Benefit Rate. </td></tr>
+<tr><td data-label="Benefit">Funeral <span class="sec">Code on SS s.32(1)(f)</span> proviso; <span class="sec">SS Central Rules r.21</span></td><td data-label="Rule">The Code caps funeral expenses at the amount the Central Government prescribes and requires the claim within <b>three months</b> of death, or within such extended period as the Corporation or an officer or authority authorised by it allows. The amount of funeral expenses is notified by the Corporation and is <b>Rs 20,000</b> <span class="sec">SS Central Rules r.21</span>.  </td></tr>
+</tbody></table>
+<h3>Disputes and appeals</h3>
+<table class="cmp"><thead><tr><th>Point</th><th>Rule</th></tr></thead><tbody>
+<tr><td data-label="Point">Employees' Insurance Court <span class="sec">Code on SS ss.37, 48, 49</span></td><td data-label="Rule">Disputes about contributions, benefits or who is an employee go to the Employees' Insurance Court constituted by the State Government. Questions of disablement are decided by a medical board. An appeal lies to the medical appeal tribunal or directly to the Employees' Insurance Court. </td></tr>
+<tr><td data-label="Point">High Court <span class="sec">Code on SS s.52</span></td><td data-label="Rule">An appeal lies from an order of the Employees' Insurance Court only if it involves a substantial question of law, within <b>sixty days</b> of the order. </td></tr>
+</tbody></table>
+
+<h2 id="s8-employees-compensation-chapter-vii" data-nav>8. Employees' Compensation (Chapter VII)</h2>
+<p><b>Law today.</b> <span class="sec">Code on SS Ch VII</span> pays compensation for work injury and occupational disease. It is in force from 21 November 2025. The Employee's Compensation Act 1923 is repealed.  </p>
+<div class="decide">
+<p class="q">Does Chapter IV (ESI) apply to the establishment?</p>
+<div class="opts">
+<div class="opt"><b>Yes</b> The ESI benefits in <span class="sec">Code on SS s.32</span> apply, not Chapter VII. </div>
+<div class="opt"><b>No</b> Chapter VII pays, to the persons in the Second Schedule and others notified <span class="sec">Code on SS s.2(26)</span> third proviso.  </div>
+</div></div>
+<div class="rule">
+<div class="rh"><span class="sec">Code on SS s.74(1)</span> <span class="rt">Liability</span></div>
+<p>The employer pays compensation if personal injury is caused to an employee by accident, or by an occupational disease listed in the Third Schedule, arising out of and in the course of employment. The employer is not liable if the injury does not result in total or partial disablement for a period exceeding <b>three days</b>. </p>
+</div>
+<div class="rule">
+<div class="rh"><span class="sec">Code on SS s.74(1)(b)</span> <span class="rt">Exceptions</span></div>
+<p>No liability for an injury not resulting in death or permanent total disablement if it is directly attributable to the employee being under the influence of drink or drugs, wilful disobedience of an express safety order or rule, or wilful removal or disregard of a safety guard. </p>
+</div>
+<div class="rule">
+<div class="rh"><span class="sec">Code on SS s.74(4)</span> <span class="rt">Commuting</span></div>
+<p>An accident while commuting from residence to the place of employment for duty, or back after duty, is deemed to arise out of and in the course of employment if a nexus between circumstances, time and place of the accident and the employment is established. </p>
+</div>
+<div class="rule">
+<div class="rh"><span class="sec">Code on SS s.76(1)(a)</span> <span class="rt">Death</span></div>
+<p><b>50%</b> of the monthly wages of the deceased x the relevant factor, or an amount notified by the Central Government, whichever is more. </p>
+<div class="was"><span class="sec old"><i>old</i> EC Act 1923 s.4(1)(a)</span> 50% of monthly wages x relevant factor <span class="tag same">Same</span>  </div>
+</div>
+<div class="rule">
+<div class="rh"><span class="sec">Code on SS s.76(1)(b)</span> <span class="rt">Permanent total disablement</span></div>
+<p><b>60%</b> of the monthly wages x the relevant factor, or a notified amount, whichever is more. The Central Government may enhance both amounts by notification. </p>
+</div>
+<div class="rule">
+<div class="rh"><span class="sec">Code on SS s.76(1)(c)</span> <span class="rt">Permanent partial disablement</span></div>
+<p>For scheduled injuries, the percentage of the permanent total disablement amount fixed in Part II of the Fourth Schedule. For others, a percentage proportionate to the loss of earning capacity assessed by the medical practitioner. </p>
+<div class="was"><span class="sec old"><i>old</i> EC Act 1923 Schedule I Part II</span> the injuries list <span class="tag changed">Changed</span>  </div>
+</div>
+<div class="rule">
+<div class="rh"><span class="sec">Code on SS ss.76(1)(d), 76(4)</span> <span class="rt">Temporary disablement</span></div>
+<p>A half-monthly payment of <b>25%</b> of monthly wages. Payable on the sixteenth day from disablement if it lasts 28 days or more, otherwise after a waiting period of three days. Then half-monthly during the disablement or five years, whichever is shorter. </p>
+</div>
+<table class="cmp"><thead><tr><th>Point</th><th>Rule</th></tr></thead><tbody>
+<tr><td data-label="Point">Relevant factor</td><td data-label="Rule">For an employee aged 48 the factor is <b>159.80</b> (Sixth Schedule). Age means completed years on the last birthday before the compensation fell due. </td></tr>
+<tr><td data-label="Point">Funeral and medical <span class="sec">Code on SS ss.76(5), 76(7)</span></td><td data-label="Rule">The employer deposits with the competent authority not less than <b>Rs 15,000</b> (or the State Government's higher amount) for the eldest surviving dependant's funeral expenses. The employer reimburses the actual medical expenditure. </td></tr>
+<tr><td data-label="Point">Notice and claim <span class="sec">Code on SS s.82</span></td><td data-label="Rule">Notice of the accident as soon as practicable. A claim within <b>two years</b> of the accident (or, for death, of the date of death). </td></tr>
+<tr><td data-label="Point">Late payment <span class="sec">Code on SS s.77(3)</span></td><td data-label="Rule">If the employer defaults in paying compensation within one month of the due date, the competent authority directs interest at the prescribed rate and, if the delay is unjustified, a further sum up to <b>50%</b> of the arrears as damages. The Code says "damages", not "penalty". </td></tr>
+<tr><td data-label="Point">Interest <span class="sec">SS Central Rules r.57</span></td><td data-label="Rule">Where compensation is unpaid after thirty days, simple interest is 12% a year or any other rate notified, from the due date. </td></tr>
+<tr><td data-label="Point">Deciding officer <span class="sec">Code on SS ss.90(1), 91</span></td><td data-label="Rule">The "competent authority" is appointed by the State Government under <span class="sec">Code on SS s.91</span> and settles liability or amount under <span class="sec">Code on SS s.90(1)</span>. </td></tr>
+<tr><td data-label="Point">Appeal <span class="sec">Code on SS s.99</span></td><td data-label="Rule">To the High Court from the listed orders only on a substantial question of law. Except for an order refusing redemption, only where the amount in dispute is not less than ten thousand rupees or a higher notified amount. Limitation: sixty days. </td></tr>
+<tr><td data-label="Point">Schedules</td><td data-label="Rule">Second (employees covered), Third (occupational diseases, Parts A, B and C), Fourth (injuries and percent loss of earning capacity; Part I permanent total disablement, Part II permanent partial disablement), Sixth (relevant factors). The old Act numbered them I to IV: injuries I, covered employees II, diseases III, factors IV. </td></tr>
+</tbody></table>
+<p>Example: a worker aged 48 earns Rs 12,000 a month and dies. Compensation is 50% x 12,000 x 159.80 = Rs 9,58,800. This holds if the notified wage ceiling is not below Rs 12,000 and no notified minimum amount exceeds the result.  </p>
+<h3>Bridge: the Employee's Compensation Act 1923 (repealed)</h3>
+<table class="cmp"><thead><tr><th>Point</th><th>Act</th><th>Code now</th></tr></thead><tbody>
+<tr><td data-label="Point">Name</td><td data-label="Act">The Workmen's Compensation Act 1923 was renamed the Employee's Compensation Act in 2009. </td><td data-label="Code now"><span class="sec">Code on SS Ch VII</span> </td></tr>
+<tr><td data-label="Point">Death formula</td><td data-label="Act"><span class="sec old"><i>old</i> EC Act 1923 s.4(1)(a)</span> 50% of monthly wages x relevant factor </td><td data-label="Code now"><span class="sec">Code on SS s.76(1)(a)</span> the same formula </td></tr>
+<tr><td data-label="Point">Injury schedule</td><td data-label="Act"><span class="sec old"><i>old</i> EC Act 1923 Schedule I Part II</span> </td><td data-label="Code now"><span class="sec">Code on SS Fourth Schedule</span> Part II </td></tr>
+<tr><td data-label="Point">Deciding officer</td><td data-label="Act">The Commissioner disposes of the matter and intimates the decision within three months of reference <span class="sec old"><i>old</i> EC Act 1923 s.25A</span>. </td><td data-label="Code now">The "competent authority". No three-month limit appears in <span class="sec">Code on SS ss.88 to 92</span> or in Rules <span class="sec">SS Central Rules r.57 to 63</span>. </td></tr>
+</tbody></table>
+
+<h2 id="s9-maternity-benefit-chapter-vi" data-nav>9. Maternity Benefit (Chapter VI)</h2>
+<p><b>Law today.</b> <span class="sec">Code on SS Ch VI</span> gives maternity benefit. It is in force from 21 November 2025. The Maternity Benefit Act 1961 is repealed.  </p>
+<div class="decide">
+<p class="q">What is her situation? The maximum weeks follow.</p>
+<div class="opts">
+<div class="opt"><b>Fewer than two surviving children</b> <b>26 weeks</b>, of which not more than <b>8 weeks</b> precede the expected delivery <span class="sec">Code on SS s.60(3)</span>. </div>
+<div class="opt"><b>Two or more surviving children</b> <b>12 weeks</b>, of which not more than <b>6 weeks</b> precede the expected delivery <span class="sec">Code on SS s.60(3)</span>. </div>
+<div class="opt"><b>Adopting or commissioning mother</b> <b>12 weeks</b> from the date the child is handed over. The adopted child is below three months of age <span class="sec">Code on SS s.60(4)</span>. </div>
+<div class="opt"><b>Miscarriage or medical termination</b> <b>6 weeks</b> of leave with wages immediately following the day <span class="sec">Code on SS s.65</span>. </div>
+</div></div>
+<div class="rule">
+<div class="rh"><span class="sec">Code on SS s.60(2)</span> <span class="rt">Qualifying service</span></div>
+<p>A woman is entitled only if she has actually worked in the establishment for not less than <b>eighty days</b> in the twelve months immediately before the expected delivery. </p>
+</div>
+<div class="rule">
+<div class="rh"><span class="sec">Code on SS s.60(4)</span> <span class="rt">Adopting or commissioning mother</span></div>
+<p>A woman who legally adopts a child below three months of age, or a commissioning mother, gets <b>twelve weeks</b> from the date the child is handed over. </p>
+<div class="was"><span class="sec old"><i>old</i> MB Act 1961 s.5(4)</span> already gave twelve weeks to a commissioning or adopting mother <span class="tag same">Same</span> </div>
+</div>
+<div class="rule">
+<div class="rh"><span class="sec">Code on SS s.65</span> <span class="rt">Miscarriage and others</span></div>
+<p>Miscarriage or medical termination of pregnancy: <b>six weeks</b> of leave with wages immediately following the day. Tubectomy: <b>two weeks</b>. Illness arising out of pregnancy, delivery, premature birth, miscarriage or termination: up to <b>one month</b> more. </p>
+</div>
+<table class="cmp"><thead><tr><th>Point</th><th>Rule</th></tr></thead><tbody>
+<tr><td data-label="Point">No work after delivery <span class="sec">Code on SS s.59</span></td><td data-label="Rule">No employer may knowingly employ, and no woman may work, during the <b>six weeks</b> immediately following delivery, miscarriage or medical termination. </td></tr>
+<tr><td data-label="Point">Arduous work <span class="sec">Code on SS s.59</span></td><td data-label="Rule">On her request, a pregnant woman cannot be required to do arduous work, work involving long hours of standing, or work likely to interfere with the pregnancy, during the month immediately preceding the six weeks before the expected delivery. The statute never says "light work". </td></tr>
+<tr><td data-label="Point">Rate <span class="sec">Code on SS s.60(1)</span></td><td data-label="Rule">Maternity benefit is paid at the average daily wage for the period of actual absence. "Average daily wage" is the average of wages for days worked in the three calendar months before the absence, subject to the minimum wage fixed or revised under the Code on Wages, 2019 <span class="sec">Wages Code</span>. </td></tr>
+<tr><td data-label="Point">Medical bonus <span class="sec">Code on SS s.64</span></td><td data-label="Rule">A woman entitled to maternity benefit also gets a medical bonus of <b>Rs 3,500</b>, or the amount the Central Government notifies, if the employer provides no pre-natal confinement and post-natal care free of charge. </td></tr>
+<tr><td data-label="Point">Payment <span class="sec">Code on SS s.62(5)</span></td><td data-label="Rule">The benefit for the period before the expected delivery is paid in advance on proof of pregnancy. The amount for the later period is paid within <b>forty-eight hours</b> of proof of delivery. </td></tr>
+<tr><td data-label="Point">Nursing breaks <span class="sec">Code on SS s.66</span></td><td data-label="Rule">Every woman delivered of a child who returns to duty gets two breaks of the prescribed duration, in addition to the interval for rest, for nursing the child until <b>fifteen months</b>. Rules <span class="sec">SS Central Rules r.36</span>: each break is 15 minutes, with up to 15 more minutes for travel to a crèche. </td></tr>
+<tr><td data-label="Point">Crèche <span class="sec">Code on SS s.67</span></td><td data-label="Rule">Every establishment to which Chapter VI applies and which employs <b>fifty</b> employees (or the number the Central Government prescribes) must have a crèche facility within the prescribed distance. The woman is allowed <b>four visits</b> a day, including her rest intervals. </td></tr>
+<tr><td data-label="Point">Crèche allowance <span class="sec">SS Central Rules r.37(2)(viii)</span></td><td data-label="Rule">By agreement with the sole negotiating union or council (or the majority of employees), an establishment may pay a crèche allowance instead. It is not less than <b>Rs 500</b> a month per child, or the notified amount, and is admissible for two children only, with an exception for multiple births from the second child birth. </td></tr>
+<tr><td data-label="Point">Work from home <span class="sec">Code on SS s.60(5)</span></td><td data-label="Rule">Where the work can be done from home, the employer may allow it after the maternity benefit, for a period and on conditions both agree. </td></tr>
+<tr><td data-label="Point">Dismissal <span class="sec">Code on SS s.68</span></td><td data-label="Rule">It is unlawful to discharge or dismiss a woman during or on account of her absence for maternity benefit, to give notice of dismissal that expires during the absence, or to vary her service conditions to her disadvantage. A dismissal for gross misconduct may deprive her of the benefit, with an appeal to the competent authority within <b>sixty days</b>. </td></tr>
+<tr><td data-label="Point">Continuity <span class="sec">Code on SS s.61</span></td><td data-label="Rule">Every woman entitled to maternity benefit under Chapter VI continues to be so entitled, even when Chapter IV applies to her establishment, until she becomes qualified to claim maternity benefit under <span class="sec">Code on SS s.32</span>. </td></tr>
+<tr><td data-label="Point">Bar <span class="sec">Code on SS s.32(7)(b)</span></td><td data-label="Rule">A woman employee eligible for maternity benefit under Chapter IV is not entitled to claim it from her employer under Chapter VI. </td></tr>
+</tbody></table>
+<div class="trap"><p>Students say maternity law "does not apply to women covered by ESI". The two sections work in turn. Chapter VI continues until she qualifies under <span class="sec">Code on SS s.32</span>. Then the bar in <span class="sec">Code on SS s.32(7)(b)</span> applies.  </p></div>
+<p>Bridge, Maternity Benefit Act 1961 (repealed): the Maternity Benefit (Amendment) Act 2017 raised the period from twelve weeks to twenty-six. The Code keeps the twelve-week rule for a commissioning or adopting mother in <span class="sec">Code on SS s.60(4)</span>.  </p>
+
+<h2 id="s10-gratuity-chapter-v" data-nav>10. Gratuity (Chapter V)</h2>
+<p><b>Law today.</b> <span class="sec">Code on SS Ch V</span> pays gratuity. It is in force from 21 November 2025. The Payment of Gratuity Act 1972 is repealed.  </p>
+<div class="decide">
+<p class="q">Why did the employment end?</p>
+<div class="opts">
+<div class="opt"><b>Superannuation, retirement or resignation</b> Gratuity needs continuous service of not less than <b>5 years</b> <span class="sec">Code on SS s.53</span>. </div>
+<div class="opt"><b>Death or disablement, expiry of fixed-term employment, or a notified event</b> The five-year condition does not apply <span class="sec">Code on SS s.53</span>. </div>
+</div></div>
+<div class="rule">
+<div class="rh"><span class="sec">Code on SS s.53</span> <span class="rt">Payable</span></div>
+<p>On termination of employment after continuous service of not less than <b>five years</b> on (a) superannuation, (b) retirement or resignation, (c) death or disablement due to accident or disease, (d) termination of a fixed-term contract, or (e) a notified event. </p>
+</div>
+<div class="rule">
+<div class="rh"><span class="sec">Code on SS s.53(2)</span> <span class="rt">Amount</span></div>
+<p>For every completed year of service or part thereof in excess of six months, <b>fifteen days' wages</b> (or the number of days the Central Government notifies), based on the rate of wages last drawn. For a monthly rated employee: monthly wage last drawn divided by <b>26</b>, multiplied by <b>15</b>.  </p>
+</div>
+<p>Example: last wages Rs 26,000, service 20 years 7 months. Part of a year over six months counts as a year, so 21 years. Gratuity = 26,000 x 15/26 x 21 = Rs 3,15,000.   </p>
+<table class="cmp"><thead><tr><th>Point</th><th>Rule</th></tr></thead><tbody>
+<tr><td data-label="Point">Working journalist</td><td data-label="Rule">The five years in <span class="sec">Code on SS s.53(1)</span> are deemed <b>three years</b> (Working Journalists Act 1955 definition). </td></tr>
+<tr><td data-label="Point">Fixed-term employee <span class="sec">Code on SS s.53(2)</span></td><td data-label="Rule">Gratuity is paid on a <b>pro rata</b> basis (third proviso). The Code names no one-year minimum. </td></tr>
+<tr><td data-label="Point">Fixed-term employee <span class="sec">SS Central Rules r.33(1)</span></td><td data-label="Rule">Eligible if he renders service under the contract for at least <b>one year</b>. Service of more than six months but less than one year in the subsequent period is rounded off to one additional year. </td></tr>
+<tr><td data-label="Point">Piece-rated, seasonal</td><td data-label="Rule">Piece-rated: daily wages are the average of total wages for the three months before termination (overtime excluded). Seasonal employment: gratuity is <b>seven days' wages</b> for each season. </td></tr>
+<tr><td data-label="Point">Ceiling <span class="sec">Code on SS s.53(3)</span></td><td data-label="Rule">The amount of gratuity must not exceed the amount the Central Government notifies. The Code states no rupee figure. </td></tr>
+<tr><td data-label="Point">Forfeiture <span class="sec">Code on SS s.53(6)(a)</span></td><td data-label="Rule">Forfeited to the extent of the damage or loss to the employer's property caused by an act, wilful omission or negligence for which the services were terminated. </td></tr>
+<tr><td data-label="Point">Forfeiture <span class="sec">Code on SS s.53(6)(b)</span></td><td data-label="Rule">May be wholly or partially forfeited if services were terminated for riotous or disorderly conduct or any other act of violence, or for an offence involving moral turpitude committed in the course of employment. </td></tr>
+<tr><td data-label="Point">Continuous service <span class="sec">Code on SS s.54</span></td><td data-label="Rule">Uninterrupted service, including breaks for sickness, accident, leave, lay-off, strike. An employee not in continuous service for a year is deemed so if he actually worked at least <b>240 days</b> in the twelve months (<b>190 days</b> for an employee below ground in a mine or in an establishment working less than six days a week). </td></tr>
+<tr><td data-label="Point">Seasonal establishment <span class="sec">Code on SS s.54</span></td><td data-label="Rule">Deemed continuous if he actually worked at least <b>75%</b> of the days on which the establishment operated. </td></tr>
+<tr><td data-label="Point">Payment time <span class="sec">Code on SS s.56</span></td><td data-label="Rule">Within <b>thirty days</b> of becoming payable. If not, simple interest at a rate not exceeding the notified long-term-deposit rate, unless the delay is the employee's fault and the employer has the competent authority's written permission. </td></tr>
+<tr><td data-label="Point">Application <span class="sec">SS Central Rules r.33(1)</span></td><td data-label="Rule">The employee applies in Form IV, ordinarily within thirty days of the date it became payable. The employer decides within the periods the Rules set. </td></tr>
+<tr><td data-label="Point">Dispute <span class="sec">Code on SS s.56(5)</span></td><td data-label="Rule">The employer, employee or any other person raising the dispute applies to the competent authority. The employer first deposits the amount he admits. The Code does not use the term "Controlling Authority". </td></tr>
+<tr><td data-label="Point">Competent authority <span class="sec">Code on SS s.58(1)</span></td><td data-label="Rule">The appropriate Government appoints any officer with the prescribed qualifications and experience by notification, for the area the notification specifies. <span class="sec">Code on SS s.2(16)</span> defines it for Chapter V as an authority appointed under <span class="sec">Code on SS s.58</span>. </td></tr>
+<tr><td data-label="Point">Appeal <span class="sec">Code on SS s.56(8)</span></td><td data-label="Rule">Within <b>sixty days</b> from receipt of the order, to the appropriate Government or the authority it specifies. A proviso lets the appeal be admitted after sixty days for sufficient cause. </td></tr>
+<tr><td data-label="Point">Insurance <span class="sec">Code on SS s.57(1)</span></td><td data-label="Rule">Every employer other than a Central or State Government employer must, from a date the appropriate Government notifies, insure his gratuity liability with an IRDA-regulated insurer. The appropriate Government may exempt employers with an approved gratuity fund and employers employing five hundred or more persons who set up an approved fund. The duty starts only from the notified date. </td></tr>
+<tr><td data-label="Point">No attachment <span class="sec">Code on SS s.151</span></td><td data-label="Rule">Gratuity is not liable to attachment in execution of a decree. </td></tr>
+</tbody></table>
+<p>Bridge, Payment of Gratuity Act 1972 (repealed): compulsory insurance was <span class="sec old"><i>old</i> Gratuity Act 1972 s.4A</span>. The Code's equivalent is <span class="sec">Code on SS s.57(1)</span>. The Code uses "competent authority" and does not use the term "Controlling Authority".   </p>
+
+<h2 id="s11-gig-and-platform-workers" data-nav>11. Gig and platform workers</h2>
+<p><b>Law today.</b> The gig and platform worker provisions (<span class="sec">Code on SS ss.113, 114</span>, <span class="sec">Code on SS s.141</span>) are in force from 21 November 2025. <span class="sec">Code on SS s.114</span> is in force, but the aggregator's duty to contribute starts on a date the Central Government notifies.  </p>
+<div class="rule">
+<div class="rh"><span class="sec">Code on SS s.114(1)</span> <span class="rt">Schemes</span></div>
+<p>The Central Government may frame schemes for gig workers and platform workers on life and disability cover, accident insurance, health and maternity benefits, old age protection, crèche and other benefits. </p>
+</div>
+<div class="rule">
+<div class="rh"><span class="sec">Code on SS s.114(4)</span> <span class="rt">Aggregator contribution</span></div>
+<p>At a rate notified by the Central Government, <b>not less than 1%</b> and <b>not exceeding 2%</b>, of the annual turnover of an aggregator in a category listed in the Seventh Schedule. The contribution must not exceed <b>5%</b> of the amount paid or payable by the aggregator to gig workers and platform workers. Turnover excludes tax, levy and cess paid or payable to the Central Government. The actual rate within the 1% to 2% band is a notification, not Code text.  </p>
+</div>
+<div class="rule">
+<div class="rh"><span class="sec">Code on SS s.114(5)</span> <span class="rt">When it starts</span></div>
+<p>The date of commencement of the aggregator contribution is to be notified by the Central Government. The Central Government may exempt an aggregator or class from paying it. </p>
+</div>
+<p>The Seventh Schedule has nine categories: ride sharing services; food and grocery delivery services; logistic services; e-market place (market place and inventory model) for wholesale or retail sale of goods or services (B2B/B2C); professional services provider; healthcare; travel and hospitality; content and media services; any other goods and services provider platform. </p>
+<table class="cmp"><thead><tr><th>Point</th><th>Rule</th></tr></thead><tbody>
+<tr><td data-label="Point">Board <span class="sec">Code on SS s.114(6)</span></td><td data-label="Rule">For gig and platform workers the National Board is reconstituted: five representatives of aggregators, five of gig and platform workers, the Director General of the Corporation, the Central Provident Fund Commissioner, expert members, five State Government representatives and a Joint Secretary as Member Secretary replace the <span class="sec">Code on SS ss.6(2)(c), 6(2)(d)</span> members. </td></tr>
+<tr><td data-label="Point">Social Security Fund <span class="sec">Code on SS s.141</span></td><td data-label="Rule">The Central Government establishes a Social Security Fund for the social security and welfare of unorganised, gig and platform workers. It is funded by money under <span class="sec">Code on SS s.109(3)</span>, money under <span class="sec">Code on SS s.114(3)</span> and composition of offences and other central labour-law funds. <span class="sec">Code on SS s.141(2)</span> requires a separate account for each source. </td></tr>
+</tbody></table>
+<h3>The Rules for gig and platform workers (in force from 8 May 2026)</h3>
+<table class="cmp"><thead><tr><th>Point</th><th>Rule</th></tr></thead><tbody>
+<tr><td data-label="Point">Registration age <span class="sec">Code on SS s.113</span>; <span class="sec">SS Central Rules r.48(2)(a)</span></td><td data-label="Rule">A gig or platform worker must be at least <b>sixteen</b> years of age (or the age the Central Government prescribes) to register. Every gig and platform worker who has completed sixteen years must register. </td></tr>
+<tr><td data-label="Point">Eligibility <span class="sec">SS Central Rules r.48(2)(e)</span> proviso</td><td data-label="Rule">Scheme benefits only if engaged with an aggregator for at least <b>ninety days</b>, or <b>one hundred and twenty days</b> across multiple aggregators, in the last financial year. A day counts if he earned any income that day. </td></tr>
+<tr><td data-label="Point">Exit <span class="sec">SS Central Rules r.49(4)</span></td><td data-label="Rule">A registered worker ceases to be eligible for scheme benefits at <b>sixty</b> years of age, or when he is not engaged for at least ninety days (one hundred and twenty with multiple aggregators) in the last financial year. </td></tr>
+<tr><td data-label="Point">Fund administration <span class="sec">SS Central Rules r.64</span></td><td data-label="Rule">Sets up the Fund's administration. <span class="sec">SS Central Rules r.49(1)(c)</span> keeps a separate account for gig and platform workers. </td></tr>
+</tbody></table>
+<p>The aggregator's year, under the Rules:</p>
+<ol class="steps">
+<li><b>Share details</b> The aggregator shares the details of its gig and platform workers on the designated portal within <b>forty-five days</b> of the Rules' commencement. It registers each new worker, and shares exits, in real time or on a daily basis through an API <span class="sec">SS Central Rules r.48</span>. </li>
+<li><b>30 June</b> A provisional contribution (Form XX) by 30 June of the year after the financial year <span class="sec">SS Central Rules r.49(3)</span>. </li>
+<li><b>31 October</b> A final return (Form XXI) with any balance <span class="sec">SS Central Rules r.49(3)</span>. The duty bites only once the contribution under <span class="sec">Code on SS s.114</span> is notified.  </li>
+<li><b>Delay</b> Interest at <b>1%</b> for every month or part of a month from the due date until payment <span class="sec">SS Central Rules r.49(2)</span>. The Rule states no annual rate. </li>
+</ol>
+
+<h2 id="s12-unorganised-workers-and-the-boards" data-nav>12. Unorganised workers and the Boards</h2>
+<p><b>Law today.</b> The Boards and schemes for unorganised workers (<span class="sec">Code on SS s.6</span>, <span class="sec">Code on SS s.109</span>) are in force from 21 November 2025. The Unorganised Workers' Social Security Act 2008 is repealed.  </p>
+<table class="cmp"><thead><tr><th>Point</th><th>Rule</th></tr></thead><tbody>
+<tr><td data-label="Point">National Social Security Board <span class="sec">Code on SS s.6</span></td><td data-label="Rule">Chairperson: the Union Minister for Labour and Employment. Vice-Chairperson: the Secretary of the Ministry. <b>Forty</b> members nominated by the Central Government: seven unorganised workers, seven employers, seven eminent persons, two Lok Sabha and one Rajya Sabha members, ten Central Ministries, five State Governments, one Union Territory. The Director General Labour Welfare is Member-Secretary. </td></tr>
+<tr><td data-label="Point">State Boards <span class="sec">Code on SS s.6</span></td><td data-label="Rule">Every State Government constitutes a State Unorganised Workers' Social Security Board, chaired ex officio by the State Minister of Labour and Employment, with <b>thirty-one</b> nominated members. </td></tr>
+<tr><td data-label="Point">Registration age</td><td data-label="Rule">A gig, platform or unorganised worker must be at least sixteen years of age (or the age the Central Government prescribes) to register. </td></tr>
+</tbody></table>
+<p>Who frames the schemes <span class="sec">Code on SS s.109</span>:</p>
+<div class="cards">
+<div class="card"><h4>Central Government <span class="sec">Code on SS s.109(1)</span></h4><p>Welfare schemes on life and disability cover, health and maternity, old age protection, education and others.</p></div>
+<div class="card"><h4>State Governments <span class="sec">Code on SS s.109(2)</span></h4><p>Schemes on provident fund, employment injury benefit, housing, children's education, skill upgradation, funeral assistance and old age homes.</p></div>
+</div>
+
+<p>Bridge, Unorganised Workers' Social Security Act 2008 (repealed): the National Board had the Union Labour Minister as chairman, the Director General (Labour Welfare) as member-secretary and <b>34</b> members nominated by the Central Government (7 unorganised workers, 7 employers, 7 civil society or eminent persons, 3 MPs, 5 Central Government and 5 State Government representatives). The Code has 40. Registration under the Act was for workers aged 14 and above with a smart card. The Code registers from age 16.   </p>
+<div class="trap"><p>Students swap the two ages and two band numbers. A gig, platform or unorganised worker registers at <b>16</b>. A building worker is a beneficiary from <b>18 to under 60</b>. The aggregator band and the building cess band are both <b>1% to 2%</b>, but one is on turnover and the other on cost of construction.    </p></div>
+
+<h2 id="s13-building-and-other-construction-workers-chapter-viii" data-nav>13. Building and other construction workers (Chapter VIII)</h2>
+<p><b>Law today.</b> <span class="sec">Code on SS Ch VIII</span> is in force from 21 November 2025. The BOCW Welfare Cess Act 1996 is repealed.  </p>
+<div class="rule">
+<div class="rh"><span class="sec">Code on SS s.100(1)</span> <span class="rt">Cess</span></div>
+<p>A cess for the social security and welfare of building workers is levied at a rate <b>not less than 1%</b> and <b>not exceeding 2%</b> of the cost of construction incurred by an employer, specified by the Central Government by notification. The cost of construction excludes the cost of land and any compensation paid or payable to an employee or kin under Chapter VII.  </p>
+</div>
+<div class="rule">
+<div class="rh"><span class="sec">Code on SS s.103</span>; <span class="sec">SS Central Rules r.41</span> <span class="rt">Self-assessment</span></div>
+<p>The employer self-assesses the cess within <b>sixty days</b> (or a notified period) of completion of each building or construction work, adjusting advance cess, and files a return. If the assessing officer finds a discrepancy he makes an assessment order. </p>
+</div>
+<div class="rule">
+<div class="rh"><span class="sec">Code on SS ss.106, 107</span> <span class="rt">Beneficiary</span></div>
+<p>A building worker aged at least <b>eighteen</b> and under <b>sixty</b> who has worked on building or construction work for at least <b>ninety days</b> in the preceding twelve months is registered as a beneficiary by the officer authorised by the State Building Workers' Welfare Board. He ceases to be a beneficiary at sixty or if he works fewer than ninety days in a year. </p>
+</div>
+<table class="cmp"><thead><tr><th>Point</th><th>Rule</th></tr></thead><tbody>
+<tr><td data-label="Point">Rs 50 lakh test <span class="sec">Code on SS s.2(6)</span></td><td data-label="Rule">The definition of "building or other construction work" does not include work employing fewer than ten workers in the preceding twelve months, or work for an individual's or group's own residence whose total cost does not exceed fifty lakh rupees (or a higher notified amount, with a notified number of workers). It is a definitional exclusion, not a cess exemption.  </td></tr>
+<tr><td data-label="Point">Scrutiny threshold <span class="sec">SS Central Rules r.41(4)(a)</span> proviso</td><td data-label="Rule"><b>Rs 10 lakh</b> appears only as the self-assessed cess amount above which the assessing officer scrutinises the return. It is not a construction-cost exemption. </td></tr>
+<tr><td data-label="Point">Fund <span class="sec">Code on SS s.108</span></td><td data-label="Rule">The cess proceeds are credited to the Building and Other Construction Workers' Welfare Fund of the State Building Workers' Welfare Board. The Board's salaries and administrative expenses must not exceed <b>5%</b> of its total expenses in a year. </td></tr>
+</tbody></table>
+<div class="trap"><p>Students confuse the Rs 10 lakh and Rs 50 lakh figures because both look like a cess exemption. Rs 10 lakh only triggers scrutiny of a self-assessed return. Rs 50 lakh is in the definition of building work, for an own residence.  </p></div>
+
+<h2 id="s14-career-centres" data-nav>14. Career centres</h2>
+<p><b>Law today.</b> <span class="sec">Code on SS s.139</span> on career centres is in force from 21 November 2025. The Employment Exchanges (Compulsory Notification of Vacancies) Act 1959 is repealed.  </p>
+<table class="cmp"><thead><tr><th>Point</th><th>Rule</th></tr></thead><tbody>
+<tr><td data-label="Point">Reporting vacancies <span class="sec">Code on SS s.139(1)</span></td><td data-label="Rule">The appropriate Government may, by notification, require employers in establishments (or classes) to report vacancies to a notified career centre before filling them. The reporting duty starts only from a notification. </td></tr>
+<tr><td data-label="Point">No duty to recruit through it <span class="sec">Code on SS s.139(3)</span></td><td data-label="Rule">No employer is obliged to recruit through the career centre merely because a vacancy is reported. </td></tr>
+<tr><td data-label="Point">Until notified <span class="sec">SS Central Rules r.55, 56</span></td><td data-label="Rule">The existing local and Central Employment Exchanges function as career centres (Regional) and career centres (Central). Reports are made through a digital mechanism that issues a vacancy number within <b>three working days</b> (seven in the north-eastern States). </td></tr>
+</tbody></table>
+<p>The Cine-Workers and Cinema Theatre Workers (Regulation of Employment) Act 1981 is not in this Code. It sits in <span class="sec">OSH Code</span> (Topic 8). </p>
+
+<h2 id="s15-registration-inspection-offences-and-compounding" data-nav>15. Registration, inspection, offences and compounding</h2>
+<p><b>Law today.</b> The sections below (<span class="sec">Code on SS ss.3, 122, 123, 124, 133, 134, 136, 137, 138</span>) are in force from 21 November 2025.  </p>
+<table class="cmp"><thead><tr><th>Point</th><th>Rule</th></tr></thead><tbody>
+<tr><td data-label="Point">Registration <span class="sec">Code on SS s.3(1)</span></td><td data-label="Rule">Every establishment to which the Code applies must be registered, electronically or otherwise, within the time and in the manner the Central Government prescribes. An establishment already registered under any other Central labour law need not register again, and that registration is deemed registration under the Code. </td></tr>
+<tr><td data-label="Point">Records and returns <span class="sec">Code on SS s.123</span></td><td data-label="Rule">Records and registers may be kept electronically. The employer files returns electronically or otherwise to the officer or authority prescribed, in the manner and periods the appropriate Government prescribes. </td></tr>
+<tr><td data-label="Point">Inspector-cum-Facilitator <span class="sec">Code on SS s.122(1)</span></td><td data-label="Rule">The Central Government (for Chapters III and IV) and the appropriate Government (for other provisions) appoint Inspector-cum-Facilitators. <span class="sec">Code on SS s.2(37)</span> defines the post by reference to <span class="sec">Code on SS s.122</span>. </td></tr>
+<tr><td data-label="Point">Role <span class="sec">Code on SS s.122(5)</span></td><td data-label="Rule">The Inspector-cum-Facilitator may advise employers and employees on compliance and, subject to the instructions or guidelines issued by the appropriate Government, may inspect the establishments assigned to him. </td></tr>
+<tr><td data-label="Point">Inspection scheme <span class="sec">Code on SS ss.122(2), 122(3)</span></td><td data-label="Rule">The Government may lay down a web-based inspection scheme and may confer randomised selection of inspections on Inspector-cum-Facilitators. </td></tr>
+<tr><td data-label="Point">Direction before prosecution <span class="sec">Code on SS s.137</span></td><td data-label="Rule">Before prosecuting an employer the Inspector-cum-Facilitator must give a written direction that lays down a time period for compliance. If the employer complies within it, no prosecution is started. No such opportunity is given if the same kind of violation is repeated within <b>three years</b> of the first violation. </td></tr>
+<tr><td data-label="Point">Cognizance <span class="sec">Code on SS s.136</span></td><td data-label="Rule">No court takes cognizance of an offence under the Code except on a complaint by an aggrieved person or an officer notified by the Government. No prosecution starts without the previous sanction of the notified authority. </td></tr>
+<tr><td data-label="Point">Wages protected <span class="sec">Code on SS s.124</span></td><td data-label="Rule">An employer must not reduce the wages or total benefits of an employee by reason only of his liability to pay a contribution under the Code. </td></tr>
+</tbody></table>
+<h3>Offences and penalties</h3>
+<table class="cmp"><thead><tr><th>Offence</th><th>Penalty</th></tr></thead><tbody>
+<tr><td data-label="Offence">Obstructing an Inspector-cum-Facilitator or other officer <span class="sec">Code on SS s.133</span></td><td data-label="Penalty">Imprisonment up to <b>six months</b>, or fine up to <b>Rs 50,000</b>, or both. </td></tr>
+<tr><td data-label="Offence">Not paying the employee's contribution that the employer deducted from wages <span class="sec">Code on SS s.133</span></td><td data-label="Penalty">Imprisonment of not less than <b>one year</b> and up to <b>three years</b>, and fine of <b>Rs 1 lakh</b>. The court may impose a lesser term for adequate and special reasons recorded. </td></tr>
+<tr><td data-label="Offence">Other contribution defaults <span class="sec">Code on SS s.133</span></td><td data-label="Penalty">Imprisonment of two months to six months and fine of <b>Rs 50,000</b>. </td></tr>
+<tr><td data-label="Offence">Repeat offender <span class="sec">Code on SS s.134</span></td><td data-label="Penalty">Imprisonment up to <b>two years</b> and fine of <b>Rs 2 lakh</b>. For a repeat failure to pay contribution, charges, cess, maternity benefit, gratuity or compensation: imprisonment of <b>two to three years</b> and fine of <b>Rs 3 lakh</b>. </td></tr>
+</tbody></table>
+<h3>Compounding <span class="sec">Code on SS s.138</span></h3>
+<div class="decide">
+<p class="q">What can the first offence be punished with?</p>
+<div class="opts">
+<div class="opt"><b>Fine only</b> It may be compounded on payment of <b>half</b> of the maximum fine <span class="sec">Code on SS s.138(1)</span>. </div>
+<div class="opt"><b>Imprisonment of not more than one year and also fine</b> It may be compounded on payment of <b>three-fourths</b> of the maximum fine <span class="sec">Code on SS s.138(1)</span>. </div>
+</div></div>
+<table class="cmp"><thead><tr><th>Point</th><th>Rule</th></tr></thead><tbody>
+<tr><td data-label="Point">Bars and extra <span class="sec">Code on SS ss.138(2), 138(7)</span></td><td data-label="Rule">Compounding is barred for a second offence within three years of an earlier compounded or convicted offence. A person who fails to comply with a compounding order is liable for <b>twenty per cent.</b> of the maximum fine in addition. </td></tr>
+<tr><td data-label="Point">Deposit <span class="sec">SS Central Rules r.54</span></td><td data-label="Rule">The compounding amount must be deposited within <b>fifteen days</b> of the notice (Form XXIV). </td></tr>
+</tbody></table>
+
+<h2 id="s16-exemption-and-emergency-powers" data-nav>16. Exemption and emergency powers</h2>
+<p><b>Law today.</b> <span class="sec">Code on SS s.143</span> (the parts not in force since 2023) and <span class="sec">Code on SS s.144</span> are in force from 21 November 2025.   </p>
+<div class="rule">
+<div class="rh"><span class="sec">Code on SS s.143</span> <span class="rt">Exemption</span></div>
+<p>The appropriate Government may exempt an establishment or class of establishments from any provision of the Code or a scheme, if the employees receive benefits substantially similar or superior. The exemption is initially for <b>three years</b> from the date of the notification. An exempted establishment's PF is run by a board of trustees constituted by the employer. No exemption in respect of the PF, Pension or Insurance Scheme is granted or renewed without prior consultation with the Central Board. None in respect of Chapter IV without prior consultation with the Corporation.  </p>
+<div class="was"><span class="sec old"><i>old</i> EPF Act 1952 s.17</span> the appropriate Government could exempt an establishment if its employees got benefits not less favourable <span class="tag same">Same</span> </div>
+</div>
+<div class="rule">
+<div class="rh"><span class="sec">SS Central Rules r.65(1)</span> <span class="rt">Conditions for exemption</span></div>
+<p>Substantially similar or superior benefits; compliance with Chapter III (or the EPF Act 1952) or Chapter IV (or the ESI Act 1948) for a continuous <b>three years</b> before applying, without default; at least <b>five hundred</b> contributory members (Chapter III) or employees (Chapter IV); a cumulative member balance of <b>Rs 50 crore</b> or more for the PF or Pension Scheme; and majority employee consent for Chapter III. <span class="sec">SS Central Rules r.65(1)(g)</span> also needs a positive net worth for three years and <span class="sec">SS Central Rules r.65(1)(h)</span> needs linking of Aadhaar. </p>
+</div>
+<p>Old exemptions <span class="sec">Code on SS s.164(2)(c)</span>: an exemption given under a repealed enactment stays in force till its validity expires or it ceases to operate under the Code. Separately, the EPF Scheme 2026 para 13(40) says establishments with exemption under the repealed Act apply for continuation within two years from the date of notification of the Social Security (Central) Rules 2026. </p>
+<div class="trap"><p>Students mix the two "threes". The exemption term is 3 years <span class="sec">Code on SS s.143</span>. The compliance record needed to apply is also 3 years, but it sits in the Rules <span class="sec">SS Central Rules r.65(1)</span>.  </p></div>
+<div class="rule">
+<div class="rh"><span class="sec">Code on SS s.144</span> <span class="rt">Emergency power</span></div>
+<p>In a pandemic, endemic or national disaster, the Central Government may by order defer or reduce the employer's or employee's contribution, or both, under Chapter III or IV, for up to <b>three months</b> at a time, for the whole of India or a part. The statute says "endemic", not "epidemic". </p>
+</div>
+
+<h2 id="s17-the-nine-repealed-acts-where-each-went" data-nav>17. The nine repealed Acts: where each went</h2>
+<p>All nine Acts are repealed by <span class="sec">Code on SS s.164(1)</span>: items 1, 2 and 4 to 9 from 21 November 2025; the EPF and Miscellaneous Provisions Act 1952 (item 3) for the matching provisions from 3 May 2023 and for the rest from 21 November 2025.  </p>
+<table class="cmp"><thead><tr><th>Old Act</th><th>Where it is now</th></tr></thead><tbody>
+<tr><td data-label="Old Act"><span class="sec old"><i>old</i> EC Act 1923</span> Employee's Compensation Act 1923</td><td data-label="Where it is now"><span class="sec">Code on SS Ch VII</span> </td></tr>
+<tr><td data-label="Old Act"><span class="sec old"><i>old</i> ESI Act 1948</span> Employees' State Insurance Act 1948</td><td data-label="Where it is now"><span class="sec">Code on SS Ch IV</span> </td></tr>
+<tr><td data-label="Old Act"><span class="sec old"><i>old</i> EPF Act 1952</span> Employees' Provident Funds and Miscellaneous Provisions Act 1952</td><td data-label="Where it is now"><span class="sec">Code on SS Ch III</span> with the Schemes 2026 </td></tr>
+<tr><td data-label="Old Act"><span class="sec old"><i>old</i> Employment Exchanges Act 1959</span> Employment Exchanges (Compulsory Notification of Vacancies) Act 1959</td><td data-label="Where it is now">Career centres <span class="sec">Code on SS s.139</span> </td></tr>
+<tr><td data-label="Old Act"><span class="sec old"><i>old</i> MB Act 1961</span> Maternity Benefit Act 1961</td><td data-label="Where it is now"><span class="sec">Code on SS Ch VI</span> </td></tr>
+<tr><td data-label="Old Act"><span class="sec old"><i>old</i> Gratuity Act 1972</span> Payment of Gratuity Act 1972</td><td data-label="Where it is now"><span class="sec">Code on SS Ch V</span> </td></tr>
+<tr><td data-label="Old Act"><span class="sec old"><i>old</i> Cine-Workers Fund Act 1981</span> Cine-Workers Welfare Fund Act 1981</td><td data-label="Where it is now">Repealed by <span class="sec">Code on SS s.164(1)</span> item 7 </td></tr>
+<tr><td data-label="Old Act"><span class="sec old"><i>old</i> BOCW Cess Act 1996</span> BOCW Welfare Cess Act 1996</td><td data-label="Where it is now"><span class="sec">Code on SS Ch VIII</span> </td></tr>
+<tr><td data-label="Old Act"><span class="sec old"><i>old</i> UWSS Act 2008</span> Unorganised Workers' Social Security Act 2008</td><td data-label="Where it is now">Subsumed in the Code, <span class="sec">Code on SS s.6</span> and <span class="sec">Code on SS s.109</span> </td></tr>
+</tbody></table>
+
+<h2 id="what-changed" data-nav>What changed</h2>
+<table class="shift"><thead><tr><th>Point</th><th>Before</th><th>Now</th><th></th></tr></thead><tbody>
+<tr><td data-label="Point">EPF coverage</td><td data-label="Before">Factory in a Schedule I industry with 20 or more persons, or a notified establishment or class <span class="sec old"><i>old</i> EPF Act 1952</span> </td><td data-label="Now"><b>20</b> or more employees, no list of industries <span class="sec">Code on SS First Schedule</span> </td><td><span class="tag changed">Changed</span></td></tr>
+<tr><td data-label="Point">Co-operative exclusion</td><td data-label="Before">Fewer than 50 persons, no power <span class="sec old"><i>old</i> EPF Act 1952 s.16(1)(a)</span> </td><td data-label="Now">Fewer than 50 persons, no power <span class="sec">Code on SS s.20(1)(a)</span> </td><td><span class="tag same">Same</span></td></tr>
+<tr><td data-label="Point">EPF pay base</td><td data-label="Before">Basic wages, dearness allowance and retaining allowance <span class="sec old"><i>old</i> EPF Act 1952 s.6</span> </td><td data-label="Now">"Wages" <span class="sec">Code on SS s.16(1)(a)</span> </td><td><span class="tag changed">Changed</span></td></tr>
+<tr><td data-label="Point">EPF Schemes</td><td data-label="Before">EPF Scheme 1952, EDLI Scheme 1976, EPS 1995 </td><td data-label="Now">Schemes of 29 June 2026 <span class="sec">Code on SS s.15(1)</span>   </td><td><span class="tag changed">Changed</span></td></tr>
+<tr><td data-label="Point">Delay interest</td><td data-label="Before">Simple interest at 12% a year <span class="sec old"><i>old</i> EPF Act 1952 s.7Q</span> </td><td data-label="Now">Rate notified, no figure <span class="sec">Code on SS s.127</span> </td><td><span class="tag changed">Changed</span></td></tr>
+<tr><td data-label="Point">Appeal deposit</td><td data-label="Before"><b>75%</b>, which the Tribunal may waive or reduce <span class="sec old"><i>old</i> EPF Act 1952 s.7-O</span> </td><td data-label="Now"><b>25%</b>, no waiver proviso <span class="sec">Code on SS s.23(3)</span> </td><td><span class="tag changed">Changed</span></td></tr>
+<tr><td data-label="Point">Appeal body</td><td data-label="Before">Industrial Tribunal <span class="sec old"><i>old</i> EPF Act 1952 s.7D</span> </td><td data-label="Now">Tribunal constituted by the Central Government <span class="sec">Code on SS s.23</span> </td><td><span class="tag same">Same</span></td></tr>
+<tr><td data-label="Point">Recovery Officer</td><td data-label="Before">Defined for the EPF Act <span class="sec old"><i>old</i> EPF Act 1952 s.2(kb)</span> </td><td data-label="Now">Serves every chapter of the Code <span class="sec">Code on SS s.129</span> </td><td><span class="tag changed">Changed</span></td></tr>
+<tr><td data-label="Point">ESI rate</td><td data-label="Before">4% (3.25% plus 0.75%) since 1 July 2019 <span class="sec old"><i>old</i> ESI Act 1948</span> </td><td data-label="Now">3.25% plus 0.75%, in the Rules <span class="sec">SS Central Rules r.19(1)</span> </td><td><span class="tag same">Same</span></td></tr>
+<tr><td data-label="Point">Compensation formula</td><td data-label="Before">50% of monthly wages x relevant factor <span class="sec old"><i>old</i> EC Act 1923 s.4(1)(a)</span> </td><td data-label="Now">The same formula <span class="sec">Code on SS s.76(1)(a)</span> </td><td><span class="tag same">Same</span></td></tr>
+<tr><td data-label="Point">Injury schedule</td><td data-label="Before">Schedule I, Part II <span class="sec old"><i>old</i> EC Act 1923</span> </td><td data-label="Now">Fourth Schedule, Part II <span class="sec">Code on SS Fourth Schedule</span> </td><td><span class="tag changed">Changed</span></td></tr>
+<tr><td data-label="Point">Deciding officer</td><td data-label="Before">The Commissioner decides within 3 months of reference <span class="sec old"><i>old</i> EC Act 1923 s.25A</span> </td><td data-label="Now">The competent authority; no time limit <span class="sec">Code on SS s.91</span> </td><td><span class="tag removed">Removed</span></td></tr>
+<tr><td data-label="Point">Commissioning mother</td><td data-label="Before">12 weeks <span class="sec old"><i>old</i> MB Act 1961 s.5(4)</span> </td><td data-label="Now">12 weeks <span class="sec">Code on SS s.60(4)</span> </td><td><span class="tag same">Same</span></td></tr>
+<tr><td data-label="Point">Compulsory gratuity insurance</td><td data-label="Before">Employer insures <span class="sec old"><i>old</i> Gratuity Act 1972 s.4A</span> </td><td data-label="Now">Employer insures, from a notified date <span class="sec">Code on SS s.57(1)</span> </td><td><span class="tag same">Same</span></td></tr>
+<tr><td data-label="Point">National Board</td><td data-label="Before">34 members <span class="sec old"><i>old</i> UWSS Act 2008</span> </td><td data-label="Now"><b>40</b> members <span class="sec">Code on SS s.6</span> </td><td><span class="tag changed">Changed</span></td></tr>
+<tr><td data-label="Point">Registration age</td><td data-label="Before">14 and above, with a smart card <span class="sec old"><i>old</i> UWSS Act 2008</span> </td><td data-label="Now"><b>16</b> years <span class="sec">Code on SS s.113</span> </td><td><span class="tag changed">Changed</span></td></tr>
+<tr><td data-label="Point">Exemption</td><td data-label="Before">Benefits not less favourable <span class="sec old"><i>old</i> EPF Act 1952 s.17</span> </td><td data-label="Now">Substantially similar or superior; 3 years initially <span class="sec">Code on SS s.143</span> </td><td><span class="tag changed">Changed</span></td></tr>
+</tbody></table>
+
+<h2 id="numbers-on-one-scale" data-nav>Numbers on one scale</h2>
+<h3>Headcounts: persons, employees, workers</h3>
+<div class="ladder">
+<div class="rung"><b>10</b><span>persons: ESI coverage, other than a seasonal factory <span class="sec">Code on SS First Schedule</span> </span></div>
+<div class="rung"><b>10</b><span>employees: gratuity and maternity, for shops and establishments <span class="sec">Code on SS First Schedule</span>  </span></div>
+<div class="rung"><b>10</b><span>workers: fewer than this are outside building work <span class="sec">Code on SS s.2(6)</span> </span></div>
+<div class="rung"><b>20</b><span>employees: EPF coverage <span class="sec">Code on SS First Schedule</span> </span></div>
+<div class="rung"><b>50</b><span>persons: a co-operative society with fewer than this, without power, is outside Chapter III <span class="sec">Code on SS s.20(1)(a)</span> </span></div>
+<div class="rung"><b>50</b><span>employees: crèche facility <span class="sec">Code on SS s.67</span> </span></div>
+<div class="rung"><b>100</b><span>persons: separate PF account <span class="sec">Code on SS s.21(1)</span> </span></div>
+<div class="rung"><b>500</b><span>members or employees: at least this many for exemption <span class="sec">SS Central Rules r.65(1)</span> </span></div>
+</div>
+<h3>Time limits: days</h3>
+<div class="ladder">
+<div class="rung"><b>3</b><span>days: injury must cause disablement for more than this for compensation <span class="sec">Code on SS s.74(1)</span> </span></div>
+<div class="rung"><b>15</b><span>days: EPF payment after the month closes <span class="sec">EPF Scheme 2026 para 20(1)</span>; compounding deposit <span class="sec">SS Central Rules r.54</span>  </span></div>
+<div class="rung"><b>30</b><span>days: gratuity payment <span class="sec">Code on SS s.56</span>; Form IV application <span class="sec">SS Central Rules r.33(1)</span>  </span></div>
+<div class="rung"><b>60</b><span>days: appeal on gratuity <span class="sec">Code on SS s.56(8)</span>, maternity dismissal <span class="sec">Code on SS s.68</span>, ESI <span class="sec">Code on SS s.52</span> and compensation <span class="sec">Code on SS s.99</span>; cess self-assessment <span class="sec">Code on SS s.103</span>     </span></div>
+<div class="rung"><b>78</b><span>days: contributions for ESI sickness benefit <span class="sec">SS Central Rules r.22(1)</span> </span></div>
+<div class="rung"><b>80</b><span>days: actual work for maternity benefit <span class="sec">Code on SS s.60(2)</span> </span></div>
+<div class="rung"><b>90</b><span>days: gig worker with one aggregator <span class="sec">SS Central Rules r.48(2)(e)</span>; building worker <span class="sec">Code on SS s.106</span>  </span></div>
+<div class="rung"><b>91</b><span>days: ESI sickness cap in two consecutive benefit periods <span class="sec">SS Central Rules r.22(1)</span> </span></div>
+<div class="rung"><b>120</b><span>days: gig worker with several aggregators <span class="sec">SS Central Rules r.48(2)(e)</span> </span></div>
+<div class="rung"><b>190</b><span>days: continuous service below ground or in a short-week establishment <span class="sec">Code on SS s.54</span> </span></div>
+<div class="rung"><b>240</b><span>days: continuous service in a year <span class="sec">Code on SS s.54</span> </span></div>
+<div class="rung"><b>730</b><span>days: extended sickness benefit <span class="sec">SS Central Rules r.22(2)</span> </span></div>
+</div>
+<h3>Time limits: weeks</h3>
+<div class="ladder">
+<div class="rung"><b>2</b><span>weeks: tubectomy leave <span class="sec">Code on SS s.65</span> </span></div>
+<div class="rung"><b>6</b><span>weeks: miscarriage leave <span class="sec">Code on SS s.65</span>; no work after delivery <span class="sec">Code on SS s.59</span>  </span></div>
+<div class="rung"><b>8</b><span>weeks: the most before delivery, within the 26 <span class="sec">Code on SS s.60(3)</span> </span></div>
+<div class="rung"><b>12</b><span>weeks: two or more surviving children; adopting or commissioning mother <span class="sec">Code on SS ss.60(3), 60(4)</span>  </span></div>
+<div class="rung"><b>26</b><span>weeks: maternity benefit maximum <span class="sec">Code on SS s.60(3)</span> </span></div>
+</div>
+<h3>Time limits: months</h3>
+<div class="ladder">
+<div class="rung"><b>1</b><span>month: default in paying compensation before damages <span class="sec">Code on SS s.77(3)</span>; extra leave for illness <span class="sec">Code on SS s.65</span>  </span></div>
+<div class="rung"><b>3</b><span>months: ESI funeral claim <span class="sec">Code on SS s.32(1)(f)</span>; contribution deferral at a time <span class="sec">Code on SS s.144</span>  </span></div>
+<div class="rung"><b>6</b><span>months: obstruction imprisonment <span class="sec">Code on SS s.133</span>; a part of a year above this counts as a year for gratuity <span class="sec">Code on SS s.53(2)</span>  </span></div>
+<div class="rung"><b>12</b><span>months: EPF membership before partial withdrawal groups open <span class="sec">EPF Scheme 2026 para 46(2)</span>; premature full withdrawal <span class="sec">EPF Scheme 2026 para 49(2)</span>  </span></div>
+<div class="rung"><b>15</b><span>months: nursing breaks until the child is this old <span class="sec">Code on SS s.66</span> </span></div>
+</div>
+<h3>Time limits: years</h3>
+<div class="ladder">
+<div class="rung"><b>1</b><span>year: Tribunal endeavours to decide <span class="sec">Code on SS s.23(4)</span>; extension of an inquiry <span class="sec">Code on SS s.125(2)</span>; fixed-term gratuity <span class="sec">SS Central Rules r.33(1)</span>   </span></div>
+<div class="rung"><b>2</b><span>years: inquiry endeavour <span class="sec">Code on SS s.125(2)</span>; compensation claim <span class="sec">Code on SS s.82</span>; repeat offence imprisonment <span class="sec">Code on SS s.134</span>   </span></div>
+<div class="rung"><b>3</b><span>years: exemption term <span class="sec">Code on SS s.143</span>; repeat violation window <span class="sec">Code on SS s.137</span>; working journalist gratuity <span class="sec">Code on SS s.53(1)</span>   </span></div>
+<div class="rung"><b>5</b><span>years: gratuity service <span class="sec">Code on SS s.53</span>; limit for starting an EPF proceeding <span class="sec">Code on SS s.125(1)</span>  </span></div>
+<div class="rung"><b>10</b><span>years: eligible service for pension <span class="sec">EPS Scheme 2026 para 12(1)(i)</span> </span></div>
+</div>
+<h3>Ages in years</h3>
+<div class="ladder">
+<div class="rung"><b>16</b><span>registration of gig, platform and unorganised workers <span class="sec">Code on SS s.113</span> </span></div>
+<div class="rung"><b>18</b><span>lower age for a building worker beneficiary <span class="sec">Code on SS s.106</span> </span></div>
+<div class="rung"><b>50</b><span>earliest early pension <span class="sec">EPS Scheme 2026 para 12(7)</span> </span></div>
+<div class="rung"><b>55</b><span>full EPF withdrawal on retirement <span class="sec">EPF Scheme 2026 para 49(1)(i)</span> </span></div>
+<div class="rung"><b>58</b><span>age of superannuation for Chapter III <span class="sec">Code on SS s.2(82)</span> </span></div>
+<div class="rung"><b>60</b><span>exit age for gig workers <span class="sec">SS Central Rules r.49(4)</span>; building workers cease at 60 <span class="sec">Code on SS s.107</span>; pension deferral up to 60 <span class="sec">EPS Scheme 2026 para 12(9)</span>   </span></div>
+</div>
+<h3>Shares and rates</h3>
+<div class="ladder">
+<div class="rung"><b>0.25%</b><span>EPF damages a month for default of less than two months <span class="sec">EPF Scheme 2026 para 23(1)</span> </span></div>
+<div class="rung"><b>0.75%</b><span>ESI employee share <span class="sec">SS Central Rules r.19(1)</span> </span></div>
+<div class="rung"><b>1% to 2%</b><span>aggregator contribution on turnover <span class="sec">Code on SS s.114(4)</span>; building cess on cost of construction <span class="sec">Code on SS s.100(1)</span>  </span></div>
+<div class="rung"><b>3.25%</b><span>ESI employer share <span class="sec">SS Central Rules r.19(1)</span> </span></div>
+<div class="rung"><b>5%</b><span>aggregator cap on payouts <span class="sec">Code on SS s.114(4)</span>; Board expenses cap <span class="sec">Code on SS s.108</span>  </span></div>
+<div class="rung"><b>8.33%</b><span>employer's part to the Pension Fund <span class="sec">EPS Scheme 2026 para 4(1)</span> </span></div>
+<div class="rung"><b>10%</b><span>Code default contribution <span class="sec">Code on SS s.16(1)(a)</span> </span></div>
+<div class="rung"><b>12%</b><span>by notification <span class="sec">Code on SS s.16(1)(a)</span>; Scheme 2026 default <span class="sec">EPF Scheme 2026 para 18(2)</span>  </span></div>
+<div class="rung"><b>20%</b><span>extra on the maximum fine for not complying with a compounding order <span class="sec">Code on SS s.138(7)</span> </span></div>
+<div class="rung"><b>25%</b><span>appeal deposit <span class="sec">Code on SS s.23(3)</span>; minimum EPF balance kept <span class="sec">EPF Scheme 2026 para 46(1)</span>  </span></div>
+<div class="rung"><b>50%</b><span>death compensation <span class="sec">Code on SS s.76(1)(a)</span>; damages cap on late compensation <span class="sec">Code on SS s.77(3)</span>; half of the maximum fine compounded <span class="sec">Code on SS s.138(1)</span>   </span></div>
+<div class="rung"><b>60%</b><span>permanent total disablement <span class="sec">Code on SS s.76(1)(b)</span> </span></div>
+<div class="rung"><b>70%</b><span>ESI sickness benefit <span class="sec">SS Central Rules r.22(1)</span> </span></div>
+<div class="rung"><b>75%</b><span>seasonal establishment attendance <span class="sec">Code on SS s.54</span>; three-fourths of the maximum fine compounded <span class="sec">Code on SS s.138(1)</span>  </span></div>
+<div class="rung"><b>80%</b><span>extended sickness benefit <span class="sec">SS Central Rules r.22(2)</span> </span></div>
+<div class="rung"><b>90%</b><span>ESI disablement and dependants' benefit <span class="sec">SS Central Rules r.22</span> </span></div>
+</div>
+<h3>Money: rupees</h3>
+<div class="ladder">
+<div class="rung"><b>Rs 500</b><span>crèche allowance a month per child, at least <span class="sec">SS Central Rules r.37(2)(viii)</span> </span></div>
+<div class="rung"><b>Rs 1,000</b><span>minimum partial EPF withdrawal <span class="sec">EPF Scheme 2026 para 46(1)</span>; minimum monthly pension <span class="sec">EPS Scheme 2026 para 12(8)</span>  </span></div>
+<div class="rung"><b>Rs 3,500</b><span>maternity medical bonus <span class="sec">Code on SS s.64</span> </span></div>
+<div class="rung"><b>Rs 15,000</b><span>ESI medical bonus <span class="sec">SS Central Rules r.22(4)</span>; compensation funeral deposit <span class="sec">Code on SS s.76(7)</span>; old EPF wage ceiling   </span></div>
+<div class="rung"><b>Rs 18,000</b><span>a month: inter-State migrant worker wage limit <span class="sec">Code on SS s.2(41)</span> </span></div>
+<div class="rung"><b>Rs 20,000</b><span>ESI funeral expenses <span class="sec">SS Central Rules r.21</span> </span></div>
+<div class="rung"><b>Rs 25,000</b><span>EPF wage ceiling from 17 September 2026 </span></div>
+<div class="rung"><b>Rs 50,000</b><span>fine for obstruction; fine for other contribution defaults <span class="sec">Code on SS s.133</span>  </span></div>
+<div class="rung"><b>Rs 1 lakh</b><span>fine for not paying the deducted employee contribution <span class="sec">Code on SS s.133</span> </span></div>
+<div class="rung"><b>Rs 2 lakh</b><span>fine for a repeat offender <span class="sec">Code on SS s.134</span> </span></div>
+<div class="rung"><b>Rs 2,50,000</b><span>EDLI benefit minimum <span class="sec">EDLI Scheme 2026 para 21(4)</span> </span></div>
+<div class="rung"><b>Rs 3 lakh</b><span>fine for a repeat contribution-type offence <span class="sec">Code on SS s.134</span> </span></div>
+<div class="rung"><b>Rs 5 lakh</b><span>auto-settlement limit for advance claims, raised from Rs 1 lakh in June 2025 </span></div>
+<div class="rung"><b>Rs 7,00,000</b><span>EDLI benefit maximum <span class="sec">EDLI Scheme 2026 para 21(4)</span> </span></div>
+<div class="rung"><b>Rs 10 lakh</b><span>cess scrutiny threshold <span class="sec">SS Central Rules r.41(4)(a)</span> </span></div>
+<div class="rung"><b>Rs 50 lakh</b><span>own-residence test in building work <span class="sec">Code on SS s.2(6)</span> </span></div>
+<div class="rung"><b>Rs 50 crore</b><span>cumulative balance for exemption <span class="sec">SS Central Rules r.65(1)</span> </span></div>
+</div>
+
+<h2 id="quick-revision" data-nav>Quick revision</h2>
+<table class="recall"><tbody>
+<tr><td>Sections / chapters / Acts repealed</td><td>164 / 14 / 9 <span class="sec">Code on SS s.164(1)</span>   </td></tr>
+<tr><td>Assent</td><td>28 September 2020 </td></tr>
+<tr><td>Aadhaar section</td><td><span class="sec">Code on SS s.142</span>, from 3 May 2021, S.O. 1730(E) </td></tr>
+<tr><td>Pension Scheme parts, <span class="sec">Code on SS s.16(1)(b)</span>, EPF Act repeal</td><td>3 May 2023, S.O. 2060(E)   </td></tr>
+<tr><td>General date</td><td>21 November 2025, S.O. 5319(E); corrigendum S.O. 5936(E), 19 December 2025  </td></tr>
+<tr><td>Rules</td><td>G.S.R. 344(E), 8 May 2026 </td></tr>
+<tr><td>Schemes 2026</td><td>G.S.R. 525(E) EPF, 526(E) EDLI, 527(E) EPS; 29 June 2026   </td></tr>
+<tr><td>Coverage</td><td>EPF 20 or more; ESI 10 or more; gratuity and maternity shops 10 or more    </td></tr>
+<tr><td>Once covered</td><td><span class="sec">Code on SS s.1(8)</span> </td></tr>
+<tr><td>EPF contribution</td><td>Code 10%, 12% by notification; Scheme 12% each, 10% for notified classes    </td></tr>
+<tr><td>EPF payment and damages</td><td>15 days from close of month; 0.25%, 0.50%, 1% a month  </td></tr>
+<tr><td>Wage ceiling</td><td>Rs 15,000 (from September 2014); Rs 25,000 from 17 September 2026  </td></tr>
+<tr><td>Retirement withdrawal; pension age</td><td>55; 58  </td></tr>
+<tr><td>Pension</td><td>10 years, divided by 70, 60 months, minimum Rs 1,000; early from 50, minus 4% a year; defer to 60     </td></tr>
+<tr><td>EDLI benefit</td><td>35 times average wages plus 50% of average balance; Rs 2.5 lakh to Rs 7 lakh  </td></tr>
+<tr><td>EPF appeal</td><td>Tribunal, <span class="sec">Code on SS s.23</span>; deposit 25% (old Act 75%); no proceeding after 5 years    </td></tr>
+<tr><td>ESI rates</td><td>3.25% employer, 0.75% employee, <span class="sec">SS Central Rules r.19(1)</span>; Rs 20,000 wage gives Rs 650 and Rs 150  </td></tr>
+<tr><td>ESI benefits</td><td>Six: sickness, maternity, disablement, dependants', medical, funeral; no "health benefit"  </td></tr>
+<tr><td>ESI sickness</td><td>78 days; 70%; 91 days in two benefit periods; extended 80%, 730 days   </td></tr>
+<tr><td>ESI disablement, dependants; funeral</td><td>90%; Rs 20,000, claim in 3 months   </td></tr>
+<tr><td>Compensation</td><td>Death 50%, permanent total 60%, temporary 25% half-monthly; factor 159.80 at age 48; claim in 2 years     </td></tr>
+<tr><td>Compensation late payment</td><td>After one month: interest; damages up to 50% of arrears if unjustified </td></tr>
+<tr><td>Maternity</td><td>80 days worked; 26 weeks (8 before); 12 weeks for two or more children (6 before); adopting or commissioning 12 weeks; miscarriage 6 weeks; tubectomy 2 weeks     </td></tr>
+<tr><td>Maternity extras</td><td>Medical bonus Rs 3,500; payment in 48 hours; 2 nursing breaks to 15 months; crèche at 50 employees; dismissal appeal 60 days     </td></tr>
+<tr><td>Gratuity</td><td>5 years (none on death, disablement, fixed-term expiry); working journalist 3 years; 15 days' wages; wage divided by 26 x 15 x years     </td></tr>
+<tr><td>Gratuity: continuous service, payment, appeal</td><td>240 days (190 days); pay in 30 days; appeal in 60 days; seasonal 7 days' wages    </td></tr>
+<tr><td>Gratuity ceiling; insurance</td><td>As notified, no figure in the Code; <span class="sec">Code on SS s.57(1)</span> from a notified date  </td></tr>
+<tr><td>Aggregator</td><td>1% to 2% of turnover; cap 5% of payouts; starts on a notified date; Form XX by 30 June, Form XXI by 31 October; delay 1% a month     </td></tr>
+<tr><td>Gig eligibility, ages</td><td>90 or 120 days; register at 16; exit at 60   </td></tr>
+<tr><td>Boards</td><td>National 40 members (old Act 34); State 31   </td></tr>
+<tr><td>Social Security Fund</td><td><span class="sec">Code on SS s.141</span> </td></tr>
+<tr><td>Building cess</td><td>1% to 2% of cost of construction; beneficiary 18 to under 60 with 90 days; Board expenses not above 5%   </td></tr>
+<tr><td>Career centre</td><td><span class="sec">Code on SS s.139</span>; vacancy number in 3 working days  </td></tr>
+<tr><td>Before prosecution</td><td>Written direction with a time period; none for a repeat within 3 years </td></tr>
+<tr><td>Penalties</td><td>Obstruction 6 months or Rs 50,000; deducted contribution unpaid 1 to 3 years and Rs 1 lakh; repeat 2 years and Rs 2 lakh   </td></tr>
+<tr><td>Compounding</td><td>Half of the maximum fine; three-fourths with imprisonment up to 1 year and fine; plus 20% on default   </td></tr>
+<tr><td>Exemption; emergency</td><td><span class="sec">Code on SS s.143</span>, 3 years initially, at least 500 members and Rs 50 crore (Rules); <span class="sec">Code on SS s.144</span>, up to 3 months at a time   </td></tr>
+</tbody></table>
+
+<h2 id="test-yourself" data-nav>Test yourself</h2>
+<ol class="quiz">
+<li>Which parts of the Code came into force before 21 November 2025, and when?</li>
+<li>What is the employee headcount for EPF coverage, and what is it for ESI?</li>
+<li>What does the Code say about the EPF contribution rate, and what does the EPF Scheme 2026 say?</li>
+<li>What deposit must an employer make to appeal in an EPF dues case, and what was it under the old Act?</li>
+<li>A worker aged 48 earns Rs 12,000 a month and dies from a work injury. What is the compensation?</li>
+<li>How many weeks of maternity benefit does a woman with two surviving children get? What about a miscarriage?</li>
+<li>Last wages Rs 26,000, service 20 years 7 months. What is the gratuity?</li>
+<li>On a wage of Rs 20,000, what do the employer and the employee pay to ESI?</li>
+<li>What is the aggregator contribution band and cap? When does the duty start?</li>
+<li>A first offence is punishable with imprisonment of up to one year and fine. At what share of the maximum fine can it be compounded?</li>
+<li>What is the initial term of an exemption under the Code? Where is the 3-year compliance record?</li>
+</ol>
+<div class="answers"><h3>Answers</h3><ol>
+<li><span class="sec">Code on SS s.142</span> (Aadhaar) from 3 May 2021. The Pension Scheme 1995 parts, all of <span class="sec">Code on SS s.16(1)(b)</span> and the repeal of the matching EPF Act provisions from 3 May 2023.    </li>
+<li>EPF: 20 or more employees. ESI: 10 or more persons, other than a seasonal factory <span class="sec">Code on SS First Schedule</span>.  </li>
+<li>The Code reads 10% with 12% by notification <span class="sec">Code on SS s.16(1)(a)</span>. The Scheme reads 12% each side, with 10% for notified classes <span class="sec">EPF Scheme 2026 para 18(2)</span>.    </li>
+<li>25% of the amount due <span class="sec">Code on SS s.23(3)</span>. The old Act asked 75% <span class="sec old"><i>old</i> EPF Act 1952 s.7-O</span>.  </li>
+<li>50% x 12,000 x 159.80 = Rs 9,58,800 <span class="sec">Code on SS s.76(1)(a)</span>. This holds if the notified wage ceiling is not below Rs 12,000 and no notified minimum exceeds the result.  </li>
+<li>12 weeks, of which not more than 6 precede delivery <span class="sec">Code on SS s.60(3)</span>. A miscarriage gets 6 weeks <span class="sec">Code on SS s.65</span>.  </li>
+<li>Part of a year over six months counts as a year, so 21 years. 26,000 x 15/26 x 21 = Rs 3,15,000 <span class="sec">Code on SS s.53(2)</span>.   </li>
+<li>Employer 3.25% = Rs 650. Employee 0.75% = Rs 150 <span class="sec">SS Central Rules r.19(1)</span>.  </li>
+<li>Not less than 1% and not more than 2% of annual turnover, capped at 5% of what the aggregator pays or owes gig and platform workers <span class="sec">Code on SS s.114(4)</span>. The duty starts on a date the Central Government notifies <span class="sec">Code on SS s.114(5)</span>.   </li>
+<li>Three-fourths of the maximum fine <span class="sec">Code on SS s.138(1)</span>. A fine-only first offence is compounded at half.  </li>
+<li>3 years from the date of notification <span class="sec">Code on SS s.143</span>. The 3-year compliance record is in the Rules <span class="sec">SS Central Rules r.65(1)</span>.  </li>
+</ol></div>
+</section>
+
+</main>
+<script>
+/* Fallback only: runs when the browser cannot drive the bar from CSS. Passive listeners, one rAF per frame. */
+(function(){
+  try{
+    if(window.CSS&&CSS.supports&&CSS.supports('animation-timeline','scroll()'))return;
+    var bar=document.querySelector('.rp-bar'),el=document.documentElement,q=false;
+    if(!bar)return;
+    function update(){q=false;var y=window.pageYOffset||el.scrollTop,max=el.scrollHeight-el.clientHeight;
+      bar.style.transform='scaleX('+(max>0?Math.min(1,Math.max(0,y/max)):0)+')';}
+    function queue(){if(!q){q=true;requestAnimationFrame(update);}}
+    window.addEventListener('scroll',queue,{passive:true});
+    window.addEventListener('resize',queue,{passive:true});
+    update();
+  }catch(e){}
+})();
+</script>
+</body>
+</html>
